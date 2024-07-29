@@ -1,9 +1,10 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook, faYoutube, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faFacebook, faYoutube, faGithub, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import React from 'react';
 import { faEnvelope, faLocation, faLocationDot, faMailBulk, faPhone, faSchoolFlag } from '@fortawesome/free-solid-svg-icons';
 import { faBuilding, faMap } from '@fortawesome/free-regular-svg-icons';
 import { faAddressCard } from '@fortawesome/free-solid-svg-icons/faAddressCard';
+import { Link } from 'react-router-dom';
 const Footer = () => {
     return (
         <>
@@ -14,18 +15,18 @@ const Footer = () => {
                     </div>
 
                     <div>
-                        <a href="" className="me-4 text-reset">
+                        <a href="https://www.facebook.com/leumagoficial" target="_blank" className="me-4 text-reset">
                             <FontAwesomeIcon icon={faFacebook} />
                         </a>
-                        <a href="" className="me-4 text-reset">
+                        <a href="https://www.youtube.com/leumagtv" target="_blank" className=" me-4 text-reset">
                             <FontAwesomeIcon icon={faYoutube} />
                         </a>
-                        <a href="" className="me-4 text-reset">
-                            <FontAwesomeIcon icon={faGithub} />
+                        <a href="https://www.instagram.com/leumagoficial/" target="_blank" className=" me-4 text-reset">
+                            <FontAwesomeIcon icon={faInstagram} />
                         </a>
                     </div>
 
-                </section>
+                </section >
 
 
 
@@ -51,16 +52,16 @@ const Footer = () => {
                                     Principal
                                 </h6>
                                 <p>
-                                    <a href="#!" className="text-reset">Inicio</a>
+                                    <Link to={'/'} className="text-reset">Inicio</Link>
                                 </p>
                                 <p>
-                                    <a href="#!" className="text-reset">Nosotros</a>
+                                    <Link to={'/Nosotros'} className="text-reset">Nosotros</Link>
                                 </p>
                                 <p>
-                                    <a href="#!" className="text-reset">Estamentos</a>
+                                    <Link to={'/Estamentos'} className="text-reset">Estamentos</Link>
                                 </p>
                                 <p>
-                                    <a href="#!" className="text-reset">Contacto</a>
+                                    <Link to={'/Contacto'} className="text-reset">Contacto</Link>
                                 </p>
                             </div>
                             <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
@@ -99,7 +100,7 @@ const Footer = () => {
 
                 </div>
 
-            </footer>
+            </footer >
 
         </>
 

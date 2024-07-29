@@ -22,5 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-assets/docs
-assets/img
+
+# Ignorar carpetas específicas
+src/assets/docs
+src/assets/img

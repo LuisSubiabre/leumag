@@ -12,9 +12,9 @@ const Noticia = () => {
     useEffect(() => {
         const fetchNoticia = async () => {
             try {
-                const response = await axios.get(`http://portal.liceoexperimental.cl/wp-json/wp/v2/posts/${id}`);
+                const response = await axios.get(`https://portal.liceoexperimental.cl/wp-json/wp/v2/posts/${id}`);
                 const post = response.data;
-                const featuredMediaResponse = post.featured_media ? await axios.get(`http://portal.liceoexperimental.cl/wp-json/wp/v2/media/${post.featured_media}`) : null;
+                const featuredMediaResponse = post.featured_media ? await axios.get(`https://portal.liceoexperimental.cl/wp-json/wp/v2/media/${post.featured_media}`) : null;
 
                 setNoticia({
                     id: post.id,

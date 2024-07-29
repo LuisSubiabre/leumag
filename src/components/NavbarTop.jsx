@@ -1,5 +1,5 @@
 import React from 'react';
-import logoImage from '../assets/img/logo11.png';
+import logoImage from '../assets/img/logo.png';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 const NavbarTop = () => {
