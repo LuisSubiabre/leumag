@@ -2,8 +2,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faYoutube, faGithub, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import React from 'react';
 import { faEnvelope, faLocation, faLocationDot, faMailBulk, faPhone, faSchoolFlag } from '@fortawesome/free-solid-svg-icons';
-import { faBuilding, faMap } from '@fortawesome/free-regular-svg-icons';
-import { faAddressCard } from '@fortawesome/free-solid-svg-icons/faAddressCard';
 import { Link } from 'react-router-dom';
 const Footer = () => {
     return (

@@ -1,35 +1,73 @@
 import React from "react";
 import { Usuarios } from "./Usuarios";
 import demoImage from '../assets/img/funcionarios/demo.png';
+import lbarria from '../assets/img/funcionarios/lbarria.png';
+import tcardenas from '../assets/img/funcionarios/tcardenas.png';
+import aespana from '../assets/img/funcionarios/aespana.png';
+import msolis from '../assets/img/funcionarios/msolis.png';
+import dandrade from '../assets/img/funcionarios/dandrade.png';
+import nrodriguez from '../assets/img/funcionarios/nrodriguez.png';
+import jvenegas from '../assets/img/funcionarios/jvenegas.png';
+import abarrientos from '../assets/img/funcionarios/abarrientos.png';
 
 const docentes = [
   {
-    img: demoImage,
+    img: aespana,
     nombre: "Ángela España",
     correo: "aespana@liceoexperimental.cl",
     dpto: "Educación Parvularia",
     more: "Jefatura NT1A",
   },
   {
-    img: demoImage,
+    img: msolis,
     nombre: "Maria José Solís",
     correo: "msolis@liceoexperimental.cl",
     dpto: "Educación Parvularia",
     more: "Jefatura NT1B",
   },
   {
-    img: demoImage,
+    img: lbarria,
     nombre: "Luz Barría",
     correo: "msolis@liceoexperimental.cl",
     dpto: "Educación Parvularia",
     more: "Jefatura NT2A",
   },
   {
-    img: demoImage,
+    img: tcardenas,
     nombre: "Teresa Cárdenas",
     correo: "tcardenas@liceoexperimental.cl",
     dpto: "Educación Parvularia",
     more: "Jefatura NT2B",
+  },
+
+  {
+    img: dandrade,
+    nombre: "Deice Andrade",
+    correo: "dandrade@liceoexperimental.cl",
+    dpto: "Técnico en Educación Parvularia",
+    more: "NT 1A",
+  },
+  {
+    img: nrodriguez,
+    nombre: "Ninfa Rodríguez",
+    correo: "nrodriguez@liceoexperimental.cl",
+    dpto: "Técnico en Educación Parvularia",
+    more: "NT 1B",
+  },
+  {
+    img: jvenegas,
+    nombre: "Jaqueline Venegas",
+    correo: "jvenegas@liceoexperimental.cl",
+    dpto: "Técnico en Educación Parvularia",
+    more: "NT 2B",
+  }
+  ,
+  {
+    img: abarrientos,
+    nombre: "Alejandra Barrientos",
+    correo: "abarrientos@liceoexperimental.cl",
+    dpto: "Técnico en Educación Parvularia",
+    more: "NT 2A",
   }
 ];
 

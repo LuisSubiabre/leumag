@@ -1,6 +1,20 @@
 import React from "react";
 import { Usuarios } from "./Usuarios";
 import demoImage from '../assets/img/funcionarios/demo.png';
+import hoyarzun from '../assets/img/funcionarios/hoyarzun.png';
+import cvargas from '../assets/img/funcionarios/cvargas.png';
+import cvergara from '../assets/img/funcionarios/cvergara.png';
+import lgomez from '../assets/img/funcionarios/lgomez.png';
+import tguidipani from '../assets/img/funcionarios/tguidipani.png';
+import ccardenas from '../assets/img/funcionarios/ccardenas.png';
+import fperez from '../assets/img/funcionarios/fperez.png';
+import jgonzalez from '../assets/img/funcionarios/jgonzalez.png';
+import ncanio from '../assets/img/funcionarios/ncanio.png';
+import iacuna from '../assets/img/funcionarios/iacuna.png';
+import mmolina from '../assets/img/funcionarios/mmolina.png';
+import rbarria from '../assets/img/funcionarios/rbarria.png';
+import vsantana from '../assets/img/funcionarios/vsantana.png';
+import karaya from '../assets/img/funcionarios/karaya.png';
 
 const docentes = [
   {
@@ -12,7 +26,7 @@ const docentes = [
     asignatura: "Generalista"
   },
   {
-    img: demoImage,
+    img: cvergara,
     nombre: "Carolina Vergara",
     correo: "cvergara@liceoexperimental.cl",
     dpto: "Educación Básica",
@@ -20,7 +34,7 @@ const docentes = [
     asignatura: "Generalista"
   },
   {
-    img: demoImage,
+    img: hoyarzun,
     nombre: "Helda Oyarzún",
     correo: "hoyarzun@liceoexperimental.cl",
     dpto: "Educación Básica",
@@ -28,7 +42,7 @@ const docentes = [
     asignatura: "Generalista"
   },
   {
-    img: demoImage,
+    img: cvargas,
     nombre: "Catherine Vargas",
     correo: "cvargas@liceoexperimental.cl",
     dpto: "Educación Básica",
@@ -44,15 +58,15 @@ const docentes = [
     asignatura: "Inglés"
   },
   {
-    img: demoImage,
-    nombre: "Katherine Araya",
+    img: karaya,
+    nombre: "karaya Araya",
     correo: "karaya@liceoexperimental.cl",
     dpto: "Educación Básica",
     more: "Jefatura: 3° Básico B",
     asignatura: "Matemática"
   },
   {
-    img: demoImage,
+    img: tguidipani,
     nombre: "Tatiana Guidipani",
     correo: "tguidipani@liceoexperimental.cl",
     dpto: "Educación Básica",
@@ -68,7 +82,7 @@ const docentes = [
     asignatura: "Educación Física"
   },
   {
-    img: demoImage,
+    img: jgonzalez,
     nombre: "Jonathan González",
     correo: "jgonzalez@liceoexperimental.cl",
     dpto: "Educación Básica",
@@ -76,7 +90,7 @@ const docentes = [
     asignatura: "Lenguaje"
   },
   {
-    img: demoImage,
+    img: ccardenas,
     nombre: "Carola Cárdenas",
     correo: "ccardenas@liceoexperimental.cl",
     dpto: "Educación Básica",
@@ -92,7 +106,7 @@ const docentes = [
     asignatura: "Inglés"
   },
   {
-    img: demoImage,
+    img: vsantana,
     nombre: "Viviana Santana",
     correo: "vsantana@liceoexperimental.cl",
     dpto: "Educación Básica",
@@ -108,7 +122,7 @@ const docentes = [
     asignatura: "Lenguaje"
   },
   {
-    img: demoImage,
+    img: ncanio,
     nombre: "Natalia Canio",
     correo: "ncanio@liceoexperimental.cl",
     dpto: "Educación Básica",
@@ -116,7 +130,7 @@ const docentes = [
     asignatura: "Matemática"
   },
   {
-    img: demoImage,
+    img: fperez,
     nombre: "Fredy Pérez",
     correo: "fperez@liceoexperimental.cl",
     dpto: "Educación Básica",
@@ -132,7 +146,7 @@ const docentes = [
     asignatura: "Matemática"
   },
   {
-    img: demoImage,
+    img: iacuna,
     nombre: "Ingrid Acuña",
     correo: "iacuna@liceoexperimental.cl",
     dpto: "Educación Básica",
@@ -140,7 +154,7 @@ const docentes = [
     asignatura: "Religión Evangélica"
   },
   {
-    img: demoImage,
+    img: rbarria,
     nombre: "Romina Barría",
     correo: "rbarria@liceoexperimental.cl",
     dpto: "Educación Básica",
@@ -148,7 +162,7 @@ const docentes = [
     asignatura: "Historia – Artes"
   },
   {
-    img: demoImage,
+    img: lgomez,
     nombre: "Luis Gómez",
     correo: "lgomez@liceoexperimental.cl",
     dpto: "Educación Básica",
@@ -164,7 +178,7 @@ const docentes = [
     asignatura: "Lenguaje"
   },
   {
-    img: demoImage,
+    img: mmolina,
     nombre: "Marlen Molina",
     correo: "mmolina@liceoexperimental.cl",
     dpto: "Educación Básica",

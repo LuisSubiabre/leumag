@@ -1,11 +1,18 @@
 import React from "react";
 import { Usuarios } from "./Usuarios";
 import demoImage from '../assets/img/funcionarios/demo.png';
+import jtrujillo from '../assets/img/funcionarios/jtrujillo.png';
+import nibarra from '../assets/img/funcionarios/nibarra.png';
+import acancino from '../assets/img/funcionarios/acancino.png';
+import mcisternas from '../assets/img/funcionarios/mcisternas.png';
+import arivas from '../assets/img/funcionarios/arivas.png';
+import pbarrientos from '../assets/img/funcionarios/pbarrientos.png';
+import cpardo from '../assets/img/funcionarios/cpardo.png';
 
 
 const docentes = [
   {
-    img: demoImage,
+    img: mcisternas,
     nombre: "Manuel Cisternas Williams",
     correo: "mcisternas@liceoexperimental.cl",
     dpto: "Educación Media",
@@ -13,7 +20,7 @@ const docentes = [
     asignatura: "Biología – Ciencias para la Ciudadanía – FD Biología Celular y Molecular – FD Biología de los Ecosistemas"
   },
   {
-    img: demoImage,
+    img: arivas,
     nombre: "Alejandra Rivas Diaz",
     correo: "arivas@liceoexperimental.cl",
     dpto: "Educación Media",
@@ -37,7 +44,7 @@ const docentes = [
     asignatura: "Lengua y Literatura – Teatro – Simce"
   },
   {
-    img: demoImage,
+    img: acancino,
     nombre: "Alex Cancino Vásquez",
     correo: "acancino@liceoexperimental.cl",
     dpto: "Educación Media",
@@ -109,7 +116,7 @@ const docentes = [
     asignatura: "Mindfulness – Expresión Corporal"
   },
   {
-    img: demoImage,
+    img: pbarrientos,
     nombre: "Patricia Barrientos",
     correo: "pbarrientos@liceoexperimental.cl",
     dpto: "Educación Media",
@@ -125,7 +132,7 @@ const docentes = [
     asignatura: "—"
   },
   {
-    img: demoImage,
+    img: nibarra,
     nombre: "Nelda Ibarra",
     correo: "nibarra@liceoexperimental.cl",
     dpto: "Educación Media",
@@ -149,7 +156,7 @@ const docentes = [
     asignatura: "—"
   },
   {
-    img: demoImage,
+    img: jtrujillo,
     nombre: "Jorge Trujillo Emilqueo",
     correo: "jtrujillo@liceoexperimental.cl",
     dpto: "Educación Media",
@@ -165,7 +172,7 @@ const docentes = [
     asignatura: "Educación Física y Salud 2 – Ciencias del Ejercicio Físico y Deportivo"
   },
   {
-    img: demoImage,
+    img: cpardo,
     nombre: "Carolina Pardo",
     correo: "cpardo@liceoexperimental.cl",
     dpto: "Educación Media",

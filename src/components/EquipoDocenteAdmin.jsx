@@ -1,10 +1,14 @@
 import React from "react";
 import { Usuarios } from "./Usuarios";
 import demoImage from '../assets/img/funcionarios/demo.png';
-
+import jvaldes from '../assets/img/funcionarios/jvaldes.png';
+import caraneda from '../assets/img/funcionarios/caraneda.png';
+import mlopez from '../assets/img/funcionarios/mlopez.png';
+import jtrujillo from '../assets/img/funcionarios/jtrujillo.png';
+import rcontreras from '../assets/img/funcionarios/rcontreras.png';
 const docentes = [
   {
-    img: demoImage,
+    img: jvaldes,
     nombre: "Janet Valdés",
     correo: "jvaldes@liceoexperimental.cl",
     dpto: "Coordinación CRA",
@@ -18,24 +22,31 @@ const docentes = [
     more: "",
   },
   {
-    img: demoImage,
+    img: caraneda,
     nombre: " Carlos Araneda ",
     correo: "caraneda@liceoexperimental.cl",
     dpto: "Asistente U.T.P. Ens. Básica",
     more: "",
   },
   {
-    img: demoImage,
+    img: mlopez,
     nombre: "Mariana López",
     correo: "mlopez@liceoexperimental.cl",
     dpto: "Asistente U.T.P. Ens. Media",
     more: "",
   },
   {
-    img: demoImage,
+    img: jtrujillo,
     nombre: "Jorge Trujillo",
     correo: "jtrujillo@liceoexperimental.cl",
     dpto: "Asistente U.T.P. Ens. Media",
+    more: "",
+  },
+  {
+    img: rcontreras,
+    nombre: "Ruth Contreras",
+    correo: "rcontreras@liceoexperimental.cl",
+    dpto: "Educadora Diferencial",
     more: "",
   },
   {
