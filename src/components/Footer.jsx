@@ -69,8 +69,7 @@ const Footer = () => {
                                 <h6 className="text-uppercase fw-bold mb-4">Establecimiento</h6>
                                 <p><FontAwesomeIcon icon={faLocationDot} /> Angamos 17</p>
                                 <p>
-                                    <FontAwesomeIcon icon={faEnvelope} />
-                                    leumag@liceoexperimental.cl
+                                    <FontAwesomeIcon icon={faEnvelope} /> leumag@liceoexperimental.cl
                                 </p>
                                 <p><FontAwesomeIcon icon={faPhone} /> 61 2454270</p>
 
@@ -82,10 +81,9 @@ const Footer = () => {
                                 <h6 className="text-uppercase fw-bold mb-4">Administración</h6>
                                 <p><FontAwesomeIcon icon={faLocationDot} /> Angamos 131</p>
                                 <p>
-                                    <FontAwesomeIcon icon={faEnvelope} />
-                                    administracion@liceoexperimental.cl
+                                    <FontAwesomeIcon icon={faEnvelope} /> administracion@liceoexperimental.cl
                                 </p>
-                                <p> <FontAwesomeIcon icon={faPhone} /> 61 2454270</p>
+                                <p> <FontAwesomeIcon icon={faPhone} /> 61 2240075</p>
 
 
                             </div>

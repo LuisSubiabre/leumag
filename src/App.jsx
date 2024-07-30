@@ -11,11 +11,12 @@ import Horarios from './components/Horarios';
 import Materiales from './components/Materiales';
 import Evaluaciones from './components/Evaluaciones';
 import Noticia from './components/Noticia';
-
+import Noticias from './components/Noticias';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <NavbarTop />
       <Header />
       <Routes>
@@ -27,7 +28,7 @@ function App() {
         <Route path="/Materiales" element={<Materiales />} />
         <Route path="/Evaluaciones" element={<Evaluaciones />} />
         <Route path='/Noticia/:id' element={<Noticia />} />
-
+        <Route path='/Noticias' element={<Noticias />} />
       </Routes>
       <Footer />
     </Router>

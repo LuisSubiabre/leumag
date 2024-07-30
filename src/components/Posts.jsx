@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import { Row, Col, Card, Image } from "react-bootstrap";
+import { Row, Col, Card, Image, Button } from "react-bootstrap";
 
 const Posts = () => {
     const [posts, setPosts] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         const fetchPosts = async () => {
@@ -26,6 +27,8 @@ const Posts = () => {
             } catch (error) {
                 console.error('Error fetching data:', error);
                 // Mostrar mensaje de error al usuario
+            } finally {
+                setIsLoading(false);
             }
         };
 
@@ -35,20 +38,27 @@ const Posts = () => {
     return (
         <Row>
             <h2>Últimas noticias:</h2>
-            {posts.map((post, index) => (
-                <Col md={4} key={index}>
-                    <Card className="shadow mb-5 bg-body-tertiary rounded">
-                        <Card.Img variant="top" src={post.featuredMedia} alt={post.title} />
-                        <Card.Body>
-                            <Card.Title dangerouslySetInnerHTML={{ __html: post.title }}></Card.Title>
-                            <Card.Text dangerouslySetInnerHTML={{ __html: post.content }}></Card.Text>
-                            <div className='d-flex justify-content-end'>
-                                <Link to={`Noticia/${post.id}`} className="btn btn-primary">Leer más</Link>
-                            </div>
-                        </Card.Body>
-                    </Card>
-                </Col>
-            ))}
+            {isLoading ? (
+                <p>Cargando noticias...</p>
+            ) : (
+                <>
+                    {posts.map((post, index) => (
+                        <Col md={4} key={index}>
+                            <Card className="shadow mb-5 bg-body-tertiary rounded">
+                                <Card.Img variant="top" src={post.featuredMedia} alt={post.title} />
+                                <Card.Body>
+                                    <Card.Title dangerouslySetInnerHTML={{ __html: post.title }}></Card.Title>
+                                    <Card.Text dangerouslySetInnerHTML={{ __html: post.content }}></Card.Text>
+                                    <div className='d-flex justify-content-end'>
+                                        <Link to={`Noticia/${post.id}`} className="btn btn-primary">Leer más</Link>
+                                    </div>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                    ))}
+                    <Link to="/Noticias" className="btn btn-primary">Ver todas las noticias</Link>
+                </>
+            )}
         </Row>
     );
 };

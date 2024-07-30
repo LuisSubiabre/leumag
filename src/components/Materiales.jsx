@@ -109,7 +109,7 @@ const Materiales = () => {
                     </a>
                 </div>
                 <div className="col-md-4">
-                    <a href='http://portal.liceoexperimental.cl/wp-content/uploads/2024/01/LM-6%C2%BA-b%C3%A1sico-2024.pdf' target="_blank" rel="noopener noreferrer" className='link-underlinelink-offset-2 link-underline link-underline-opacity-0'>
+                    <a href='http://portal.liceoexperimental.cl/wp-content/uploads/2024/01/LM-5%C2%BA-b%C3%A1sico-2024-1.pdf' target="_blank" rel="noopener noreferrer" className='link-underlinelink-offset-2 link-underline link-underline-opacity-0'>
                         <Card border="primary" className="mb-4 btnCard">
                             <Card.Header>5to Básico</Card.Header>
                             <Card.Body>
@@ -122,7 +122,7 @@ const Materiales = () => {
                     </a>
                 </div>
                 <div className="col-md-4">
-                    <a href='http://portal.liceoexperimental.cl/wp-content/uploads/2024/01/LM-3%C2%BA-b%C3%A1sico-2024.pdf' target="_blank" rel="noopener noreferrer" className='link-underlinelink-offset-2 link-underline link-underline-opacity-0'>
+                    <a href='http://portal.liceoexperimental.cl/wp-content/uploads/2024/01/LM-6%C2%BA-b%C3%A1sico-2024.pdf' target="_blank" rel="noopener noreferrer" className='link-underlinelink-offset-2 link-underline link-underline-opacity-0'>
                         <Card border="primary" className="mb-4 btnCard">
                             <Card.Header>6to Básico</Card.Header>
                             <Card.Body>
