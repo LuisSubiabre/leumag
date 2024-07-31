@@ -7,7 +7,7 @@ import jsaldivia from '../assets/img/funcionarios/jsaldivia.png';
 import svelasquez from '../assets/img/funcionarios/svelasquez.png';
 import ereyes from '../assets/img/funcionarios/ereyes.png';
 import gquinchen from '../assets/img/funcionarios/gquinchen.png';
-
+import { Row, Col, Container } from "react-bootstrap";
 const docentes = [
   {
     img: mbahamonde,
@@ -64,11 +64,12 @@ const docentes = [
 
 export const EquipoAuxiliar = () => {
   return (
-    <div className="container my-6">
+    <Container className="my-6">
+      <hr />
       <h1 className="display-4 mx-3 mb-4">Departamento Auxiliar</h1>
-      <div className="row">
+      <Row>
         {docentes.map((member, index) => (
-          <div className="col my-2" key={index}>
+          <Col className="my-2" key={index}>
             <Usuarios
               img={member.img}
               nombre={member.nombre}
@@ -76,9 +77,9 @@ export const EquipoAuxiliar = () => {
               dpto={member.dpto}
               more={member.more}
             />
-          </div>
+          </Col>
         ))}
-      </div>
-    </div>
+      </Row>
+    </Container>
   );
 };

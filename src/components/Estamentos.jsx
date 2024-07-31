@@ -3,17 +3,18 @@ import { EquipoAsistentes } from "./EquipoAsistentes";
 import { EquipoDirectivo } from "./EquipoDirectivo";
 import { EquipoDocente } from "./EquipoDocente";
 import { EquipoAuxiliar } from "./EquipoAuxiliar";
+import { Container } from "react-bootstrap";
 
 export const Estamentos = () => {
 
     return (
         <>
-            <div className="container">
+            <Container className="contenedor">
                 <EquipoDirectivo />
                 <EquipoDocente />
                 <EquipoAsistentes />
                 <EquipoAuxiliar />
-            </div>
+            </Container>
         </>
 
     );

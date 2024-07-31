@@ -9,8 +9,16 @@ import dandrade from '../assets/img/funcionarios/dandrade.png';
 import nrodriguez from '../assets/img/funcionarios/nrodriguez.png';
 import jvenegas from '../assets/img/funcionarios/jvenegas.png';
 import abarrientos from '../assets/img/funcionarios/abarrientos.png';
+import { Row, Col, Container } from "react-bootstrap";
 
 const docentes = [
+  {
+    img: lbarria,
+    nombre: "Luz Barría",
+    correo: "lbarria@liceoexperimental.cl",
+    dpto: "Educación Parvularia",
+    more: "Jefatura NT2A",
+  },
   {
     img: aespana,
     nombre: "Ángela España",
@@ -25,13 +33,7 @@ const docentes = [
     dpto: "Educación Parvularia",
     more: "Jefatura NT1B",
   },
-  {
-    img: lbarria,
-    nombre: "Luz Barría",
-    correo: "msolis@liceoexperimental.cl",
-    dpto: "Educación Parvularia",
-    more: "Jefatura NT2A",
-  },
+
   {
     img: tcardenas,
     nombre: "Teresa Cárdenas",
@@ -73,11 +75,12 @@ const docentes = [
 
 export const EquipoParvulos = () => {
   return (
-    <div className="container my-6">
+    <Container className="my-6">
+      <hr />
       <h1 className="display-4 mx-3 mb-4">Educación Parvularia</h1>
-      <div className="row">
+      <Row>
         {docentes.map((member, index) => (
-          <div className="col my-2" key={index}>
+          <Col className="col my-2" key={index}>
             <Usuarios
               img={member.img}
               nombre={member.nombre}
@@ -85,9 +88,9 @@ export const EquipoParvulos = () => {
               dpto={member.dpto}
               more={member.more}
             />
-          </div>
+          </Col>
         ))}
-      </div>
-    </div>
+      </Row>
+    </Container>
   );
 };

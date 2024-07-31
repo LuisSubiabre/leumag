@@ -23,6 +23,7 @@ import ecastillo from '../assets/img/funcionarios/ecastillo.png';
 import svillegas from '../assets/img/funcionarios/svillegas.png';
 import ybahamonde from '../assets/img/funcionarios/ybahamonde.png';
 import anaguelquin from '../assets/img/funcionarios/anaguelquin.png';
+import { Row, Col, Container } from "react-bootstrap";
 
 const asistentes = [
   {
@@ -173,21 +174,22 @@ const asistentes = [
 
 export const EquipoAsistentes = (props) => {
   return (
-    <div className="container my-6">
+    <Container className="my-6">
+      <hr />
       <h1 className="display-4 mx-3 mb-4">Asistentes de la Educación</h1>
-      <div className="row">
+      <Row>
         {asistentes.map((member, index) => (
-          <div className="col my-2" key={index}>
+          <Col className="my-2" key={index}>
             <Usuarios
               img={member.img}
               nombre={member.nombre}
               correo={member.correo}
               dpto={member.dpto}
             />
-          </div>
+          </Col>
         ))}
-      </div>
-    </div>
+      </Row>
+    </Container>
 
 
   );

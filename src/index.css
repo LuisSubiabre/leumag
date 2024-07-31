@@ -3,6 +3,24 @@
     padding-bottom: 12px;
 }
 
+/* Estilos específicos para el tema oscuro */
+[data-bs-theme="dark"] .contenedor {
+    background: #333333;
+
+
+}
+
+.btn-custom {
+    border-color: var(--bs-primary);
+    color: var(--bs-primary);
+}
+
+/* Botón en modo oscuro */
+[data-bs-theme="dark"] .btn-custom {
+    border-color: var(--bs-warning);
+    color: var(--bs-warning);
+}
+
 .btnCard {
     will-change: transform;
     transition: transform 450ms;

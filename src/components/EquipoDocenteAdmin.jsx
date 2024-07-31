@@ -6,6 +6,8 @@ import caraneda from '../assets/img/funcionarios/caraneda.png';
 import mlopez from '../assets/img/funcionarios/mlopez.png';
 import jtrujillo from '../assets/img/funcionarios/jtrujillo.png';
 import rcontreras from '../assets/img/funcionarios/rcontreras.png';
+import { Row, Col, Container } from "react-bootstrap";
+
 const docentes = [
   {
     img: jvaldes,
@@ -68,11 +70,12 @@ const docentes = [
 
 export const EquipoDocenteAdmin = () => {
   return (
-    <div className="container my-6">
+    <Container className="my-6">
+      <hr />
       <h1 className="display-4 mx-3 mb-4">Docentes Administrativos</h1>
-      <div className="row">
+      <Row>
         {docentes.map((member, index) => (
-          <div className="col my-2" key={index}>
+          <Col className="my-2" key={index}>
             <Usuarios
               img={member.img}
               nombre={member.nombre}
@@ -80,9 +83,9 @@ export const EquipoDocenteAdmin = () => {
               dpto={member.dpto}
               more={member.more}
             />
-          </div>
+          </Col>
         ))}
-      </div>
-    </div>
+      </Row>
+    </Container>
   );
 };

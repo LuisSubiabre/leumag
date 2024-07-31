@@ -7,6 +7,7 @@ import jvasquez from '../assets/img/funcionarios/jvasquez.png';
 import fhinojosa from '../assets/img/funcionarios/fhinojosa.png';
 import mmansilla from '../assets/img/funcionarios/mmansilla.png';
 import moyarzun from '../assets/img/funcionarios/moyarzun.png';
+import { Row, Col, Container } from "react-bootstrap";
 
 const equipoDirectivo = [
   {
@@ -50,11 +51,12 @@ const equipoDirectivo = [
 export const EquipoDirectivo = () => {
   return (
     <>
-      <div className="container my-6">
+      <Container className="my-6">
+
         <h1 className="display-4 mx-3 mb-4">Directivos</h1>
-        <div className="row">
+        <Row>
           {equipoDirectivo.map((member, index) => (
-            <div className="col my-2" key={index}>
+            <Col className="my-2" key={index}>
               <Usuarios
                 img={member.img}
                 nombre={member.nombre}
@@ -62,10 +64,10 @@ export const EquipoDirectivo = () => {
                 dpto={member.dpto}
 
               />
-            </div>
+            </Col>
           ))}
-        </div>
-      </div>
+        </Row>
+      </Container>
     </>
   );
 };

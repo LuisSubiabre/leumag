@@ -15,6 +15,7 @@ import mmolina from '../assets/img/funcionarios/mmolina.png';
 import rbarria from '../assets/img/funcionarios/rbarria.png';
 import vsantana from '../assets/img/funcionarios/vsantana.png';
 import karaya from '../assets/img/funcionarios/karaya.png';
+import { Row, Col, Container } from "react-bootstrap";
 
 const docentes = [
   {
@@ -213,11 +214,12 @@ const docentes = [
 
 export const EquipoBasica = () => {
   return (
-    <div className="container my-6">
+    <Container className="my-6">
+      <hr />
       <h1 className="display-4 mx-3 mb-4">Educación Básica</h1>
-      <div className="row">
+      <Row>
         {docentes.map((member, index) => (
-          <div className="col my-2" key={index}>
+          <Col className="my-2" key={index}>
             <Usuarios
               img={member.img}
               nombre={member.nombre}
@@ -226,9 +228,9 @@ export const EquipoBasica = () => {
               more={member.more}
               asignatura={member.asignatura}
             />
-          </div>
+          </Col>
         ))}
-      </div>
-    </div>
+      </Row>
+    </Container>
   );
 };
