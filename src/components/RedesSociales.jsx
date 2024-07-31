@@ -7,10 +7,10 @@ const RedesSociales = (props) => {
             <a href="https://www.facebook.com/leumagoficial" target="_blank" className="me-4 text-reset">
                 <FontAwesomeIcon icon={faFacebook} color={props.colorRSS} />
             </a>
-            <a href="https://www.youtube.com/leumagtv" target="_blank" className=" me-4 text-reset">
+            <a href="https://www.youtube.com/leumagtv" target="_blank" className="me-4 text-reset">
                 <FontAwesomeIcon icon={faYoutube} color={props.colorRSS} />
             </a>
-            <a href="https://www.instagram.com/leumagoficial/" target="_blank" className=" me-4 text-reset">
+            <a href="https://www.instagram.com/leumagoficial/" target="_blank" className="me-4 text-reset">
                 <FontAwesomeIcon icon={faInstagram} color={props.colorRSS} />
             </a>
         </>

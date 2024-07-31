@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 import logoImage from '../assets/img/logo.png';
 import Button from 'react-bootstrap/Button';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import RedesSociales from './RedesSociales';
 
 const NavbarTop = () => {
@@ -34,16 +34,16 @@ const NavbarTop = () => {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <Link className="nav-link" to={'/'}>Inicio</Link>
+                            <NavLink className="nav-link" to={'/'}>Inicio</NavLink>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to={'/Nosotros'}>Nosotros</Link>
+                            <NavLink className="nav-link" to={'/Nosotros'}>Nosotros</NavLink>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to={'/Estamentos'}>Estamentos</Link>
+                            <NavLink className="nav-link" to={'/Estamentos'}>Estamentos</NavLink>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to={'/Contacto'}>Contacto</Link>
+                            <NavLink className="nav-link" to={'/Contacto'}>Contacto</NavLink>
                         </li>
                     </ul>
                     <RedesSociales colorRSS='gray' />
