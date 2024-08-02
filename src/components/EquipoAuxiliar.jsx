@@ -27,7 +27,7 @@ const docentes = [
     img: hortiz,
     nombre: "Héctor Ortíz",
     correo: "hortiz@liceoexperimental.cl",
-    dpto: "Auxiliar",
+    dpto: "Auxiliar Apoyo de Mantenimiento",
     more: "",
   },
   {
@@ -36,7 +36,15 @@ const docentes = [
     correo: "gquinchen@liceoexperimental.cl",
     dpto: "Auxiliar",
     more: "",
-  }, ,
+  },
+  {
+    img: demoImage,
+    nombre: "Carlos Ortega",
+    correo: "cortega@liceoexperimental.cl",
+    dpto: "Auxiliar Apoyo de Mantenimiento",
+    more: "",
+  },
+
   {
     img: jsaldivia,
     nombre: "José Saldivia",

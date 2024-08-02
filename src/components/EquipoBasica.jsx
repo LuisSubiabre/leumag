@@ -35,6 +35,14 @@ const docentes = [
     asignatura: "Generalista"
   },
   {
+    img: demoImage,
+    nombre: "Mónica Mércado",
+    correo: "mmercado@liceoexperimental.cl",
+    dpto: "Educación Básica",
+    more: "Jefatura: 1° Básico B",
+    asignatura: "Generalista"
+  },
+  {
     img: hoyarzun,
     nombre: "Helda Oyarzún",
     correo: "hoyarzun@liceoexperimental.cl",
@@ -178,6 +186,7 @@ const docentes = [
     more: "",
     asignatura: "Lenguaje"
   },
+
   {
     img: mmolina,
     nombre: "Marlen Molina",

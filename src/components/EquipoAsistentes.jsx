@@ -26,6 +26,7 @@ import anaguelquin from '../assets/img/funcionarios/anaguelquin.png';
 import { Row, Col, Container } from "react-bootstrap";
 
 const asistentes = [
+
   {
     img: aacevedo,
     nombre: "Andrea Acevedo",
@@ -51,6 +52,12 @@ const asistentes = [
     dpto: "Asistente RR.HH"
   },
   {
+    img: demoImage,
+    nombre: "María Cárcamo",
+    correo: "mcarcamo@liceoexperimental.cl",
+    dpto: "Técnico 2° Básico B"
+  },
+  {
     img: pcardenas,
     nombre: "Paola Cárdenas",
     correo: "pcardenas@liceoexperimental.cl",
@@ -73,6 +80,12 @@ const asistentes = [
     nombre: "Ronny Cisterna",
     correo: "rcisterna@liceoexperimental.cl",
     dpto: "Administrador Establecimiento"
+  },
+  {
+    img: demoImage,
+    nombre: "Maricela Cortéz",
+    correo: "mcortez@liceoexperimental.cl",
+    dpto: "Técnico 1° Básico B"
   },
   {
     img: rfarina,
@@ -100,6 +113,12 @@ const asistentes = [
   },
   {
     img: demoImage,
+    nombre: "Carolina Gutiérrez",
+    correo: "cgutierrez@liceoexperimental.cl",
+    dpto: "Encargada de Seguridad "
+  },
+  {
+    img: demoImage,
     nombre: "Katherine Hechenleitner",
     correo: "khetchenleitner@liceoexperimental.cl",
     dpto: "Central de Apuntes"
@@ -123,6 +142,12 @@ const asistentes = [
     dpto: "Encargado Recaudación"
   },
   {
+    img: demoImage,
+    nombre: "Andrea Márquez",
+    correo: "amarquez@liceoexperimental.cl",
+    dpto: "Técnico 2° Básico A"
+  },
+  {
     img: rmartinez,
     nombre: "Rosa Martínez",
     correo: "rmartinez@liceoexperimental.cl",
@@ -135,10 +160,23 @@ const asistentes = [
     dpto: "Encargada Tesorería"
   },
   {
+    img: demoImage,
+    nombre: "Carolina Ramírez",
+    correo: "cramirez@liceoexperimental.cl",
+    dpto: "Técnico 1° Básico A"
+  },
+  {
     img: mrodriguez,
     nombre: "Miguel Rodríguez",
     correo: "mrodriguez@liceoexperimental.cl",
     dpto: "Encargado Remuneraciones"
+  },
+
+  {
+    img: demoImage,
+    nombre: "Paulina Paredes",
+    correo: "pparedes@liceoexperimental.cl",
+    dpto: "Psicologa Apoyo Convivencia Escolar"
   },
   {
     img: nsanabria,
