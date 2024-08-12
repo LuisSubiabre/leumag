@@ -4,13 +4,13 @@ import { faFacebook, faYoutube, faGithub, faInstagram } from '@fortawesome/free-
 const RedesSociales = (props) => {
     return (
         <>
-            <a href="https://www.facebook.com/leumagoficial" target="_blank" className="me-4 text-reset">
+            <a href="https://www.facebook.com/leumagoficial" target="_blank" className="me-4 text-reset" role='Ir a Facebook'>
                 <FontAwesomeIcon icon={faFacebook} color={props.colorRSS} />
             </a>
-            <a href="https://www.youtube.com/leumagtv" target="_blank" className="me-4 text-reset">
+            <a href="https://www.youtube.com/leumagtv" target="_blank" className="me-4 text-reset" role='Ir a Youtube'>
                 <FontAwesomeIcon icon={faYoutube} color={props.colorRSS} />
             </a>
-            <a href="https://www.instagram.com/leumagoficial/" target="_blank" className="me-4 text-reset">
+            <a href="https://www.instagram.com/leumagoficial/" target="_blank" className="me-4 text-reset" role='Ir a Instagram'>
                 <FontAwesomeIcon icon={faInstagram} color={props.colorRSS} />
             </a>
         </>

@@ -4,7 +4,7 @@ import docEvaluacion from '../assets/docs/reglamento2024.pdf';
 // import docConvivencia from '../assets/docs/convivencia.pdf';
 import docCAA from '../assets/docs/reglamentoCAA.pdf';
 import docBecas from '../assets/docs/becas.pdf';
-import { Card } from 'react-bootstrap';
+import { Card, Badge } from 'react-bootstrap';
 
 export const Documentos = () => {
     return (
@@ -14,7 +14,7 @@ export const Documentos = () => {
                 <div className="col-md-4">
                     <a href={docRIE} target="_blank" rel="noopener noreferrer" className='link-underlinelink-offset-2 link-underline link-underline-opacity-0'>
                         <Card border="primary" className="mb-4 btnCard">
-                            <Card.Header>RIE</Card.Header>
+                            <Card.Header>RIE <small><Badge>Actualizado</Badge></small></Card.Header>
                             <Card.Body>
                                 <Card.Title>Reglamento Interno Escolar</Card.Title>
                                 <Card.Text>
@@ -23,7 +23,7 @@ export const Documentos = () => {
                             </Card.Body>
                         </Card>
                     </a>
-                </div>
+                </div >
                 <div className="col-md-4">
                     <a href={docPISE} target="_blank" rel="noopener noreferrer" className='link-underlinelink-offset-2 link-underline link-underline-opacity-0'>
                         <Card border="primary" className="mb-4 btnCard">
@@ -50,7 +50,7 @@ export const Documentos = () => {
                         </Card>
                     </a>
                 </div>
-            </div>
+            </div >
             <div className="row">
                 {/* <div className="col-md-4">
                     <a href={docConvivencia} target="_blank" rel="noopener noreferrer" className='link-underlinelink-offset-2 link-underline link-underline-opacity-0'>

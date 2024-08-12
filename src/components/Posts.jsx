@@ -43,7 +43,9 @@ const Posts = () => {
             ) : (
                 <>
                     {posts.map((post, index) => (
+
                         <Col md={4} key={index}>
+
                             <Card className="shadow mb-5 bg-body-tertiary rounded">
                                 <Card.Img variant="top" src={post.featuredMedia} alt={post.title} />
                                 <Card.Body>

@@ -56,6 +56,7 @@ const NavbarTop = () => {
                         id="dropdownMenuButton"
                         data-bs-toggle="dropdown"
                         aria-expanded="false"
+                        role='Cambiar color del tema'
                     >
                         <FontAwesomeIcon icon={isDarkMode ? faMoon : faSun} />
                     </button>

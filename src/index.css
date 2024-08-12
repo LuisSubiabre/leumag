@@ -5,9 +5,11 @@
 
 /* Estilos específicos para el tema oscuro */
 [data-bs-theme="dark"] .contenedor {
-    background: #333333;
+    background: #333333dc;
+}
 
-
+[data-bs-theme="dark"] body {
+    background-image: linear-gradient(to right top, #0b0b0b, #0f0e16, #11111e, #111327, #0e1630, #0c1634, #091538, #07153c, #09123b, #0d0d3a, #100838, #140236);
 }
 
 .btn-custom {

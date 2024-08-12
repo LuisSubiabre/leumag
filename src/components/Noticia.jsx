@@ -1,8 +1,9 @@
-// Noticia.jsx
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import Spinner from 'react-bootstrap/Spinner';
+import ArticleReader from './ArticleReader';
+
 
 const Noticia = () => {
     const { id } = useParams();
@@ -34,34 +35,36 @@ const Noticia = () => {
     }, [id]);
 
     if (loading) {
-        return <div className='contenedor container'><Spinner animation="border" role="status">
-            <span className="visually-hidden">Loading...</span>
-        </Spinner></div>
+        return (
+            <div className='contenedor container'>
+                <Spinner animation="border" role="status">
+                    <span className="visually-hidden">Loading...</span>
+                </Spinner>
+            </div>
+        );
     }
 
     if (!noticia) {
-        return <div className='contenedor container has-text-centered hero-footer-bg px-6'>No se encontró la noticia</div>;
+        return (
+            <div className='contenedor container has-text-centered hero-footer-bg px-6'>
+                No se encontró la noticia
+            </div>
+        );
     }
 
     return (
         <>
-
-
             <div className="container contenedor px-5">
-
                 {/* {noticia.featuredMedia && (
-
                     <img src={noticia.featuredMedia} alt={noticia.title} className='img-noticia' />
-
                 )} */}
+                <ArticleReader articleText={noticia.content} />
                 <h1 className="title pt-4" dangerouslySetInnerHTML={{ __html: noticia.title }}></h1>
                 <hr />
                 <div className="content pb-6" dangerouslySetInnerHTML={{ __html: noticia.content }}></div>
             </div>
             <div className="container py-6"></div>
         </>
-
-
     );
 };
 

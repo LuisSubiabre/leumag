@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card } from 'react-bootstrap';
+import { Badge, Card } from 'react-bootstrap';
 
 const Evaluaciones = () => {
     return (
@@ -8,9 +8,9 @@ const Evaluaciones = () => {
             <hr />
             <div className="row">
                 <div className="col-md-4">
-                    <a href='https://docs.google.com/spreadsheets/d/18Dcms3doKgW8Q9Dn0T6kHWGVZEHE26VfjW43d1VgTPg/edit?usp=sharing' target="_blank" rel="noopener noreferrer" className='link-underlinelink-offset-2 link-underline link-underline-opacity-0'>
+                    <a href='https://docs.google.com/spreadsheets/d/1AFD47lXVXj_UPTptWym87X53bgryr8UQwVuHwBLUQ3g/edit?gid=575399820#gid=575399820' target="_blank" rel="noopener noreferrer" className='link-underlinelink-offset-2 link-underline link-underline-opacity-0'>
                         <Card border="primary" className="mb-4 btnCard">
-                            <Card.Header>Evaluaciones E.G.B.</Card.Header>
+                            <Card.Header>Evaluaciones E.G.B <small className='pl-4'><Badge>Actualizado 2do Semestre</Badge></small></Card.Header>
                             <Card.Body>
                                 <Card.Title>1er Ciclo Basico</Card.Title>
                                 <Card.Text>
@@ -21,9 +21,9 @@ const Evaluaciones = () => {
                     </a>
                 </div>
                 <div className="col-md-4">
-                    <a href='https://docs.google.com/spreadsheets/d/1yqHhLflhZf0L08lZJUQ29DO8UY7ilc1QLqDvO-zyJWQ/edit#gid=575399820' target="_blank" rel="noopener noreferrer" className='link-underlinelink-offset-2 link-underline link-underline-opacity-0'>
+                    <a href='https://docs.google.com/spreadsheets/d/1XiLmES-9tgpFRArKtF04DOsG5OtTYpN0UT0ePMzYigU/edit?gid=575399820#gid=575399820' target="_blank" rel="noopener noreferrer" className='link-underlinelink-offset-2 link-underline link-underline-opacity-0'>
                         <Card border="primary" className="mb-4 btnCard">
-                            <Card.Header>Evaluaciones E.G.B.</Card.Header>
+                            <Card.Header>Evaluaciones E.G.B. <small className='pl-4'><Badge>Actualizado 2do Semestre</Badge></small></Card.Header>
                             <Card.Body>
                                 <Card.Title>2do Ciclo Básico</Card.Title>
                                 <Card.Text>
@@ -34,9 +34,9 @@ const Evaluaciones = () => {
                     </a>
                 </div>
                 <div className="col-md-4">
-                    <a href='https://docs.google.com/spreadsheets/d/10P-yo0vvOdpovzewGxTsyrXu9JImFKjlOd60yqdPZ_g/edit?usp=sharing' target="_blank" rel="noopener noreferrer" className='link-underlinelink-offset-2 link-underline link-underline-opacity-0'>
+                    <a href='https://docs.google.com/spreadsheets/d/10P-yo0vvOdpovzewGxTsyrXu9JImFKjlOd60yqdPZ_g/edit?gid=0#gid=0' target="_blank" rel="noopener noreferrer" className='link-underlinelink-offset-2 link-underline link-underline-opacity-0'>
                         <Card border="primary" className="mb-4 btnCard">
-                            <Card.Header>Evaluaciones E.M.</Card.Header>
+                            <Card.Header>Evaluaciones E.M. </Card.Header>
                             <Card.Body>
                                 <Card.Title>Enseñanza Media</Card.Title>
                                 <Card.Text>
