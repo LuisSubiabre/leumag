@@ -17,7 +17,7 @@ function MyVerticallyCenteredModal(props) {
         >
             <Modal.Header closeButton>
                 <Modal.Title id="contained-modal-title-vcenter">
-                    Comunicado
+
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body className="text-center"> {/* Added className */}
@@ -36,7 +36,7 @@ const Home = () => {
     const [modalShow, setModalShow] = React.useState(false);
 
     useEffect(() => {
-        setModalShow(false);
+        setModalShow(true);
     }, []);
 
     return (

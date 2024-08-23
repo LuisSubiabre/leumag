@@ -181,7 +181,7 @@ const docentes = [
   {
     img: demoImage,
     nombre: "Macarena Gutiérrez",
-    correo: "mlopez@liceoexperimental.cl",
+    correo: "mgutierrez@liceoexperimental.cl",
     dpto: "Educación Básica",
     more: "",
     asignatura: "Lenguaje"
