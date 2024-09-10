@@ -7,6 +7,7 @@ import jsaldivia from '../assets/img/funcionarios/jsaldivia.png';
 import svelasquez from '../assets/img/funcionarios/svelasquez.png';
 import ereyes from '../assets/img/funcionarios/ereyes.png';
 import gquinchen from '../assets/img/funcionarios/gquinchen.png';
+import kepinoza from '../assets/img/funcionarios/kepinoza.png';
 import { Row, Col, Container } from "react-bootstrap";
 const docentes = [
   {
@@ -17,7 +18,7 @@ const docentes = [
     more: "",
   },
   {
-    img: demoImage,
+    img: kepinoza,
     nombre: "Katherine Espinoza",
     correo: "kepinoza@liceoexperimental.cl",
     dpto: "Auxiliar",

@@ -5,7 +5,7 @@ import { Documentos } from './Documentos';
 import Externos from './Externos';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
-import imgComunicado from '../assets/img/comunicado.png';
+import imgComunicado from '/comunicados/com02092024.png';
 
 function MyVerticallyCenteredModal(props) {
     return (
@@ -44,6 +44,7 @@ const Home = () => {
             <div className="container contenedor px-5">
                 <Posts />
                 <Documentos />
+
                 <Externos />
             </div>
             <MyVerticallyCenteredModal

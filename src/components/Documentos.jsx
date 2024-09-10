@@ -79,11 +79,11 @@ export const Documentos = () => {
                     </a>
                 </div>
                 <div className="col-md-4">
-                    <a href={docBecas} target="_blank" rel="noopener noreferrer" className='link-underlinelink-offset-2 link-underline link-underline-opacity-0'>
+                    <a href="https://docs.google.com/document/d/1m7WZ1CmMgsM2u34fZSoePobwyexFi52M/pub" target="_blank" rel="noopener noreferrer" className='link-underlinelink-offset-2 link-underline link-underline-opacity-0'>
                         <Card border="primary" className="mb-4 btnCard">
                             <Card.Header>Becas</Card.Header>
                             <Card.Body>
-                                <Card.Title>Reglamento General de Becas</Card.Title>
+                                <Card.Title>Reglamento General de Becas 2025</Card.Title>
                                 <Card.Text>
                                     Ver documento
                                 </Card.Text>

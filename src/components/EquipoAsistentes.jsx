@@ -1,7 +1,6 @@
 import React from "react";
 import { Usuarios } from "./Usuarios";
 import demoImage from '../assets/img/funcionarios/demo.png';
-import aacevedo from '../assets/img/funcionarios/aacevedo.png';
 import avidal from '../assets/img/funcionarios/avidal.png';
 import fgodoy from '../assets/img/funcionarios/fgodoy.png';
 import mcarreno from '../assets/img/funcionarios/mcarreno.png';
@@ -23,16 +22,15 @@ import ecastillo from '../assets/img/funcionarios/ecastillo.png';
 import svillegas from '../assets/img/funcionarios/svillegas.png';
 import ybahamonde from '../assets/img/funcionarios/ybahamonde.png';
 import anaguelquin from '../assets/img/funcionarios/anaguelquin.png';
+import mcortez from '../assets/img/funcionarios/mcortez.png';
+import cramirez from '../assets/img/funcionarios/cramirez.png';
+import cgutierrez from '../assets/img/funcionarios/cgutierrez.png';
+import amarquez from '../assets/img/funcionarios/amarquez.png';
+
 import { Row, Col, Container } from "react-bootstrap";
 
 const asistentes = [
 
-  {
-    img: aacevedo,
-    nombre: "Andrea Acevedo",
-    correo: "aacevedo@liceoexperimental.cl",
-    dpto: "Inspector"
-  },
   {
     img: aalarcon,
     nombre: "Andrea Alarcón",
@@ -82,7 +80,7 @@ const asistentes = [
     dpto: "Administrador Establecimiento"
   },
   {
-    img: demoImage,
+    img: mcortez,
     nombre: "Maricela Cortéz",
     correo: "mcortez@liceoexperimental.cl",
     dpto: "Técnico 1° Básico B"
@@ -112,7 +110,7 @@ const asistentes = [
     dpto: "Encargado Logística"
   },
   {
-    img: demoImage,
+    img: cgutierrez,
     nombre: "Carolina Gutiérrez",
     correo: "cgutierrez@liceoexperimental.cl",
     dpto: "Encargada de Seguridad "
@@ -142,7 +140,7 @@ const asistentes = [
     dpto: "Encargado Recaudación"
   },
   {
-    img: demoImage,
+    img: amarquez,
     nombre: "Andrea Márquez",
     correo: "amarquez@liceoexperimental.cl",
     dpto: "Técnico 2° Básico A"
@@ -160,7 +158,7 @@ const asistentes = [
     dpto: "Encargada Tesorería"
   },
   {
-    img: demoImage,
+    img: cramirez,
     nombre: "Carolina Ramírez",
     correo: "cramirez@liceoexperimental.cl",
     dpto: "Técnico 1° Básico A"

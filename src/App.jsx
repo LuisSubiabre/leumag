@@ -14,6 +14,7 @@ import Noticia from './components/Noticia';
 import Noticias from './components/Noticias';
 import ScrollToTop from './components/ScrollToTop';
 import NotFound from './components/NotFound';
+import { Comunicados } from './components/Comunicados';
 
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
         <Route path="/Evaluaciones" element={<Evaluaciones />} />
         <Route path='/Noticia/:id' element={<Noticia />} />
         <Route path='/Noticias' element={<Noticias />} />
+        <Route path="/Comunicados" element={<Comunicados />} />
         <Route path="*" element={<NotFound />} /> {/* Ruta para manejar 404 */}
       </Routes>
       <Footer />

@@ -3,7 +3,6 @@ import { Usuarios } from "./Usuarios";
 import demoImage from '../assets/img/funcionarios/demo.png';
 import lbarria from '../assets/img/funcionarios/lbarria.png';
 import tcardenas from '../assets/img/funcionarios/tcardenas.png';
-import aespana from '../assets/img/funcionarios/aespana.png';
 import msolis from '../assets/img/funcionarios/msolis.png';
 import dandrade from '../assets/img/funcionarios/dandrade.png';
 import nrodriguez from '../assets/img/funcionarios/nrodriguez.png';
@@ -20,9 +19,9 @@ const docentes = [
     more: "Jefatura NT2A",
   },
   {
-    img: aespana,
-    nombre: "Ángela España",
-    correo: "aespana@liceoexperimental.cl",
+    img: demoImage,
+    nombre: "Paola Nuñez",
+    correo: "pnunez@liceoexperimental.cl",
     dpto: "Educación Parvularia",
     more: "Jefatura NT1A",
   },
@@ -70,6 +69,14 @@ const docentes = [
     correo: "abarrientos@liceoexperimental.cl",
     dpto: "Técnico en Educación Parvularia",
     more: "NT 2A",
+  }
+  ,
+  {
+    img: demoImage,
+    nombre: "Franco Figueroa",
+    correo: "ffigueroa@liceoexperimental.cl",
+    dpto: "Profesor Educación Músical",
+    more: "NT 1 y NT 2",
   }
 ];
 

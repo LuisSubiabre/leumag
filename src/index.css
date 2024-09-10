@@ -82,6 +82,19 @@
     color: rgba(255, 255, 255, 0.795);
 }
 
+.parallax-container {
+
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
 @keyframes mymove {
     5% {
         transform: rotate(5deg);

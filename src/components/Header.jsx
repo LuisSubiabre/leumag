@@ -6,8 +6,9 @@ export const Header = () => {
     return (
         <>
             <div className="d-flex flex-column">
-                <div className="pt-5 text-center bg-image d-flex flex-column justify-content-between" style={{ backgroundImage: `url(${bgImagen})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center', height: '400px' }}>
+                <div className="pt-5 text-center bg-image d-flex flex-column justify-content-between parallax-container" style={{ backgroundImage: `url(${bgImagen})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center', height: '400px' }}>
                     <div className="mask"> {/* Agrega una máscara para oscurecer el fondo */}
+
                         <div className="d-flex justify-content-center align-items-center h-100">
                             <div className="text-white" style={{ filter: 'none' }}> {/* Fondo opaco */}
                                 <h1 className="mb-3">Liceo Experimental Umag</h1>

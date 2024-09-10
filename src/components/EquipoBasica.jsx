@@ -16,10 +16,15 @@ import rbarria from '../assets/img/funcionarios/rbarria.png';
 import vsantana from '../assets/img/funcionarios/vsantana.png';
 import karaya from '../assets/img/funcionarios/karaya.png';
 import { Row, Col, Container } from "react-bootstrap";
-
+import mmercado from '../assets/img/funcionarios/mmercado.png';
+import pespinoza from '../assets/img/funcionarios/pespinoza.png';
+import vgarret from '../assets/img/funcionarios/vgarret.png';
+import azamorano from '../assets/img/funcionarios/azamorano.png';
+import movando from '../assets/img/funcionarios/movando.png';
+import plemus from '../assets/img/funcionarios/plemus.png';
 const docentes = [
   {
-    img: demoImage,
+    img: vgarret,
     nombre: "Victoria Garret",
     correo: "vgarret@liceoexperimental.cl",
     dpto: "Educación Básica",
@@ -35,7 +40,7 @@ const docentes = [
     asignatura: "Generalista"
   },
   {
-    img: demoImage,
+    img: mmercado,
     nombre: "Mónica Mércado",
     correo: "mmercado@liceoexperimental.cl",
     dpto: "Educación Básica",
@@ -59,7 +64,7 @@ const docentes = [
     asignatura: "Generalista – Tecnología"
   },
   {
-    img: demoImage,
+    img: movando,
     nombre: "Mario Ovando",
     correo: "movando@liceoexperimental.cl",
     dpto: "Educación Básica",
@@ -83,9 +88,9 @@ const docentes = [
     asignatura: "Educación Física"
   },
   {
-    img: demoImage,
+    img: plemus,
     nombre: "Priscila Lemus",
-    correo: "plemues@liceoexperimental.cl",
+    correo: "plemus@liceoexperimental.cl",
     dpto: "Educación Básica",
     more: "Jefatura: 4° Básico B",
     asignatura: "Educación Física"
@@ -107,7 +112,7 @@ const docentes = [
     asignatura: "Ciencias Naturales – Tecnología"
   },
   {
-    img: demoImage,
+    img: pespinoza,
     nombre: "Pablo Espinoza",
     correo: "pespinoza@liceoexperimental.cl",
     dpto: "Educación Básica",
@@ -123,7 +128,7 @@ const docentes = [
     asignatura: "Artes – Tecnología"
   },
   {
-    img: demoImage,
+    img: azamorano,
     nombre: "Araceli Zamorano",
     correo: "azamorano@liceoexperimental.cl",
     dpto: "Educación Básica",

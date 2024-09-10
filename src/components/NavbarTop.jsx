@@ -43,6 +43,9 @@ const NavbarTop = () => {
                             <NavLink className="nav-link" to={'/Estamentos'}>Estamentos</NavLink>
                         </li>
                         <li className="nav-item">
+                            <NavLink className="nav-link" to={'/Comunicados'}>Comunicados</NavLink>
+                        </li>
+                        <li className="nav-item">
                             <NavLink className="nav-link" to={'/Contacto'}>Contacto</NavLink>
                         </li>
                     </ul>
