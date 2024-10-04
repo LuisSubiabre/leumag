@@ -7,14 +7,16 @@ import { Estamentos } from './components/Estamentos';
 import Nosotros from './components/Nosotros';
 import Contacto from './components/Contacto';
 import Footer from './components/Footer';
-import Horarios from './components/Horarios';
+import Horarios from './pages/Horarios';
 import Materiales from './components/Materiales';
-import Evaluaciones from './components/Evaluaciones';
+import Evaluaciones from './pages/Evaluaciones';
 import Noticia from './components/Noticia';
 import Noticias from './components/Noticias';
 import ScrollToTop from './components/ScrollToTop';
 import NotFound from './components/NotFound';
 import { Comunicados } from './components/Comunicados';
+import SocioeconomicForm from './pages/SocioeconomicForm';
+
 
 
 function App() {
@@ -25,6 +27,7 @@ function App() {
       <ScrollToTop />
       <NavbarTop />
       <Header />
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Nosotros" element={<Nosotros />} />
@@ -36,6 +39,7 @@ function App() {
         <Route path='/Noticia/:id' element={<Noticia />} />
         <Route path='/Noticias' element={<Noticias />} />
         <Route path="/Comunicados" element={<Comunicados />} />
+        <Route path="/Becas" element={<SocioeconomicForm />} />
         <Route path="*" element={<NotFound />} /> {/* Ruta para manejar 404 */}
       </Routes>
       <Footer />

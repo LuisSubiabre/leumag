@@ -14,7 +14,6 @@ import rcisterna from '../assets/img/funcionarios/rcisterna.png';
 import fgonzalez from '../assets/img/funcionarios/fgonzalez.png';
 import fmancilla from '../assets/img/funcionarios/fmancilla.png';
 import mrodriguez from '../assets/img/funcionarios/mrodriguez.png';
-import rgarrido from '../assets/img/funcionarios/rgarrido.png';
 import pcardenas from '../assets/img/funcionarios/pcardenas.png';
 import aalarcon from '../assets/img/funcionarios/aalarcon.png';
 import nsanabria from '../assets/img/funcionarios/nsanabria.png';
@@ -90,12 +89,6 @@ const asistentes = [
     nombre: "Rodrigo Fariña",
     correo: "rfariña@liceoexperimental.cl",
     dpto: "TENS"
-  },
-  {
-    img: rgarrido,
-    nombre: "Rosa Garrido",
-    correo: "rgarrido@liceoexperimental.cl",
-    dpto: "Secretaria Dirección"
   },
   {
     img: fgodoy,
