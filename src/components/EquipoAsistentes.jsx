@@ -50,8 +50,8 @@ const asistentes = [
   },
   {
     img: demoImage,
-    nombre: "María Cárcamo",
-    correo: "mcarcamo@liceoexperimental.cl",
+    nombre: "Elizabeth Almonacid",
+    correo: "ealmonacid@liceoexperimental.cl",
     dpto: "Técnico 2° Básico B"
   },
   {
