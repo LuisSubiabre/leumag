@@ -22,6 +22,8 @@ import vgarret from '../assets/img/funcionarios/vgarret.png';
 import azamorano from '../assets/img/funcionarios/azamorano.png';
 import movando from '../assets/img/funcionarios/movando.png';
 import plemus from '../assets/img/funcionarios/plemus.png';
+import mdiazbustos from '../assets/img/funcionarios/mdiazbustos.png';
+import fvera from '../assets/img/funcionarios/fvera.png';
 const docentes = [
   {
     img: vgarret,
@@ -209,7 +211,7 @@ const docentes = [
     asignatura: "Inglés"
   },
   {
-    img: demoImage,
+    img: fvera,
     nombre: "Fernanda Vera",
     correo: "fvera@liceoexperimental.cl",
     dpto: "Educación Básica",
@@ -217,7 +219,7 @@ const docentes = [
     asignatura: "Historia"
   },
   {
-    img: demoImage,
+    img: mdiazbustos,
     nombre: "Miguel Diaz",
     correo: "mdiazbustos@liceoexperimental.cl",
     dpto: "Educación Básica",

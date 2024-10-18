@@ -25,7 +25,7 @@ import mcortez from '../assets/img/funcionarios/mcortez.png';
 import cramirez from '../assets/img/funcionarios/cramirez.png';
 import cgutierrez from '../assets/img/funcionarios/cgutierrez.png';
 import amarquez from '../assets/img/funcionarios/amarquez.png';
-
+import ssanchez from '../assets/img/funcionarios/ssanchez.png';
 import { Row, Col, Container } from "react-bootstrap";
 
 const asistentes = [
@@ -176,7 +176,7 @@ const asistentes = [
     dpto: "Inspectora"
   },
   {
-    img: demoImage,
+    img: ssanchez,
     nombre: "Silvia Sánchez",
     correo: "ssanchez@liceoexperimental.cl",
     dpto: "Encargada CRA"

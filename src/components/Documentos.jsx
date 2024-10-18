@@ -29,7 +29,7 @@ export const Documentos = () => {
                         <Card border="primary" className="mb-4 btnCard">
                             <Card.Header>PISE</Card.Header>
                             <Card.Body>
-                                <Card.Title>Plan Integran de Seguridad Escolar</Card.Title>
+                                <Card.Title>Plan Integral de Seguridad Escolar</Card.Title>
                                 <Card.Text>
                                     Ver documento
                                 </Card.Text>

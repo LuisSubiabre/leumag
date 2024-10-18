@@ -1,5 +1,19 @@
 export const comunicados = [
     {
+        "id": 4,
+        "titulo": "Charla FUAS",
+        "fecha": "08-10-2024",
+        "img": "/comunicados/com08102024.png",
+        "contenido": "Invitamos a asistir a una charla  sobre el FUAS (Formulario Único de Acreditación socioeconómica) en donde se entregarán indicaciones para llenar este formulario, instrumento importante  para acceder  a beneficios de la Educación Superior."
+    },
+    {
+        "id": 3,
+        "titulo": "Reunión de Apoderados",
+        "fecha": "07-10-2024",
+        "img": "/comunicados/com071024.png",
+        "contenido": "Estimada Comunidad Educativa, se cita a reunión de Padres y Apoderados (Octubre), conforme a la siguiente organización:"
+    },
+    {
         "id": 2,
         "titulo": "Reunión de Apoderados",
         "fecha": "02-09-2024",
@@ -16,3 +30,4 @@ export const comunicados = [
 
 
 ]
+

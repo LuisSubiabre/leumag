@@ -14,7 +14,7 @@ import Noticia from './components/Noticia';
 import Noticias from './components/Noticias';
 import ScrollToTop from './components/ScrollToTop';
 import NotFound from './components/NotFound';
-import { Comunicados } from './components/Comunicados';
+import { Comunicados } from './pages/Comunicados';
 import SocioeconomicForm from './pages/SocioeconomicForm';
 
 

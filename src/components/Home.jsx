@@ -5,8 +5,9 @@ import { Documentos } from './Documentos';
 import Externos from './Externos';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
-import imgComunicado from '/comunicados/com03102024.png';
-
+import imgComunicado from '/comunicados/com071024.png';
+import imgComunicado2 from '/comunicados/com08102024.png';
+import Carousel from 'react-bootstrap/Carousel';
 function MyVerticallyCenteredModal(props) {
     return (
         <Modal
@@ -17,13 +18,14 @@ function MyVerticallyCenteredModal(props) {
         >
             <Modal.Header closeButton>
                 <Modal.Title id="contained-modal-title-vcenter">
-                    3er Ensayo PAES
+
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body className="text-center"> {/* Added className */}
                 <p>
                     <img src={imgComunicado} width="600" height="600" alt="Reunion de Apoderados" className='img-fluid' />
                 </p>
+
             </Modal.Body>
             <Modal.Footer>
                 <Button onClick={props.onHide}>Cerrar</Button>
@@ -36,7 +38,7 @@ const Home = () => {
     const [modalShow, setModalShow] = React.useState(false);
 
     useEffect(() => {
-        setModalShow(false);
+        setModalShow(true);
     }, []);
 
     return (

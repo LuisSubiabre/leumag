@@ -13,7 +13,7 @@ const docentes = [
   {
     img: mbahamonde,
     nombre: "Manuel Bahamonde",
-    correo: "mbhamonde@liceoexperimental.cl",
+    correo: "mbahamonde@liceoexperimental.cl",
     dpto: "Auxiliar",
     more: "",
   },
