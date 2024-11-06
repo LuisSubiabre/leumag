@@ -16,7 +16,7 @@ import ScrollToTop from './components/ScrollToTop';
 import NotFound from './components/NotFound';
 import { Comunicados } from './pages/Comunicados';
 import SocioeconomicForm from './pages/SocioeconomicForm';
-
+import MatriculaPage from './pages/MatriculaPage';
 
 
 function App() {
@@ -40,6 +40,7 @@ function App() {
         <Route path='/Noticias' element={<Noticias />} />
         <Route path="/Comunicados" element={<Comunicados />} />
         <Route path="/Becas" element={<SocioeconomicForm />} />
+        <Route path="/matricula" element={<MatriculaPage />} />
         <Route path="*" element={<NotFound />} /> {/* Ruta para manejar 404 */}
       </Routes>
       <Footer />

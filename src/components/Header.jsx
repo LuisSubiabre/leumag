@@ -20,6 +20,12 @@ export const Header = () => {
                     <div className="container contenedor">
                         <div className="d-flex justify-content-center align-items-center"> {/* Fixed className */}
                             <ButtonAccess
+                                name={'Matríricula 2025'}
+                                link={'/matricula'}
+                                color={'btn-warning'} />
+
+
+                            <ButtonAccess
                                 name={'Horarios'}
                                 link={'/Horarios'} />
 
