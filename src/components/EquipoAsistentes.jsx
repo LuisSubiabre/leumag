@@ -34,7 +34,7 @@ const asistentes = [
     img: aalarcon,
     nombre: "Andrea Alarcón",
     correo: "aalarcon@liceoexperimental.cl",
-    dpto: "Inspector"
+    dpto: "Secretaria Dirección"
   },
   {
     img: ybahamonde,

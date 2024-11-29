@@ -5,7 +5,7 @@ import { Documentos } from './Documentos';
 import Externos from './Externos';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
-import imgComunicado from '/comunicados/com071024.png';
+import imgComunicado from '/comunicados/com29112024.png';
 import imgComunicado2 from '/comunicados/com08102024.png';
 import Carousel from 'react-bootstrap/Carousel';
 function MyVerticallyCenteredModal(props) {
@@ -35,10 +35,10 @@ function MyVerticallyCenteredModal(props) {
 }
 
 const Home = () => {
-    const [modalShow, setModalShow] = React.useState(false);
+    const [modalShow, setModalShow] = React.useState(true);
 
     useEffect(() => {
-        setModalShow(false);
+        setModalShow(true);
     }, []);
 
     return (

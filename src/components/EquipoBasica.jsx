@@ -75,7 +75,7 @@ const docentes = [
   },
   {
     img: karaya,
-    nombre: "karaya Araya",
+    nombre: "Katherine Araya",
     correo: "karaya@liceoexperimental.cl",
     dpto: "Educación Básica",
     more: "Jefatura: 3° Básico B",
