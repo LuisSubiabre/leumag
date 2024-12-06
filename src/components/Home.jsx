@@ -6,7 +6,7 @@ import Externos from './Externos';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import imgComunicado from '/comunicados/com29112024.png';
-import imgComunicado2 from '/comunicados/com08102024.png';
+import imgMatricula from '../assets/img/citacion_matricula.png';
 import Carousel from 'react-bootstrap/Carousel';
 function MyVerticallyCenteredModal(props) {
     return (
@@ -23,6 +23,9 @@ function MyVerticallyCenteredModal(props) {
             </Modal.Header>
             <Modal.Body className="text-center"> {/* Added className */}
                 <p>
+                    <a href="https://drive.google.com/drive/folders/19ikLvNwlnBiK57-3leeCcPJyX8wrXGan?usp=sharing" target="_blank" rel="noreferrer">
+                    <img src={imgMatricula} width="600" height="600" alt="Reunion de Apoderados" className='img-fluid' /></a>
+                    <hr />
                     <img src={imgComunicado} width="600" height="600" alt="Reunion de Apoderados" className='img-fluid' />
                 </p>
 
