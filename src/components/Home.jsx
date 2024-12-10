@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Row, Col } from "react-bootstrap";
+//import { Row, Col } from "react-bootstrap";
 import Posts from './Posts';
 import { Documentos } from './Documentos';
 import Externos from './Externos';
@@ -7,7 +7,7 @@ import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import imgComunicado from '/comunicados/com29112024.png';
 import imgMatricula from '../assets/img/citacion_matricula.png';
-import Carousel from 'react-bootstrap/Carousel';
+import { ComunicadosComponent } from './ComunicadosComponent';
 function MyVerticallyCenteredModal(props) {
     return (
         <Modal
@@ -24,9 +24,8 @@ function MyVerticallyCenteredModal(props) {
             <Modal.Body className="text-center"> {/* Added className */}
                 <p>
                     <a href="https://drive.google.com/drive/folders/19ikLvNwlnBiK57-3leeCcPJyX8wrXGan?usp=sharing" target="_blank" rel="noreferrer">
-                    <img src={imgMatricula} width="600" height="600" alt="Reunion de Apoderados" className='img-fluid' /></a>
-                    <hr />
-                    <img src={imgComunicado} width="600" height="600" alt="Reunion de Apoderados" className='img-fluid' />
+                        <img src={imgMatricula} width="600" height="600" alt="Reunion de Apoderados" className='img-fluid' /></a>
+
                 </p>
 
             </Modal.Body>
@@ -48,8 +47,11 @@ const Home = () => {
         <>
             <div className="container contenedor px-5">
                 <Posts />
+                <hr />
+                <ComunicadosComponent />
+                <hr />
                 <Documentos />
-
+                <hr />
                 <Externos />
             </div>
             <MyVerticallyCenteredModal

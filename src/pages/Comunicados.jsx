@@ -1,11 +1,11 @@
-import { useState } from "react";
-import { comunicados } from '../comunicados';
+//import { useState } from "react";
+import { comunicados } from '../comunicados.js';
 
 
 export const Comunicados = () => {
     return (
         <div className="container contenedor px-5">
-            <h2> Historial de Comumicados</h2>
+            <h2> Historial de Comunicados</h2>
             <div className="row row-cols-1 row-cols-md-2 g-4">
                 {comunicados.map((comunicado) => (
 
