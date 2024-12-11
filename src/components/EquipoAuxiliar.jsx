@@ -7,20 +7,12 @@ import jsaldivia from '../assets/img/funcionarios/jsaldivia.png';
 import svelasquez from '../assets/img/funcionarios/svelasquez.png';
 import ereyes from '../assets/img/funcionarios/ereyes.png';
 import gquinchen from '../assets/img/funcionarios/gquinchen.png';
-import kepinoza from '../assets/img/funcionarios/kepinoza.png';
 import { Row, Col, Container } from "react-bootstrap";
 const docentes = [
   {
     img: mbahamonde,
     nombre: "Manuel Bahamonde",
     correo: "mbahamonde@liceoexperimental.cl",
-    dpto: "Auxiliar",
-    more: "",
-  },
-  {
-    img: kepinoza,
-    nombre: "Katherine Espinoza",
-    correo: "kepinoza@liceoexperimental.cl",
     dpto: "Auxiliar",
     more: "",
   },
@@ -45,7 +37,6 @@ const docentes = [
     dpto: "Auxiliar Apoyo de Mantenimiento",
     more: "",
   },
-
   {
     img: jsaldivia,
     nombre: "José Saldivia",

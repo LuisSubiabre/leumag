@@ -6,7 +6,6 @@ import fgodoy from '../assets/img/funcionarios/fgodoy.png';
 import mcarreno from '../assets/img/funcionarios/mcarreno.png';
 import mhijerra from '../assets/img/funcionarios/mhijerra.png';
 import rfarina from '../assets/img/funcionarios/rfarina.png';
-import rmartinez from '../assets/img/funcionarios/rmartinez.png';
 import svera from '../assets/img/funcionarios/svera.png';
 import vhernandez from '../assets/img/funcionarios/vhernandez.png';
 import gbarria from '../assets/img/funcionarios/gbarria.png';
@@ -137,12 +136,6 @@ const asistentes = [
     nombre: "Andrea Márquez",
     correo: "amarquez@liceoexperimental.cl",
     dpto: "Técnico 2° Básico A"
-  },
-  {
-    img: rmartinez,
-    nombre: "Rosa Martínez",
-    correo: "rmartinez@liceoexperimental.cl",
-    dpto: "Psicóloga"
   },
   {
     img: anaguelquin,
