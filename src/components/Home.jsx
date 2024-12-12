@@ -5,8 +5,9 @@ import { Documentos } from './Documentos';
 import Externos from './Externos';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
-import imgComunicado from '/comunicados/com29112024.png';
-import imgMatricula from '../assets/img/citacion_matricula.png';
+import imgComunicado from '/comunicados/com111224.png';
+//import imgMatricula from '../assets/img/com111224.png';
+import docMatricula from '/docs/citacion_alumnos_nuevos.pdf';
 import { ComunicadosComponent } from './ComunicadosComponent';
 function MyVerticallyCenteredModal(props) {
     return (
@@ -23,11 +24,11 @@ function MyVerticallyCenteredModal(props) {
             </Modal.Header>
             <Modal.Body className="text-center"> {/* Added className */}
                 <p>
-                    <a href="https://drive.google.com/drive/folders/19ikLvNwlnBiK57-3leeCcPJyX8wrXGan?usp=sharing" target="_blank" rel="noreferrer">
-                        <img src={imgMatricula} width="600" height="600" alt="Reunion de Apoderados" className='img-fluid' /></a>
 
+                    <a href={docMatricula} target="_blank" rel="noreferrer">
+                        <img src={imgComunicado} width="600" height="600" alt="Lista de citacion alumnos nuevos" className='img-fluid' />
+                    </a>
                 </p>
-
             </Modal.Body>
             <Modal.Footer>
                 <Button onClick={props.onHide}>Cerrar</Button>
