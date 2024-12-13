@@ -23,15 +23,15 @@ export const Header = () => {
                                 name={'Matrícula 2025'}
                                 link={'/matricula'}
                                 color={'btn-warning'} />
-
+{/* 
 
                             <ButtonAccess
                                 name={'Horarios'}
-                                link={'/Horarios'} />
+                                link={'/Horarios'} /> */}
 
-                            <ButtonAccess
+                            {/* <ButtonAccess
                                 name={'Evaluaciones'}
-                                link={'/Evaluaciones'} />
+                                link={'/Evaluaciones'} /> */}
                             <ButtonAccess
                                 name={'Lista de Materiales'}
                                 link={'/Materiales'} />

@@ -6,7 +6,7 @@ const Horarios = () => {
         <div className="container contenedor px-5">
             <h2> Horarios</h2>
             <hr />
-            <div className="row">
+            {/* <div className="row">
                 <div className="col-md-4">
                     <a href='https://docs.google.com/spreadsheets/d/1x1BKq2yg9oTURQV8xOlJ_E2wY9mwt5CACvmFglWUSkU/edit?gid=1663824483#gid=1663824483' target="_blank" rel="noopener noreferrer" className='link-underlinelink-offset-2 link-underline link-underline-opacity-0'>
                         <Card border="primary" className="mb-4 btnCard">
@@ -34,7 +34,8 @@ const Horarios = () => {
                     </a>
                 </div>
 
-            </div>
+            </div> */}
+            Horarios 2025 proximamente.
 
         </div >
     );

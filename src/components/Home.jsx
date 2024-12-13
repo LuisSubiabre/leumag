@@ -41,7 +41,7 @@ const Home = () => {
     const [modalShow, setModalShow] = React.useState(true);
 
     useEffect(() => {
-        setModalShow(true);
+        setModalShow(false);
     }, []);
 
     return (
