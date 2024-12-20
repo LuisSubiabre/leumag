@@ -1,6 +1,29 @@
 export const comunicados = [
+    
   {
-    id: 6,
+    id: 10,
+    titulo: "Postulación/Renovación beca indígena y presidente de la República Junaeb ",
+    fecha: "20-12-2024",
+    img: "/comunicados/com20122024.png",
+    contenido: `Se informa que a  partir del 05 de diciembre de 2024  se dio inició el proceso de renovación y postulación a las Becas de Mantención de JUNAEB hasta el 31 de Enero de 2025, para lo cual debe ingresar al Portal Unificado en el siguiente link: <a href="https://portalbecas.junaeb.cl/" target="_blank" rel="noopener noreferrer">Portal JUNAEB</a>
+. Comparto link del video disponible en Youtube, que explica el proceso de postulación y renovación de Becas 2025. <a href="https://youtu.be/EaLXkJihba0" target="_blank" rel="noopener noreferrer">Ver Video</a>`,
+  },
+  {
+    id: 9,
+    titulo: "Comunicado Oficial",
+    fecha: "17-12-2024",
+    img: "/comunicados/com17122024.png",
+    contenido: "",
+  },
+  // {
+  //   id: 8,
+  //   titulo: "Felices Vacaciones",
+  //   fecha: "13-12-2024",
+  //   img: "/comunicados/com13152024.png",
+  //   contenido: "Felices y reponedoras vacaciones a todas las familias del Liceo Experimental Umag.",
+  // },
+  {
+    id: 7,
     titulo: "Beneficio Alimientación Escolar Junaeb",
     fecha: "05-12-2024",
     img: "/comunicados/com051224.png",

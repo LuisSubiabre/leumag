@@ -14,7 +14,7 @@ export const Comunicados = () => {
                             <div className="card-body">
                                 <h5 className="card-title">{comunicado.titulo}</h5>
                                 <p className="card-text">{comunicado.fecha}</p>
-                                <p className="card-text">{comunicado.contenido}</p>
+                                <p className="card-text" dangerouslySetInnerHTML={{ __html: comunicado.contenido }}></p>
                                 <div style={{ textAlign: 'center' }}>
                                     <img src={comunicado.img} style={{ width: '80%' }} alt="" />
                                 </div>

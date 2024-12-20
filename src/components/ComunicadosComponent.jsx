@@ -12,7 +12,6 @@ export const ComunicadosComponent = () => {
                 </div>
             </div>
             <div className="row">
-
                 {primerosAvisos.map((comunicados) => (
                     <div className="col-md-6" key={comunicados.id}>
                         <div className="card">
@@ -20,7 +19,8 @@ export const ComunicadosComponent = () => {
                                 <h5 className="card-title">{comunicados.titulo}</h5>
                                 <p className="card-text">{comunicados.fecha}</p>
 
-                                <p className="card-text">{comunicados.contenido}</p>
+                                {/* Render HTML dentro del contenido */}
+                                <p className="card-text" dangerouslySetInnerHTML={{ __html: comunicados.contenido }}></p>
                                 <div style={{ textAlign: 'center' }}>
                                     <img src={comunicados.img} style={{ width: '80%' }} alt="" />
                                 </div>
@@ -28,9 +28,10 @@ export const ComunicadosComponent = () => {
                         </div>
                     </div>
                 ))}
-                <div className="my-2 d-flex flex-row-reverse bd-highlight"><Link to="/Comunicados" className="btn btn-primary">Ver todos los comunicados</Link></div>
-
+                <div className="my-2 d-flex flex-row-reverse bd-highlight">
+                    <Link to="/Comunicados" className="btn btn-primary">Ver todos los comunicados</Link>
+                </div>
             </div>
         </div>
     );
-} 
+}

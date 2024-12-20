@@ -5,7 +5,7 @@ import { Documentos } from './Documentos';
 import Externos from './Externos';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
-import imgComunicado from '/comunicados/com111224.png';
+import imgComunicado from '/comunicados/com17122024.png';
 //import imgMatricula from '../assets/img/com111224.png';
 import docMatricula from '/docs/citacion_alumnos_nuevos.pdf';
 import { ComunicadosComponent } from './ComunicadosComponent';
@@ -26,7 +26,7 @@ function MyVerticallyCenteredModal(props) {
                 <p>
 
                     <a href={docMatricula} target="_blank" rel="noreferrer">
-                        <img src={imgComunicado} width="600" height="600" alt="Lista de citacion alumnos nuevos" className='img-fluid' />
+                        <img src={imgComunicado} width="600" height="600" alt="Felices Vacaciones" className='img-fluid' />
                     </a>
                 </p>
             </Modal.Body>
