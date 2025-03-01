@@ -1,8 +1,15 @@
 export const comunicados = [
-    
+  // {
+  //   id: 11,
+  //   titulo: "Lista de Materiales y Plan Lector 2025",
+  //   fecha: "27-12-2024",
+  //   img: "/comunicados/com27122024.png",
+  //   contenido: ``,
+  // },
   {
     id: 10,
-    titulo: "Postulación/Renovación beca indígena y presidente de la República Junaeb ",
+    titulo:
+      "Postulación/Renovación beca indígena y presidente de la República Junaeb ",
     fecha: "20-12-2024",
     img: "/comunicados/com20122024.png",
     contenido: `Se informa que a  partir del 05 de diciembre de 2024  se dio inició el proceso de renovación y postulación a las Becas de Mantención de JUNAEB hasta el 31 de Enero de 2025, para lo cual debe ingresar al Portal Unificado en el siguiente link: <a href="https://portalbecas.junaeb.cl/" target="_blank" rel="noopener noreferrer">Portal JUNAEB</a>
