@@ -1,11 +1,11 @@
 export const comunicados = [
-  // {
-  //   id: 11,
-  //   titulo: "Lista de Materiales y Plan Lector 2025",
-  //   fecha: "27-12-2024",
-  //   img: "/comunicados/com27122024.png",
-  //   contenido: ``,
-  // },
+  {
+    id: 11,
+    titulo: "Comunicado Inicio Año Escolar 2025",
+    fecha: "03-03-2025",
+    img: "/comunicados/com030325.png",
+    contenido: `Ver comunicado <a href="https://docs.google.com/document/d/1hcoJ4nTqdvt7Y_W2ooJjACYKsvpq36_GXnAYvKUzE-Q/edit?tab=t.0" target="_blank" rel="noopener noreferrer">aquí</a>`,
+  },
   {
     id: 10,
     titulo:

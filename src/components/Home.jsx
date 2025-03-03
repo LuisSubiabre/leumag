@@ -1,15 +1,14 @@
-import React, { useEffect } from "react";
-//import { Row, Col } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
 import Posts from "./Posts";
 import { Documentos } from "./Documentos";
 import Externos from "./Externos";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
-import imgComunicado from "/comunicados/necrologico.png";
-//import imgMatricula from '../assets/img/com111224.png';
-import docMatricula from "/docs/citacion_alumnos_nuevos.pdf";
+import imgComunicado from "/comunicados/com030325.png";
 import { ComunicadosComponent } from "./ComunicadosComponent";
 import { Link } from "react-router-dom";
+
+// Componente del modal
 function MyVerticallyCenteredModal(props) {
   return (
     <Modal
@@ -22,10 +21,12 @@ function MyVerticallyCenteredModal(props) {
         <Modal.Title id="contained-modal-title-vcenter"></Modal.Title>
       </Modal.Header>
       <Modal.Body className="text-center">
-        {" "}
-        {/* Added className */}
         <p>
-          <Link to="/Materiales" rel="noreferrer">
+          <a
+            href="https://docs.google.com/document/d/1hcoJ4nTqdvt7Y_W2ooJjACYKsvpq36_GXnAYvKUzE-Q/edit?tab=t.0"
+            target="_blank"
+            rel="noreferrer"
+          >
             <img
               src={imgComunicado}
               width="600"
@@ -33,7 +34,7 @@ function MyVerticallyCenteredModal(props) {
               alt="Felices Vacaciones"
               className="img-fluid"
             />
-          </Link>
+          </a>
         </p>
       </Modal.Body>
       <Modal.Footer>
@@ -43,7 +44,9 @@ function MyVerticallyCenteredModal(props) {
   );
 }
 
-  const [modalShow, setModalShow] = React.useState(true);
+// Componente principal Home
+function Home() {
+  const [modalShow, setModalShow] = useState(true);
 
   useEffect(() => {
     setModalShow(true);
@@ -66,6 +69,6 @@ function MyVerticallyCenteredModal(props) {
       />
     </>
   );
-};
+}
 
 export default Home;
