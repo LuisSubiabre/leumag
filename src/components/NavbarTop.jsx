@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
 import logoImage from "../assets/img/logo.png";
-import Button from "react-bootstrap/Button";
 import { Link, NavLink } from "react-router-dom";
 import RedesSociales from "./RedesSociales";
 
@@ -81,41 +80,22 @@ const NavbarTop = () => {
           <RedesSociales colorRSS="gray" />
         </div>
 
-        <div className="dropdown mx-2">
-          <button
-            className="btn btn-secondary dropdown-toggle"
-            type="button"
-            id="dropdownMenuButton"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-            role="Cambiar color del tema"
-          >
+        <div className="form-check form-switch mx-2">
+          <input
+            className="form-check-input"
+            type="checkbox"
+            id="themeSwitch"
+            checked={isDarkMode}
+            onChange={() => handleThemeChange(isDarkMode ? "claro" : "oscuro")}
+          />
+          <label className="form-check-label" htmlFor="themeSwitch">
             <FontAwesomeIcon icon={isDarkMode ? faMoon : faSun} />
-          </button>
-          <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <li>
-              <button
-                className="dropdown-item"
-                onClick={() => handleThemeChange("claro")}
-              >
-                <FontAwesomeIcon icon={faSun} /> Claro
-              </button>
-            </li>
-            <li>
-              <button
-                className="dropdown-item"
-                onClick={() => handleThemeChange("oscuro")}
-              >
-                <FontAwesomeIcon icon={faMoon} /> Oscuro
-              </button>
-            </li>
-          </ul>
+          </label>
         </div>
 
-        <div className="text-end">
-          {/* <Button variant="primary" className='mx-2' onClick={() => window.open('http://latium.cl/leumag/ph/funcionario/', '_blank')}>Funcionario</Button>
+        <div className="text-end"></div>
+        {/* <Button variant="primary" className='mx-2' onClick={() => window.open('http://latium.cl/leumag/ph/funcionario/', '_blank')}>Funcionario</Button>
                     <Button variant="primary" className='mx-2' onClick={() => window.open('http://latium.cl/leumag/ph/apoderado/', '_blank')}>Apoderado</Button> */}
-        </div>
       </div>
     </nav>
   );

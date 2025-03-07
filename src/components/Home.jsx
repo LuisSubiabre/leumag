@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Posts from "./Posts";
 import { Documentos } from "./Documentos";
 import Externos from "./Externos";
@@ -6,7 +6,6 @@ import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import imgComunicado from "/comunicados/com030325.png";
 import { ComunicadosComponent } from "./ComunicadosComponent";
-import { Link } from "react-router-dom";
 
 // Componente del modal
 function MyVerticallyCenteredModal(props) {
@@ -46,10 +45,10 @@ function MyVerticallyCenteredModal(props) {
 
 // Componente principal Home
 function Home() {
-  const [modalShow, setModalShow] = useState(true);
+  const [modalShow, setModalShow] = useState(false);
 
   useEffect(() => {
-    setModalShow(true);
+    setModalShow(false);
   }, []);
 
   return (
