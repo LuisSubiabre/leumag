@@ -100,7 +100,7 @@ const NavbarTop = () => {
           variant="primary"
           className="mx-2"
           onClick={() =>
-            window.open("http://leumagestudiante.vercel.app", "_blank")
+            window.open("https://estudiante.liceoexperimental.cl/")
           }
         >
           Estudiante
