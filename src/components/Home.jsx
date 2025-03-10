@@ -4,7 +4,7 @@ import { Documentos } from "./Documentos";
 import Externos from "./Externos";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
-import imgComunicado from "/comunicados/com030325.png";
+import imgComunicado from "/images/reuniones.png";
 import { ComunicadosComponent } from "./ComunicadosComponent";
 
 // Componente del modal
@@ -17,7 +17,9 @@ function MyVerticallyCenteredModal(props) {
       centered
     >
       <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter"></Modal.Title>
+        <Modal.Title id="contained-modal-title-vcenter">
+          Calendario Reuniones
+        </Modal.Title>
       </Modal.Header>
       <Modal.Body className="text-center">
         <p>
@@ -30,7 +32,7 @@ function MyVerticallyCenteredModal(props) {
               src={imgComunicado}
               width="600"
               height="600"
-              alt="Felices Vacaciones"
+              alt="li"
               className="img-fluid"
             />
           </a>
@@ -45,10 +47,10 @@ function MyVerticallyCenteredModal(props) {
 
 // Componente principal Home
 function Home() {
-  const [modalShow, setModalShow] = useState(false);
+  const [modalShow, setModalShow] = useState(true);
 
   useEffect(() => {
-    setModalShow(false);
+    setModalShow(true);
   }, []);
 
   return (

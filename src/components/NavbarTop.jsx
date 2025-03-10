@@ -4,6 +4,7 @@ import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
 import logoImage from "../assets/img/logo.png";
 import { Link, NavLink } from "react-router-dom";
 import RedesSociales from "./RedesSociales";
+import { Button } from "react-bootstrap";
 
 const NavbarTop = () => {
   // Cargar el tema guardado en localStorage o usar el tema claro por defecto
@@ -94,8 +95,16 @@ const NavbarTop = () => {
         </div>
 
         <div className="text-end"></div>
-        {/* <Button variant="primary" className='mx-2' onClick={() => window.open('http://latium.cl/leumag/ph/funcionario/', '_blank')}>Funcionario</Button>
-                    <Button variant="primary" className='mx-2' onClick={() => window.open('http://latium.cl/leumag/ph/apoderado/', '_blank')}>Apoderado</Button> */}
+        {/* <Button variant="primary" className='mx-2' onClick={() => window.open('http://latium.cl/leumag/ph/funcionario/', '_blank')}>Funcionario</Button>*/}
+        <Button
+          variant="primary"
+          className="mx-2"
+          onClick={() =>
+            window.open("http://leumagestudiante.vercel.app", "_blank")
+          }
+        >
+          Estudiante
+        </Button>
       </div>
     </nav>
   );
