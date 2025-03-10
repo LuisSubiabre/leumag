@@ -22,7 +22,7 @@ const Horarios = () => {
             </Card>
           </a>
         </div>
-        {/* <div className="col-md-4">
+        <div className="col-md-4">
           <a
             href="https://docs.google.com/spreadsheets/d/1Xd3OOQxeUJFRraxwiu_vkVBDycjZpICS3ttpl1k0kkU/edit?gid=0#gid=0"
             target="_blank"
@@ -37,7 +37,7 @@ const Horarios = () => {
               </Card.Body>
             </Card>
           </a>
-        </div> */}
+        </div>
       </div>
       {/* Horarios 2025 proximamente. */}
     </div>
