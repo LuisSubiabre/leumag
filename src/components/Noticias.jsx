@@ -121,9 +121,50 @@ const Noticias = () => {
                 <div className="d-flex justify-content-end mt-3">
                   <Link
                     to={`/Noticia/${post.id}`}
-                    className="btn btn-outline-primary"
+                    className="btn btn-primary"
+                    style={{
+                      fontSize: "0.95rem",
+                      padding: "8px 20px",
+                      borderRadius: "30px",
+                      fontWeight: "600",
+                      boxShadow: "0 4px 8px rgba(0, 123, 255, 0.3)",
+                      transition: "all 0.3s ease",
+                      backgroundColor: "#007bff",
+                      border: "none",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "8px",
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = "translateY(-2px)";
+                      e.currentTarget.style.boxShadow =
+                        "0 6px 12px rgba(0, 123, 255, 0.4)";
+                      e.currentTarget.style.backgroundColor = "#0056b3";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = "translateY(0)";
+                      e.currentTarget.style.boxShadow =
+                        "0 4px 8px rgba(0, 123, 255, 0.3)";
+                      e.currentTarget.style.backgroundColor = "#007bff";
+                    }}
                   >
-                    Leer más
+                    Leer noticia
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      style={{ marginLeft: "4px" }}
+                    >
+                      <path
+                        d="M1 8H15M15 8L8 1M15 8L8 15"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
                   </Link>
                 </div>
               </Card.Body>

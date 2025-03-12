@@ -1,7 +1,8 @@
 import bgImagen from "../assets/img/hero.png";
 import { ButtonAccess } from "./ButtonAccess";
 import logoImage from "../assets/img/experimentalin.png";
-import { Image } from "react-bootstrap";
+import { Image, Container, Row, Col } from "react-bootstrap";
+
 export const Header = () => {
   return (
     <>
@@ -13,7 +14,8 @@ export const Header = () => {
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
             backgroundPosition: "center",
-            height: "400px",
+            minHeight: "400px",
+            height: "auto",
           }}
         >
           <div className="mask">
@@ -27,32 +29,56 @@ export const Header = () => {
                     alt="Logo Liceo Experimental Umag"
                     width="160"
                     height="160"
+                    className="img-fluid"
                   />
                 </div>
                 {/* Fondo opaco */}
-                <h1 className="mb-3">Liceo Experimental Umag</h1>
-                <h4 className="mb-3">La verdad a través de la razón</h4>
+                <h1 className="mb-3 fs-2 fs-md-1">Liceo Experimental Umag</h1>
+                <h4 className="mb-3 fs-5 fs-md-4">
+                  La verdad a través de la razón
+                </h4>
                 {/* <a data-mdb-ripple-init className="btn btn-outline-light btn-lg" href="#!" role="button">A</a> */}
               </div>
             </div>
           </div>
-          <div className="container contenedor">
-            <div className="d-flex justify-content-center align-items-center">
-              {" "}
-              {/* Fixed className */}
-              <ButtonAccess
-                name={"Matrícula 2025"}
-                link={"/matricula"}
-                color={"btn-warning"}
-              />
-              <ButtonAccess name={"Fechas Reuniones"} link={"/Reuniones"} />
-              <ButtonAccess name={"Horarios"} link={"/Horarios"} />
-              <ButtonAccess name={"Evaluaciones"} link={"/Evaluaciones"} />
-              <ButtonAccess name={"Lista de Materiales"} link={"/Materiales"} />
-            </div>
-          </div>
+          <Container className="mb-4">
+            <Row className="justify-content-center">
+              <Col
+                xs={12}
+                md="auto"
+                className="d-flex flex-column flex-md-row justify-content-center align-items-stretch gap-2"
+              >
+                <ButtonAccess
+                  name={"Matrícula 2025"}
+                  link={"/matricula"}
+                  variant={"warning"}
+                />
+                <ButtonAccess
+                  name={"Fechas Reuniones"}
+                  link={"/Reuniones"}
+                  variant={"primary"}
+                />
+                <ButtonAccess
+                  name={"Horarios"}
+                  link={"/Horarios"}
+                  variant={"primary"}
+                />
+                <ButtonAccess
+                  name={"Evaluaciones"}
+                  link={"/Evaluaciones"}
+                  variant={"primary"}
+                />
+                <ButtonAccess
+                  name={"Lista de Materiales"}
+                  link={"/Materiales"}
+                  variant={"primary"}
+                />
+              </Col>
+            </Row>
+          </Container>
         </div>
       </div>
+      <div className="container contenedor py-4"></div>
     </>
   );
 };
