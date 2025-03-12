@@ -1,6 +1,7 @@
 import bgImagen from "../assets/img/hero.png";
 import { ButtonAccess } from "./ButtonAccess";
-
+import logoImage from "../assets/img/experimentalin.png";
+import { Image } from "react-bootstrap";
 export const Header = () => {
   return (
     <>
@@ -20,7 +21,14 @@ export const Header = () => {
             {/* Agrega una máscara para oscurecer el fondo */}
             <div className="d-flex justify-content-center align-items-center h-100">
               <div className="text-white" style={{ filter: "none" }}>
-                {" "}
+                <div className="animate-bounce-slow">
+                  <Image
+                    src={logoImage}
+                    alt="Logo Liceo Experimental Umag"
+                    width="160"
+                    height="160"
+                  />
+                </div>
                 {/* Fondo opaco */}
                 <h1 className="mb-3">Liceo Experimental Umag</h1>
                 <h4 className="mb-3">La verdad a través de la razón</h4>

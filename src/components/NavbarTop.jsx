@@ -4,14 +4,16 @@ import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
 import logoImage from "../assets/img/logo.png";
 import { Link, NavLink } from "react-router-dom";
 import RedesSociales from "./RedesSociales";
-import { Button } from "react-bootstrap";
+import { Button, Dropdown } from "react-bootstrap";
+import "./NavbarTop.css";
 
 const NavbarTop = () => {
-  // Cargar el tema guardado en localStorage o usar el tema claro por defecto
   const [isDarkMode, setIsDarkMode] = useState(() => {
     const savedTheme = localStorage.getItem("theme");
     return savedTheme ? savedTheme === "dark" : false;
   });
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     document.documentElement.setAttribute(
@@ -20,68 +22,124 @@ const NavbarTop = () => {
     );
   }, [isDarkMode]);
 
-  const handleThemeChange = (theme) => {
-    const isDark = theme === "oscuro";
+  const handleThemeChange = (isDark) => {
     setIsDarkMode(isDark);
-    localStorage.setItem("theme", isDark ? "dark" : "light"); // Guardar en localStorage
+    localStorage.setItem("theme", isDark ? "dark" : "light");
   };
 
   return (
-    <nav className="navbar navbar-expand-lg">
+    <nav
+      className={`navbar navbar-expand-lg sticky-top ${
+        isDarkMode ? "navbar-dark" : "navbar-light"
+      }`}
+    >
       <div className="container-fluid">
-        <img
-          src={logoImage}
-          width="30"
-          height="24"
-          className="d-inline-block align-text-top"
-          alt="Logo Liceo Experimental Umag"
-        />
-        <Link className="navbar-brand" to={"/"}>
-          Liceo Experimental Umag
+        <Link className="navbar-brand d-flex align-items-center" to={"/"}>
+          <img
+            src={logoImage}
+            width="40"
+            height="30"
+            className="me-2"
+            alt="Logo Liceo Experimental Umag"
+          />
+          <span>Liceo Experimental Umag</span>
         </Link>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
+
+        <div className="d-flex align-items-center order-lg-last">
+          <RedesSociales colorRSS="gray" className="d-none d-lg-flex me-3" />
+
+          <div className="theme-switch-wrapper">
+            <div className="theme-switch">
+              <FontAwesomeIcon
+                icon={faSun}
+                className={`theme-icon ${!isDarkMode ? "active" : ""}`}
+                onClick={() => handleThemeChange(false)}
+                role="button"
+              />
+              <div className="switch-track">
+                <input
+                  type="checkbox"
+                  id="themeSwitch"
+                  checked={isDarkMode}
+                  onChange={() => handleThemeChange(!isDarkMode)}
+                />
+                <span className="switch-thumb"></span>
+              </div>
+              <FontAwesomeIcon
+                icon={faMoon}
+                className={`theme-icon ${isDarkMode ? "active" : ""}`}
+                onClick={() => handleThemeChange(true)}
+                role="button"
+              />
+            </div>
+          </div>
+
+          <Button
+            variant="primary"
+            className="student-portal-btn d-none d-lg-block ms-3"
+            onClick={() =>
+              window.open("https://estudiante.liceoexperimental.cl/")
+            }
+          >
+            Portal Estudiante
+          </Button>
+
+          <button
+            className="navbar-toggler ms-2"
+            type="button"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-controls="navbarSupportedContent"
+            aria-expanded={isMenuOpen}
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+        </div>
+
+        <div
+          className={`collapse navbar-collapse ${isMenuOpen ? "show" : ""}`}
+          id="navbarSupportedContent"
         >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+          <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
             <li className="nav-item">
               <NavLink className="nav-link" to={"/"}>
                 Inicio
               </NavLink>
             </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to={"/Nosotros"}>
-                Nosotros
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to={"/Estamentos"}>
-                Estamentos
-              </NavLink>
-            </li>
+
+            <Dropdown className="nav-item">
+              <Dropdown.Toggle as="a" className="nav-link dropdown-toggle">
+                Institución
+              </Dropdown.Toggle>
+              <Dropdown.Menu>
+                <Dropdown.Item as={NavLink} to="/Nosotros">
+                  Nosotros
+                </Dropdown.Item>
+                <Dropdown.Item as={NavLink} to="/Estamentos">
+                  Estamentos
+                </Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+
             <li className="nav-item">
               <NavLink className="nav-link" to={"/Comunicados"}>
                 Comunicados
               </NavLink>
             </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to={"/CentroDePadres"}>
-                Centro de Padres
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to={"/CentroDeAlumnos"}>
-                Centro de Alumnos
-              </NavLink>
-            </li>
+
+            <Dropdown className="nav-item">
+              <Dropdown.Toggle as="a" className="nav-link dropdown-toggle">
+                Comunidad{" "}
+              </Dropdown.Toggle>
+              <Dropdown.Menu>
+                <Dropdown.Item as={NavLink} to="/CentroDePadres">
+                  Centro de Padres
+                </Dropdown.Item>
+                <Dropdown.Item as={NavLink} to="/CentroDeAlumnos">
+                  Centro de Alumnos
+                </Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
 
             <li className="nav-item">
               <NavLink className="nav-link" to={"/Contacto"}>
@@ -89,33 +147,20 @@ const NavbarTop = () => {
               </NavLink>
             </li>
           </ul>
-          <RedesSociales colorRSS="gray" />
-        </div>
 
-        <div className="form-check form-switch mx-2">
-          <input
-            className="form-check-input"
-            type="checkbox"
-            id="themeSwitch"
-            checked={isDarkMode}
-            onChange={() => handleThemeChange(isDarkMode ? "claro" : "oscuro")}
-          />
-          <label className="form-check-label" htmlFor="themeSwitch">
-            <FontAwesomeIcon icon={isDarkMode ? faMoon : faSun} />
-          </label>
+          <div className="d-lg-none mobile-bottom-actions">
+            <Button
+              variant="primary"
+              className="student-portal-btn w-100 mb-3"
+              onClick={() =>
+                window.open("https://estudiante.liceoexperimental.cl/")
+              }
+            >
+              Portal Estudiante
+            </Button>
+            <RedesSociales colorRSS="gray" />
+          </div>
         </div>
-
-        <div className="text-end"></div>
-        {/* <Button variant="primary" className='mx-2' onClick={() => window.open('http://latium.cl/leumag/ph/funcionario/', '_blank')}>Funcionario</Button>*/}
-        <Button
-          variant="primary"
-          className="mx-2"
-          onClick={() =>
-            window.open("https://estudiante.liceoexperimental.cl/")
-          }
-        >
-          Estudiante
-        </Button>
       </div>
     </nav>
   );

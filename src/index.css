@@ -1,114 +1,140 @@
 .contenedor {
-    background: #f8f6f6;
-    padding-bottom: 12px;
+  background: #f8f6f6;
+  padding-bottom: 12px;
 }
 
 /* Estilos específicos para el tema oscuro */
 [data-bs-theme="dark"] .contenedor {
-    background: #333333dc;
+  background: #333333dc;
 }
 
 [data-bs-theme="dark"] body {
-    background-image: linear-gradient(to right top, #0b0b0b, #0f0e16, #11111e, #111327, #0e1630, #0c1634, #091538, #07153c, #09123b, #0d0d3a, #100838, #140236);
+  background-image: linear-gradient(
+    to right top,
+    #0b0b0b,
+    #0f0e16,
+    #11111e,
+    #111327,
+    #0e1630,
+    #0c1634,
+    #091538,
+    #07153c,
+    #09123b,
+    #0d0d3a,
+    #100838,
+    #140236
+  );
 }
 
 .btn-custom {
-    border-color: var(--bs-primary);
-    color: var(--bs-primary);
+  border-color: var(--bs-primary);
+  color: var(--bs-primary);
 }
 
 /* Botón en modo oscuro */
 [data-bs-theme="dark"] .btn-custom {
-    border-color: var(--bs-warning);
-    color: var(--bs-warning);
+  border-color: var(--bs-warning);
+  color: var(--bs-warning);
 }
 
 .btnCard {
-    will-change: transform;
-    transition: transform 450ms;
+  will-change: transform;
+  transition: transform 450ms;
 }
 
 .btnCard:hover {
-    transition: transform 125ms;
-    transform: translateY(-10px);
+  transition: transform 125ms;
+  transform: translateY(-10px);
 }
 
 .personal {
-    width: 300px;
-    height: 150px;
-    background-color: #4258ff;
-    border-radius: 12px;
-    color: white;
-    display: flex;
-    text-align: center;
-    font-size: 12px;
-    justify-content: space-around;
-    align-items: center;
-    background-image: url('./assets/img/bg-usuario.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-
+  width: 300px;
+  height: 150px;
+  background-color: #4258ff;
+  border-radius: 12px;
+  color: white;
+  display: flex;
+  text-align: center;
+  font-size: 12px;
+  justify-content: space-around;
+  align-items: center;
+  background-image: url("./assets/img/bg-usuario.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .personal-info {
-    width: 200px;
-    text-align: left;
-    padding-left: 4px;
+  width: 200px;
+  text-align: left;
+  padding-left: 4px;
 }
 
 .personal img {
-    width: 80px;
-    height: 80px;
-    border: 2px solid white;
+  width: 80px;
+  height: 80px;
+  border: 2px solid white;
 }
 
 .personal:hover,
 .btn-home:hover {
-    animation: mymove 5s infinite;
+  animation: mymove 5s infinite;
 }
 
 .btn-home:hover {
-    animation: shadow 1s infinite;
+  animation: shadow 1s infinite;
 }
 
 .footer-bg {
-    margin-top: 12px;
-    border-top: 2px solid yellow;
-    background-image: url('./assets/img/footbanner.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    color: rgba(255, 255, 255, 0.795);
+  margin-top: 12px;
+  border-top: 2px solid yellow;
+  background-image: url("./assets/img/footbanner.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: rgba(255, 255, 255, 0.795);
 }
 
 .parallax-container {
-
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-align: center;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
 }
 
 @keyframes mymove {
-    5% {
-        transform: rotate(5deg);
-    }
+  5% {
+    transform: rotate(5deg);
+  }
 }
 
 @keyframes shadow {
-    5% {
-        filter: saturate(80%);
-    }
+  5% {
+    filter: saturate(80%);
+  }
 }
 
 @media (min-width: 575px) {
-    .personal {
-        width: 350px;
-    }
+  .personal {
+    width: 350px;
+  }
+}
+
+@keyframes bounce-slow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 3s infinite ease-in-out;
 }
