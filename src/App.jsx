@@ -19,6 +19,8 @@ import SocioeconomicForm from "./pages/SocioeconomicForm";
 import MatriculaPage from "./pages/MatriculaPage";
 import Reuniones from "./pages/Reuniones";
 import CentroDePadres from "./pages/CentroDePadres";
+import CardShowcase from "./pages/CardShowcase";
+
 function App() {
   return (
     <Router>
@@ -42,6 +44,7 @@ function App() {
         <Route path="/matricula" element={<MatriculaPage />} />
         <Route path="/CentroDePadres" element={<CentroDePadres />} />
         <Route path="/CentroDeAlumnos" element={<CentroDePadres />} />
+        <Route path="/cards" element={<CardShowcase />} />
         <Route path="*" element={<NotFound />} /> {/* Ruta para manejar 404 */}
       </Routes>
       <Footer />

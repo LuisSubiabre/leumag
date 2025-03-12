@@ -82,6 +82,7 @@ const NavbarTop = () => {
                 Centro de Alumnos
               </NavLink>
             </li>
+
             <li className="nav-item">
               <NavLink className="nav-link" to={"/Contacto"}>
                 Contacto

@@ -1,4 +1,5 @@
 import { Card } from "react-bootstrap";
+import { FaFileAlt, FaGraduationCap } from "react-icons/fa";
 
 const Materiales = () => {
   return (
@@ -15,11 +16,36 @@ const Materiales = () => {
             rel="noopener noreferrer"
             className="link-underlinelink-offset-2 link-underline link-underline-opacity-0"
           >
-            <Card border="primary" className="mb-4 btnCard">
-              <Card.Header>Materiales NT 1</Card.Header>
+            <Card
+              border="primary"
+              className="mb-4 btnCard"
+              style={{
+                transition: "transform 0.3s ease, box-shadow 0.3s ease",
+                borderRadius: "12px",
+                overflow: "hidden",
+                boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "translateY(-5px)";
+                e.currentTarget.style.boxShadow =
+                  "0 8px 16px rgba(0, 123, 255, 0.2)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "translateY(0)";
+                e.currentTarget.style.boxShadow =
+                  "0 4px 8px rgba(0, 0, 0, 0.1)";
+              }}
+            >
+              <Card.Header className="d-flex align-items-center">
+                <FaGraduationCap className="text-primary me-2" size={18} />
+                <span>Materiales NT 1</span>
+              </Card.Header>
               <Card.Body>
                 <Card.Title>Materiales NT 1</Card.Title>
-                <Card.Text>Ver materiales</Card.Text>
+                <Card.Text className="d-flex align-items-center">
+                  <FaFileAlt className="text-danger me-2" size={16} /> Ver
+                  materiales
+                </Card.Text>
               </Card.Body>
             </Card>
           </a>
@@ -31,11 +57,36 @@ const Materiales = () => {
             rel="noopener noreferrer"
             className="link-underlinelink-offset-2 link-underline link-underline-opacity-0"
           >
-            <Card border="primary" className="mb-4 btnCard">
-              <Card.Header>Materiales NT 2</Card.Header>
+            <Card
+              border="primary"
+              className="mb-4 btnCard"
+              style={{
+                transition: "transform 0.3s ease, box-shadow 0.3s ease",
+                borderRadius: "12px",
+                overflow: "hidden",
+                boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "translateY(-5px)";
+                e.currentTarget.style.boxShadow =
+                  "0 8px 16px rgba(0, 123, 255, 0.2)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "translateY(0)";
+                e.currentTarget.style.boxShadow =
+                  "0 4px 8px rgba(0, 0, 0, 0.1)";
+              }}
+            >
+              <Card.Header className="d-flex align-items-center">
+                <FaGraduationCap className="text-primary me-2" size={18} />
+                <span>Materiales NT 2</span>
+              </Card.Header>
               <Card.Body>
                 <Card.Title>Materiales NT 2</Card.Title>
-                <Card.Text>Ver materiales</Card.Text>
+                <Card.Text className="d-flex align-items-center">
+                  <FaFileAlt className="text-danger me-2" size={16} /> Ver
+                  materiales
+                </Card.Text>
               </Card.Body>
             </Card>
           </a>
@@ -48,10 +99,16 @@ const Materiales = () => {
             className="link-underlinelink-offset-2 link-underline link-underline-opacity-0"
           >
             <Card border="primary" className="mb-4 btnCard">
-              <Card.Header>Textos de Inglés</Card.Header>
+              <Card.Header>
+                <FaGraduationCap className="text-primary me-2" size={18} />
+                <span>Textos de Inglés</span>
+              </Card.Header>
               <Card.Body>
                 <Card.Title>Textos de Inglés</Card.Title>
-                <Card.Text>Ver materiales</Card.Text>
+                <Card.Text className="d-flex align-items-center">
+                  <FaFileAlt className="text-danger me-2" size={16} /> Ver
+                  materiales
+                </Card.Text>
               </Card.Body>
             </Card>
           </a>
@@ -69,10 +126,16 @@ const Materiales = () => {
             className="link-underlinelink-offset-2 link-underline link-underline-opacity-0"
           >
             <Card border="primary" className="mb-4 btnCard">
-              <Card.Header>1ero Básico</Card.Header>
+              <Card.Header>
+                <FaGraduationCap className="text-primary me-2" size={18} />
+                <span>1ero Básico</span>
+              </Card.Header>
               <Card.Body>
                 <Card.Title>1ero Básico</Card.Title>
-                <Card.Text>Ver materiales</Card.Text>
+                <Card.Text className="d-flex align-items-center">
+                  <FaFileAlt className="text-danger me-2" size={16} /> Ver
+                  materiales
+                </Card.Text>
               </Card.Body>
             </Card>
           </a>
@@ -85,10 +148,16 @@ const Materiales = () => {
             className="link-underlinelink-offset-2 link-underline link-underline-opacity-0"
           >
             <Card border="primary" className="mb-4 btnCard">
-              <Card.Header>2do Básico</Card.Header>
+              <Card.Header>
+                <FaGraduationCap className="text-primary me-2" size={18} />
+                <span>2do Básico</span>
+              </Card.Header>
               <Card.Body>
                 <Card.Title>2do Básico</Card.Title>
-                <Card.Text>Ver materiales</Card.Text>
+                <Card.Text className="d-flex align-items-center">
+                  <FaFileAlt className="text-danger me-2" size={16} /> Ver
+                  materiales
+                </Card.Text>
               </Card.Body>
             </Card>
           </a>
@@ -101,10 +170,16 @@ const Materiales = () => {
             className="link-underlinelink-offset-2 link-underline link-underline-opacity-0"
           >
             <Card border="primary" className="mb-4 btnCard">
-              <Card.Header>3ero Básico</Card.Header>
+              <Card.Header>
+                <FaGraduationCap className="text-primary me-2" size={18} />
+                <span>3ero Básico</span>
+              </Card.Header>
               <Card.Body>
                 <Card.Title>3ero Básico</Card.Title>
-                <Card.Text>Ver materiales</Card.Text>
+                <Card.Text className="d-flex align-items-center">
+                  <FaFileAlt className="text-danger me-2" size={16} /> Ver
+                  materiales
+                </Card.Text>
               </Card.Body>
             </Card>
           </a>
@@ -120,10 +195,16 @@ const Materiales = () => {
             className="link-underlinelink-offset-2 link-underline link-underline-opacity-0"
           >
             <Card border="primary" className="mb-4 btnCard">
-              <Card.Header>4to Básico</Card.Header>
+              <Card.Header>
+                <FaGraduationCap className="text-primary me-2" size={18} />
+                <span>4to Básico</span>
+              </Card.Header>
               <Card.Body>
                 <Card.Title>4to Básico</Card.Title>
-                <Card.Text>Ver materiales</Card.Text>
+                <Card.Text className="d-flex align-items-center">
+                  <FaFileAlt className="text-danger me-2" size={16} /> Ver
+                  materiales
+                </Card.Text>
               </Card.Body>
             </Card>
           </a>
@@ -136,10 +217,16 @@ const Materiales = () => {
             className="link-underlinelink-offset-2 link-underline link-underline-opacity-0"
           >
             <Card border="primary" className="mb-4 btnCard">
-              <Card.Header>5to Básico</Card.Header>
+              <Card.Header>
+                <FaGraduationCap className="text-primary me-2" size={18} />
+                <span>5to Básico</span>
+              </Card.Header>
               <Card.Body>
                 <Card.Title>5to Básico</Card.Title>
-                <Card.Text>Ver materiales</Card.Text>
+                <Card.Text className="d-flex align-items-center">
+                  <FaFileAlt className="text-danger me-2" size={16} /> Ver
+                  materiales
+                </Card.Text>
               </Card.Body>
             </Card>
           </a>
@@ -152,10 +239,16 @@ const Materiales = () => {
             className="link-underlinelink-offset-2 link-underline link-underline-opacity-0"
           >
             <Card border="primary" className="mb-4 btnCard">
-              <Card.Header>6to Básico</Card.Header>
+              <Card.Header>
+                <FaGraduationCap className="text-primary me-2" size={18} />
+                <span>6to Básico</span>
+              </Card.Header>
               <Card.Body>
                 <Card.Title>6to Básico</Card.Title>
-                <Card.Text>Ver materiales</Card.Text>
+                <Card.Text className="d-flex align-items-center">
+                  <FaFileAlt className="text-danger me-2" size={16} /> Ver
+                  materiales
+                </Card.Text>
               </Card.Body>
             </Card>
           </a>
@@ -171,10 +264,16 @@ const Materiales = () => {
             className="link-underlinelink-offset-2 link-underline link-underline-opacity-0"
           >
             <Card border="primary" className="mb-4 btnCard">
-              <Card.Header>7mo Básico</Card.Header>
+              <Card.Header>
+                <FaGraduationCap className="text-primary me-2" size={18} />
+                <span>7mo Básico</span>
+              </Card.Header>
               <Card.Body>
                 <Card.Title>7mo Básico</Card.Title>
-                <Card.Text>Ver materiales</Card.Text>
+                <Card.Text className="d-flex align-items-center">
+                  <FaFileAlt className="text-danger me-2" size={16} /> Ver
+                  materiales
+                </Card.Text>
               </Card.Body>
             </Card>
           </a>
@@ -187,10 +286,16 @@ const Materiales = () => {
             className="link-underlinelink-offset-2 link-underline link-underline-opacity-0"
           >
             <Card border="primary" className="mb-4 btnCard">
-              <Card.Header>8vo Básico</Card.Header>
+              <Card.Header>
+                <FaGraduationCap className="text-primary me-2" size={18} />
+                <span>8vo Básico</span>
+              </Card.Header>
               <Card.Body>
                 <Card.Title>8vo Básico</Card.Title>
-                <Card.Text>Ver materiales</Card.Text>
+                <Card.Text className="d-flex align-items-center">
+                  <FaFileAlt className="text-danger me-2" size={16} /> Ver
+                  materiales
+                </Card.Text>
               </Card.Body>
             </Card>
           </a>
@@ -203,10 +308,16 @@ const Materiales = () => {
             className="link-underlinelink-offset-2 link-underline link-underline-opacity-0"
           >
             <Card border="primary" className="mb-4 btnCard">
-              <Card.Header>Textos de Inglés</Card.Header>
+              <Card.Header>
+                <FaGraduationCap className="text-primary me-2" size={18} />
+                <span>Textos de Inglés</span>
+              </Card.Header>
               <Card.Body>
                 <Card.Title>Textos de Inglés</Card.Title>
-                <Card.Text>Ver materiales</Card.Text>
+                <Card.Text className="d-flex align-items-center">
+                  <FaFileAlt className="text-danger me-2" size={16} /> Ver
+                  materiales
+                </Card.Text>
               </Card.Body>
             </Card>
           </a>
@@ -220,10 +331,16 @@ const Materiales = () => {
             className="link-underlinelink-offset-2 link-underline link-underline-opacity-0"
           >
             <Card border="primary" className="mb-4 btnCard">
-              <Card.Header>Plan Lector</Card.Header>
+              <Card.Header>
+                <FaGraduationCap className="text-primary me-2" size={18} />
+                <span>Plan Lector</span>
+              </Card.Header>
               <Card.Body>
                 <Card.Title>Plan Lector</Card.Title>
-                <Card.Text>Ver materiales</Card.Text>
+                <Card.Text className="d-flex align-items-center">
+                  <FaFileAlt className="text-danger me-2" size={16} /> Ver
+                  materiales
+                </Card.Text>
               </Card.Body>
             </Card>
           </a>
@@ -240,10 +357,16 @@ const Materiales = () => {
             className="link-underlinelink-offset-2 link-underline link-underline-opacity-0"
           >
             <Card border="primary" className="mb-4 btnCard">
-              <Card.Header>Materiales E.M.</Card.Header>
+              <Card.Header>
+                <FaGraduationCap className="text-primary me-2" size={18} />
+                <span>Materiales E.M.</span>
+              </Card.Header>
               <Card.Body>
                 <Card.Title>Materiales 1ero a 4to Medio</Card.Title>
-                <Card.Text>Ver materiales</Card.Text>
+                <Card.Text className="d-flex align-items-center">
+                  <FaFileAlt className="text-danger me-2" size={16} /> Ver
+                  materiales
+                </Card.Text>
               </Card.Body>
             </Card>
           </a>
@@ -256,10 +379,16 @@ const Materiales = () => {
             className="link-underlinelink-offset-2 link-underline link-underline-opacity-0"
           >
             <Card border="primary" className="mb-4 btnCard">
-              <Card.Header>Plan Lector E.M.</Card.Header>
+              <Card.Header>
+                <FaGraduationCap className="text-primary me-2" size={18} />
+                <span>Plan Lector E.M.</span>
+              </Card.Header>
               <Card.Body>
                 <Card.Title>Plan Lector Ens. Media</Card.Title>
-                <Card.Text>Ver materiales</Card.Text>
+                <Card.Text className="d-flex align-items-center">
+                  <FaFileAlt className="text-danger me-2" size={16} /> Ver
+                  materiales
+                </Card.Text>
               </Card.Body>
             </Card>
           </a>
