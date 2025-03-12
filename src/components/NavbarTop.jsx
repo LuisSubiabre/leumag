@@ -73,6 +73,16 @@ const NavbarTop = () => {
               </NavLink>
             </li>
             <li className="nav-item">
+              <NavLink className="nav-link" to={"/CentroDePadres"}>
+                Centro de Padres
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to={"/CentroDeAlumnos"}>
+                Centro de Alumnos
+              </NavLink>
+            </li>
+            <li className="nav-item">
               <NavLink className="nav-link" to={"/Contacto"}>
                 Contacto
               </NavLink>

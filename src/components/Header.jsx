@@ -39,9 +39,7 @@ export const Header = () => {
               />
               <ButtonAccess name={"Fechas Reuniones"} link={"/Reuniones"} />
               <ButtonAccess name={"Horarios"} link={"/Horarios"} />
-              {/* <ButtonAccess
-                                name={'Evaluaciones'}
-                                link={'/Evaluaciones'} /> */}
+              <ButtonAccess name={"Evaluaciones"} link={"/Evaluaciones"} />
               <ButtonAccess name={"Lista de Materiales"} link={"/Materiales"} />
             </div>
           </div>
