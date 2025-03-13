@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavbarTop from "./components/NavbarTop";
 import Home from "./components/Home";
 import { Header } from "./components/Header";
-import { Estamentos } from "./components/Estamentos";
+//import { Estamentos } from "./components/Estamentos";
 import Nosotros from "./components/Nosotros";
 import Contacto from "./components/Contacto";
 import Footer from "./components/Footer";
@@ -20,6 +20,7 @@ import MatriculaPage from "./pages/MatriculaPage";
 import Reuniones from "./pages/Reuniones";
 import CentroDePadres from "./pages/CentroDePadres";
 import CardShowcase from "./pages/CardShowcase";
+import EstamentosPage from "./pages/EstamentosPage";
 
 function App() {
   return (
@@ -31,7 +32,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Nosotros" element={<Nosotros />} />
-        <Route path="/Estamentos" element={<Estamentos />} />
+        <Route path="/Estamentos" element={<EstamentosPage />} />
         <Route path="/Contacto" element={<Contacto />} />
         <Route path="/Horarios" element={<Horarios />} />
         <Route path="/Materiales" element={<Materiales />} />

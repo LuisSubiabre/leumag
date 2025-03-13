@@ -50,7 +50,7 @@ function Home() {
   const [modalShow, setModalShow] = useState(true);
 
   useEffect(() => {
-    setModalShow(true);
+    setModalShow(false);
   }, []);
 
   return (
