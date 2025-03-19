@@ -129,6 +129,7 @@ const EstamentosPage = () => {
                   correo={member.correo}
                   dpto={member.dpto}
                   more={member.more}
+                  asignatura={member.asignatura}
                 />
               </Col>
             ))}
@@ -156,6 +157,7 @@ const EstamentosPage = () => {
                   correo={member.correo}
                   dpto={member.dpto}
                   more={member.more}
+                  asignatura={member.asignatura}
                 />
               </Col>
             ))}

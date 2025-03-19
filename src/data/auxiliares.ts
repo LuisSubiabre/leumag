@@ -63,4 +63,4 @@ export const equipoAuxiliar: Funcionario[] = [
     dpto: "Auxiliar",
     more: "",
   },
-];
+].sort((a, b) => a.nombre.split(" ")[1].localeCompare(b.nombre.split(" ")[1]));
