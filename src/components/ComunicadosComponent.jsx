@@ -10,7 +10,7 @@ export const ComunicadosComponent = () => {
     <div className="container">
       <div className="row">
         <div className="col-12">
-          <h1 className="mb-4">Últimos comunicados</h1>
+          <h2 className="mb-4">Últimos comunicados</h2>
         </div>
       </div>
 
