@@ -21,6 +21,7 @@ import Reuniones from "./pages/Reuniones";
 import CentroDePadres from "./pages/CentroDePadres";
 import CardShowcase from "./pages/CardShowcase";
 import EstamentosPage from "./pages/EstamentosPage";
+import CentroDeAlumnos from "./pages/CentroDeAlumnos";
 
 function App() {
   return (
@@ -44,7 +45,7 @@ function App() {
         <Route path="/Reuniones" element={<Reuniones />} />
         <Route path="/matricula" element={<MatriculaPage />} />
         <Route path="/CentroDePadres" element={<CentroDePadres />} />
-        <Route path="/CentroDeAlumnos" element={<CentroDePadres />} />
+        <Route path="/CentroDeAlumnos" element={<CentroDeAlumnos />} />
         <Route path="/cards" element={<CardShowcase />} />
         <Route path="*" element={<NotFound />} /> {/* Ruta para manejar 404 */}
       </Routes>

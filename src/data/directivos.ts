@@ -1,5 +1,4 @@
 import pbravo from "../assets/img/funcionarios/pbravo.png";
-import ifigueroa from "../assets/img/funcionarios/ifigueroa.png";
 import jvasquez from "../assets/img/funcionarios/jvasquez.png";
 import fhinojosa from "../assets/img/funcionarios/fhinojosa.png";
 import mmansilla from "../assets/img/funcionarios/mmansilla.png";
@@ -19,12 +18,7 @@ export const equipoDirectivo: Funcionario[] = [
     correo: "pbravo@liceoexperimental.cl",
     dpto: "Director",
   },
-  {
-    img: ifigueroa,
-    nombre: "Iván Figueroa",
-    correo: "ifigueroa@liceoexperimental.cl",
-    dpto: "Inspector General",
-  },
+
   {
     img: jvasquez,
     nombre: "Jorge Vásquez",

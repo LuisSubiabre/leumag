@@ -82,7 +82,7 @@ export const equipoAsistentes: Funcionario[] = [
     img: demoImage,
     nombre: "Elizabeth Galindo",
     correo: "egalindo@liceoexperimental.cl",
-    dpto: "Psicologa Apoyo Convivencia Escolar",
+    dpto: "Inspectora",
   },
   {
     img: fgodoy,

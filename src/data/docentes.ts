@@ -7,6 +7,8 @@ import mcalvarado from "../assets/img/funcionarios/mcalvarado.png";
 import plemus from "../assets/img/funcionarios/plemus.png";
 import lsubiabre from "../assets/img/funcionarios/lsubiabre.png";
 import lbarria from "../assets/img/funcionarios/lbarria.png";
+import ifigueroa from "../assets/img/funcionarios/ifigueroa.png";
+
 export type Funcionario = {
   img: string;
   nombre: string;
@@ -16,6 +18,12 @@ export type Funcionario = {
 };
 
 export const equipoDocenteAdministrativo: Funcionario[] = [
+  {
+    img: ifigueroa,
+    nombre: "Iván Figueroa",
+    correo: "ifigueroa@liceoexperimental.cl",
+    dpto: "Encargado Convivencia Escolar",
+  },
   {
     img: lbarria,
     nombre: "Luz Barría",

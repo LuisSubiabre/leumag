@@ -206,4 +206,12 @@ export const equipoMedia: Funcionario[] = [
     more: "—",
     asignatura: "Pensamiento Computacional y Programación",
   },
+  {
+    img: demoImage,
+    nombre: "Águeda Hernández",
+    correo: "ahernadez@liceoexperimental.cl",
+    dpto: "Educación Media",
+    more: "—",
+    asignatura: "Religión Católica",
+  },
 ];
