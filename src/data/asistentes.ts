@@ -22,6 +22,8 @@ import cramirez from "../assets/img/funcionarios/cramirez.png";
 import cgutierrez from "../assets/img/funcionarios/cgutierrez.png";
 import amarquez from "../assets/img/funcionarios/amarquez.png";
 import ssanchez from "../assets/img/funcionarios/ssanchez.png";
+import aguerra from "../assets/img/funcionarios/aguerra.png";
+import rahumada from "../assets/img/funcionarios/rahumada.png";
 export type Funcionario = {
   img: string;
   nombre: string;
@@ -55,7 +57,7 @@ export const equipoAsistentes: Funcionario[] = [
     dpto: "Inspectora",
   },
   {
-    img: demoImage,
+    img: aguerra,
     nombre: "Arielle Guerra",
     correo: "aguerra@liceoexperimental.cl",
     dpto: "Inspectora Parvulos",
@@ -139,10 +141,10 @@ export const equipoAsistentes: Funcionario[] = [
     dpto: "Encargado Remuneraciones",
   },
   {
-    img: nsanabria,
-    nombre: "Ninoska Sanabria",
-    correo: "nsanabria@liceoexperimental.cl",
-    dpto: "Inspectora",
+    img: rahumada,
+    nombre: "Ricardo Ahumada",
+    correo: "rahumada@liceoexperimental.cl",
+    dpto: "Inspector",
   },
   {
     img: pcardenas,
