@@ -120,6 +120,15 @@ input:checked ~ .switch-track {
   padding: 0.5rem 1rem;
   border-radius: 2rem;
   font-weight: 500;
+  white-space: nowrap;
+}
+
+/* Responsive Button Styles */
+@media (min-width: 991px) and (max-width: 1080px) {
+  .student-portal-btn {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+  }
 }
 
 /* Mobile Styles */
@@ -128,10 +137,28 @@ input:checked ~ .switch-track {
     padding: 1rem 0;
   }
 
-  .dropdown-menu {
+  .navbar-collapse .dropdown-menu {
+    display: block !important;
+    position: static !important;
+    width: 100%;
+    margin-top: 0;
     border: none;
+    background-color: transparent;
     box-shadow: none;
-    padding-left: 1rem;
+  }
+
+  .navbar-collapse .dropdown-item {
+    padding-left: 2rem;
+    color: var(--bs-nav-link-color);
+  }
+
+  .navbar-collapse .dropdown-item:hover {
+    background-color: transparent;
+    color: var(--bs-primary);
+  }
+
+  .navbar-collapse .dropdown-toggle::after {
+    display: none;
   }
 
   .mobile-bottom-actions {
@@ -146,5 +173,16 @@ input:checked ~ .switch-track {
 
   [data-bs-theme="dark"] .mobile-bottom-actions {
     border-top-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Desktop Styles */
+@media (min-width: 992px) {
+  .dropdown-menu {
+    display: none;
+  }
+
+  .dropdown-menu.show {
+    display: block;
   }
 }

@@ -4,7 +4,7 @@ import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
 import logoImage from "../assets/img/logo.png";
 import { Link, NavLink } from "react-router-dom";
 import RedesSociales from "./RedesSociales";
-import { Button, Dropdown } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import "./NavbarTop.css";
 
 const NavbarTop = () => {
@@ -14,6 +14,7 @@ const NavbarTop = () => {
   });
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState(null);
 
   useEffect(() => {
     document.documentElement.setAttribute(
@@ -107,19 +108,31 @@ const NavbarTop = () => {
               </NavLink>
             </li>
 
-            <Dropdown className="nav-item">
-              <Dropdown.Toggle as="a" className="nav-link dropdown-toggle">
+            <li className="nav-item dropdown">
+              <a
+                className="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                onMouseEnter={() => setActiveDropdown("institucion")}
+                onMouseLeave={() => setActiveDropdown(null)}
+              >
                 Institución
-              </Dropdown.Toggle>
-              <Dropdown.Menu>
-                <Dropdown.Item as={NavLink} to="/Nosotros">
+              </a>
+              <div
+                className={`dropdown-menu ${
+                  activeDropdown === "institucion" ? "show" : ""
+                }`}
+                onMouseEnter={() => setActiveDropdown("institucion")}
+                onMouseLeave={() => setActiveDropdown(null)}
+              >
+                <NavLink className="dropdown-item" to="/Nosotros">
                   Nosotros
-                </Dropdown.Item>
-                <Dropdown.Item as={NavLink} to="/Estamentos">
+                </NavLink>
+                <NavLink className="dropdown-item" to="/Estamentos">
                   Estamentos
-                </Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
+                </NavLink>
+              </div>
+            </li>
 
             <li className="nav-item">
               <NavLink className="nav-link" to={"/Comunicados"}>
@@ -127,19 +140,31 @@ const NavbarTop = () => {
               </NavLink>
             </li>
 
-            <Dropdown className="nav-item">
-              <Dropdown.Toggle as="a" className="nav-link dropdown-toggle">
-                Comunidad{" "}
-              </Dropdown.Toggle>
-              <Dropdown.Menu>
-                <Dropdown.Item as={NavLink} to="/CentroDePadres">
+            <li className="nav-item dropdown">
+              <a
+                className="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                onMouseEnter={() => setActiveDropdown("comunidad")}
+                onMouseLeave={() => setActiveDropdown(null)}
+              >
+                Comunidad
+              </a>
+              <div
+                className={`dropdown-menu ${
+                  activeDropdown === "comunidad" ? "show" : ""
+                }`}
+                onMouseEnter={() => setActiveDropdown("comunidad")}
+                onMouseLeave={() => setActiveDropdown(null)}
+              >
+                <NavLink className="dropdown-item" to="/CentroDePadres">
                   Centro de Padres
-                </Dropdown.Item>
-                <Dropdown.Item as={NavLink} to="/CentroDeAlumnos">
+                </NavLink>
+                <NavLink className="dropdown-item" to="/CentroDeAlumnos">
                   Centro de Alumnos
-                </Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
+                </NavLink>
+              </div>
+            </li>
 
             <li className="nav-item">
               <NavLink className="nav-link" to={"/Contacto"}>

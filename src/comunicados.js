@@ -1,5 +1,12 @@
 export const comunicados = [
   {
+    id: 12,
+    titulo: "Comunicado a padres y apoderados",
+    fecha: "01-04-2025",
+    img: "/comunicados/com01042025.png",
+    contenido: `Ver comunicado <a href="https://docs.google.com/document/d/100paWWna-aC5BeiQnpoBFu_G_ynu1VSh/edit?usp=sharing&ouid=113785725979968228794&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer">aquí</a>`,
+  },
+  {
     id: 11,
     titulo: "Comunicado Inicio Año Escolar 2025",
     fecha: "03-03-2025",
