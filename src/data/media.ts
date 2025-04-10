@@ -198,20 +198,4 @@ export const equipoMedia: Funcionario[] = [
     more: "—",
     asignatura: "Economía y Sociedad",
   },
-  {
-    img: demoImage,
-    nombre: "Fresia Román",
-    correo: "froman@liceoexperimental.cl",
-    dpto: "Educación Media",
-    more: "—",
-    asignatura: "Pensamiento Computacional y Programación",
-  },
-  {
-    img: demoImage,
-    nombre: "Águeda Hernández",
-    correo: "ahernadez@liceoexperimental.cl",
-    dpto: "Educación Media",
-    more: "—",
-    asignatura: "Religión Católica",
-  },
 ];
