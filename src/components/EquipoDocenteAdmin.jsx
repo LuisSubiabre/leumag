@@ -6,18 +6,24 @@ import caraneda from '../assets/img/funcionarios/caraneda.png';
 import mlopez from '../assets/img/funcionarios/mlopez.png';
 import jtrujillo from '../assets/img/funcionarios/jtrujillo.png';
 import rcontreras from '../assets/img/funcionarios/rcontreras.png';
+import mcalvarado from '../assets/img/funcionarios/mcalvarado.png';
+import plemus from '../assets/img/funcionarios/plemus.png';
+import lsubiabre from '../assets/img/funcionarios/lsubiabre.png';
+import lbarria from '../assets/img/funcionarios/lbarria.png';
+
 import { Row, Col, Container } from "react-bootstrap";
 
 const docentes = [
   {
-    img: jvaldes,
-    nombre: "Janet Valdés",
-    correo: "jvaldes@liceoexperimental.cl",
-    dpto: "Coordinación CRA",
+    img: lbarria,
+    nombre: "Luz Barría",
+    correo: "lbarria@liceoexperimental.cl",
+    dpto: "Coordinadora Ciclo Educación Parvularia",
     more: "",
   },
+
   {
-    img: demoImage,
+    img: mcalvarado,
     nombre: "Maria Cecilia Alvarado",
     correo: "mcalvarado@liceoexperimental.cl",
     dpto: "Asistente U.T.P. Ens. Básica",
@@ -38,6 +44,13 @@ const docentes = [
     more: "",
   },
   {
+    img: jvaldes,
+    nombre: "Janet Valdés",
+    correo: "jvaldes@liceoexperimental.cl",
+    dpto: "Coordinación CRA",
+    more: "",
+  },
+  {
     img: jtrujillo,
     nombre: "Jorge Trujillo",
     correo: "jtrujillo@liceoexperimental.cl",
@@ -52,7 +65,7 @@ const docentes = [
     more: "",
   },
   {
-    img: demoImage,
+    img: plemus,
     nombre: "Priscila Lemus",
     correo: "plemus@liceoexperimental.cl",
     dpto: "Coordinación ACLE",
@@ -60,7 +73,7 @@ const docentes = [
   }
   ,
   {
-    img: demoImage,
+    img: lsubiabre,
     nombre: "Luis Subiabre",
     correo: "lsubiabre@liceoexperimental.cl",
     dpto: "Coordinación Tecnológica",

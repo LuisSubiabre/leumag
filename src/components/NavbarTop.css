@@ -1,0 +1,188 @@
+.navbar {
+  padding: 0.5rem 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: var(--bs-body-bg);
+}
+
+.navbar-brand {
+  font-weight: 600;
+}
+
+.brand-text {
+  font-size: 1.2rem;
+  background: linear-gradient(45deg, #0056b3, #007bff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+
+.nav-link {
+  position: relative;
+  padding: 0.5rem 1rem !important;
+  font-weight: 500;
+}
+
+.nav-link.active {
+  color: #007bff;
+}
+
+/* Theme Switch Styles */
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+  margin: 0 1rem;
+}
+
+.theme-switch {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.theme-icon {
+  color: #6c757d;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.theme-icon.active {
+  color: #007bff;
+}
+
+.theme-icon:hover {
+  color: #007bff;
+}
+
+.switch-track {
+  position: relative;
+  width: 3rem;
+  height: 1.5rem;
+  background-color: #e9ecef;
+  border-radius: 1rem;
+  padding: 0.25rem;
+  cursor: pointer;
+}
+
+.switch-track input {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.switch-thumb {
+  position: absolute;
+  left: 0.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1rem;
+  height: 1rem;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+input:checked + .switch-thumb {
+  transform: translate(1.5rem, -50%);
+}
+
+input:checked ~ .switch-track {
+  background-color: #007bff;
+}
+
+/* Dropdown Styles */
+.dropdown-toggle::after {
+  display: none;
+}
+
+.dropdown-menu {
+  border-radius: 0.5rem;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem;
+}
+
+.dropdown-item {
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+}
+
+.dropdown-item:hover {
+  background-color: rgba(0, 123, 255, 0.1);
+}
+
+/* Button Styles */
+.student-portal-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* Responsive Button Styles */
+@media (min-width: 991px) and (max-width: 1080px) {
+  .student-portal-btn {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    padding: 1rem 0;
+  }
+
+  .navbar-collapse .dropdown-menu {
+    display: block !important;
+    position: static !important;
+    width: 100%;
+    margin-top: 0;
+    border: none;
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  .navbar-collapse .dropdown-item {
+    padding-left: 2rem;
+    color: var(--bs-nav-link-color);
+  }
+
+  .navbar-collapse .dropdown-item:hover {
+    background-color: transparent;
+    color: var(--bs-primary);
+  }
+
+  .navbar-collapse .dropdown-toggle::after {
+    display: none;
+  }
+
+  .mobile-bottom-actions {
+    padding: 1rem 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    margin-top: 1rem;
+  }
+
+  .student-portal-btn {
+    margin: 0;
+  }
+
+  [data-bs-theme="dark"] .mobile-bottom-actions {
+    border-top-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Desktop Styles */
+@media (min-width: 992px) {
+  .dropdown-menu {
+    display: none;
+  }
+
+  .dropdown-menu.show {
+    display: block;
+  }
+}

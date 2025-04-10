@@ -1,57 +1,69 @@
-import React, { useEffect } from 'react';
-import { Row, Col } from "react-bootstrap";
-import Posts from './Posts';
-import { Documentos } from './Documentos';
-import Externos from './Externos';
-import Modal from 'react-bootstrap/Modal';
-import Button from 'react-bootstrap/Button';
-import imgComunicado from '../assets/img/comunicado.png';
+import { useEffect, useState } from "react";
+import Posts from "./Posts";
+import Documentos from "./Documentos";
+import Externos from "./Externos";
+import Modal from "react-bootstrap/Modal";
+import Button from "react-bootstrap/Button";
+import imgComunicado from "/images/afiche.png";
+import { ComunicadosComponent } from "./ComunicadosComponent";
 
+// Componente del modal
 function MyVerticallyCenteredModal(props) {
-    return (
-        <Modal
-            {...props}
-            size="lg"
-            aria-labelledby="contained-modal-title-vcenter"
-            centered
-        >
-            <Modal.Header closeButton>
-                <Modal.Title id="contained-modal-title-vcenter">
-
-                </Modal.Title>
-            </Modal.Header>
-            <Modal.Body className="text-center"> {/* Added className */}
-                <p>
-                    <img src={imgComunicado} alt="Reunion de Apoderados" className='img-fluid' />
-                </p>
-            </Modal.Body>
-            <Modal.Footer>
-                <Button onClick={props.onHide}>Cerrar</Button>
-            </Modal.Footer>
-        </Modal>
-    );
+  return (
+    <Modal
+      {...props}
+      size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Header closeButton>
+        <Modal.Title id="contained-modal-title-vcenter">
+          1er Ensayo PAES
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body className="text-center">
+        <p>
+          <img
+            src={imgComunicado}
+            width="600"
+            height="600"
+            alt="li"
+            className="img-fluid"
+          />
+        </p>
+      </Modal.Body>
+      <Modal.Footer>
+        <Button onClick={props.onHide}>Cerrar</Button>
+      </Modal.Footer>
+    </Modal>
+  );
 }
 
-const Home = () => {
-    const [modalShow, setModalShow] = React.useState(false);
+// Componente principal Home
+function Home() {
+  const [modalShow, setModalShow] = useState(true);
 
-    useEffect(() => {
-        setModalShow(true);
-    }, []);
+  useEffect(() => {
+    setModalShow(true);
+  }, []);
 
-    return (
-        <>
-            <div className="container contenedor px-5">
-                <Posts />
-                <Documentos />
-                <Externos />
-            </div>
-            <MyVerticallyCenteredModal
-                show={modalShow}
-                onHide={() => setModalShow(false)}
-            />
-        </>
-    );
-};
+  return (
+    <>
+      <div className="container contenedor px-5">
+        <Posts />
+        <hr />
+        <ComunicadosComponent />
+        <hr />
+        <Documentos />
+        <hr />
+        <Externos />
+      </div>
+      <MyVerticallyCenteredModal
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+      />
+    </>
+  );
+}
 
 export default Home;

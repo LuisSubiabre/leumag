@@ -12,14 +12,7 @@ const docentes = [
   {
     img: mbahamonde,
     nombre: "Manuel Bahamonde",
-    correo: "mbhamonde@liceoexperimental.cl",
-    dpto: "Auxiliar",
-    more: "",
-  },
-  {
-    img: demoImage,
-    nombre: "Katherine Espinoza",
-    correo: "kepinoza@liceoexperimental.cl",
+    correo: "mbahamonde@liceoexperimental.cl",
     dpto: "Auxiliar",
     more: "",
   },
@@ -44,7 +37,6 @@ const docentes = [
     dpto: "Auxiliar Apoyo de Mantenimiento",
     more: "",
   },
-
   {
     img: jsaldivia,
     nombre: "José Saldivia",

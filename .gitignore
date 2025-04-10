@@ -24,5 +24,5 @@ dist-ssr
 *.sw?
 
 # Ignorar carpetas específicas
-src/assets/docs
-src/assets/img
+# src/assets/docs
+# src/assets/img

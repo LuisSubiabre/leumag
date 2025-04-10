@@ -1,13 +1,21 @@
-import React from "react";
 import { Usuarios } from "./Usuarios";
-import demoImage from '../assets/img/funcionarios/demo.png';
-import jtrujillo from '../assets/img/funcionarios/jtrujillo.png';
-import nibarra from '../assets/img/funcionarios/nibarra.png';
-import acancino from '../assets/img/funcionarios/acancino.png';
-import mcisternas from '../assets/img/funcionarios/mcisternas.png';
-import arivas from '../assets/img/funcionarios/arivas.png';
-import pbarrientos from '../assets/img/funcionarios/pbarrientos.png';
-import cpardo from '../assets/img/funcionarios/cpardo.png';
+import demoImage from "../assets/img/funcionarios/demo.png";
+import jtrujillo from "../assets/img/funcionarios/jtrujillo.png";
+import nibarra from "../assets/img/funcionarios/nibarra.png";
+import acancino from "../assets/img/funcionarios/acancino.png";
+import mcisternas from "../assets/img/funcionarios/mcisternas.png";
+import arivas from "../assets/img/funcionarios/arivas.png";
+import pbarrientos from "../assets/img/funcionarios/pbarrientos.png";
+import cpardo from "../assets/img/funcionarios/cpardo.png";
+import csoto from "../assets/img/funcionarios/csoto.png";
+import mdiaz from "../assets/img/funcionarios/mdiaz.png";
+import saranguiz from "../assets/img/funcionarios/saranguiz.png";
+import aneira from "../assets/img/funcionarios/aneira.png";
+import jfajardo from "../assets/img/funcionarios/jfajardo.png";
+import pnavea from "../assets/img/funcionarios/pnavea.png";
+import jtoro from "../assets/img/funcionarios/jtoro.png";
+import pbarria from "../assets/img/funcionarios/pbarria.png";
+import rbahamonde from "../assets/img/funcionarios/rbahamonde.png";
 import { Row, Col, Container } from "react-bootstrap";
 
 const docentes = [
@@ -17,7 +25,8 @@ const docentes = [
     correo: "mcisternas@liceoexperimental.cl",
     dpto: "Educación Media",
     more: "—",
-    asignatura: "Biología – Ciencias para la Ciudadanía – FD Biología Celular y Molecular – FD Biología de los Ecosistemas"
+    asignatura:
+      "Biología – Ciencias para la Ciudadanía – FD Biología Celular y Molecular – FD Biología de los Ecosistemas",
   },
   {
     img: arivas,
@@ -25,23 +34,24 @@ const docentes = [
     correo: "arivas@liceoexperimental.cl",
     dpto: "Educación Media",
     more: "Jefatura: 3° C",
-    asignatura: "Química – Ciencias para la Ciudadanía – Ciencias de la Salud – FD Química"
+    asignatura:
+      "Química – Ciencias para la Ciudadanía – Ciencias de la Salud – FD Química",
   },
   {
-    img: demoImage,
+    img: saranguiz,
     nombre: "Samy Letricia Aránguiz Aránguiz",
     correo: "saranguiz@liceoexperimental.cl",
     dpto: "Educación Media",
     more: "Jefatura: 1° B",
-    asignatura: "Lengua y Literatura – Taller de Literatura"
+    asignatura: "Lengua y Literatura – Taller de Literatura",
   },
   {
-    img: demoImage,
+    img: pbarria,
     nombre: "Paula Belén Barría Barría",
     correo: "pbarria@liceoexperimental.cl",
     dpto: "Educación Media",
     more: "Jefatura: 2° A",
-    asignatura: "Lengua y Literatura – Teatro – Simce"
+    asignatura: "Lengua y Literatura – Teatro – Simce",
   },
   {
     img: acancino,
@@ -49,87 +59,74 @@ const docentes = [
     correo: "acancino@liceoexperimental.cl",
     dpto: "Educación Media",
     more: "Jefatura: 2° B",
-    asignatura: "Matemática"
+    asignatura: "Matemática",
   },
   {
-    img: demoImage,
+    img: rbahamonde,
     nombre: "Romina Alejandra Bahamonde Galli",
     correo: "rbahamonde@liceoexperimental.cl",
     dpto: "Educación Media",
     more: "Jefatura: 3° B",
-    asignatura: "Educación Física y Salud"
+    asignatura: "Educación Física y Salud",
   },
   {
-    img: demoImage,
+    img: jtoro,
     nombre: "Josué Toro Ojeda",
     correo: "jtoro@liceoexperimental.cl",
     dpto: "Educación Media",
     more: "Jefatura: 2° C",
-    asignatura: "Historia – Filosofía"
+    asignatura: "Historia – Filosofía",
   },
   {
-    img: demoImage,
+    img: mdiaz,
     nombre: "Milton Diaz Saldivia",
     correo: "mdiaz@liceoexperimental.cl",
     dpto: "Educación Media",
     more: "Jefatura: 3° A",
-    asignatura: "Formación Ciudadana e Historia del Presente"
+    asignatura: "Formación Ciudadana e Historia del Presente",
   },
   {
-    img: demoImage,
+    img: jfajardo,
     nombre: "Jessica Fajardo Cuiñas",
     correo: "jfajardo@liceoexperimental.cl",
     dpto: "Educación Media",
     more: "Jefatura: 1° C",
-    asignatura: "Inglés"
+    asignatura: "Inglés",
   },
   {
-    img: demoImage,
+    img: csoto,
     nombre: "Camila Soto Aguillar",
     correo: "csoto@liceoexperimental.cl",
     dpto: "Educación Media",
     more: "—",
-    asignatura: "Religión Evangélica – Desarrollo Personal"
+    asignatura: "Religión Evangélica – Desarrollo Personal",
   },
+
   {
-    img: demoImage,
-    nombre: "Michelle Funes Neira",
-    correo: "mfunes@liceoexperimental.cl",
-    dpto: "Educación Media",
-    more: "Jefatura: 4° A",
-    asignatura: "Simce – Paes – Límites y Derivadas – Matemáticas"
-  },
-  {
-    img: demoImage,
+    img: aneira,
     nombre: "Ana Maria Neira Johnston",
     correo: "aneira@liceoexperimental.cl",
     dpto: "Educación Media",
     more: "—",
-    asignatura: "Matemática"
+    asignatura: "Matemática",
   },
-  {
-    img: demoImage,
-    nombre: "Antonella Almonacid López",
-    correo: "aalmonacid@liceoexperimental.cl",
-    dpto: "Educación Media",
-    more: "—",
-    asignatura: "Mindfulness – Expresión Corporal"
-  },
+
   {
     img: pbarrientos,
     nombre: "Patricia Barrientos",
     correo: "pbarrientos@liceoexperimental.cl",
     dpto: "Educación Media",
     more: "Jefatura: 4° B",
-    asignatura: "Física – Ciencias para la Ciudadanía – FD Física – FD Ciencias de la Salud"
+    asignatura:
+      "Física – Ciencias para la Ciudadanía – FD Física – FD Ciencias de la Salud",
   },
   {
-    img: demoImage,
+    img: pnavea,
     nombre: "Paola Navea",
     correo: "pnavea@liceoexperimental.cl",
     dpto: "Educación Media",
     more: "Jefatura: 1° A",
-    asignatura: "—"
+    asignatura: "—",
   },
   {
     img: nibarra,
@@ -137,7 +134,8 @@ const docentes = [
     correo: "nibarra@liceoexperimental.cl",
     dpto: "Educación Media",
     more: "Jefatura: 4° C",
-    asignatura: "Inglés Idioma Extranjero Cursos 2° A, 2° B, 3° A, 3° B, 4° A, 4° B, 4° C"
+    asignatura:
+      "Inglés Idioma Extranjero Cursos 2° A, 2° B, 3° A, 3° B, 4° A, 4° B, 4° C",
   },
   {
     img: demoImage,
@@ -145,7 +143,7 @@ const docentes = [
     correo: "dbascunan@liceoexperimental.cl",
     dpto: "Educación Media",
     more: "—",
-    asignatura: "—"
+    asignatura: "—",
   },
   {
     img: demoImage,
@@ -153,7 +151,7 @@ const docentes = [
     correo: "ccontreras@liceoexperimental.cl",
     dpto: "Educación Media",
     more: "—",
-    asignatura: "—"
+    asignatura: "—",
   },
   {
     img: jtrujillo,
@@ -161,26 +159,26 @@ const docentes = [
     correo: "jtrujillo@liceoexperimental.cl",
     dpto: "Educación Media",
     more: "—",
-    asignatura: "Desarrollo Personal – Asistente de UTP"
+    asignatura: "Desarrollo Personal – Asistente de UTP",
   },
-  {
-    img: demoImage,
-    nombre: "Celso Oyarzo Hidalgo",
-    correo: "coyarzo@liceoexperimental.cl",
-    dpto: "Educación Media",
-    more: "—",
-    asignatura: "Educación Física y Salud 2 – Ciencias del Ejercicio Físico y Deportivo"
-  },
+
   {
     img: cpardo,
     nombre: "Carolina Pardo",
     correo: "cpardo@liceoexperimental.cl",
     dpto: "Educación Media",
     more: "—",
-    asignatura: "Economía y Sociedad"
-  }
+    asignatura: "Economía y Sociedad",
+  },
+  {
+    img: demoImage,
+    nombre: "Karina Martínez Miranda",
+    correo: "kmartinezm@liceoexperimental.cl",
+    dpto: "Educación Media",
+    more: "—",
+    asignatura: "Religion Católica",
+  },
 ];
-
 
 export const EquipoMedia = () => {
   return (

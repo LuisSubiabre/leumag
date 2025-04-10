@@ -2,6 +2,7 @@ import React from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
+import { emails } from '../emails';
 
 // Solución para un problema común con los íconos
 delete L.Icon.Default.prototype._getIconUrl;
@@ -21,14 +22,14 @@ const Contacto = () => {
                 <div className="box">
                     <h4>Establecimiento Educacional</h4>
                     <p>Angamos 17, Punta Arenas, Chile</p>
-                    <p>leumag@liceoexperimental.cl</p>
+                    <p>{emails.contacto}</p>
                     <p>Teléfono: 61 2454270</p>
                 </div>
 
                 <div className="box">
                     <h4>Administración y Finanzas</h4>
                     <p>Angamos 131, Punta Arenas, Chile</p>
-                    <p>administracion@liceoexperimental.cl</p>
+                    <p>{emails.administracion}</p>
                     <p>Teléfono: 61 2240075</p>
                 </div>
             </div>

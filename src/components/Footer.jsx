@@ -4,7 +4,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faLocation, faLocationDot, faMailBulk, faPhone, faSchoolFlag } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import RedesSociales from './RedesSociales';
+import { emails } from '../emails';
 const Footer = () => {
+
     return (
         <>
             <footer className="footer-bg text-center text-lg-start">
@@ -60,7 +62,7 @@ const Footer = () => {
                                 <h6 className="text-uppercase fw-bold mb-4">Establecimiento</h6>
                                 <p><FontAwesomeIcon icon={faLocationDot} /> Angamos 17</p>
                                 <p>
-                                    <FontAwesomeIcon icon={faEnvelope} /> leumag@liceoexperimental.cl
+                                    <FontAwesomeIcon icon={faEnvelope} /> {emails.contacto}
                                 </p>
                                 <p><FontAwesomeIcon icon={faPhone} /> 61 2454270</p>
 
@@ -72,7 +74,7 @@ const Footer = () => {
                                 <h6 className="text-uppercase fw-bold mb-4">Administración</h6>
                                 <p><FontAwesomeIcon icon={faLocationDot} /> Angamos 131</p>
                                 <p>
-                                    <FontAwesomeIcon icon={faEnvelope} /> administracion@liceoexperimental.cl
+                                    <FontAwesomeIcon icon={faEnvelope} /> {emails.administracion}
                                 </p>
                                 <p> <FontAwesomeIcon icon={faPhone} /> 61 2240075</p>
 
