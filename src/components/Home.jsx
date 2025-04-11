@@ -4,7 +4,7 @@ import Documentos from "./Documentos";
 import Externos from "./Externos";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
-import imgComunicado from "/images/afiche.png";
+import imgComunicado from "/comunicados/com01042025.png";
 import { ComunicadosComponent } from "./ComunicadosComponent";
 
 // Componente del modal
@@ -17,9 +17,7 @@ function MyVerticallyCenteredModal(props) {
       centered
     >
       <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">
-          1er Ensayo PAES
-        </Modal.Title>
+        <Modal.Title id="contained-modal-title-vcenter">Comunicado</Modal.Title>
       </Modal.Header>
       <Modal.Body className="text-center">
         <p>
