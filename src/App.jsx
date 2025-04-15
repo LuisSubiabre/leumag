@@ -22,6 +22,7 @@ import CentroDePadres from "./pages/CentroDePadres";
 import CardShowcase from "./pages/CardShowcase";
 import EstamentosPage from "./pages/EstamentosPage";
 import CentroDeAlumnos from "./pages/CentroDeAlumnos";
+import InfoCra from "./pages/InfoCra";
 
 function App() {
   return (
@@ -47,6 +48,7 @@ function App() {
         <Route path="/CentroDePadres" element={<CentroDePadres />} />
         <Route path="/CentroDeAlumnos" element={<CentroDeAlumnos />} />
         <Route path="/cards" element={<CardShowcase />} />
+        <Route path="/InfoCra" element={<InfoCra />} />
         <Route path="*" element={<NotFound />} /> {/* Ruta para manejar 404 */}
       </Routes>
       <Footer />
