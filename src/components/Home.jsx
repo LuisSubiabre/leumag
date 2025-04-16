@@ -6,6 +6,7 @@ import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import imgComunicado from "/comunicados/com01042025.png";
 import { ComunicadosComponent } from "./ComunicadosComponent";
+import { Container, Row, Col } from "react-bootstrap";
 
 // Componente del modal
 function MyVerticallyCenteredModal(props) {
@@ -47,15 +48,22 @@ function Home() {
 
   return (
     <>
-      <div className="container contenedor px-5">
-        <Posts />
-        <hr />
-        <ComunicadosComponent />
-        <hr />
-        <Documentos />
-        <hr />
-        <Externos />
-      </div>
+      <Container fluid className="px-4">
+        <Row>
+          <Col lg={8} className="order-1 order-lg-1">
+            <Posts />
+            <hr className="d-lg-none" />
+            <ComunicadosComponent />
+            <hr />
+            <Documentos />
+          </Col>
+          <Col lg={4} className="order-2 order-lg-2">
+            <div className="sticky-top" style={{ top: "20px" }}>
+              <Externos />
+            </div>
+          </Col>
+        </Row>
+      </Container>
       <MyVerticallyCenteredModal
         show={modalShow}
         onHide={() => setModalShow(false)}
