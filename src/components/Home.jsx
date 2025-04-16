@@ -50,15 +50,21 @@ function Home() {
     <>
       <Container fluid className="px-4">
         <Row>
-          <Col lg={8} className="order-1 order-lg-1">
+          <Col lg={8} className="order-2 order-lg-1">
             <Posts />
             <hr className="d-lg-none" />
             <ComunicadosComponent />
             <hr />
             <Documentos />
           </Col>
-          <Col lg={4} className="order-2 order-lg-2">
-            <div className="sticky-top" style={{ top: "20px" }}>
+          <Col lg={4} className="order-1 order-lg-2">
+            <div className="d-lg-none mb-4">
+              <Externos />
+            </div>
+            <div
+              className="d-none d-lg-block sticky-top"
+              style={{ top: "20px" }}
+            >
               <Externos />
             </div>
           </Col>
