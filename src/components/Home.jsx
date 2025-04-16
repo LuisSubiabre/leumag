@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Posts from "./Posts";
 import Documentos from "./Documentos";
 import Externos from "./Externos";
+import FacebookFeed from "./FacebookFeed";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import imgComunicado from "/comunicados/com01042025.png";
@@ -56,6 +57,10 @@ function Home() {
             <ComunicadosComponent />
             <hr />
             <Documentos />
+            <div className="d-lg-none">
+              <hr />
+              <FacebookFeed />
+            </div>
           </Col>
           <Col lg={4} className="order-1 order-lg-2">
             <div className="d-lg-none mb-4">
@@ -63,9 +68,10 @@ function Home() {
             </div>
             <div
               className="d-none d-lg-block sticky-top"
-              style={{ top: "20px" }}
+              style={{ top: "80px" }}
             >
               <Externos />
+              <FacebookFeed />
             </div>
           </Col>
         </Row>

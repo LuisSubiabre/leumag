@@ -12,7 +12,7 @@ const Posts = () => {
     const fetchPosts = async () => {
       try {
         const response = await axios.get(
-          "https://portal.liceoexperimental.cl/wp-json/wp/v2/posts?per_page=4"
+          "https://portal.liceoexperimental.cl/wp-json/wp/v2/posts?per_page=6"
         );
         const postsData = await Promise.all(
           response.data.map(async (post) => {
@@ -76,7 +76,7 @@ const Posts = () => {
       ) : (
         <>
           {posts.map((post, index) => (
-            <Col md={6} key={index} className="mb-3">
+            <Col md={6} lg={4} key={index} className="mb-3">
               <Link to={`Noticia/${post.id}`} className="text-decoration-none">
                 <Card
                   className="rounded h-100"
@@ -103,7 +103,6 @@ const Posts = () => {
                     style={{
                       height: "220px",
                       objectFit: "cover",
-
                       transition: "transform 0.3s ease",
                       transform:
                         hoveredCard === post.id ? "scale(1.02)" : "scale(1)",
