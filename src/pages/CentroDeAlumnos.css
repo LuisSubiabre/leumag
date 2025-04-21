@@ -1,0 +1,33 @@
+.directiva-list {
+  padding: 1.5rem;
+  background-color: #f8f9fa;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.directiva-item {
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.directiva-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.cargo {
+  font-weight: 600;
+  color: #0d6efd;
+  margin-right: 0.5rem;
+}
+
+.nombre {
+  font-weight: 500;
+  margin-right: 0.5rem;
+}
+
+.curso {
+  color: #6c757d;
+  font-size: 0.9rem;
+}
