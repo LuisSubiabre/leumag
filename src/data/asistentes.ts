@@ -82,8 +82,8 @@ export const equipoAsistentes: Funcionario[] = [
   },
   {
     img: demoImage,
-    nombre: "Elizabeth Galindo",
-    correo: "egalindo@liceoexperimental.cl",
+    nombre: "María Angélica Castelblanco",
+    correo: "mcastelblanco@liceoexperimental.cl",
     dpto: "Inspectora",
   },
   {

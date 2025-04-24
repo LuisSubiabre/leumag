@@ -3,6 +3,7 @@ import jvasquez from "../assets/img/funcionarios/jvasquez.png";
 import fhinojosa from "../assets/img/funcionarios/fhinojosa.png";
 import mmansilla from "../assets/img/funcionarios/mmansilla.png";
 import moyarzun from "../assets/img/funcionarios/moyarzun.png";
+import mcisternas from "../assets/img/funcionarios/mcisternas.png";
 
 export type Funcionario = {
   img: string;
@@ -17,6 +18,12 @@ export const equipoDirectivo: Funcionario[] = [
     nombre: "Patricio Bravo",
     correo: "pbravo@liceoexperimental.cl",
     dpto: "Director",
+  },
+  {
+    img: mcisternas,
+    nombre: "Manuel Cisterna",
+    correo: "mcisternas@liceoexperimental.cl",
+    dpto: "Inspector General",
   },
 
   {
