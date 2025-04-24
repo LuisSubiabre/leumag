@@ -78,7 +78,7 @@ export const Header = () => {
           </Container>
         </div>
       </div>
-      <div className="container contenedor py-4"></div>
+      <div className="container py-4"></div>
     </>
   );
 };
