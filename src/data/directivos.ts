@@ -21,7 +21,7 @@ export const equipoDirectivo: Funcionario[] = [
   },
   {
     img: mcisternas,
-    nombre: "Manuel Cisterna",
+    nombre: "Manuel Cisternas",
     correo: "mcisternas@liceoexperimental.cl",
     dpto: "Inspector General",
   },

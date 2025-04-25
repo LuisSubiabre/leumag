@@ -75,6 +75,12 @@ export const equipoAsistentes: Funcionario[] = [
     dpto: "Técnico 1° Básico A",
   },
   {
+    img: rfarina,
+    nombre: "Rodrigo Fariña",
+    correo: "rfarina@liceoexperimental.cl",
+    dpto: "TENS",
+  },
+  {
     img: demoImage,
     nombre: "Elizabeth Almonacid",
     correo: "ealmonacid@liceoexperimental.cl",
