@@ -5,7 +5,8 @@ import Externos from "./Externos";
 import FacebookFeed from "./FacebookFeed";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
-import imgComunicado from "/comunicados/afichePAES.jpg";
+//import imgComunicado from "/comunicados/afichePAES.jpg";
+import imgComunicado from "/images/Necrologica.png";
 import { ComunicadosComponent } from "./ComunicadosComponent";
 import { Container, Row, Col } from "react-bootstrap";
 
