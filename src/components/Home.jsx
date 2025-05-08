@@ -5,7 +5,7 @@ import Externos from "./Externos";
 import FacebookFeed from "./FacebookFeed";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
-import imgComunicado from "/comunicados/com01042025.png";
+import imgComunicado from "/comunicados/afichePAES.jpg";
 import { ComunicadosComponent } from "./ComunicadosComponent";
 import { Container, Row, Col } from "react-bootstrap";
 
@@ -19,7 +19,7 @@ function MyVerticallyCenteredModal(props) {
       centered
     >
       <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">Comunicado</Modal.Title>
+        <Modal.Title id="contained-modal-title-vcenter"></Modal.Title>
       </Modal.Header>
       <Modal.Body className="text-center">
         <p>
@@ -44,7 +44,7 @@ function Home() {
   const [modalShow, setModalShow] = useState(true);
 
   useEffect(() => {
-    setModalShow(false);
+    setModalShow(true);
   }, []);
 
   return (
