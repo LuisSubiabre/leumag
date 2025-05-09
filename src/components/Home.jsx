@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 import Posts from "./Posts";
 import Documentos from "./Documentos";
 import Externos from "./Externos";
@@ -72,6 +73,10 @@ function MyVerticallyCenteredModal(props) {
     </Modal>
   );
 }
+
+MyVerticallyCenteredModal.propTypes = {
+  onHide: PropTypes.func.isRequired,
+};
 
 // Componente principal Home
 function Home() {
