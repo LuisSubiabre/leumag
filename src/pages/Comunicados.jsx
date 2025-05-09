@@ -1,5 +1,5 @@
 //import { useState } from "react";
-import { comunicados } from "../comunicados.js";
+import { comunicados } from "../data/comunicados.js";
 import { FaCalendarAlt, FaBullhorn, FaImage } from "react-icons/fa";
 
 export const Comunicados = () => {

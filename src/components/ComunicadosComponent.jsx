@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { comunicados } from "../comunicados.js";
+import { comunicados } from "../data/comunicados.js";
 import { useState } from "react";
 
 export const ComunicadosComponent = () => {

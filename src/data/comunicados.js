@@ -1,5 +1,37 @@
 export const comunicados = [
   {
+    id: 13,
+    titulo: "Feliz día del estudiante",
+    fecha: "09-04-2025",
+    img: "/comunicados/comEstudiante.png",
+    contenido: ` <p>
+          <strong>Queridos estudiantes:</strong>
+        </p>
+        <p>
+          Hoy, 9 de mayo, es oficialmente el <strong>Día del Estudiante</strong>
+          , y aunque en nuestro liceo celebraremos esta fecha el próximo
+          <strong>viernes 16 de mayo</strong>, no queremos dejar pasar esta
+          oportunidad para saludarlos con mucho cariño.
+        </p>
+        <p>
+          Ustedes son el corazón de nuestra comunidad educativa. Cada día, con
+          sus sueños, preguntas, talentos y energía, llenan de sentido nuestro
+          trabajo. Por eso, aunque aplazamos la celebración por razones
+          organizativas y de contingencia comunal, estamos preparando una
+          jornada especial pensada para ustedes, donde puedan disfrutar,
+          compartir y sentirse reconocidos como quienes deben brillar en nuestro
+          liceo.
+        </p>
+        <p>
+          Queremos también invitarlos a reflexionar. Celebremos este día
+          recordando que una buena convivencia nace del respeto, del cuidado
+          mutuo y de saber que todos tenemos un lugar en esta comunidad. Ser
+          estudiante no es solo aprender materias, sino aprender a vivir con
+          otros, con empatía, con alegría y con responsabilidad.
+        </p>
+        <p>`,
+  },
+  {
     id: 12,
     titulo: "Comunicado a padres y apoderados",
     fecha: "01-04-2025",
