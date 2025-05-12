@@ -198,4 +198,12 @@ export const equipoMedia: Funcionario[] = [
     more: "—",
     asignatura: "Pensamiento Computacional y Programación",
   },
+  {
+    img: demoImage,
+    nombre: "María José Vargas",
+    correo: "mvargas@liceoexperimental.cl",
+    dpto: "Educación Media",
+    more: "—",
+    asignatura: "Biología",
+  },
 ];
