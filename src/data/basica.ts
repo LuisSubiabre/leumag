@@ -152,7 +152,7 @@ export const equipoBasica: Funcionario[] = [
   {
     img: demoImage,
     nombre: "Gustavo Contreras",
-    correo: "gconstreras@liceoexperimental.cl",
+    correo: "gcontreras@liceoexperimental.cl",
     dpto: "Educación Básica",
     more: "Jefatura: 8° Básico A",
     asignatura: "Profesor de inglés 7° y 8°",
