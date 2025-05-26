@@ -6,8 +6,7 @@ import Externos from "./Externos";
 import FacebookFeed from "./FacebookFeed";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
-//import imgComunicado from "/comunicados/afichePAES.jpg";
-import imgComunicado from "/comunicados/diaMadre.png";
+import imgComunicado from "/comunicados/afiche.png";
 import { ComunicadosComponent } from "./ComunicadosComponent";
 import { Container, Row, Col } from "react-bootstrap";
 
@@ -33,26 +32,6 @@ function MyVerticallyCenteredModal(props) {
             className="img-fluid mb-3"
           />
         </div>
-        <div>
-          <p>
-            En este Día de las Madres, queremos reconocer y felicitar con afecto
-            a todas las mujeres de nuestra comunidad educativa que cumplen con
-            amor y entrega el valioso rol de ser madres: apoderadas,
-            funcionarias, docentes y asistentes.
-          </p>
-          <p>
-            Gracias por su dedicación, por acompañar con compromiso la formación
-            de sus hijos e hijas, y por ser un ejemplo diario de fortaleza,
-            cuidado y generosidad.
-          </p>
-          <p>
-            ¡Feliz Día de la Madre! Que reciban hoy y siempre el mismo amor que
-            entregan cada día.
-          </p>
-          <p>
-            <em>Comunidad Educativa Liceo Experimental Umag</em>
-          </p>
-        </div>
       </Modal.Body>
       <Modal.Footer>
         <Button onClick={props.onHide}>Cerrar</Button>
@@ -70,7 +49,7 @@ function Home() {
   const [modalShow, setModalShow] = useState(true);
 
   useEffect(() => {
-    setModalShow(false);
+    setModalShow(true);
   }, []);
 
   return (
