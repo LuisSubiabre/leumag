@@ -38,15 +38,22 @@ const InfoCra = () => {
               }}
             >
               <div className="position-relative">
-                <img
-                  src={portada.image}
-                  className="card-img-top"
-                  alt={portada.title}
-                  style={{ height: "400px", objectFit: "cover" }}
-                />
-                <div className="position-absolute top-0 start-0 p-2">
-                  <FaNewspaper className="text-white opacity-75" size={24} />
-                </div>
+                <a
+                  href={portada.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ display: "block" }}
+                >
+                  <img
+                    src={portada.image}
+                    className="card-img-top"
+                    alt={portada.title}
+                    style={{ height: "400px", objectFit: "cover" }}
+                  />
+                  <div className="position-absolute top-0 start-0 p-2">
+                    <FaNewspaper className="text-white opacity-75" size={24} />
+                  </div>
+                </a>
               </div>
               <div className="card-body">
                 <h5 className="card-title fw-bold">{portada.title}</h5>
