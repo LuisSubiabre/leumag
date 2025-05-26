@@ -24,6 +24,17 @@ function MyVerticallyCenteredModal(props) {
       </Modal.Header>
       <Modal.Body className="text-center">
         <div>
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/9a9MHDsBEHs?si=To2dnFUstGcYVjY4"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+          <hr></hr>
           <img
             src={imgComunicado}
             width="400"
