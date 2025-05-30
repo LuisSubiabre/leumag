@@ -8,6 +8,11 @@ const Posts = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [hoveredCard, setHoveredCard] = useState(null);
 
+  const formatDate = (dateString) => {
+    const options = { year: "numeric", month: "long", day: "numeric" };
+    return new Date(dateString).toLocaleDateString("es-ES", options);
+  };
+
   useEffect(() => {
     const fetchPosts = async () => {
       try {
@@ -22,6 +27,7 @@ const Posts = () => {
               title,
               content,
               link,
+              date,
             } = post;
             const featuredMediaResponse = featuredMediaId
               ? await axios.get(
@@ -37,6 +43,7 @@ const Posts = () => {
               content: content.rendered.substring(0, 100) + "...",
               link,
               featuredMedia,
+              date: formatDate(date),
             };
           })
         );
@@ -109,9 +116,24 @@ const Posts = () => {
                     }}
                   />
                   <Card.Body>
+                    <div className="d-flex justify-content-between align-items-center mb-2">
+                      <small
+                        className="text-muted"
+                        style={{
+                          fontSize: "0.9rem",
+                          fontStyle: "italic",
+                          color: "#6c757d",
+                          backgroundColor: "#f8f9fa",
+                          padding: "4px 8px",
+                          borderRadius: "4px",
+                        }}
+                      >
+                        {post.date}
+                      </small>
+                    </div>
                     <Card.Title
                       dangerouslySetInnerHTML={{ __html: post.title }}
-                      className="h2 "
+                      className="h2"
                       style={{
                         fontSize: "1.2rem",
                         fontWeight: "700",

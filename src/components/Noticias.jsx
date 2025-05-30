@@ -11,6 +11,11 @@ const Noticias = () => {
   const [hasMore, setHasMore] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
 
+  const formatDate = (dateString) => {
+    const options = { year: "numeric", month: "long", day: "numeric" };
+    return new Date(dateString).toLocaleDateString("es-ES", options);
+  };
+
   useEffect(() => {
     const fetchPosts = async () => {
       if (!hasMore) return;
@@ -27,6 +32,7 @@ const Noticias = () => {
               title,
               content,
               link,
+              date,
             } = post;
             const featuredMediaResponse = featuredMediaId
               ? await axios.get(
@@ -42,6 +48,7 @@ const Noticias = () => {
               content: content.rendered.substring(0, 100) + "...",
               link,
               featuredMedia,
+              date: formatDate(date),
             };
           })
         );
@@ -110,6 +117,21 @@ const Noticias = () => {
                 className="rounded-top"
               />
               <Card.Body className="p-4">
+                <div className="d-flex justify-content-between align-items-center mb-2">
+                  <small
+                    className="text-muted"
+                    style={{
+                      fontSize: "0.9rem",
+                      fontStyle: "italic",
+                      color: "#6c757d",
+                      backgroundColor: "#f8f9fa",
+                      padding: "4px 8px",
+                      borderRadius: "4px",
+                    }}
+                  >
+                    {post.date}
+                  </small>
+                </div>
                 <Card.Title
                   className="text-primary fw-bold"
                   dangerouslySetInnerHTML={{ __html: post.title }}
