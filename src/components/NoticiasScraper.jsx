@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { scrapeNoticias } from "../services/scrapingService";
-import { Row, Col, Card, Spinner } from "react-bootstrap";
+import { Row, Col, Card, Spinner, Button } from "react-bootstrap";
 
 const NoticiasScraper = () => {
   const [noticias, setNoticias] = useState([]);
@@ -8,6 +8,7 @@ const NoticiasScraper = () => {
   const [error, setError] = useState(null);
   const [ultimaActualizacion, setUltimaActualizacion] = useState(null);
   const [hoveredCard, setHoveredCard] = useState(null);
+  const [currentPage, setCurrentPage] = useState(0);
 
   const truncateText = (text, maxLength = 100) => {
     if (text.length <= maxLength) return text;
@@ -18,8 +19,7 @@ const NoticiasScraper = () => {
     try {
       setLoading(true);
       const data = await scrapeNoticias();
-      // Tomar solo las 8 noticias más recientes
-      setNoticias(data.slice(0, 8));
+      setNoticias(data);
       setError(null);
       setUltimaActualizacion(new Date());
     } catch (err) {
@@ -32,16 +32,27 @@ const NoticiasScraper = () => {
     }
   }, []);
 
-  // Actualización automática cada 5 minutos
   useEffect(() => {
     obtenerNoticias();
-
     const intervalo = setInterval(() => {
       obtenerNoticias();
-    }, 5 * 60 * 1000); // 5 minutos
-
+    }, 5 * 60 * 1000);
     return () => clearInterval(intervalo);
   }, [obtenerNoticias]);
+
+  const totalPages = Math.ceil(noticias.length / 4);
+  const currentNoticias = noticias.slice(
+    currentPage * 4,
+    (currentPage + 1) * 4
+  );
+
+  const handlePrevPage = () => {
+    setCurrentPage((prev) => (prev === 0 ? totalPages - 1 : prev - 1));
+  };
+
+  const handleNextPage = () => {
+    setCurrentPage((prev) => (prev === totalPages - 1 ? 0 : prev + 1));
+  };
 
   if (loading && noticias.length === 0) {
     return (
@@ -75,104 +86,168 @@ const NoticiasScraper = () => {
   }
 
   return (
-    <Row className="card-deck">
-      {ultimaActualizacion && (
-        <div className="w-100 mb-3">
-          <small className="text-muted">
-            Última actualización: {ultimaActualizacion.toLocaleTimeString()}
-          </small>
-        </div>
-      )}
+    <div className="position-relative">
+      <Row className="card-deck">
+        {ultimaActualizacion && (
+          <div className="w-100 mb-3">
+            <small className="text-muted">
+              Última actualización: {ultimaActualizacion.toLocaleTimeString()}
+            </small>
+          </div>
+        )}
 
-      {noticias.length === 0 ? (
-        <div className="text-center p-8 bg-gray-50 rounded-lg">
-          <p className="text-gray-600">
-            No hay noticias disponibles en este momento.
-          </p>
-        </div>
-      ) : (
-        <>
-          {noticias.map((noticia, index) => (
-            <Col md={6} lg={3} key={index} className="mb-3">
-              <Card
-                className="rounded h-100"
-                style={{
-                  height: "350px",
-                  boxShadow:
-                    hoveredCard === index
-                      ? "0 8px 16px rgba(0, 123, 255, 0.2)"
-                      : "0 4px 8px rgba(0, 0, 0, 0.1)",
-                  borderRadius: "12px",
-                  transition: "all 0.3s ease",
-                  transform:
-                    hoveredCard === index ? "translateY(-5px)" : "none",
-                  cursor: "pointer",
-                }}
-                onMouseEnter={() => setHoveredCard(index)}
-                onMouseLeave={() => setHoveredCard(null)}
-              >
-                <Card.Img
-                  variant="top"
-                  src="/images/nutricion.png"
-                  alt="Nutrición"
+        {noticias.length === 0 ? (
+          <div className="text-center p-8 bg-gray-50 rounded-lg">
+            <p className="text-gray-600">
+              No hay noticias disponibles en este momento.
+            </p>
+          </div>
+        ) : (
+          <>
+            {currentNoticias.map((noticia, index) => (
+              <Col md={6} lg={3} key={index} className="mb-3">
+                <Card
+                  className="rounded h-100"
                   style={{
-                    height: "180px",
-                    objectFit: "cover",
-                    transition: "transform 0.3s ease",
+                    height: "350px",
+                    boxShadow:
+                      hoveredCard === index
+                        ? "0 8px 16px rgba(0, 123, 255, 0.2)"
+                        : "0 4px 8px rgba(0, 0, 0, 0.1)",
+                    borderRadius: "12px",
+                    transition: "all 0.3s ease",
                     transform:
-                      hoveredCard === index ? "scale(1.02)" : "scale(1)",
+                      hoveredCard === index ? "translateY(-5px)" : "none",
+                    cursor: "pointer",
                   }}
-                />
-                <Card.Body className="d-flex flex-column">
-                  <Card.Title
-                    className="h2"
+                  onMouseEnter={() => setHoveredCard(index)}
+                  onMouseLeave={() => setHoveredCard(null)}
+                >
+                  <Card.Img
+                    variant="top"
+                    src="/images/nutricion.png"
+                    alt="Nutrición"
                     style={{
-                      fontSize: "1.2rem",
-                      fontWeight: "700",
-                      marginBottom: "15px",
-                      color: "#007bff",
+                      height: "180px",
+                      objectFit: "cover",
+                      transition: "transform 0.3s ease",
+                      transform:
+                        hoveredCard === index ? "scale(1.02)" : "scale(1)",
                     }}
-                  >
-                    {noticia.titulo}
-                  </Card.Title>
-                  <Card.Text className="text-muted flex-grow-1">
-                    {truncateText(noticia.contenido)}
-                  </Card.Text>
-                  <a
-                    href="https://sites.google.com/liceoexperimental.cl/proyectonutricionydietetica/noticias"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-primary mt-auto"
-                    style={{
-                      width: "100%",
-                      borderRadius: "20px",
-                      transition: "all 0.3s ease",
-                      backgroundColor: "#007bff",
-                      border: "none",
-                      padding: "8px 16px",
-                      fontWeight: "600",
-                      boxShadow: "0 2px 4px rgba(0, 123, 255, 0.2)",
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.transform = "translateY(-2px)";
-                      e.currentTarget.style.boxShadow =
-                        "0 4px 8px rgba(0, 123, 255, 0.3)";
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.transform = "translateY(0)";
-                      e.currentTarget.style.boxShadow =
-                        "0 2px 4px rgba(0, 123, 255, 0.2)";
-                    }}
-                  >
-                    Leer noticia
-                  </a>
-                </Card.Body>
-              </Card>
-            </Col>
-          ))}
-        </>
+                  />
+                  <Card.Body className="d-flex flex-column">
+                    <Card.Title
+                      className="h2"
+                      style={{
+                        fontSize: "1.2rem",
+                        fontWeight: "700",
+                        marginBottom: "15px",
+                        color: "#007bff",
+                      }}
+                    >
+                      {noticia.titulo}
+                    </Card.Title>
+                    <Card.Text className="text-muted flex-grow-1">
+                      {truncateText(noticia.contenido)}
+                    </Card.Text>
+                    <a
+                      href="https://sites.google.com/liceoexperimental.cl/proyectonutricionydietetica/noticias"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn btn-primary mt-auto"
+                      style={{
+                        width: "100%",
+                        borderRadius: "20px",
+                        transition: "all 0.3s ease",
+                        backgroundColor: "#007bff",
+                        border: "none",
+                        padding: "8px 16px",
+                        fontWeight: "600",
+                        boxShadow: "0 2px 4px rgba(0, 123, 255, 0.2)",
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.transform = "translateY(-2px)";
+                        e.currentTarget.style.boxShadow =
+                          "0 4px 8px rgba(0, 123, 255, 0.3)";
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.transform = "translateY(0)";
+                        e.currentTarget.style.boxShadow =
+                          "0 2px 4px rgba(0, 123, 255, 0.2)";
+                      }}
+                    >
+                      Leer noticia
+                    </a>
+                  </Card.Body>
+                </Card>
+              </Col>
+            ))}
+          </>
+        )}
+      </Row>
+
+      {noticias.length > 4 && (
+        <div className="d-flex justify-content-center align-items-center mt-4 gap-3">
+          <Button
+            variant="outline-primary"
+            onClick={handlePrevPage}
+            style={{
+              borderRadius: "50%",
+              width: "40px",
+              height: "40px",
+              padding: "0",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              border: "2px solid #007bff",
+              backgroundColor: "white",
+              color: "#007bff",
+              transition: "all 0.3s ease",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = "#007bff";
+              e.currentTarget.style.color = "white";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = "white";
+              e.currentTarget.style.color = "#007bff";
+            }}
+          >
+            ←
+          </Button>
+          <span className="text-muted">
+            Página {currentPage + 1} de {totalPages}
+          </span>
+          <Button
+            variant="outline-primary"
+            onClick={handleNextPage}
+            style={{
+              borderRadius: "50%",
+              width: "40px",
+              height: "40px",
+              padding: "0",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              border: "2px solid #007bff",
+              backgroundColor: "white",
+              color: "#007bff",
+              transition: "all 0.3s ease",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = "#007bff";
+              e.currentTarget.style.color = "white";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = "white";
+              e.currentTarget.style.color = "#007bff";
+            }}
+          >
+            →
+          </Button>
+        </div>
       )}
-    </Row>
+    </div>
   );
 };
 
