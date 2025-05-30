@@ -83,7 +83,7 @@ function Home() {
                 marginBottom: "2rem",
                 position: "relative",
                 backdropFilter: "blur(8px)",
-                backgroundColor: "rgba(var(--bs-body-bg-rgb), 0.3)",
+                backgroundColor: "rgba(var(--bs-body-bg-rgb), 0.15)",
               }}
             >
               <div
@@ -93,6 +93,7 @@ function Home() {
                   borderRadius: "15px",
                   backdropFilter: "blur(4px)",
                   boxShadow: "0 4px 6px rgba(0, 0, 0, 0.05)",
+                  backgroundColor: "rgba(var(--bs-body-bg-rgb), 0.6)",
                 }}
               >
                 <h2 className="text-2xl font-bold text-center mb-4">
