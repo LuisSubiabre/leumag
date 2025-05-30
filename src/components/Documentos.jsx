@@ -26,7 +26,7 @@ const Documentos = () => {
               borderColor="#007bff"
               footerText="Ver documento"
               footerIcon={<FaGoogle className="text-danger" />}
-              subtitle={<span className="badge bg-danger ms-2">Nuevo</span>}
+              //subtitle={<span className="badge bg-danger ms-2">Nuevo</span>}
             />
           </a>
         </Col>
