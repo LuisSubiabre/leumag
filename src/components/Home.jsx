@@ -70,11 +70,21 @@ function Home() {
           <Col lg={8} className="order-2 order-lg-1">
             <Posts />
             <hr className="d-lg-none" />
-            <h2 className="text-2xl font-bold text-center mb-4">
-              Intervenciones educativas Carrera de Nutrición y Dietética
-              Universidad de Magallanes
-            </h2>
-            <NoticiasScraper />
+            <div
+              style={{
+                backgroundColor: "#f8f9fa",
+                padding: "2rem",
+                borderRadius: "15px",
+                boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+                marginBottom: "2rem",
+              }}
+            >
+              <h2 className="text-2xl font-bold text-center mb-4">
+                Intervenciones educativas Carrera de Nutrición y Dietética
+                Universidad de Magallanes
+              </h2>
+              <NoticiasScraper />
+            </div>
             <hr />
             <Documentos />
             <div className="d-lg-none">
