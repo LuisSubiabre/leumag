@@ -1,17 +1,25 @@
 import { useState, useEffect, useCallback } from "react";
 import { scrapeNoticias } from "../services/scrapingService";
+import { Row, Col, Card, Spinner } from "react-bootstrap";
 
 const NoticiasScraper = () => {
   const [noticias, setNoticias] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [ultimaActualizacion, setUltimaActualizacion] = useState(null);
+  const [hoveredCard, setHoveredCard] = useState(null);
+
+  const truncateText = (text, maxLength = 100) => {
+    if (text.length <= maxLength) return text;
+    return text.substring(0, maxLength) + "...";
+  };
 
   const obtenerNoticias = useCallback(async () => {
     try {
       setLoading(true);
       const data = await scrapeNoticias();
-      setNoticias(data);
+      // Tomar solo las 8 noticias más recientes
+      setNoticias(data.slice(0, 8));
       setError(null);
       setUltimaActualizacion(new Date());
     } catch (err) {
@@ -37,8 +45,20 @@ const NoticiasScraper = () => {
 
   if (loading && noticias.length === 0) {
     return (
-      <div className="flex justify-center items-center min-h-[200px]">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500"></div>
+      <div
+        className="d-flex justify-content-center align-items-center"
+        style={{ height: "50vh" }}
+      >
+        <div className="text-center">
+          <Spinner
+            animation="border"
+            role="status"
+            style={{ color: "#007bff", width: "3rem", height: "3rem" }}
+          >
+            <span className="visually-hidden">Cargando...</span>
+          </Spinner>
+          <p className="mt-3">Cargando las noticias, por favor espera...</p>
+        </div>
       </div>
     );
   }
@@ -55,19 +75,14 @@ const NoticiasScraper = () => {
   }
 
   return (
-    <div className="container mx-auto p-4">
-      <div className="bg-white rounded-lg shadow-md p-6 mb-6">
-        <div className="flex flex-col items-center">
-          <h1 className="text-2xl font-bold text-center mb-2">
-            Noticias del Proyecto Nutrición y Dietética
-          </h1>
-          {ultimaActualizacion && (
-            <p className="text-sm text-gray-500">
-              Última actualización: {ultimaActualizacion.toLocaleTimeString()}
-            </p>
-          )}
+    <Row className="card-deck">
+      {ultimaActualizacion && (
+        <div className="w-100 mb-3">
+          <small className="text-muted">
+            Última actualización: {ultimaActualizacion.toLocaleTimeString()}
+          </small>
         </div>
-      </div>
+      )}
 
       {noticias.length === 0 ? (
         <div className="text-center p-8 bg-gray-50 rounded-lg">
@@ -76,28 +91,88 @@ const NoticiasScraper = () => {
           </p>
         </div>
       ) : (
-        <div className="grid gap-6">
+        <>
           {noticias.map((noticia, index) => (
-            <div
-              key={index}
-              className="border rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow bg-white"
-            >
-              <h2 className="text-xl font-semibold mb-3 text-blue-600">
-                {noticia.titulo}
-              </h2>
-              {noticia.fecha && (
-                <p className="text-sm text-gray-500 mb-3">
-                  Publicado el: {noticia.fecha}
-                </p>
-              )}
-              <p className="text-gray-700 whitespace-pre-line">
-                {noticia.contenido}
-              </p>
-            </div>
+            <Col md={6} lg={3} key={index} className="mb-3">
+              <Card
+                className="rounded h-100"
+                style={{
+                  height: "350px",
+                  boxShadow:
+                    hoveredCard === index
+                      ? "0 8px 16px rgba(0, 123, 255, 0.2)"
+                      : "0 4px 8px rgba(0, 0, 0, 0.1)",
+                  borderRadius: "12px",
+                  transition: "all 0.3s ease",
+                  transform:
+                    hoveredCard === index ? "translateY(-5px)" : "none",
+                  cursor: "pointer",
+                }}
+                onMouseEnter={() => setHoveredCard(index)}
+                onMouseLeave={() => setHoveredCard(null)}
+              >
+                <Card.Img
+                  variant="top"
+                  src="/images/nutricion.png"
+                  alt="Nutrición"
+                  style={{
+                    height: "180px",
+                    objectFit: "cover",
+                    transition: "transform 0.3s ease",
+                    transform:
+                      hoveredCard === index ? "scale(1.02)" : "scale(1)",
+                  }}
+                />
+                <Card.Body className="d-flex flex-column">
+                  <Card.Title
+                    className="h2"
+                    style={{
+                      fontSize: "1.2rem",
+                      fontWeight: "700",
+                      marginBottom: "15px",
+                      color: "#007bff",
+                    }}
+                  >
+                    {noticia.titulo}
+                  </Card.Title>
+                  <Card.Text className="text-muted flex-grow-1">
+                    {truncateText(noticia.contenido)}
+                  </Card.Text>
+                  <a
+                    href="https://sites.google.com/liceoexperimental.cl/proyectonutricionydietetica/noticias"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-primary mt-auto"
+                    style={{
+                      width: "100%",
+                      borderRadius: "20px",
+                      transition: "all 0.3s ease",
+                      backgroundColor: "#007bff",
+                      border: "none",
+                      padding: "8px 16px",
+                      fontWeight: "600",
+                      boxShadow: "0 2px 4px rgba(0, 123, 255, 0.2)",
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = "translateY(-2px)";
+                      e.currentTarget.style.boxShadow =
+                        "0 4px 8px rgba(0, 123, 255, 0.3)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = "translateY(0)";
+                      e.currentTarget.style.boxShadow =
+                        "0 2px 4px rgba(0, 123, 255, 0.2)";
+                    }}
+                  >
+                    Leer noticia
+                  </a>
+                </Card.Body>
+              </Card>
+            </Col>
           ))}
-        </div>
+        </>
       )}
-    </div>
+    </Row>
   );
 };
 

@@ -7,7 +7,7 @@ import FacebookFeed from "./FacebookFeed";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import imgComunicado from "/comunicados/afiche.png";
-import { ComunicadosComponent } from "./ComunicadosComponent";
+import NoticiasScraper from "./NoticiasScraper";
 import { Container, Row, Col } from "react-bootstrap";
 
 // Componente del modal
@@ -70,7 +70,11 @@ function Home() {
           <Col lg={8} className="order-2 order-lg-1">
             <Posts />
             <hr className="d-lg-none" />
-            <ComunicadosComponent />
+            <h2 className="text-2xl font-bold text-center mb-4">
+              Intervenciones educativas Carrera de Nutrición y Dietética
+              Universidad de Magallanes
+            </h2>
+            <NoticiasScraper />
             <hr />
             <Documentos />
             <div className="d-lg-none">
