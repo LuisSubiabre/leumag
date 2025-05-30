@@ -88,13 +88,7 @@ const NoticiasScraper = () => {
   return (
     <div className="position-relative">
       <Row className="card-deck">
-        {ultimaActualizacion && (
-          <div className="w-100 mb-3">
-            <small className="text-muted">
-              Última actualización: {ultimaActualizacion.toLocaleTimeString()}
-            </small>
-          </div>
-        )}
+        {ultimaActualizacion && <div className="w-100 mb-3"></div>}
 
         {noticias.length === 0 ? (
           <div className="text-center p-8 bg-gray-50 rounded-lg">

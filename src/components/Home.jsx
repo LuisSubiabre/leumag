@@ -71,19 +71,36 @@ function Home() {
             <Posts />
             <hr className="d-lg-none" />
             <div
+              className="bg-body-tertiary"
               style={{
-                backgroundColor: "#f8f9fa",
+                backgroundImage: "url('/images/bannerumag.png')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
                 padding: "2rem",
                 borderRadius: "15px",
                 boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
                 marginBottom: "2rem",
+                position: "relative",
+                backdropFilter: "blur(8px)",
+                backgroundColor: "rgba(var(--bs-body-bg-rgb), 0.3)",
               }}
             >
-              <h2 className="text-2xl font-bold text-center mb-4">
-                Intervenciones educativas Carrera de Nutrición y Dietética
-                Universidad de Magallanes
-              </h2>
-              <NoticiasScraper />
+              <div
+                className="bg-body"
+                style={{
+                  padding: "2rem",
+                  borderRadius: "15px",
+                  backdropFilter: "blur(4px)",
+                  boxShadow: "0 4px 6px rgba(0, 0, 0, 0.05)",
+                }}
+              >
+                <h2 className="text-2xl font-bold text-center mb-4">
+                  Intervenciones educativas Carrera de Nutrición y Dietética
+                  Universidad de Magallanes
+                </h2>
+                <NoticiasScraper />
+              </div>
             </div>
             <hr />
             <Documentos />
