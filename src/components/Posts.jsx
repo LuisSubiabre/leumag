@@ -122,10 +122,13 @@ const Posts = () => {
                         style={{
                           fontSize: "0.9rem",
                           fontStyle: "italic",
-                          color: "#6c757d",
-                          backgroundColor: "#f8f9fa",
-                          padding: "4px 8px",
-                          borderRadius: "4px",
+                          color: "var(--bs-body-color)",
+                          backgroundColor: "var(--bs-tertiary-bg)",
+                          padding: "6px 12px",
+                          borderRadius: "8px",
+                          boxShadow: "0 2px 4px rgba(0,0,0,0.05)",
+                          border: "1px solid var(--bs-border-color)",
+                          transition: "all 0.3s ease",
                         }}
                       >
                         {post.date}

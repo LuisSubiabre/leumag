@@ -38,67 +38,71 @@ const Noticias = () => {
     [mediaCache]
   );
 
-  useEffect(() => {
-    const fetchPosts = async () => {
-      if (!hasMore) return;
-      try {
-        setLoading(true);
-        const response = await axios.get(
-          `https://portal.liceoexperimental.cl/wp-json/wp/v2/posts?page=${page}&per_page=10`
-        );
+  const fetchPosts = useCallback(async () => {
+    if (!hasMore || loading) return;
 
-        // Procesar los posts en lotes para mejor rendimiento
-        const batchSize = 5;
-        const postsData = [];
+    try {
+      setLoading(true);
+      const response = await axios.get(
+        `https://portal.liceoexperimental.cl/wp-json/wp/v2/posts?page=${page}&per_page=10`
+      );
 
-        for (let i = 0; i < response.data.length; i += batchSize) {
-          const batch = response.data.slice(i, i + batchSize);
-          const batchPromises = batch.map(async (post) => {
-            const {
-              featured_media: featuredMediaId,
-              id,
-              title,
-              content,
-              link,
-              date,
-            } = post;
-
-            const featuredMedia = featuredMediaId
-              ? await getMediaUrl(featuredMediaId)
-              : null;
-
-            return {
-              id,
-              title: title.rendered,
-              content: content.rendered.substring(0, 100) + "...",
-              link,
-              featuredMedia,
-              date: formatDate(date),
-            };
-          });
-
-          const batchResults = await Promise.all(batchPromises);
-          postsData.push(...batchResults);
-        }
-
-        setPosts((prevPosts) => [...prevPosts, ...postsData]);
-        setPage((prevPage) => prevPage + 1);
-        setLoading(false);
-
-        if (postsData.length < 10) {
-          setHasMore(false);
-        }
-      } catch (error) {
-        console.error("Error fetching data:", error);
-        setLoading(false);
+      if (response.data.length === 0) {
+        setHasMore(false);
+        return;
       }
-    };
 
+      const postsData = await Promise.all(
+        response.data.map(async (post) => {
+          const {
+            featured_media: featuredMediaId,
+            id,
+            title,
+            content,
+            link,
+            date,
+          } = post;
+
+          const featuredMedia = featuredMediaId
+            ? await getMediaUrl(featuredMediaId)
+            : null;
+
+          return {
+            id,
+            title: title.rendered,
+            content: content.rendered.substring(0, 100) + "...",
+            link,
+            featuredMedia,
+            date: formatDate(date),
+          };
+        })
+      );
+
+      setPosts((prevPosts) => {
+        // Filtrar posts duplicados
+        const newPosts = postsData.filter(
+          (newPost) =>
+            !prevPosts.some((existingPost) => existingPost.id === newPost.id)
+        );
+        return [...prevPosts, ...newPosts];
+      });
+
+      setPage((prevPage) => prevPage + 1);
+      setHasMore(response.data.length === 10);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    } finally {
+      setLoading(false);
+    }
+  }, [page, hasMore, loading, getMediaUrl]);
+
+  useEffect(() => {
     const handleScroll = () => {
       if (
         window.innerHeight + document.documentElement.scrollTop + 100 >=
           document.documentElement.offsetHeight &&
-        !loading
+        !loading &&
+        hasMore
       ) {
         fetchPosts();
       }
@@ -110,7 +114,7 @@ const Noticias = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [page, hasMore, loading, getMediaUrl]);
+  }, [fetchPosts]);
 
   const filteredPosts = posts.filter(
     (post) =>
@@ -132,8 +136,8 @@ const Noticias = () => {
       </Form>
       <Row>
         <h2>Todas las noticias:</h2>
-        {filteredPosts.map((post, index) => (
-          <Col md={4} key={index}>
+        {filteredPosts.map((post) => (
+          <Col md={4} key={post.id}>
             <Card className="shadow-lg mb-5 bg-body-tertiary rounded-3">
               <Card.Img
                 variant="top"
@@ -150,10 +154,13 @@ const Noticias = () => {
                     style={{
                       fontSize: "0.9rem",
                       fontStyle: "italic",
-                      color: "#6c757d",
-                      backgroundColor: "#f8f9fa",
-                      padding: "4px 8px",
-                      borderRadius: "4px",
+                      color: "var(--bs-body-color)",
+                      backgroundColor: "var(--bs-tertiary-bg)",
+                      padding: "6px 12px",
+                      borderRadius: "8px",
+                      boxShadow: "0 2px 4px rgba(0,0,0,0.05)",
+                      border: "1px solid var(--bs-border-color)",
+                      transition: "all 0.3s ease",
                     }}
                   >
                     {post.date}
@@ -230,9 +237,9 @@ const Noticias = () => {
             </Spinner>
           </div>
         )}
-        {!hasMore && (
+        {!hasMore && posts.length > 0 && (
           <p className="text-center text-muted">
-            No hay más noticias para mostrar.
+            Has llegado al final de las noticias.
           </p>
         )}
       </Row>
