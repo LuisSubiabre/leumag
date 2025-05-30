@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { Row, Col, Card, Form, Spinner } from "react-bootstrap";
@@ -10,11 +10,33 @@ const Noticias = () => {
   const [loading, setLoading] = useState(false);
   const [hasMore, setHasMore] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
+  const [mediaCache, setMediaCache] = useState(new Map());
 
   const formatDate = (dateString) => {
     const options = { year: "numeric", month: "long", day: "numeric" };
     return new Date(dateString).toLocaleDateString("es-ES", options);
   };
+
+  const getMediaUrl = useCallback(
+    async (mediaId) => {
+      if (mediaCache.has(mediaId)) {
+        return mediaCache.get(mediaId);
+      }
+
+      try {
+        const response = await axios.get(
+          `https://portal.liceoexperimental.cl/wp-json/wp/v2/media/${mediaId}`
+        );
+        const url = response.data.source_url;
+        setMediaCache((prev) => new Map(prev).set(mediaId, url));
+        return url;
+      } catch (error) {
+        console.error("Error fetching media:", error);
+        return null;
+      }
+    },
+    [mediaCache]
+  );
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -24,8 +46,14 @@ const Noticias = () => {
         const response = await axios.get(
           `https://portal.liceoexperimental.cl/wp-json/wp/v2/posts?page=${page}&per_page=10`
         );
-        const postsData = await Promise.all(
-          response.data.map(async (post) => {
+
+        // Procesar los posts en lotes para mejor rendimiento
+        const batchSize = 5;
+        const postsData = [];
+
+        for (let i = 0; i < response.data.length; i += batchSize) {
+          const batch = response.data.slice(i, i + batchSize);
+          const batchPromises = batch.map(async (post) => {
             const {
               featured_media: featuredMediaId,
               id,
@@ -34,14 +62,11 @@ const Noticias = () => {
               link,
               date,
             } = post;
-            const featuredMediaResponse = featuredMediaId
-              ? await axios.get(
-                  `https://portal.liceoexperimental.cl/wp-json/wp/v2/media/${featuredMediaId}`
-                )
+
+            const featuredMedia = featuredMediaId
+              ? await getMediaUrl(featuredMediaId)
               : null;
-            const featuredMedia = featuredMediaResponse
-              ? featuredMediaResponse.data.source_url
-              : null;
+
             return {
               id,
               title: title.rendered,
@@ -50,14 +75,16 @@ const Noticias = () => {
               featuredMedia,
               date: formatDate(date),
             };
-          })
-        );
+          });
+
+          const batchResults = await Promise.all(batchPromises);
+          postsData.push(...batchResults);
+        }
 
         setPosts((prevPosts) => [...prevPosts, ...postsData]);
         setPage((prevPage) => prevPage + 1);
         setLoading(false);
 
-        // Verificar si hay más posts para cargar
         if (postsData.length < 10) {
           setHasMore(false);
         }
@@ -78,14 +105,12 @@ const Noticias = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
-
-    // Cargar los primeros posts al montar el componente
     fetchPosts();
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [page, hasMore, loading]);
+  }, [page, hasMore, loading, getMediaUrl]);
 
   const filteredPosts = posts.filter(
     (post) =>
@@ -115,6 +140,8 @@ const Noticias = () => {
                 src={post.featuredMedia}
                 alt="Imagen destacada"
                 className="rounded-top"
+                loading="lazy"
+                style={{ height: "200px", objectFit: "cover" }}
               />
               <Card.Body className="p-4">
                 <div className="d-flex justify-content-between align-items-center mb-2">
