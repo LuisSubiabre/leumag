@@ -6,7 +6,7 @@ import Externos from "./Externos";
 import FacebookFeed from "./FacebookFeed";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
-import imgComunicado from "/comunicados/afiche.png";
+import imgComunicado from "/comunicados/diaPadre.png";
 import NoticiasScraper from "./NoticiasScraper";
 import { Container, Row, Col } from "react-bootstrap";
 
@@ -20,32 +20,74 @@ function MyVerticallyCenteredModal(props) {
       centered
     >
       <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter"></Modal.Title>
+        <Modal.Title id="contained-modal-title-vcenter">
+          <span style={{ fontWeight: "bold", fontSize: "1.3rem" }}>
+            ¡Feliz Día del Padre!
+          </span>
+        </Modal.Title>
       </Modal.Header>
       <Modal.Body className="text-center">
-        <div>
-          <iframe
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/9a9MHDsBEHs?si=To2dnFUstGcYVjY4"
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowfullscreen
-          ></iframe>
-          <hr></hr>
+        <div style={{ maxWidth: 600, margin: "0 auto" }}>
+          <div
+            style={{
+              background: "rgba(245,245,245,0.95)",
+              borderRadius: "12px",
+              padding: "1.5rem",
+              marginBottom: "1.5rem",
+              boxShadow: "0 1px 6px rgba(0,0,0,0.04)",
+              textAlign: "left",
+              fontSize: "1.08rem",
+              lineHeight: 1.6,
+              color: "#333",
+            }}
+          >
+            <p>
+              Hoy queremos dedicar unas palabras a todos los padres que forman
+              parte de nuestra Comunidad Educativa: funcionarios, apoderados,
+              abuelos, cuidadores. A cada uno que, desde su lugar, ha asumido
+              con amor, paciencia y compromiso ese rol tan importante.
+            </p>
+            <p>
+              Sabemos que ser papá no es una tarea sencilla. Requiere estar
+              presente, muchas veces sin que se den cuenta, muchas veces
+              agotados, pero siempre con el corazón puesto en lo mejor para sus
+              hijos. Requiere enseñar con el ejemplo, acompañar con firmeza y
+              ternura, y sostener incluso cuando las fuerzas disminuyen.
+            </p>
+            <p>
+              A ustedes, que cada día se levantan a soñar un futuro con esfuerzo
+              y cariño, les decimos gracias. Gracias por confiar en nuestro
+              liceo, por ser parte de este camino y por todo lo que entregan,
+              muchas veces sin que nadie lo note.
+            </p>
+            <p>
+              Como comunidad del Liceo Experimental UMAG, les deseamos un día
+              lleno de reconocimiento, de afecto sincero y de momentos que
+              retribuyan el alma.
+            </p>
+            <p style={{ fontWeight: "bold", color: "#1976d2" }}>
+              ¡Feliz Día del Padre!
+            </p>
+          </div>
           <img
             src={imgComunicado}
-            width="400"
-            height="400"
+            width="320"
+            height="320"
             alt="Comunicado"
             className="img-fluid mb-3"
+            style={{
+              borderRadius: "12px",
+              boxShadow: "0 2px 12px rgba(0,0,0,0.08)",
+              maxWidth: "100%",
+              height: "auto",
+            }}
           />
         </div>
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={props.onHide}>Cerrar</Button>
+        <Button variant="primary" onClick={props.onHide}>
+          Cerrar
+        </Button>
       </Modal.Footer>
     </Modal>
   );
@@ -60,7 +102,7 @@ function Home() {
   const [modalShow, setModalShow] = useState(true);
 
   useEffect(() => {
-    setModalShow(false);
+    setModalShow(true);
   }, []);
 
   return (
