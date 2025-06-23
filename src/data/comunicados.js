@@ -1,5 +1,45 @@
 export const comunicados = [
   {
+    id: 14,
+    titulo: "Atención de Apoderados - Administración",
+    fecha: "26-03-2025",
+    img: "/comunicados/administracio062025.png",
+    contenido: `Estimado(a) Apoderado(a):
+
+<p>Junto con saludar cordialmente, les informamos que, con motivo de que nuestro Liceo ha
+sido designado como local de votación para las primarias presidenciales de este domingo
+29 de junio, y por instrucción del SERVEL, debemos entregar las instalaciones a las Fuerzas Armadas desde el viernes 27 hasta el lunes 30 de junio.</p>
+
+<p>Además, de acuerdo con lo establecido por el Ministerio de Educación en el calendario
+escolar 2025, el receso de invierno se extenderá desde el 1 al 18 de julio del presente
+año. Por esta razón, durante ese período no habrá atención al público en las oficinas de
+administración, lo que incluye la suspensión de pagos presenciales.</p>
+
+<p>Retomaremos nuestras funciones el día lunes 21 de julio, en el horario habitual de 08:00 a 13:00 hrs.</p>
+
+<p>Durante los días de receso, los pagos podrán realizarse únicamente mediante
+transferencia electrónica o depósito bancario en la siguiente cuenta:</p>
+
+<p>Banco Scotiabank</p>
+<p>Cta.Cte. Nro. 00064014056</p>
+<p>RUT 65.471.020-1</p>
+<p>FUDE UMAG</p>
+
+<p>Recordar siempre por favor enviar correo a la siguiente dirección: pagoarancel@liceoexperimental.cl
+En el mensaje indicar nombre y RUT del alumno, curso y mes de pago, junto al respaldo de transferencia o depósito.</p>
+
+<p>Durante este período, las boletas correspondientes al pago del arancel serán enviadas a
+sus correos electrónicos al finalizar cada semana.
+Les recordamos que el compromiso adquirido con la institución contempla el pago
+mensual del arancel, cuyo vencimiento es el día 5 de cada mes. Este aporte regular y
+oportuno es fundamental para que podamos llevar a cabo adecuadamente las actividades programadas, en beneficio de nuestros estudiantes y el buen funcionamiento de la institución.</p>
+
+<p>Agradecemos su comprensión y compromiso, y los animamos a mantener sus pagos al día conforme al calendario establecido.</p>
+
+<p>Que tengan un reparador receso de invierno, atte.
+ADMINISTRACIÓN</p>`,
+  },
+  {
     id: 13,
     titulo: "Feliz día del estudiante",
     fecha: "09-04-2025",
