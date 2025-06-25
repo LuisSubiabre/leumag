@@ -6,7 +6,7 @@ import Externos from "./Externos";
 import FacebookFeed from "./FacebookFeed";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
-import imgComunicado from "/comunicados/administracio062025.png";
+import imgComunicado from "/comunicados/vacaciones.png";
 import NoticiasScraper from "./NoticiasScraper";
 import { Container, Row, Col } from "react-bootstrap";
 
