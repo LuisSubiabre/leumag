@@ -9,7 +9,7 @@ const Evaluaciones = () => {
       <div className="row">
         <div className="col-md-4">
           <a
-            href="https://docs.google.com/spreadsheets/d/1ZbUUI61Obwioj0ikvuBi8Vac-QmJDigO8bK3YTrXz7s/edit?usp=sharing"
+            href="https://docs.google.com/spreadsheets/d/1byXNmAtssdVuFQFirrIAP33ClARLc_yiozi549Wjgms/edit?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="link-underlinelink-offset-2 link-underline link-underline-opacity-0"
@@ -40,7 +40,7 @@ const Evaluaciones = () => {
                   <span>Evaluaciones E.G.B</span>
                 </div>
                 <small className="pl-4">
-                  <Badge>Actualizado 1er Semestre</Badge>
+                  <Badge>Actualizado 2do Semestre</Badge>
                 </small>
               </Card.Header>
               <Card.Body>
@@ -55,7 +55,7 @@ const Evaluaciones = () => {
         </div>
         <div className="col-md-4">
           <a
-            href="https://docs.google.com/spreadsheets/d/1_0S2O8YUCpCVw08sli3f6VD4bw3tCUjgWgGTlaKMj04/edit?usp=sharing"
+            href="https://docs.google.com/spreadsheets/d/1RWaRdPXiKuZIesIf1N_HakmkcHSdlRXS9UKUzlq1hIE/edit?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="link-underlinelink-offset-2 link-underline link-underline-opacity-0"
@@ -86,7 +86,7 @@ const Evaluaciones = () => {
                   <span>Evaluaciones E.G.B.</span>
                 </div>
                 <small className="pl-4">
-                  <Badge>Actualizado 1er Semestre</Badge>
+                  <Badge>Actualizado 2do Semestre</Badge>
                 </small>
               </Card.Header>
               <Card.Body>
@@ -101,7 +101,7 @@ const Evaluaciones = () => {
         </div>
         <div className="col-md-4">
           <a
-            href="https://docs.google.com/spreadsheets/d/1UoHZpqW_kjqIQw1_rax25rL2FKRUBlcMnC-Bp-exs44/edit?usp=sharing"
+            href="https://docs.google.com/spreadsheets/d/1VDDlX1aqYOhG0snFYIiW_24BYfMW7uPOxaJlaSR8HQw/edit?gid=0#gid=0"
             target="_blank"
             rel="noopener noreferrer"
             className="link-underlinelink-offset-2 link-underline link-underline-opacity-0"
@@ -132,7 +132,7 @@ const Evaluaciones = () => {
                   <span>Evaluaciones E.M.</span>
                 </div>
                 <small className="pl-4">
-                  <Badge>Actualizado 1er Semestre</Badge>
+                  <Badge>Actualizado 2do Semestre</Badge>
                 </small>
               </Card.Header>
               <Card.Body>
