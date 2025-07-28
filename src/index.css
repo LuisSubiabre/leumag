@@ -202,6 +202,31 @@
   animation: bounce-slow 3s infinite ease-in-out;
 }
 
+/* Animación shake suave */
+@keyframes shake-soft {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateY(-3px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateY(3px);
+  }
+}
+
+.animate-shake-soft {
+  animation: shake-soft 2s infinite ease-in-out;
+}
+
 [data-bs-theme="dark"] .sticky-nav {
   background-color: #1a1a1a !important;
   border-bottom: 1px solid #2d2d2d;

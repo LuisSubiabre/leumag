@@ -67,6 +67,7 @@ export const Header = () => {
                   name={"Evaluaciones"}
                   link={"/Evaluaciones"}
                   variant={"primary"}
+                  animate={true}
                 />
                 <ButtonAccess
                   name={"Lista de Materiales"}
