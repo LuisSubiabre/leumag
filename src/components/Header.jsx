@@ -2,8 +2,16 @@ import bgImagen from "../assets/img/hero.png";
 import { ButtonAccess } from "./ButtonAccess";
 import logoImage from "../assets/img/experimentalin.png";
 import { Image, Container, Row, Col } from "react-bootstrap";
+import { useState } from "react";
+import ComponentSae from "./sae";
 
 export const Header = () => {
+  const [showSaeModal, setShowSaeModal] = useState(false);
+
+  const handleSaeClick = () => {
+    setShowSaeModal(true);
+  };
+
   return (
     <>
       <div className="d-flex flex-column">
@@ -48,10 +56,16 @@ export const Header = () => {
                 md="auto"
                 className="d-flex flex-column flex-md-row justify-content-center align-items-stretch gap-2"
               >
-                <ButtonAccess
+                {/* <ButtonAccess
                   name={"Matrícula 2025"}
                   link={"/matricula"}
                   variant={"warning"}
+                /> */}
+                <ButtonAccess
+                  name={"SAE 2025"}
+                  variant={"warning"}
+                  onClick={handleSaeClick}
+                  animate={true}
                 />
                 <ButtonAccess
                   name={"Fechas Reuniones"}
@@ -67,7 +81,6 @@ export const Header = () => {
                   name={"Evaluaciones"}
                   link={"/Evaluaciones"}
                   variant={"primary"}
-                  animate={true}
                 />
                 <ButtonAccess
                   name={"Lista de Materiales"}
@@ -80,6 +93,9 @@ export const Header = () => {
         </div>
       </div>
       <div className="container py-4"></div>
+
+      {/* Modal del SAE */}
+      <ComponentSae show={showSaeModal} onHide={() => setShowSaeModal(false)} />
     </>
   );
 };

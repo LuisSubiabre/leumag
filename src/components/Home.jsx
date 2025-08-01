@@ -9,6 +9,7 @@ import Button from "react-bootstrap/Button";
 import imgComunicado from "/comunicados/vacaciones.png";
 import NoticiasScraper from "./NoticiasScraper";
 import { Container, Row, Col } from "react-bootstrap";
+import ComponentSae from "./sae";
 
 // Componente del modal
 function MyVerticallyCenteredModal(props) {
@@ -100,20 +101,23 @@ function Home() {
             </div>
             <hr />
             <Documentos />
-            <div className="d-lg-none">
-              <hr />
-              <FacebookFeed />
-            </div>
           </Col>
           <Col lg={4} className="order-1 order-lg-2">
             <div className="d-lg-none mb-4">
               <Externos />
+              <hr />
+              <ComponentSae />
             </div>
+            <hr />
+
             <div
               className="d-none d-lg-block sticky-top"
               style={{ top: "80px" }}
             >
               <Externos />
+              <hr />
+              <ComponentSae />
+              <hr />
               <FacebookFeed />
             </div>
           </Col>
