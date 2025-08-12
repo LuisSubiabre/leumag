@@ -203,11 +203,17 @@ const Noticia = () => {
                 dangerouslySetInnerHTML={{ __html: noticia.title }}
               ></h1>
 
-              {/* Botones de compartir mejorados */}
+              {/* Botones de compartir con coherencia visual */}
               <div className="d-flex flex-wrap gap-2 mb-4">
                 <button
                   onClick={() => handleShare("facebook")}
-                  className="btn btn-primary d-flex align-items-center gap-2 px-4 py-2 rounded-pill shadow-sm"
+                  className="btn btn-primary d-flex align-items-center gap-2 px-3 py-2 text-uppercase fw-bold"
+                  style={{
+                    fontSize: "clamp(0.8rem, 2vw, 0.9rem)",
+                    letterSpacing: "0.5px",
+                    whiteSpace: "nowrap",
+                    transition: "all 0.3s ease",
+                  }}
                   title="Compartir en Facebook"
                 >
                   <FaFacebook size={16} />
@@ -216,7 +222,13 @@ const Noticia = () => {
 
                 <button
                   onClick={() => handleShare("whatsapp")}
-                  className="btn btn-success d-flex align-items-center gap-2 px-4 py-2 rounded-pill shadow-sm"
+                  className="btn btn-success d-flex align-items-center gap-2 px-3 py-2 text-uppercase fw-bold"
+                  style={{
+                    fontSize: "clamp(0.8rem, 2vw, 0.9rem)",
+                    letterSpacing: "0.5px",
+                    whiteSpace: "nowrap",
+                    transition: "all 0.3s ease",
+                  }}
                   title="Compartir en WhatsApp"
                 >
                   <FaWhatsapp size={16} />
@@ -225,9 +237,15 @@ const Noticia = () => {
 
                 <button
                   onClick={() => handleShare("copy")}
-                  className={`btn d-flex align-items-center gap-2 px-4 py-2 rounded-pill shadow-sm ${
-                    copied ? "btn-success" : "btn-outline-secondary"
+                  className={`btn d-flex align-items-center gap-2 px-3 py-2 text-uppercase fw-bold ${
+                    copied ? "btn-primary" : "btn-outline-secondary"
                   }`}
+                  style={{
+                    fontSize: "clamp(0.8rem, 2vw, 0.9rem)",
+                    letterSpacing: "0.5px",
+                    whiteSpace: "nowrap",
+                    transition: "all 0.3s ease",
+                  }}
                   title="Copiar enlace"
                 >
                   <FaLink size={16} />
@@ -258,17 +276,24 @@ const Noticia = () => {
 
             {/* Footer de la noticia */}
             <footer className="mt-5 pt-4 border-top">
-              <div className="d-flex justify-content-between align-items-center">
+              <div className="d-flex justify-content-between align-items-center flex-wrap gap-3">
                 <div className="text-muted small">
                   <i className="fas fa-info-circle me-1"></i>
                   Noticia del Liceo Experimental
                 </div>
                 <Link
                   to="/noticias"
-                  className="btn btn-outline-primary btn-sm rounded-pill"
+                  className="btn btn-primary d-flex align-items-center gap-2 px-3 py-2 text-uppercase fw-bold"
+                  style={{
+                    fontSize: "clamp(0.8rem, 2vw, 0.9rem)",
+                    letterSpacing: "0.5px",
+                    whiteSpace: "nowrap",
+                    transition: "all 0.3s ease",
+                    textDecoration: "none",
+                  }}
                 >
-                  <i className="fas fa-arrow-left me-1"></i>
-                  Ver más noticias
+                  <i className="fas fa-arrow-left"></i>
+                  <span>Ver más noticias</span>
                 </Link>
               </div>
             </footer>
