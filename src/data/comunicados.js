@@ -1,5 +1,55 @@
 export const comunicados = [
   {
+    id: 15,
+    titulo: "Suspensión de clases jornada tarde Jueves 14 de agosto 2025",
+    fecha: "12-08-2025",
+    img: "/comunicados/com120825.png",
+    contenido: `
+    <p>En el marco de la convocatoria del Ministerio de Educación a todos los establecimientos educacionales del País, a participar de una Jornada de reflexión pedagógica sobre el desarrollo profesional docente, a realizarse el próximo día jueves 14 de agosto de 2025. Les informamos que se suspenden las clases sin recuperación para la jornada de la tarde. Con este propósito, los horarios de salida para cada nivel son los siguientes:</p>
+
+    <ul>
+        <li>Las clases para los niveles transición 1 y 2 son normales conforme a la jornada escolar habitual.</li>
+        <li>Les agradecemos la puntualidad en el retiro de sus pupilos, para el adecuado desarrollo de la jornada.</li>
+    </ul>
+
+    <table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse; text-align: center;">
+        <tr style="background-color: #dce6f1; font-weight: bold;">
+            <td>Enseñanza básica</td>
+            <td>jueves 14/08</td>
+        </tr>
+        <tr>
+            <td colspan="2" style="font-weight: bold;">Cursos &nbsp;&nbsp;&nbsp;&nbsp; horario</td>
+        </tr>
+        <tr>
+            <td>1° - 2° - 3°</td>
+            <td>12:50</td>
+        </tr>
+        <tr>
+            <td>4° - 5° - 6°</td>
+            <td>12:55</td>
+        </tr>
+        <tr>
+            <td>7° - 8°</td>
+            <td>13:00</td>
+        </tr>
+        <tr style="background-color: #dce6f1; font-weight: bold;">
+            <td>Enseñanza media</td>
+            <td>jueves 14/08</td>
+        </tr>
+        <tr>
+            <td>1° a 4° medio</td>
+            <td>13:45</td>
+        </tr>
+    </table>
+
+    <h4>INFORMACIÓN COMPLEMENTARIA IMPORTANTE:</h4>
+    <ul>
+        <li><strong>Almuerzo JUNAEB:</strong> Para los estudiantes beneficiarios, el servicio será entregado con normalidad.</li>
+        <li>Todos los ACLE se suspenden.</li>
+    </ul>
+    `,
+  },
+  {
     id: 14,
     titulo: "Atención de Apoderados - Administración",
     fecha: "26-03-2025",
