@@ -146,78 +146,136 @@ const Noticia = () => {
   }
 
   return (
-    <article className="container contenedor py-5">
-      <nav aria-label="breadcrumb" className="mb-4">
-        <ol className="breadcrumb">
-          <li className="breadcrumb-item">
-            <Link to="/">Inicio</Link>
-          </li>
-          <li className="breadcrumb-item">
-            <Link to="/noticias">Noticias</Link>
-          </li>
-          <li className="breadcrumb-item active" aria-current="page">
-            Noticia actual
-          </li>
-        </ol>
-      </nav>
-
-      <header className="mb-4">
-        <h1
-          className="display-4 mb-3"
-          dangerouslySetInnerHTML={{ __html: noticia.title }}
-        ></h1>
-        <div className="text-muted mb-4">Publicado el {noticia.date}</div>
-
-        {/* Botones de compartir */}
-        <div className="d-flex gap-2 mb-4">
-          <button
-            onClick={() => handleShare("facebook")}
-            className="btn btn-primary d-flex align-items-center gap-2"
-            title="Compartir en Facebook"
+    <div className="min-vh-100">
+      <article className="container contenedor py-5">
+        {/* Breadcrumb mejorado */}
+        <nav aria-label="breadcrumb" className="mb-4">
+          <ol
+            className="breadcrumb rounded-pill px-3 py-2 shadow-sm"
+            style={{ backgroundColor: "var(--bs-body-bg)" }}
           >
-            <FaFacebook size={18} />
-            Facebook
-          </button>
+            <li className="breadcrumb-item">
+              <Link to="/" className="text-decoration-none text-primary">
+                <i className="fas fa-home me-1"></i>Inicio
+              </Link>
+            </li>
+            <li className="breadcrumb-item">
+              <Link
+                to="/noticias"
+                className="text-decoration-none text-primary"
+              >
+                Noticias
+              </Link>
+            </li>
+            <li className="breadcrumb-item active" aria-current="page">
+              <span className="text-muted">Noticia actual</span>
+            </li>
+          </ol>
+        </nav>
 
-          <button
-            onClick={() => handleShare("whatsapp")}
-            className="btn btn-success d-flex align-items-center gap-2"
-            title="Compartir en WhatsApp"
-          >
-            <FaWhatsapp size={18} />
-            WhatsApp
-          </button>
+        {/* Card principal con sombra y bordes redondeados */}
+        <div
+          className="rounded-4 shadow-lg overflow-hidden"
+          style={{ backgroundColor: "var(--bs-body-bg)" }}
+        >
+          {/* Imagen destacada como hero */}
 
-          <button
-            onClick={() => handleShare("copy")}
-            className={`btn d-flex align-items-center gap-2 ${
-              copied ? "btn-success" : "btn-outline-secondary"
-            }`}
-            title="Copiar enlace"
-          >
-            <FaLink size={18} />
-            {copied ? "¡Copiado!" : "Copiar enlace"}
-          </button>
+          {/* Contenido de la noticia */}
+          <div className="p-4 p-md-5">
+            {/* Header con título y fecha */}
+            <header className="mb-4">
+              <div className="d-flex align-items-center gap-2 mb-3">
+                <span className="badge bg-primary rounded-pill px-3 py-2">
+                  <i className="fas fa-newspaper me-1"></i>Noticia
+                </span>
+                <span className="text-muted">
+                  <i className="fas fa-calendar-alt me-1"></i>
+                  {noticia.date}
+                </span>
+              </div>
+
+              <h1
+                className="display-5 fw-bold mb-4"
+                style={{
+                  lineHeight: "1.2",
+                  color: "var(--bs-body-color)",
+                }}
+                dangerouslySetInnerHTML={{ __html: noticia.title }}
+              ></h1>
+
+              {/* Botones de compartir mejorados */}
+              <div className="d-flex flex-wrap gap-2 mb-4">
+                <button
+                  onClick={() => handleShare("facebook")}
+                  className="btn btn-primary d-flex align-items-center gap-2 px-4 py-2 rounded-pill shadow-sm"
+                  title="Compartir en Facebook"
+                >
+                  <FaFacebook size={16} />
+                  <span className="d-none d-sm-inline">Facebook</span>
+                </button>
+
+                <button
+                  onClick={() => handleShare("whatsapp")}
+                  className="btn btn-success d-flex align-items-center gap-2 px-4 py-2 rounded-pill shadow-sm"
+                  title="Compartir en WhatsApp"
+                >
+                  <FaWhatsapp size={16} />
+                  <span className="d-none d-sm-inline">WhatsApp</span>
+                </button>
+
+                <button
+                  onClick={() => handleShare("copy")}
+                  className={`btn d-flex align-items-center gap-2 px-4 py-2 rounded-pill shadow-sm ${
+                    copied ? "btn-success" : "btn-outline-secondary"
+                  }`}
+                  title="Copiar enlace"
+                >
+                  <FaLink size={16} />
+                  <span className="d-none d-sm-inline">
+                    {copied ? "¡Copiado!" : "Copiar enlace"}
+                  </span>
+                </button>
+              </div>
+            </header>
+
+            {/* Separador visual */}
+            <hr className="my-4 opacity-25" />
+
+            {/* Contenido de la noticia */}
+            <div className="article-content">
+              <ArticleReader articleText={noticia.content} />
+
+              <div
+                className="content mt-4"
+                style={{
+                  fontSize: "1.1rem",
+                  lineHeight: "1.8",
+                  color: "var(--bs-body-color)",
+                }}
+                dangerouslySetInnerHTML={{ __html: noticia.content }}
+              ></div>
+            </div>
+
+            {/* Footer de la noticia */}
+            <footer className="mt-5 pt-4 border-top">
+              <div className="d-flex justify-content-between align-items-center">
+                <div className="text-muted small">
+                  <i className="fas fa-info-circle me-1"></i>
+                  Noticia del Liceo Experimental
+                </div>
+                <Link
+                  to="/noticias"
+                  className="btn btn-outline-primary btn-sm rounded-pill"
+                >
+                  <i className="fas fa-arrow-left me-1"></i>
+                  Ver más noticias
+                </Link>
+              </div>
+            </footer>
+          </div>
         </div>
-      </header>
-
-      {noticia.featuredMedia && (
-        <figure className="figure mb-4">
-          <img
-            src={noticia.featuredMedia}
-            alt=""
-            className="figure-img img-fluid rounded shadow-sm"
-            style={{ maxHeight: "500px", width: "100%", objectFit: "cover" }}
-          />
-        </figure>
-      )}
-
-      <ArticleReader articleText={noticia.content} />
-
-      <div className="content article-content pb-4">
-        <div dangerouslySetInnerHTML={{ __html: noticia.content }}></div>
-      </div>
-    </article>
+      </article>
+    </div>
   );
 };
 
