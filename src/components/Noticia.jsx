@@ -4,12 +4,55 @@ import axios from "axios";
 import Spinner from "react-bootstrap/Spinner";
 import Alert from "react-bootstrap/Alert";
 import ArticleReader from "./ArticleReader";
+import { FaFacebook, FaWhatsapp, FaLink } from "react-icons/fa";
 
 const Noticia = () => {
   const { id } = useParams();
   const [noticia, setNoticia] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [copied, setCopied] = useState(false);
+
+  const handleShare = (platform) => {
+    if (!noticia) return;
+
+    const url = window.location.href;
+    const title = noticia.title;
+    const description =
+      noticia.content.replace(/<[^>]*>/g, "").substring(0, 200) + "...";
+
+    switch (platform) {
+      case "facebook": {
+        // Usar la URL canónica de WordPress que ya viene con todos los metadatos
+        const wordpressUrl = noticia.link;
+        window.open(
+          `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+            wordpressUrl
+          )}`,
+          "_blank"
+        );
+        break;
+      }
+      case "whatsapp": {
+        const whatsappText = `${title}\n\n${description}\n\n${url}`;
+        window.open(
+          `https://wa.me/?text=${encodeURIComponent(whatsappText)}`,
+          "_blank"
+        );
+        break;
+      }
+      case "copy": {
+        const copyText = `${title}\n\n${url}`;
+        navigator.clipboard.writeText(copyText).then(() => {
+          setCopied(true);
+          setTimeout(() => setCopied(false), 2000);
+        });
+        break;
+      }
+      default:
+        break;
+    }
+  };
 
   useEffect(() => {
     const fetchNoticia = async () => {
@@ -124,6 +167,38 @@ const Noticia = () => {
           dangerouslySetInnerHTML={{ __html: noticia.title }}
         ></h1>
         <div className="text-muted mb-4">Publicado el {noticia.date}</div>
+
+        {/* Botones de compartir */}
+        <div className="d-flex gap-2 mb-4">
+          <button
+            onClick={() => handleShare("facebook")}
+            className="btn btn-primary d-flex align-items-center gap-2"
+            title="Compartir en Facebook"
+          >
+            <FaFacebook size={18} />
+            Facebook
+          </button>
+
+          <button
+            onClick={() => handleShare("whatsapp")}
+            className="btn btn-success d-flex align-items-center gap-2"
+            title="Compartir en WhatsApp"
+          >
+            <FaWhatsapp size={18} />
+            WhatsApp
+          </button>
+
+          <button
+            onClick={() => handleShare("copy")}
+            className={`btn d-flex align-items-center gap-2 ${
+              copied ? "btn-success" : "btn-outline-secondary"
+            }`}
+            title="Copiar enlace"
+          >
+            <FaLink size={18} />
+            {copied ? "¡Copiado!" : "Copiar enlace"}
+          </button>
+        </div>
       </header>
 
       {noticia.featuredMedia && (
