@@ -3,13 +3,14 @@ import PropTypes from "prop-types";
 import Posts from "./Posts";
 import Documentos from "./Documentos";
 import Externos from "./Externos";
-import FacebookFeed from "./FacebookFeed";
+// import FacebookFeed from "./FacebookFeed";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import imgComunicado from "/comunicados/com120825.png";
 import NoticiasScraper from "./NoticiasScraper";
 import { Container, Row, Col } from "react-bootstrap";
 import ComponentSae from "./sae";
+import UltimosVideos from "./UltimosVideos";
 
 // Componente del modal
 function MyVerticallyCenteredModal(props) {
@@ -66,6 +67,8 @@ function Home() {
           <Col lg={8} className="order-2 order-lg-1">
             <Posts />
             <hr className="d-lg-none" />
+            <UltimosVideos />
+            <hr />
             <div
               className="bg-body-tertiary"
               style={{
@@ -118,7 +121,7 @@ function Home() {
               <hr />
               <ComponentSae />
               <hr />
-              <FacebookFeed />
+              {/* <FacebookFeed /> */}
             </div>
           </Col>
         </Row>
