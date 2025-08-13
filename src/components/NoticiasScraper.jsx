@@ -6,11 +6,10 @@ const NoticiasScraper = () => {
   const [noticias, setNoticias] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [ultimaActualizacion, setUltimaActualizacion] = useState(null);
   const [hoveredCard, setHoveredCard] = useState(null);
   const [currentPage, setCurrentPage] = useState(0);
 
-  const truncateText = (text, maxLength = 100) => {
+  const truncateText = (text, maxLength = 60) => {
     if (text.length <= maxLength) return text;
     return text.substring(0, maxLength) + "...";
   };
@@ -21,7 +20,6 @@ const NoticiasScraper = () => {
       const data = await scrapeNoticias();
       setNoticias(data);
       setError(null);
-      setUltimaActualizacion(new Date());
     } catch (err) {
       setError(
         "No se pudieron cargar las noticias. Por favor, intente nuevamente más tarde."
@@ -40,10 +38,10 @@ const NoticiasScraper = () => {
     return () => clearInterval(intervalo);
   }, [obtenerNoticias]);
 
-  const totalPages = Math.ceil(noticias.length / 4);
+  const totalPages = Math.ceil(noticias.length / 2);
   const currentNoticias = noticias.slice(
-    currentPage * 4,
-    (currentPage + 1) * 4
+    currentPage * 2,
+    (currentPage + 1) * 2
   );
 
   const handlePrevPage = () => {
@@ -58,17 +56,19 @@ const NoticiasScraper = () => {
     return (
       <div
         className="d-flex justify-content-center align-items-center"
-        style={{ height: "50vh" }}
+        style={{ height: "30vh" }}
       >
         <div className="text-center">
           <Spinner
             animation="border"
             role="status"
-            style={{ color: "#007bff", width: "3rem", height: "3rem" }}
+            style={{ color: "#007bff", width: "2rem", height: "2rem" }}
           >
             <span className="visually-hidden">Cargando...</span>
           </Spinner>
-          <p className="mt-3">Cargando las noticias, por favor espera...</p>
+          <p className="mt-2" style={{ fontSize: "0.9rem" }}>
+            Cargando noticias...
+          </p>
         </div>
       </div>
     );
@@ -76,103 +76,100 @@ const NoticiasScraper = () => {
 
   if (error) {
     return (
-      <div className="text-center p-8 bg-red-50 rounded-lg">
-        <h2 className="text-xl font-semibold text-red-600 mb-2">
-          Error al cargar las noticias
-        </h2>
-        <p className="text-gray-600">{error}</p>
+      <div className="text-center p-3 bg-red-50 rounded-lg">
+        <p className="text-danger mb-0" style={{ fontSize: "0.85rem" }}>
+          {error}
+        </p>
       </div>
     );
   }
 
   return (
     <div className="position-relative">
-      <Row className="card-deck">
-        {ultimaActualizacion && <div className="w-100 mb-3"></div>}
-
+      <Row className="g-2">
         {noticias.length === 0 ? (
-          <div className="text-center p-8 bg-gray-50 rounded-lg">
-            <p className="text-gray-600">
-              No hay noticias disponibles en este momento.
+          <div className="text-center p-3 bg-light rounded">
+            <p className="text-muted mb-0" style={{ fontSize: "0.85rem" }}>
+              No hay noticias disponibles.
             </p>
           </div>
         ) : (
           <>
             {currentNoticias.map((noticia, index) => (
-              <Col md={6} lg={3} key={index} className="mb-3">
+              <Col xs={12} key={index}>
                 <Card
-                  className="rounded h-100"
+                  className="border-0 shadow-sm"
                   style={{
-                    height: "350px",
-                    boxShadow:
-                      hoveredCard === index
-                        ? "0 8px 16px rgba(0, 123, 255, 0.2)"
-                        : "0 4px 8px rgba(0, 0, 0, 0.1)",
-                    borderRadius: "12px",
-                    transition: "all 0.3s ease",
+                    height: "140px",
+                    borderRadius: "8px",
+                    transition: "all 0.2s ease",
                     transform:
-                      hoveredCard === index ? "translateY(-5px)" : "none",
+                      hoveredCard === index ? "translateY(-2px)" : "none",
                     cursor: "pointer",
                   }}
                   onMouseEnter={() => setHoveredCard(index)}
                   onMouseLeave={() => setHoveredCard(null)}
                 >
-                  <Card.Img
-                    variant="top"
-                    src="/images/nutricion.png"
-                    alt="Nutrición"
-                    style={{
-                      height: "180px",
-                      objectFit: "cover",
-                      transition: "transform 0.3s ease",
-                      transform:
-                        hoveredCard === index ? "scale(1.02)" : "scale(1)",
-                    }}
-                  />
-                  <Card.Body className="d-flex flex-column">
-                    <Card.Title
-                      className="h2"
+                  <div className="d-flex h-100">
+                    <div
                       style={{
-                        fontSize: "1.2rem",
-                        fontWeight: "700",
-                        marginBottom: "15px",
-                        color: "#007bff",
+                        width: "120px",
+                        height: "100%",
+                        backgroundImage: "url('/images/nutricion.png')",
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                        borderRadius: "8px 0 0 8px",
+                        flexShrink: 0,
                       }}
-                    >
-                      {noticia.titulo}
-                    </Card.Title>
-                    <Card.Text className="text-muted flex-grow-1">
-                      {truncateText(noticia.contenido)}
-                    </Card.Text>
-                    <a
-                      href="https://sites.google.com/liceoexperimental.cl/proyectonutricionydietetica/noticias"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn btn-primary mt-auto"
-                      style={{
-                        width: "100%",
-                        borderRadius: "20px",
-                        transition: "all 0.3s ease",
-                        backgroundColor: "#007bff",
-                        border: "none",
-                        padding: "8px 16px",
-                        fontWeight: "600",
-                        boxShadow: "0 2px 4px rgba(0, 123, 255, 0.2)",
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.transform = "translateY(-2px)";
-                        e.currentTarget.style.boxShadow =
-                          "0 4px 8px rgba(0, 123, 255, 0.3)";
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.transform = "translateY(0)";
-                        e.currentTarget.style.boxShadow =
-                          "0 2px 4px rgba(0, 123, 255, 0.2)";
-                      }}
-                    >
-                      Leer noticia
-                    </a>
-                  </Card.Body>
+                    />
+                    <Card.Body className="p-3 d-flex flex-column justify-content-between">
+                      <div>
+                        <Card.Title
+                          className="mb-1"
+                          style={{
+                            fontSize: "0.9rem",
+                            fontWeight: "600",
+                            color: "#007bff",
+                            lineHeight: "1.2",
+                            display: "-webkit-box",
+                            WebkitLineClamp: 2,
+                            WebkitBoxOrient: "vertical",
+                            overflow: "hidden",
+                          }}
+                        >
+                          {noticia.titulo}
+                        </Card.Title>
+                        <Card.Text
+                          className="text-muted mb-2"
+                          style={{
+                            fontSize: "0.75rem",
+                            lineHeight: "1.3",
+                            display: "-webkit-box",
+                            WebkitLineClamp: 2,
+                            WebkitBoxOrient: "vertical",
+                            overflow: "hidden",
+                          }}
+                        >
+                          {truncateText(noticia.contenido)}
+                        </Card.Text>
+                      </div>
+                      <a
+                        href="https://sites.google.com/liceoexperimental.cl/proyectonutricionydietetica/noticias"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn btn-sm btn-outline-primary"
+                        style={{
+                          fontSize: "0.7rem",
+                          padding: "4px 8px",
+                          borderRadius: "12px",
+                          alignSelf: "flex-start",
+                        }}
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        Leer más
+                      </a>
+                    </Card.Body>
+                  </div>
                 </Card>
               </Col>
             ))}
@@ -180,61 +177,35 @@ const NoticiasScraper = () => {
         )}
       </Row>
 
-      {noticias.length > 4 && (
-        <div className="d-flex justify-content-center align-items-center mt-4 gap-3">
+      {noticias.length > 2 && (
+        <div className="d-flex justify-content-center align-items-center mt-3 gap-2">
           <Button
             variant="outline-primary"
+            size="sm"
             onClick={handlePrevPage}
             style={{
               borderRadius: "50%",
-              width: "40px",
-              height: "40px",
+              width: "28px",
+              height: "28px",
               padding: "0",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              border: "2px solid #007bff",
-              backgroundColor: "white",
-              color: "#007bff",
-              transition: "all 0.3s ease",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = "#007bff";
-              e.currentTarget.style.color = "white";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = "white";
-              e.currentTarget.style.color = "#007bff";
+              fontSize: "0.7rem",
             }}
           >
             ←
           </Button>
-          <span className="text-muted">
-            Página {currentPage + 1} de {totalPages}
+          <span className="text-muted" style={{ fontSize: "0.75rem" }}>
+            {currentPage + 1} / {totalPages}
           </span>
           <Button
             variant="outline-primary"
+            size="sm"
             onClick={handleNextPage}
             style={{
               borderRadius: "50%",
-              width: "40px",
-              height: "40px",
+              width: "28px",
+              height: "28px",
               padding: "0",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              border: "2px solid #007bff",
-              backgroundColor: "white",
-              color: "#007bff",
-              transition: "all 0.3s ease",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = "#007bff";
-              e.currentTarget.style.color = "white";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = "white";
-              e.currentTarget.style.color = "#007bff";
+              fontSize: "0.7rem",
             }}
           >
             →
