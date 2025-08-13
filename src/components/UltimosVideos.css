@@ -191,6 +191,14 @@
   font-weight: 500;
 }
 
+/* Footer del botón */
+.videos-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 30px;
+  padding-top: 20px;
+}
+
 /* Estados de carga y error */
 .loading,
 .error,

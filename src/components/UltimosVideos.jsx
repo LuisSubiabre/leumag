@@ -162,6 +162,36 @@ export default function UltimosVideos() {
           <p>No hay videos disponibles en este momento.</p>
         </div>
       )}
+
+      <div className="videos-footer">
+        <a
+          href="https://www.youtube.com/@LiceoExperimentalUmag"
+          target="_blank"
+          rel="noreferrer"
+          className="btn btn-primary"
+          style={{
+            fontSize: "1.1rem",
+            padding: "10px 20px",
+            borderRadius: "30px",
+            fontWeight: "600",
+            boxShadow: "0 4px 8px rgba(0, 123, 255, 0.3)",
+            transition: "all 0.3s ease",
+            textDecoration: "none",
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.transform = "translateY(-3px)";
+            e.currentTarget.style.boxShadow =
+              "0 6px 12px rgba(0, 123, 255, 0.4)";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = "translateY(0)";
+            e.currentTarget.style.boxShadow =
+              "0 4px 8px rgba(0, 123, 255, 0.3)";
+          }}
+        >
+          Ver todos los videos
+        </a>
+      </div>
     </div>
   );
 }
