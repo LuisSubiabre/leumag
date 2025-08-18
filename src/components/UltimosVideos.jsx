@@ -14,19 +14,20 @@ export default function UltimosVideos() {
       const channelId = "UCrR4xpjHUVkhhSDhMLEqIOw"; // Tu canal LeumagTV
       const rssUrl = `https://www.youtube.com/feeds/videos.xml?channel_id=${channelId}`;
 
+      // Usar cors-anywhere como alternativa
       const response = await fetch(
-        `https://api.allorigins.win/get?url=${encodeURIComponent(rssUrl)}`
+        `https://cors-anywhere.herokuapp.com/${rssUrl}`
       );
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 
-      const data = await response.json();
-
+      const xmlText = await response.text();
+      
       // Parsear el XML
       const parser = new DOMParser();
-      const xml = parser.parseFromString(data.contents, "text/xml");
+      const xml = parser.parseFromString(xmlText, "text/xml");
       const entries = xml.getElementsByTagName("entry");
 
       const videosData = Array.from(entries)
