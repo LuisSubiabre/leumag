@@ -1,6 +1,13 @@
 import { useEffect, useState, useCallback } from "react";
 import "./UltimosVideos.css";
 
+// Función para decodificar entidades HTML
+const decodeHtmlEntities = (text) => {
+  const textarea = document.createElement("textarea");
+  textarea.innerHTML = text;
+  return textarea.value;
+};
+
 // Datos estáticos como respaldo
 const fallbackVideos = [
   {
@@ -53,7 +60,7 @@ export default function UltimosVideos() {
             const videosData = data.items.slice(0, 6).map((item) => {
               const videoId = item.link.split("v=")[1];
               return {
-                title: item.title || "Sin título",
+                title: decodeHtmlEntities(item.title || "Sin título"),
                 link: item.link,
                 videoId: videoId,
                 thumbnail: `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`,
@@ -80,7 +87,7 @@ export default function UltimosVideos() {
 
           if (invidiousData && invidiousData.length > 0) {
             const videosData = invidiousData.slice(0, 6).map((video) => ({
-              title: video.title || "Sin título",
+              title: decodeHtmlEntities(video.title || "Sin título"),
               link: `https://www.youtube.com/watch?v=${video.videoId}`,
               videoId: video.videoId,
               thumbnail: `https://img.youtube.com/vi/${video.videoId}/hqdefault.jpg`,
