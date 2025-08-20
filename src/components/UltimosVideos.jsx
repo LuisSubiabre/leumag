@@ -1,54 +1,118 @@
 import { useEffect, useState, useCallback } from "react";
 import "./UltimosVideos.css";
 
+// Función para decodificar entidades HTML
+const decodeHtmlEntities = (text) => {
+  const textarea = document.createElement("textarea");
+  textarea.innerHTML = text;
+  return textarea.value;
+};
+
+// Datos estáticos como respaldo
+const fallbackVideos = [
+  {
+    title: "Liceo Experimental UMAG - Actividades 2024",
+    link: "https://www.youtube.com/@LiceoExperimentalUmag",
+    videoId: "demo1",
+    thumbnail: "/images/bannerumag.png",
+    published: "2024-01-01",
+  },
+  {
+    title: "Canal oficial del Liceo Experimental UMAG",
+    link: "https://www.youtube.com/@LiceoExperimentalUmag",
+    videoId: "demo2",
+    thumbnail: "/images/bannerumag.png",
+    published: "2024-01-01",
+  },
+  {
+    title: "Visita nuestro canal de YouTube",
+    link: "https://www.youtube.com/@LiceoExperimentalUmag",
+    videoId: "demo3",
+    thumbnail: "/images/bannerumag.png",
+    published: "2024-01-01",
+  },
+];
+
 export default function UltimosVideos() {
   const [videos, setVideos] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [usingFallback, setUsingFallback] = useState(false);
 
   const fetchVideos = useCallback(async () => {
     try {
       setLoading(true);
       setError(null);
+      setUsingFallback(false);
 
-      const channelId = "UCrR4xpjHUVkhhSDhMLEqIOw"; // Tu canal LeumagTV
-      const rssUrl = `https://www.youtube.com/feeds/videos.xml?channel_id=${channelId}`;
+      const channelId = "UCrR4xpjHUVkhhSDhMLEqIOw"; // Canal LeumagTV
 
-      // Usar cors-anywhere como alternativa
-      const response = await fetch(
-        `https://cors-anywhere.herokuapp.com/${rssUrl}`
-      );
+      // Método 1: Intentar con RSS2JSON API
+      try {
+        const response = await fetch(
+          `https://api.rss2json.com/v1/api.json?rss_url=https://www.youtube.com/feeds/videos.xml?channel_id=${channelId}`
+        );
 
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+        if (response.ok) {
+          const data = await response.json();
+
+          if (data.status === "ok" && data.items && data.items.length > 0) {
+            const videosData = data.items.slice(0, 6).map((item) => {
+              const videoId = item.link.split("v=")[1];
+              return {
+                title: decodeHtmlEntities(item.title || "Sin título"),
+                link: item.link,
+                videoId: videoId,
+                thumbnail: `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`,
+                published: item.pubDate,
+              };
+            });
+
+            setVideos(videosData);
+            return; // Éxito, salir de la función
+          }
+        }
+      } catch (rssError) {
+        console.log("RSS2JSON falló, intentando con Invidious:", rssError);
       }
 
-      const xmlText = await response.text();
-      
-      // Parsear el XML
-      const parser = new DOMParser();
-      const xml = parser.parseFromString(xmlText, "text/xml");
-      const entries = xml.getElementsByTagName("entry");
+      // Método 2: Intentar con Invidious API
+      try {
+        const invidiousResponse = await fetch(
+          `https://invidious.snopyta.org/api/v1/channels/${channelId}/videos`
+        );
 
-      const videosData = Array.from(entries)
-        .slice(0, 6) // Limitar a 6 videos
-        .map((entry) => {
-          const title = entry.getElementsByTagName("title")[0].textContent;
-          const link = entry
-            .getElementsByTagName("link")[0]
-            .getAttribute("href");
-          const videoId = link.split("v=")[1];
-          const thumbnail = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
-          const published =
-            entry.getElementsByTagName("published")[0].textContent;
+        if (invidiousResponse.ok) {
+          const invidiousData = await invidiousResponse.json();
 
-          return { title, link, videoId, thumbnail, published };
-        });
+          if (invidiousData && invidiousData.length > 0) {
+            const videosData = invidiousData.slice(0, 6).map((video) => ({
+              title: decodeHtmlEntities(video.title || "Sin título"),
+              link: `https://www.youtube.com/watch?v=${video.videoId}`,
+              videoId: video.videoId,
+              thumbnail: `https://img.youtube.com/vi/${video.videoId}/hqdefault.jpg`,
+              published: video.published,
+            }));
 
-      setVideos(videosData);
+            setVideos(videosData);
+            return; // Éxito, salir de la función
+          }
+        }
+      } catch (invidiousError) {
+        console.log(
+          "Invidious falló, usando datos de respaldo:",
+          invidiousError
+        );
+      }
+
+      // Si todos los métodos fallan, usar datos de respaldo
+      throw new Error("No se pudieron cargar los videos del canal");
     } catch (err) {
       console.error("Error al cargar videos:", err);
-      setError("No se pudieron cargar los videos. Inténtalo más tarde.");
+      // Usar datos de respaldo en lugar de mostrar error
+      setVideos(fallbackVideos);
+      setUsingFallback(true);
+      setError(null); // No mostrar error si tenemos datos de respaldo
     } finally {
       setLoading(false);
     }
@@ -58,10 +122,10 @@ export default function UltimosVideos() {
     // Carga inicial
     fetchVideos();
 
-    // Actualización automática cada 5 minutos
+    // Actualización automática cada 15 minutos
     const interval = setInterval(() => {
       fetchVideos();
-    }, 5 * 60 * 1000); // 5 minutos
+    }, 15 * 60 * 1000); // 15 minutos
 
     // Actualización cuando el usuario regresa a la pestaña
     const handleVisibilityChange = () => {
@@ -93,23 +157,15 @@ export default function UltimosVideos() {
     );
   }
 
-  if (error && !videos.length) {
-    return (
-      <div className="videos-container">
-        <div className="videos-header">
-          <h2>Últimos videos</h2>
-        </div>
-        <div className="error">
-          <p>{error}</p>
-        </div>
-      </div>
-    );
-  }
-
   return (
     <div className="videos-container">
       <div className="videos-header">
         <h2>Últimos videos</h2>
+        {usingFallback && (
+          <div className="offline-badge">
+            <span>Modo offline</span>
+          </div>
+        )}
       </div>
 
       {loading && (
@@ -118,7 +174,7 @@ export default function UltimosVideos() {
         </div>
       )}
 
-      {error && (
+      {error && !usingFallback && (
         <div className="error-message">
           <p>{error}</p>
         </div>
@@ -139,10 +195,13 @@ export default function UltimosVideos() {
                   alt={video.title}
                   loading="lazy"
                   onError={(e) => {
-                    e.target.src = "/src/assets/img/404.png";
+                    e.target.src = "/images/404.png";
                     e.target.alt = "Imagen no disponible";
                   }}
                 />
+                <div className="play-overlay">
+                  <div className="play-button">▶</div>
+                </div>
                 <div className="video-number">{index + 1}</div>
               </div>
               <div className="video-info">
@@ -169,26 +228,7 @@ export default function UltimosVideos() {
           href="https://www.youtube.com/@LiceoExperimentalUmag"
           target="_blank"
           rel="noreferrer"
-          className="btn btn-primary"
-          style={{
-            fontSize: "1.1rem",
-            padding: "10px 20px",
-            borderRadius: "30px",
-            fontWeight: "600",
-            boxShadow: "0 4px 8px rgba(0, 123, 255, 0.3)",
-            transition: "all 0.3s ease",
-            textDecoration: "none",
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.transform = "translateY(-3px)";
-            e.currentTarget.style.boxShadow =
-              "0 6px 12px rgba(0, 123, 255, 0.4)";
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.transform = "translateY(0)";
-            e.currentTarget.style.boxShadow =
-              "0 4px 8px rgba(0, 123, 255, 0.3)";
-          }}
+          className="btn btn-primary youtube-btn"
         >
           Ver todos los videos
         </a>
