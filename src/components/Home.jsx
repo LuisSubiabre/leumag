@@ -6,7 +6,7 @@ import Externos from "./Externos";
 // import FacebookFeed from "./FacebookFeed";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
-import imgComunicado from "/comunicados/com120825.png";
+import imgComunicado from "/comunicados/ligaBalonmano.png";
 import NoticiasScraper from "./NoticiasScraper";
 import { Container, Row, Col } from "react-bootstrap";
 import ComponentSae from "./sae";
@@ -33,7 +33,7 @@ function MyVerticallyCenteredModal(props) {
             style={{
               borderRadius: "12px",
               boxShadow: "0 2px 12px rgba(0,0,0,0.08)",
-              maxWidth: "100%",
+              maxWidth: "80%",
               height: "auto",
             }}
           />
@@ -57,7 +57,7 @@ function Home() {
   const [modalShow, setModalShow] = useState(true);
 
   useEffect(() => {
-    setModalShow(false);
+    setModalShow(true);
   }, []);
 
   return (
