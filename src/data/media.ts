@@ -15,6 +15,12 @@ import pnavea from "../assets/img/funcionarios/pnavea.png";
 import jtoro from "../assets/img/funcionarios/jtoro.png";
 import pbarria from "../assets/img/funcionarios/pbarria.png";
 import rbahamonde from "../assets/img/funcionarios/rbahamonde.png";
+import cvidela from "../assets/img/funcionarios/cvidela.png";
+import dbascunan from "../assets/img/funcionarios/dbascunan.png";
+import mvargas from "../assets/img/funcionarios/mvargas.png";
+import maburto from "../assets/img/funcionarios/maburto.png";
+import csoto from "../assets/img/funcionarios/csoto.png";
+
 export type Funcionario = {
   img: string;
   nombre: string;
@@ -35,7 +41,7 @@ export const equipoMedia: Funcionario[] = [
   },
 
   {
-    img: demoImage,
+    img: cvidela,
     nombre: "Claudia Videla",
     correo: "cvidela@liceoexperimental.cl",
     dpto: "Educación Media",
@@ -158,7 +164,7 @@ export const equipoMedia: Funcionario[] = [
       "Inglés Idioma Extranjero Cursos 2° A, 2° B, 3° A, 3° B, 4° A, 4° B, 4° C",
   },
   {
-    img: demoImage,
+    img: dbascunan,
     nombre: "Denisse Bascuñán",
     correo: "dbascunan@liceoexperimental.cl",
     dpto: "Educación Media",
@@ -199,7 +205,7 @@ export const equipoMedia: Funcionario[] = [
     asignatura: "Pensamiento Computacional y Programación",
   },
   {
-    img: demoImage,
+    img: mvargas,
     nombre: "María José Vargas",
     correo: "mvargas@liceoexperimental.cl",
     dpto: "Educación Media",
@@ -207,11 +213,19 @@ export const equipoMedia: Funcionario[] = [
     asignatura: "Biología",
   },
   {
-    img: demoImage,
+    img: maburto,
     nombre: "Miguel Aburto",
     correo: "maburto@liceoexperimental.cl",
     dpto: "Educación Media",
     more: "—",
-    asignatura: "Religión",
+    asignatura: "Religión Católica",
+  },
+  {
+    img: csoto,
+    nombre: "Camila Soto",
+    correo: "csoto@liceoexperimental.cl",
+    dpto: "Educación Media",
+    more: "—",
+    asignatura: "Religión Evangélica",
   },
 ];

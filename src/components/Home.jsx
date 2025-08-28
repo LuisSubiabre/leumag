@@ -6,7 +6,7 @@ import Externos from "./Externos";
 // import FacebookFeed from "./FacebookFeed";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
-import imgComunicado from "/comunicados/ligaBalonmano.png";
+import imgComunicado from "/comunicados/zumbaton.jpeg";
 import NoticiasScraper from "./NoticiasScraper";
 import { Container, Row, Col } from "react-bootstrap";
 import ComponentSae from "./sae";
@@ -57,7 +57,7 @@ function Home() {
   const [modalShow, setModalShow] = useState(true);
 
   useEffect(() => {
-    setModalShow(false);
+    setModalShow(true);
   }, []);
 
   return (

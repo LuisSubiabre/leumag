@@ -23,6 +23,10 @@ import amarquez from "../assets/img/funcionarios/amarquez.png";
 import ssanchez from "../assets/img/funcionarios/ssanchez.png";
 import aguerra from "../assets/img/funcionarios/aguerra.png";
 import rahumada from "../assets/img/funcionarios/rahumada.png";
+import mcastelblanco from "../assets/img/funcionarios/mcastelblanco.png";
+import pparedes from "../assets/img/funcionarios/pparedes.png";
+import mperanchiguay from "../assets/img/funcionarios/mperanchiguay.png";
+
 export type Funcionario = {
   img: string;
   nombre: string;
@@ -81,7 +85,7 @@ export const equipoAsistentes: Funcionario[] = [
     dpto: "Técnico 2° Básico B",
   },
   {
-    img: demoImage,
+    img: mcastelblanco,
     nombre: "María Angélica Castelblanco",
     correo: "mcastelblanco@liceoexperimental.cl",
     dpto: "Inspectora",
@@ -153,7 +157,7 @@ export const equipoAsistentes: Funcionario[] = [
     dpto: "Inspectora",
   },
   {
-    img: demoImage,
+    img: pparedes,
     nombre: "Paulina Paredes",
     correo: "pparedes@liceoexperimental.cl",
     dpto: "Psicologa Apoyo Convivencia Escolar",
@@ -180,7 +184,7 @@ export const equipoAsistentes: Funcionario[] = [
     img: svera,
     nombre: "Samantha Vera",
     correo: "svera@liceoexperimental.cl",
-    dpto: "Portería",
+    dpto: "Recepción",
   },
   {
     img: vhernandez,
@@ -193,5 +197,12 @@ export const equipoAsistentes: Funcionario[] = [
     nombre: "Yasna Bahamonde",
     correo: "ybahamonde@liceoexperimental.cl",
     dpto: "Encargada Adquisiciones",
+  },
+  {
+    img: mperanchiguay,
+    nombre: "María Peranchiguaya",
+    correo: "mperanchiguay@liceoexperimental.cl",
+    dpto: "Recepción",
+    more: "",
   },
 ].sort((a, b) => a.nombre.split(" ")[1].localeCompare(b.nombre.split(" ")[1]));

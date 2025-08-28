@@ -5,6 +5,10 @@ import jsaldivia from "../assets/img/funcionarios/jsaldivia.png";
 import svelasquez from "../assets/img/funcionarios/svelasquez.png";
 import ereyes from "../assets/img/funcionarios/ereyes.png";
 import gquinchen from "../assets/img/funcionarios/gquinchen.png";
+import cortega from "../assets/img/funcionarios/cortega.png";
+import jbarria from "../assets/img/funcionarios/jbarria.png";
+import egallardo from "../assets/img/funcionarios/egallardo.png";
+
 export type Funcionario = {
   img: string;
   nombre: string;
@@ -36,7 +40,7 @@ export const equipoAuxiliar: Funcionario[] = [
     more: "",
   },
   {
-    img: demoImage,
+    img: cortega,
     nombre: "Carlos Ortega",
     correo: "cortega@liceoexperimental.cl",
     dpto: "Auxiliar Apoyo de Mantenimiento",
@@ -60,6 +64,20 @@ export const equipoAuxiliar: Funcionario[] = [
     img: svelasquez,
     nombre: "Sandra Velásquez",
     correo: "svelasquez@liceoexperimental.cl",
+    dpto: "Auxiliar",
+    more: "",
+  },
+  {
+    img: jbarria,
+    nombre: "Jenny Barria",
+    correo: "jbarria@liceoexperimental.cl",
+    dpto: "Auxiliar",
+    more: "",
+  },
+  {
+    img: egallardo,
+    nombre: "Elizabeth Gallardo",
+    correo: "egallardo@liceoexperimental.cl",
     dpto: "Auxiliar",
     more: "",
   },

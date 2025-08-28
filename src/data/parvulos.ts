@@ -6,6 +6,7 @@ import dandrade from "../assets/img/funcionarios/dandrade.png";
 import nrodriguez from "../assets/img/funcionarios/nrodriguez.png";
 import jvenegas from "../assets/img/funcionarios/jvenegas.png";
 import abarrientos from "../assets/img/funcionarios/abarrientos.png";
+import pnunez from "../assets/img/funcionarios/pnunez.png";
 
 export type Funcionario = {
   img: string;
@@ -24,7 +25,7 @@ export const equipoParvulos: Funcionario[] = [
     more: "Jefatura NT2A",
   },
   {
-    img: demoImage,
+    img: pnunez,
     nombre: "Paola Nuñez",
     correo: "pnunez@liceoexperimental.cl",
     dpto: "Educación Parvularia",
