@@ -200,7 +200,7 @@ export const equipoAsistentes: Funcionario[] = [
   },
   {
     img: mperanchiguay,
-    nombre: "María Peranchiguaya",
+    nombre: "María Peranchiguay",
     correo: "mperanchiguay@liceoexperimental.cl",
     dpto: "Recepción",
     more: "",
