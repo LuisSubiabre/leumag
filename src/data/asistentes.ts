@@ -26,6 +26,7 @@ import rahumada from "../assets/img/funcionarios/rahumada.png";
 import mcastelblanco from "../assets/img/funcionarios/mcastelblanco.png";
 import pparedes from "../assets/img/funcionarios/pparedes.png";
 import mperanchiguay from "../assets/img/funcionarios/mperanchiguay.png";
+import gbarrientos from "../assets/img/funcionarios/gbarrientos.png";
 
 export type Funcionario = {
   img: string;
@@ -202,6 +203,13 @@ export const equipoAsistentes: Funcionario[] = [
     img: mperanchiguay,
     nombre: "Mayra Peranchiguay",
     correo: "mperanchiguay@liceoexperimental.cl",
+    dpto: "Recepción",
+    more: "",
+  },
+  {
+    img: gbarrientos,
+    nombre: "Gísela Barrientos",
+    correo: "gbarrientos@liceoexperimental.cl",
     dpto: "Recepción",
     more: "",
   },

@@ -20,6 +20,8 @@ import dbascunan from "../assets/img/funcionarios/dbascunan.png";
 import mvargas from "../assets/img/funcionarios/mvargas.png";
 import maburto from "../assets/img/funcionarios/maburto.png";
 import csoto from "../assets/img/funcionarios/csoto.png";
+import msaldivia from "../assets/img/funcionarios/msaldivia.png";
+import amorales from "../assets/img/funcionarios/amorales.png";
 
 export type Funcionario = {
   img: string;
@@ -197,7 +199,7 @@ export const equipoMedia: Funcionario[] = [
     asignatura: "Economía y Sociedad",
   },
   {
-    img: demoImage,
+    img: msaldivia,
     nombre: "María Saldivia",
     correo: "msaldivia@liceoexperimental.cl",
     dpto: "Educación Media",
@@ -227,5 +229,13 @@ export const equipoMedia: Funcionario[] = [
     dpto: "Educación Media",
     more: "—",
     asignatura: "Religión Evangélica",
+  },
+  {
+    img: amorales,
+    nombre: "Ángela Morales",
+    correo: "amorales@liceoexperimental.cl",
+    dpto: "Educación Media",
+    more: "—",
+    asignatura: "Leguaje",
   },
 ];
