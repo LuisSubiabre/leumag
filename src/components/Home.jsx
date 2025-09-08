@@ -6,7 +6,7 @@ import Externos from "./Externos";
 // import FacebookFeed from "./FacebookFeed";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
-import imgComunicado from "/comunicados/zumbaton.jpeg";
+import imgComunicado from "/comunicados/septiembre.png";
 import NoticiasScraper from "./NoticiasScraper";
 import { Container, Row, Col } from "react-bootstrap";
 import ComponentSae from "./sae";
@@ -26,17 +26,23 @@ function MyVerticallyCenteredModal(props) {
       </Modal.Header>
       <Modal.Body className="text-center">
         <div className="d-flex flex-column align-items-center">
-          <img
-            src={imgComunicado}
-            alt="Comunicado"
-            className="img-fluid mb-3"
-            style={{
-              borderRadius: "12px",
-              boxShadow: "0 2px 12px rgba(0,0,0,0.08)",
-              maxWidth: "80%",
-              height: "auto",
-            }}
-          />
+          <a
+            href="https://docs.google.com/document/d/1yLzX4py8N7_e3XX69Id7sSQasRJBKZoD1jgJRSN-_-w/edit?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src={imgComunicado}
+              alt="Comunicado"
+              className="img-fluid mb-3"
+              style={{
+                borderRadius: "12px",
+                boxShadow: "0 2px 12px rgba(0,0,0,0.08)",
+                maxWidth: "80%",
+                height: "auto",
+              }}
+            />
+          </a>
         </div>
       </Modal.Body>
       <Modal.Footer>
@@ -57,7 +63,7 @@ function Home() {
   const [modalShow, setModalShow] = useState(true);
 
   useEffect(() => {
-    setModalShow(false);
+    setModalShow(true);
   }, []);
 
   return (

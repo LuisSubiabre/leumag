@@ -171,7 +171,7 @@ export const equipoMedia: Funcionario[] = [
     correo: "dbascunan@liceoexperimental.cl",
     dpto: "Educación Media",
     more: "—",
-    asignatura: "—",
+    asignatura: "Artes Visuales y Tecnología - FD Diseño Arquitectura y Artes.",
   },
   {
     img: demoImage,
