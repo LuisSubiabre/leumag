@@ -3,13 +3,14 @@ import { ButtonAccess } from "./ButtonAccess";
 import logoImage from "../assets/img/experimentalin.png";
 import { Image, Container, Row, Col } from "react-bootstrap";
 import { useState } from "react";
-import ComponentSae from "./sae";
+// import ComponentSae from "./sae";
+import BecaComponent from "./BecaCompoment";
 
 export const Header = () => {
-  const [showSaeModal, setShowSaeModal] = useState(false);
+  const [showBecaModal, setShowBecaModal] = useState(false);
 
-  const handleSaeClick = () => {
-    setShowSaeModal(true);
+  const handleBecaClick = () => {
+    setShowBecaModal(true);
   };
 
   return (
@@ -62,9 +63,9 @@ export const Header = () => {
                   variant={"warning"}
                 /> */}
                 <ButtonAccess
-                  name={"SAE 2025"}
+                  name={"Beca Vulnerabilidad 2026"}
                   variant={"warning"}
-                  onClick={handleSaeClick}
+                  onClick={handleBecaClick}
                   animate={true}
                 />
                 <ButtonAccess
@@ -95,7 +96,10 @@ export const Header = () => {
       <div className="container py-4"></div>
 
       {/* Modal del SAE */}
-      <ComponentSae show={showSaeModal} onHide={() => setShowSaeModal(false)} />
+      <BecaComponent
+        show={showBecaModal}
+        onHide={() => setShowBecaModal(false)}
+      />
     </>
   );
 };
