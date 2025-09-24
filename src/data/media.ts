@@ -22,7 +22,7 @@ import maburto from "../assets/img/funcionarios/maburto.png";
 import csoto from "../assets/img/funcionarios/csoto.png";
 import msaldivia from "../assets/img/funcionarios/msaldivia.png";
 import amorales from "../assets/img/funcionarios/amorales.png";
-
+import cmansilla from "../assets/img/funcionarios/cmansilla.png";
 export type Funcionario = {
   img: string;
   nombre: string;
@@ -34,8 +34,8 @@ export type Funcionario = {
 
 export const equipoMedia: Funcionario[] = [
   {
-    img: demoImage,
-    nombre: "Carmen Mansilla",
+    img: cmansilla,
+    nombre: "Carmen Gloria Mansilla",
     correo: "cmansilla@liceoexperimental.cl",
     dpto: "Educación Media",
     more: "Jefatura: 1° Medio A",

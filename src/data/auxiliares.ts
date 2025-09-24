@@ -8,6 +8,7 @@ import gquinchen from "../assets/img/funcionarios/gquinchen.png";
 import cortega from "../assets/img/funcionarios/cortega.png";
 import jbarria from "../assets/img/funcionarios/jbarria.png";
 import egallardo from "../assets/img/funcionarios/egallardo.png";
+import klapaz from "../assets/img/funcionarios/klapaz.png";
 
 export type Funcionario = {
   img: string;
@@ -89,7 +90,7 @@ export const equipoAuxiliar: Funcionario[] = [
     more: "",
   },
   {
-    img: demoImage,
+    img: klapaz,
     nombre: "Katherine La Paz",
     correo: "klapaz@liceoexperimental.cl",
     dpto: "Auxiliar",
