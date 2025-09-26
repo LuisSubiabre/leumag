@@ -27,6 +27,7 @@ import mcastelblanco from "../assets/img/funcionarios/mcastelblanco.png";
 import pparedes from "../assets/img/funcionarios/pparedes.png";
 import mperanchiguay from "../assets/img/funcionarios/mperanchiguay.png";
 import gbarrientos from "../assets/img/funcionarios/gbarrientos.png";
+import milnao from "../assets/img/funcionarios/milnao.png";
 
 export type Funcionario = {
   img: string;
@@ -89,6 +90,12 @@ export const equipoAsistentes: Funcionario[] = [
     img: mcastelblanco,
     nombre: "María Angélica Castelblanco",
     correo: "mcastelblanco@liceoexperimental.cl",
+    dpto: "Inspectora",
+  },
+  {
+    img: milnao,
+    nombre: "Marta Ilnao",
+    correo: "milnao@liceoexperimental.cl",
     dpto: "Inspectora",
   },
   {
