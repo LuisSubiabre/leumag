@@ -9,6 +9,7 @@ import cortega from "../assets/img/funcionarios/cortega.png";
 import jbarria from "../assets/img/funcionarios/jbarria.png";
 import egallardo from "../assets/img/funcionarios/egallardo.png";
 import klapaz from "../assets/img/funcionarios/klapaz.png";
+import kvera from "../assets/img/funcionarios/kvera.png";
 
 export type Funcionario = {
   img: string;
@@ -83,7 +84,7 @@ export const equipoAuxiliar: Funcionario[] = [
     more: "",
   },
   {
-    img: demoImage,
+    img: kvera,
     nombre: "Karina Vera",
     correo: "kvera@liceoexperimental.cl",
     dpto: "Auxiliar",

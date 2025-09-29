@@ -61,21 +61,36 @@ const BecaComponent = ({ show, onHide }) => {
                 del Establecimiento educacional)
               </ListGroup.Item>
               <ListGroup.Item>
-                <strong>3.-</strong> Formulario de postulación a Beca
-                Vulnerabilidad: Descargar formulario y completarlo con letra
-                legible, para luego ser enviado junto a la documentación de
-                respaldo al correo electrónico indicado en la circular.
+                <strong>3.-</strong>{" "}
+                <span className="text-decoration-line-through">
+                  Formulario de postulación a Beca Vulnerabilidad: Descargar
+                  formulario y completarlo con letra legible, para luego ser
+                  enviado junto a la documentación de respaldo al correo
+                  electrónico indicado en la circular.
+                </span>{" "}
+                <span className="text-muted">(plazo expirado)</span>
               </ListGroup.Item>
               <ListGroup.Item>
-                <strong>4.-</strong> Documentación Obligatoria a Presentar 2026.
+                <strong>4.-</strong>{" "}
+                <span className="text-decoration-line-through">
+                  Documentación Obligatoria a Presentar 2026.
+                </span>{" "}
+                <span className="text-muted">(plazo expirado)</span>
               </ListGroup.Item>
               <ListGroup.Item>
-                <strong>5.-</strong> Declaración de Gastos Mensuales 2026 (sólo
-                para trabajadores ocasionales o independientes).
+                <strong>5.-</strong>{" "}
+                <span className="text-decoration-line-through">
+                  Declaración de Gastos Mensuales 2026 (sólo para trabajadores
+                  ocasionales o independientes).
+                </span>{" "}
+                <span className="text-muted">(plazo expirado)</span>
               </ListGroup.Item>
               <ListGroup.Item>
-                <strong>6.-</strong> Archivos necesarios para realizar
-                postulación.
+                <strong>6.-</strong>{" "}
+                <span className="text-decoration-line-through">
+                  Archivos necesarios para realizar postulación.
+                </span>{" "}
+                <span className="text-muted">(plazo expirado)</span>
               </ListGroup.Item>
             </ListGroup>
 
@@ -95,16 +110,6 @@ const BecaComponent = ({ show, onHide }) => {
                 </div>
                 <div className="col-12 col-md-6">
                   <a
-                    href="/docs/becas/formulario.pdf"
-                    download="Formulario_Postulacion_Beca_Vulnerabilidad_2026.pdf"
-                    className="btn btn-outline-success w-100"
-                  >
-                    <i className="bi bi-file-earmark-pdf me-2"></i>
-                    Formulario de Postulación
-                  </a>
-                </div>
-                <div className="col-12 col-md-6">
-                  <a
                     href="/docs/becas/documentacion.pdf"
                     download="Documentacion_Obligatoria_Presentar_2026.pdf"
                     className="btn btn-outline-warning w-100"
@@ -115,12 +120,13 @@ const BecaComponent = ({ show, onHide }) => {
                 </div>
                 <div className="col-12 col-md-6">
                   <a
-                    href="/docs/becas/declaracion.pdf"
-                    download="Declaracion_Gastos_Mensuales_2026.pdf"
-                    className="btn btn-outline-info w-100"
+                    href="https://docs.google.com/document/u/2/d/1m7WZ1CmMgsM2u34fZSoePobwyexFi52M/pub"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-outline-secondary w-100"
                   >
-                    <i className="bi bi-file-earmark-pdf me-2"></i>
-                    Declaración de Gastos
+                    <i className="bi bi-file-earmark-text me-2"></i>
+                    Reglamento Becas 2025
                   </a>
                 </div>
               </div>

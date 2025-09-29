@@ -64,9 +64,9 @@ export const Header = () => {
                 /> */}
                 <ButtonAccess
                   name={"Beca Vulnerabilidad 2026"}
-                  variant={"warning"}
+                  variant={"secondary"}
                   onClick={handleBecaClick}
-                  animate={true}
+                  animate={false}
                 />
                 <ButtonAccess
                   name={"Fechas Reuniones"}
