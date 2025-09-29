@@ -28,6 +28,7 @@ import pparedes from "../assets/img/funcionarios/pparedes.png";
 import mperanchiguay from "../assets/img/funcionarios/mperanchiguay.png";
 import gbarrientos from "../assets/img/funcionarios/gbarrientos.png";
 import milnao from "../assets/img/funcionarios/milnao.png";
+import ealmonacid from "../assets/img/funcionarios/ealmonacid.png";
 
 export type Funcionario = {
   img: string;
@@ -81,7 +82,7 @@ export const equipoAsistentes: Funcionario[] = [
     dpto: "TENS",
   },
   {
-    img: demoImage,
+    img: ealmonacid,
     nombre: "Elizabeth Almonacid",
     correo: "ealmonacid@liceoexperimental.cl",
     dpto: "Técnico 2° Básico B",
