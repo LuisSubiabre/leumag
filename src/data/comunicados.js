@@ -1,5 +1,20 @@
 export const comunicados = [
   {
+    id: 16,
+    titulo: "Charla Becas y Créditos para la Educación Superior",
+    fecha: "14-10-2025",
+    img: "/comunicados/com101025.png",
+    contenido: `
+
+
+Se invita a asistir a la charla de Becas y Créditos para la Educación Superior que impartirán las Profesionales del Área de  atención ciudadana Ayuda Mineduc, con quienes podrán resolver todas sus dudas respecto a llenado del FUAS, REGISTRO SOCIAL DE HOGARES, oferta de becas, cálculo de los ingresos, becas JUNAEB, ETC. 
+
+FECHA : 14 DE OCTUBRE 
+LUGAR: AULA MAGNA 
+HORA : 19:00 HRS. 
+`,
+  },
+  {
     id: 15,
     titulo: "Suspensión de clases jornada tarde Jueves 14 de agosto 2025",
     fecha: "12-08-2025",

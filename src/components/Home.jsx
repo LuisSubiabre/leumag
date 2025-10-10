@@ -6,7 +6,7 @@ import Externos from "./Externos";
 // import FacebookFeed from "./FacebookFeed";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
-import imgComunicado from "/comunicados/asistentes.png";
+import imgComunicado from "/comunicados/com101025.png";
 import NoticiasScraper from "./NoticiasScraper";
 import { Container, Row, Col } from "react-bootstrap";
 import ComponentSae from "./sae";
@@ -27,41 +27,6 @@ function MyVerticallyCenteredModal(props) {
       <Modal.Body className="text-center">
         <div className="d-flex flex-column align-items-center">
           <div>
-            <h2 className="mb-4">
-              🎉 FELIZ DÍA DEL ASISTENTE DE LA EDUCACIÓN 🎉
-            </h2>
-
-            <p className="mb-3">
-              Hoy dedicamos un momento especial para reconocer la invaluable
-              labor que realizan nuestros asistentes de la educación.
-            </p>
-
-            <p className="mb-3">
-              Su trabajo diario, muchas veces silencioso pero siempre
-              fundamental, es lo que sostiene y da vida a nuestro liceo. Cada
-              función, cada gesto y cada aporte suma para hacer posible que
-              nuestra institución siga siendo destacada en la región, donde
-              niños y jóvenes encuentran un lugar para crecer y desarrollarse.
-            </p>
-
-            <p className="mb-3">
-              Sabemos que agradecer nunca será suficiente frente a lo que
-              entregan día a día, pero queremos expresarles con orgullo y
-              gratitud lo valioso que es contar con un equipo humano tan
-              comprometido y generoso.
-            </p>
-
-            <p className="mb-3">
-              En nombre de toda la comunidad educativa del Liceo Experimental
-              UMAG, les deseamos un muy feliz día. Que se sientan reconocidos y
-              orgullosos de la huella que dejan en cada generación.
-            </p>
-
-            <p className="mb-3 fw-bold">
-              ¡Gracias por ser parte esencial de esta gran familia educativa!
-            </p>
-          </div>
-          <a href="#" target="_blank" rel="noopener noreferrer">
             <img
               src={imgComunicado}
               alt="Comunicado"
@@ -73,7 +38,7 @@ function MyVerticallyCenteredModal(props) {
                 height: "auto",
               }}
             />
-          </a>
+          </div>
         </div>
       </Modal.Body>
       <Modal.Footer>
@@ -94,7 +59,7 @@ function Home() {
   const [modalShow, setModalShow] = useState(true);
 
   useEffect(() => {
-    setModalShow(false);
+    setModalShow(true);
   }, []);
 
   return (
