@@ -11,17 +11,17 @@ const MatriculaPage = () => {
         <Card className="matricula-card">
           <Card.Body>
             <Card.Title className="text-center mb-4">
-              <h2>Matrícula 2025 Alumnos Nuevos</h2>
+              <h2>Matrícula 2026 Alumnos Nuevos</h2>
             </Card.Title>
             <div className="d-flex justify-content-center">
               <Button
-                href="https://docs.google.com/document/d/1xMdNAjHErI2qpdVbbdncUog26vVZP96nBXyEkacuowY/edit?usp=sharing"
+                href=""
                 variant="warning"
                 target="_blank"
                 className="matricula-button"
               >
                 <FaFileAlt className="me-2" />
-                Circular Matrícula 2025
+                Circular Matrícula 2026
               </Button>
             </div>
           </Card.Body>
@@ -32,20 +32,20 @@ const MatriculaPage = () => {
         <Card className="matricula-card">
           <Card.Body>
             <Card.Title className="text-center mb-4">
-              <h2>Matrícula 2025 Alumnos Antiguos</h2>
+              <h2>Matrícula 2026 Alumnos Antiguos</h2>
             </Card.Title>
             <div className="d-flex justify-content-center gap-3">
               <Button
-                href="https://docs.google.com/document/d/1fdl5CkCyUGHlX_VnhaMxtZu-4ZtRVtsU/edit?rtpof=true&sd=true#heading=h.gjdgxs"
+                href=""
                 variant="primary"
                 target="_blank"
                 className="matricula-button"
               >
                 <FaFileAlt className="me-2" />
-                Circular Matrícula 2025
+                Circular Matrícula 2026
               </Button>
               <Button
-                href="/docs/FORMATO-PODER-NOTARIAL-2025.pdf"
+                href="/docs/FORMATO-PODER-NOTARIAL-2026.pdf"
                 variant="primary"
                 target="_blank"
                 className="matricula-button"
