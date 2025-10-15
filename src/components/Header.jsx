@@ -57,14 +57,15 @@ export const Header = () => {
                 md="auto"
                 className="d-flex flex-column flex-md-row justify-content-center align-items-stretch gap-2"
               >
-                {/* <ButtonAccess
-                  name={"Matrícula 2025"}
+                <ButtonAccess
+                  name={"Matrícula 2026"}
                   link={"/matricula"}
                   variant={"warning"}
-                /> */}
+                  animate={true}
+                />
                 <ButtonAccess
-                  name={"Beca Vulnerabilidad 2026"}
-                  variant={"secondary"}
+                  name={"Beca V. 2026"}
+                  variant={"primary"}
                   onClick={handleBecaClick}
                   animate={false}
                 />
@@ -83,11 +84,11 @@ export const Header = () => {
                   link={"/Evaluaciones"}
                   variant={"primary"}
                 />
-                <ButtonAccess
+                {/* <ButtonAccess
                   name={"Lista de Materiales"}
                   link={"/Materiales"}
                   variant={"primary"}
-                />
+                /> */}
               </Col>
             </Row>
           </Container>
