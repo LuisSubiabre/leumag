@@ -36,7 +36,7 @@ const MatriculaPage = () => {
         <Card className="">
           <Card.Body>
             <Card.Title className="text-center mb-4">
-              <h2>Matrícula 2026 Alumnos Antiguos</h2>
+              <h2>Matrícula 2026 Estudiantes Antiguos</h2>
             </Card.Title>
             <div className="d-flex justify-content-center gap-3 flex-wrap">
               <Button
