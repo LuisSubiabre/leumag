@@ -6,7 +6,7 @@ import Externos from "./Externos";
 // import FacebookFeed from "./FacebookFeed";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
-import imgComunicado from "/comunicados/h.png";
+import imgComunicado from "/comunicados/tne.jpg";
 import NoticiasScraper from "./NoticiasScraper";
 import { Container, Row, Col } from "react-bootstrap";
 import ComponentSae from "./sae";
@@ -26,6 +26,7 @@ function MyVerticallyCenteredModal(props) {
       </Modal.Header>
       <Modal.Body className="text-center">
         <div className="d-flex flex-column align-items-center">
+          <h2>Solo Enseñanza Media</h2>
           <div>
             <img
               src={imgComunicado}
@@ -59,7 +60,7 @@ function Home() {
   const [modalShow, setModalShow] = useState(true);
 
   useEffect(() => {
-    setModalShow(false);
+    setModalShow(true);
   }, []);
 
   return (
