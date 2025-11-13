@@ -67,11 +67,13 @@ const MatriculaPage = () => {
                 <FaDownload className="me-2" />
                 Formato Poder Notarial
               </Button>
+            </div>
+            <div className="d-flex justify-content-center mt-4">
               <Button
                 href="/download/paso1_leumag_2026.rar"
-                variant="primary"
+                variant="success"
                 download
-                className="matricula-button"
+                className="matricula-button matricula-button-featured"
               >
                 <FaDownload className="me-2" />
                 Paso 1 Leumag 2026
