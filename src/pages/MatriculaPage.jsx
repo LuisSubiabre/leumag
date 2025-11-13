@@ -1,6 +1,6 @@
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import { FaDownload } from "react-icons/fa";
+import { FaDownload, FaFilePdf, FaBook } from "react-icons/fa";
 import "./MatriculaPage.css";
 
 const MatriculaPage = () => {
@@ -44,7 +44,7 @@ const MatriculaPage = () => {
                 target="_blank"
                 className="matricula-button"
               >
-                <FaDownload className="me-2" />
+                <FaFilePdf className="me-2" />
                 Circular Matrícula 2026
               </Button>
               <Button
@@ -53,7 +53,7 @@ const MatriculaPage = () => {
                 target="_blank"
                 className="matricula-button"
               >
-                <FaDownload className="me-2" />
+                <FaFilePdf className="me-2" />
                 Protocolo de Acreditación de Cambio en la Condición
                 Socioeconómica y la Determinación de la No Renovación de
                 Matrícula
@@ -64,19 +64,20 @@ const MatriculaPage = () => {
                 target="_blank"
                 className="matricula-button"
               >
-                <FaDownload className="me-2" />
+                <FaFilePdf className="me-2" />
                 Formato Poder Notarial
               </Button>
             </div>
-            <div className="d-flex justify-content-center mt-4">
+            <div className="d-flex justify-content-center gap-3 mt-4 flex-wrap">
               <Button
-                href="/download/paso1_leumag_2026.rar"
-                variant="success"
-                download
+                href="https://docs.google.com/document/d/1bR00Di4zMew5sgtLUSelnaf1mhBreZMlRKZD_nmiLG4/edit?tab=t.0#heading=h.h89hwrcc8kc2"
+                variant="info"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="matricula-button matricula-button-featured"
               >
-                <FaDownload className="me-2" />
-                Paso 1 Leumag 2026
+                <FaBook className="me-2" />
+                Manual de Instrucciones
               </Button>
             </div>
           </Card.Body>
