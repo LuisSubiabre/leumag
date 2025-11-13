@@ -1,7 +1,6 @@
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import Alert from "react-bootstrap/Alert";
-import { FaDownload, FaClock } from "react-icons/fa";
+import { FaDownload } from "react-icons/fa";
 import "./MatriculaPage.css";
 
 const MatriculaPage = () => {
@@ -67,6 +66,15 @@ const MatriculaPage = () => {
               >
                 <FaDownload className="me-2" />
                 Formato Poder Notarial
+              </Button>
+              <Button
+                href="/download/paso1_leumag_2026.rar"
+                variant="primary"
+                download
+                className="matricula-button"
+              >
+                <FaDownload className="me-2" />
+                Paso 1 Leumag 2026
               </Button>
             </div>
           </Card.Body>
