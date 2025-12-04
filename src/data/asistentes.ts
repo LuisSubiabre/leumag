@@ -13,7 +13,6 @@ import fmancilla from "../assets/img/funcionarios/fmancilla.png";
 import mrodriguez from "../assets/img/funcionarios/mrodriguez.png";
 import pcardenas from "../assets/img/funcionarios/pcardenas.png";
 import aalarcon from "../assets/img/funcionarios/aalarcon.png";
-import nsanabria from "../assets/img/funcionarios/nsanabria.png";
 import svillegas from "../assets/img/funcionarios/svillegas.png";
 import ybahamonde from "../assets/img/funcionarios/ybahamonde.png";
 import anaguelquin from "../assets/img/funcionarios/anaguelquin.png";
@@ -21,12 +20,9 @@ import mcortez from "../assets/img/funcionarios/mcortez.png";
 import cramirez from "../assets/img/funcionarios/cramirez.png";
 import amarquez from "../assets/img/funcionarios/amarquez.png";
 import ssanchez from "../assets/img/funcionarios/ssanchez.png";
-import aguerra from "../assets/img/funcionarios/aguerra.png";
 import rahumada from "../assets/img/funcionarios/rahumada.png";
-import mcastelblanco from "../assets/img/funcionarios/mcastelblanco.png";
 import pparedes from "../assets/img/funcionarios/pparedes.png";
 import mperanchiguay from "../assets/img/funcionarios/mperanchiguay.png";
-import gbarrientos from "../assets/img/funcionarios/gbarrientos.png";
 import milnao from "../assets/img/funcionarios/milnao.png";
 import ealmonacid from "../assets/img/funcionarios/ealmonacid.png";
 
@@ -62,12 +58,6 @@ export const equipoAsistentes: Funcionario[] = [
     correo: "avidal@liceoexperimental.cl",
     dpto: "Inspectora",
   },
-  {
-    img: aguerra,
-    nombre: "Arielle Guerra",
-    correo: "aguerra@liceoexperimental.cl",
-    dpto: "Inspectora Parvulos",
-  },
 
   {
     img: cramirez,
@@ -87,12 +77,7 @@ export const equipoAsistentes: Funcionario[] = [
     correo: "ealmonacid@liceoexperimental.cl",
     dpto: "Técnico 2° Básico B",
   },
-  {
-    img: mcastelblanco,
-    nombre: "María Angélica Castelblanco",
-    correo: "mcastelblanco@liceoexperimental.cl",
-    dpto: "Inspectora",
-  },
+
   {
     img: milnao,
     nombre: "Marta Ilnao",
@@ -206,19 +191,5 @@ export const equipoAsistentes: Funcionario[] = [
     nombre: "Yasna Bahamonde",
     correo: "ybahamonde@liceoexperimental.cl",
     dpto: "Encargada Adquisiciones",
-  },
-  {
-    img: mperanchiguay,
-    nombre: "Mayra Peranchiguay",
-    correo: "mperanchiguay@liceoexperimental.cl",
-    dpto: "Recepción",
-    more: "",
-  },
-  {
-    img: gbarrientos,
-    nombre: "Gísela Barrientos",
-    correo: "gbarrientos@liceoexperimental.cl",
-    dpto: "Recepción",
-    more: "",
   },
 ].sort((a, b) => a.nombre.split(" ")[1].localeCompare(b.nombre.split(" ")[1]));
