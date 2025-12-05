@@ -6,7 +6,6 @@ import Externos from "./Externos";
 // import FacebookFeed from "./FacebookFeed";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
-import imgComunicado from "/comunicados/tne.jpg";
 import NoticiasScraper from "./NoticiasScraper";
 import { Container, Row, Col } from "react-bootstrap";
 import ComponentSae from "./sae";
@@ -26,9 +25,24 @@ function MyVerticallyCenteredModal(props) {
       </Modal.Header>
       <Modal.Body className="text-center">
         <div className="d-flex flex-column align-items-center">
-          <h2>Solo Enseñanza Media</h2>
+          <h2>
+            Horarios de Citación para Matrícula 2026 - Estudiantes Antiguos
+          </h2>
+          <div className="mb-4">
+            <p className="lead mb-3">Estimados apoderados:</p>
+            <p className="mb-3">
+              Informamos que ya se encuentran disponibles los horarios de
+              citación para el proceso de <strong>Matrícula 2026</strong>. Cada
+              apoderado podrá revisar el día y hora asignado para realizar el
+              trámite correspondiente.
+            </p>
+            <p className="mb-0">
+              Agradecemos su colaboración y compromiso con el proceso de
+              matrícula.
+            </p>
+          </div>
           <div>
-            <img
+            {/* <img
               src={imgComunicado}
               alt="Comunicado"
               className="img-fluid mb-3"
@@ -38,7 +52,15 @@ function MyVerticallyCenteredModal(props) {
                 maxWidth: "80%",
                 height: "auto",
               }}
-            />
+            /> */}
+            <Button
+              href="https://drive.google.com/drive/folders/1RK69p0dVA1zPfm6VJSRT5J-Y_zlWlYNY"
+              variant="primary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ver Horarios
+            </Button>
           </div>
         </div>
       </Modal.Body>
@@ -60,7 +82,7 @@ function Home() {
   const [modalShow, setModalShow] = useState(true);
 
   useEffect(() => {
-    setModalShow(false);
+    setModalShow(true);
   }, []);
 
   return (

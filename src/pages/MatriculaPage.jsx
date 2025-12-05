@@ -71,6 +71,16 @@ const MatriculaPage = () => {
             </Card.Title>
             <div className="d-flex justify-content-center gap-3 flex-wrap">
               <Button
+                href="https://drive.google.com/drive/folders/1RK69p0dVA1zPfm6VJSRT5J-Y_zlWlYNY"
+                variant="primary"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="matricula-button"
+              >
+                <FaFilePdf className="me-2" />
+                Horarios de Citación
+              </Button>
+              <Button
                 href="/docs/CircularMatriculasAntiguos.pdf"
                 variant="primary"
                 target="_blank"
