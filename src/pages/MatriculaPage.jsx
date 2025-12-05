@@ -37,7 +37,7 @@ const MatriculaPage = () => {
             <Card.Title className="text-center mb-4">
               <h2>Matrícula 2026 Estudiantes Nuevos</h2>
             </Card.Title>
-            <div className="d-flex justify-content-center">
+            <div className="d-flex justify-content-center gap-3 flex-wrap">
               <Button
                 href="https://docs.google.com/document/d/1DbcqYmNFg9L3UdivQwx4RSH-7uRIE_ESx9jKLIqT5zA/edit?usp=sharing"
                 variant="primary"
@@ -47,6 +47,16 @@ const MatriculaPage = () => {
               >
                 <FaBook className="me-2" />
                 Circular Matrícula 2026 Estudiantes Nuevos
+              </Button>
+              <Button
+                href="/docs/FORMATO-PODER-NOTARIAL-2026.pdf"
+                variant="primary"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="matricula-button"
+              >
+                <FaFilePdf className="me-2" />
+                Formato Poder Notarial
               </Button>
             </div>
           </Card.Body>
@@ -64,6 +74,7 @@ const MatriculaPage = () => {
                 href="/docs/CircularMatriculasAntiguos.pdf"
                 variant="primary"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="matricula-button"
               >
                 <FaFilePdf className="me-2" />
@@ -73,6 +84,7 @@ const MatriculaPage = () => {
                 href="/docs/ProtocoloAcreditacion.pdf"
                 variant="primary"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="matricula-button"
               >
                 <FaFilePdf className="me-2" />
@@ -84,6 +96,7 @@ const MatriculaPage = () => {
                 href="/docs/FORMATO-PODER-NOTARIAL-2026.pdf"
                 variant="primary"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="matricula-button"
               >
                 <FaFilePdf className="me-2" />
