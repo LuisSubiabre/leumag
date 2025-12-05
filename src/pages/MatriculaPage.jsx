@@ -1,6 +1,6 @@
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import { FaDownload, FaFilePdf, FaBook } from "react-icons/fa";
+import { FaFilePdf, FaBook } from "react-icons/fa";
 import "./MatriculaPage.css";
 
 const MatriculaPage = () => {
@@ -30,6 +30,28 @@ const MatriculaPage = () => {
           </Card.Body>
         </Card>
       </div> */}
+
+      <div className="matricula-section">
+        <Card className="">
+          <Card.Body>
+            <Card.Title className="text-center mb-4">
+              <h2>Matrícula 2026 Estudiantes Nuevos</h2>
+            </Card.Title>
+            <div className="d-flex justify-content-center">
+              <Button
+                href="https://docs.google.com/document/d/1DbcqYmNFg9L3UdivQwx4RSH-7uRIE_ESx9jKLIqT5zA/edit?usp=sharing"
+                variant="primary"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="matricula-button"
+              >
+                <FaBook className="me-2" />
+                Circular Matrícula 2026 Estudiantes Nuevos
+              </Button>
+            </div>
+          </Card.Body>
+        </Card>
+      </div>
 
       <div className="matricula-section">
         <Card className="">
