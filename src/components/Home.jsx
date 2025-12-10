@@ -25,9 +25,7 @@ function MyVerticallyCenteredModal(props) {
       </Modal.Header>
       <Modal.Body className="text-center">
         <div className="d-flex flex-column align-items-center">
-          <h2>
-            Horarios de Citación para Matrícula 2026 - Estudiantes Antiguos
-          </h2>
+          <h2>Horarios de Citación para Matrícula 2026</h2>
           <div className="mb-4">
             <p className="lead mb-3">Estimados apoderados:</p>
             <p className="mb-3">
@@ -41,25 +39,26 @@ function MyVerticallyCenteredModal(props) {
               matrícula.
             </p>
           </div>
-          <div>
-            {/* <img
-              src={imgComunicado}
-              alt="Comunicado"
-              className="img-fluid mb-3"
-              style={{
-                borderRadius: "12px",
-                boxShadow: "0 2px 12px rgba(0,0,0,0.08)",
-                maxWidth: "80%",
-                height: "auto",
-              }}
-            /> */}
+          <div className="d-flex flex-column gap-3 align-items-center w-100">
+            <Button
+              href="https://drive.google.com/file/d/1PCK1JobSm876adzEGhRhhB7UiOTogr8a/view?usp=drive_link"
+              variant="primary"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-100"
+              style={{ maxWidth: "300px" }}
+            >
+              Horarios de Citación - Estudiantes Nuevos
+            </Button>
             <Button
               href="https://drive.google.com/drive/folders/1RK69p0dVA1zPfm6VJSRT5J-Y_zlWlYNY"
               variant="primary"
               target="_blank"
               rel="noopener noreferrer"
+              className="w-100"
+              style={{ maxWidth: "300px" }}
             >
-              Ver Horarios
+              Horarios de Citación - Estudiantes Antiguos
             </Button>
           </div>
         </div>

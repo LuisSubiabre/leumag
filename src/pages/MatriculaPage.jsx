@@ -49,6 +49,16 @@ const MatriculaPage = () => {
                 Circular Matrícula 2026 Estudiantes Nuevos
               </Button>
               <Button
+                href="https://drive.google.com/file/d/1PCK1JobSm876adzEGhRhhB7UiOTogr8a/view?usp=drive_link"
+                variant="primary"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="matricula-button"
+              >
+                <FaFilePdf className="me-2" />
+                Horarios de Citación
+              </Button>
+              <Button
                 href="/docs/FORMATO-PODER-NOTARIAL-2026.pdf"
                 variant="primary"
                 target="_blank"
