@@ -41,7 +41,7 @@ function MyVerticallyCenteredModal(props) {
           </div>
           <div className="d-flex flex-column gap-3 align-items-center w-100">
             <Button
-              href="https://drive.google.com/file/d/1PCK1JobSm876adzEGhRhhB7UiOTogr8a/view?usp=drive_link"
+              href="https://drive.google.com/drive/folders/1x0yHCDFCYt4d-w65KMy_1ZFXrHWsyMVg?usp=sharing"
               variant="primary"
               target="_blank"
               rel="noopener noreferrer"
