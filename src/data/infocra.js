@@ -1,5 +1,14 @@
 export const craInfo = [
   {
+    id: 5,
+    title: "INFO-CRA 05",
+    description: "Segundo Semestre",
+    year: "2025",
+    link: "https://drive.google.com/file/d/1QZEUDuzPdG_Ax4YWWWUXMgcYpSvEsaL0/view?usp=sharing",
+    image:
+      "https://res.cloudinary.com/dx219dazh/image/upload/v1765818266/infocra05_tw28bn.png",
+  },
+  {
     id: 4,
     title: "INFO-CRA 04",
     description: "Segundo Semestre",
