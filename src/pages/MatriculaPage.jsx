@@ -49,7 +49,7 @@ const MatriculaPage = () => {
                 Circular Matrícula 2026 Estudiantes Nuevos
               </Button>
               <Button
-                href="https://drive.google.com/file/d/1PCK1JobSm876adzEGhRhhB7UiOTogr8a/view?usp=drive_link"
+                href="https://drive.google.com/drive/folders/1x0yHCDFCYt4d-w65KMy_1ZFXrHWsyMVg?usp=sharing"
                 variant="primary"
                 target="_blank"
                 rel="noopener noreferrer"
