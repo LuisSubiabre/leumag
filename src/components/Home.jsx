@@ -45,8 +45,7 @@ function MyVerticallyCenteredModal(props) {
               variant="primary"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-100"
-              style={{ maxWidth: "300px" }}
+              style={{ maxWidth: "220px" }}
             >
               Horarios de Citación - Estudiantes Nuevos
             </Button>
@@ -55,11 +54,23 @@ function MyVerticallyCenteredModal(props) {
               variant="primary"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-100"
-              style={{ maxWidth: "300px" }}
+              style={{ maxWidth: "220px" }}
             >
               Horarios de Citación - Estudiantes Antiguos
             </Button>
+          </div>
+          <hr className="my-4" />
+          <div className="mt-4">
+            <h3 className="mb-3">Beneficio Alimentación Escolar JUNAEB 2026</h3>
+            <p className="mb-3">
+              Se informa a los interesados en obtener el Beneficio de
+              Alimentación Escolar JUNAEB para el año 2026, enviar Registro
+              Social de Hogares Actualizado al mail{" "}
+              <a href="mailto:vhernandez@liceoexperimental.cl">
+                vhernandez@liceoexperimental.cl
+              </a>
+              , indicando nombre completo del alumno/a y curso 2026.
+            </p>
           </div>
         </div>
       </Modal.Body>
