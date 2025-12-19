@@ -25,40 +25,6 @@ function MyVerticallyCenteredModal(props) {
       </Modal.Header>
       <Modal.Body className="text-center">
         <div className="d-flex flex-column align-items-center">
-          <h2>Horarios de Citación para Matrícula 2026</h2>
-          <div className="mb-4">
-            <p className="lead mb-3">Estimados apoderados:</p>
-            <p className="mb-3">
-              Informamos que ya se encuentran disponibles los horarios de
-              citación para el proceso de <strong>Matrícula 2026</strong>. Cada
-              apoderado podrá revisar el día y hora asignado para realizar el
-              trámite correspondiente.
-            </p>
-            <p className="mb-0">
-              Agradecemos su colaboración y compromiso con el proceso de
-              matrícula.
-            </p>
-          </div>
-          <div className="d-flex flex-column gap-3 align-items-center w-100">
-            <Button
-              href="https://drive.google.com/drive/folders/1x0yHCDFCYt4d-w65KMy_1ZFXrHWsyMVg?usp=sharing"
-              variant="primary"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ maxWidth: "220px" }}
-            >
-              Horarios de Citación - Estudiantes Nuevos
-            </Button>
-            <Button
-              href="https://drive.google.com/drive/folders/1RK69p0dVA1zPfm6VJSRT5J-Y_zlWlYNY"
-              variant="primary"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ maxWidth: "220px" }}
-            >
-              Horarios de Citación - Estudiantes Antiguos
-            </Button>
-          </div>
           <hr className="my-4" />
           <div className="mt-4">
             <h3 className="mb-3">Beneficio Alimentación Escolar JUNAEB 2026</h3>
