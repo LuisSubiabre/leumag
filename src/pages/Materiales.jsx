@@ -15,25 +15,17 @@ const Materiales = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="link-underlinelink-offset-2 link-underline link-underline-opacity-0"
+            onClick={(e) => e.preventDefault()}
+            style={{ pointerEvents: "none", cursor: "not-allowed" }}
           >
             <Card
               border="primary"
-              className="mb-4 btnCard"
+              className="mb-4 disabled"
               style={{
                 transition: "transform 0.3s ease, box-shadow 0.3s ease",
                 borderRadius: "12px",
                 overflow: "hidden",
                 boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = "translateY(-5px)";
-                e.currentTarget.style.boxShadow =
-                  "0 8px 16px rgba(0, 123, 255, 0.2)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = "translateY(0)";
-                e.currentTarget.style.boxShadow =
-                  "0 4px 8px rgba(0, 0, 0, 0.1)";
               }}
             >
               <Card.Header className="d-flex align-items-center">
@@ -41,7 +33,7 @@ const Materiales = () => {
                 <span>Materiales NT 1</span>
               </Card.Header>
               <Card.Body>
-                <Card.Title>Materiales NT 1</Card.Title>
+                <Card.Title>Materiales NT 1 / En actualización</Card.Title>
                 <Card.Text className="d-flex align-items-center">
                   <FaFileAlt className="text-danger me-2" size={16} /> Ver
                   materiales
@@ -56,25 +48,17 @@ const Materiales = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="link-underlinelink-offset-2 link-underline link-underline-opacity-0"
+            onClick={(e) => e.preventDefault()}
+            style={{ pointerEvents: "none", cursor: "not-allowed" }}
           >
             <Card
               border="primary"
-              className="mb-4 btnCard"
+              className="mb-4 disabled"
               style={{
                 transition: "transform 0.3s ease, box-shadow 0.3s ease",
                 borderRadius: "12px",
                 overflow: "hidden",
                 boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = "translateY(-5px)";
-                e.currentTarget.style.boxShadow =
-                  "0 8px 16px rgba(0, 123, 255, 0.2)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = "translateY(0)";
-                e.currentTarget.style.boxShadow =
-                  "0 4px 8px rgba(0, 0, 0, 0.1)";
               }}
             >
               <Card.Header className="d-flex align-items-center">
@@ -97,8 +81,10 @@ const Materiales = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="link-underlinelink-offset-2 link-underline link-underline-opacity-0"
+            onClick={(e) => e.preventDefault()}
+            style={{ pointerEvents: "none", cursor: "not-allowed" }}
           >
-            <Card border="primary" className="mb-4 btnCard">
+            <Card border="primary" className="mb-4 disabled">
               <Card.Header>
                 <FaGraduationCap className="text-primary me-2" size={18} />
                 <span>Textos de Inglés</span>
@@ -124,8 +110,10 @@ const Materiales = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="link-underlinelink-offset-2 link-underline link-underline-opacity-0"
+            onClick={(e) => e.preventDefault()}
+            style={{ pointerEvents: "none", cursor: "not-allowed" }}
           >
-            <Card border="primary" className="mb-4 btnCard">
+            <Card border="primary" className="mb-4 disabled">
               <Card.Header>
                 <FaGraduationCap className="text-primary me-2" size={18} />
                 <span>1ero Básico</span>
@@ -146,8 +134,10 @@ const Materiales = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="link-underlinelink-offset-2 link-underline link-underline-opacity-0"
+            onClick={(e) => e.preventDefault()}
+            style={{ pointerEvents: "none", cursor: "not-allowed" }}
           >
-            <Card border="primary" className="mb-4 btnCard">
+            <Card border="primary" className="mb-4 disabled">
               <Card.Header>
                 <FaGraduationCap className="text-primary me-2" size={18} />
                 <span>2do Básico</span>
@@ -168,8 +158,10 @@ const Materiales = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="link-underlinelink-offset-2 link-underline link-underline-opacity-0"
+            onClick={(e) => e.preventDefault()}
+            style={{ pointerEvents: "none", cursor: "not-allowed" }}
           >
-            <Card border="primary" className="mb-4 btnCard">
+            <Card border="primary" className="mb-4 disabled">
               <Card.Header>
                 <FaGraduationCap className="text-primary me-2" size={18} />
                 <span>3ero Básico</span>
@@ -193,8 +185,10 @@ const Materiales = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="link-underlinelink-offset-2 link-underline link-underline-opacity-0"
+            onClick={(e) => e.preventDefault()}
+            style={{ pointerEvents: "none", cursor: "not-allowed" }}
           >
-            <Card border="primary" className="mb-4 btnCard">
+            <Card border="primary" className="mb-4 disabled">
               <Card.Header>
                 <FaGraduationCap className="text-primary me-2" size={18} />
                 <span>4to Básico</span>
@@ -215,8 +209,10 @@ const Materiales = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="link-underlinelink-offset-2 link-underline link-underline-opacity-0"
+            onClick={(e) => e.preventDefault()}
+            style={{ pointerEvents: "none", cursor: "not-allowed" }}
           >
-            <Card border="primary" className="mb-4 btnCard">
+            <Card border="primary" className="mb-4 disabled">
               <Card.Header>
                 <FaGraduationCap className="text-primary me-2" size={18} />
                 <span>5to Básico</span>
@@ -237,8 +233,10 @@ const Materiales = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="link-underlinelink-offset-2 link-underline link-underline-opacity-0"
+            onClick={(e) => e.preventDefault()}
+            style={{ pointerEvents: "none", cursor: "not-allowed" }}
           >
-            <Card border="primary" className="mb-4 btnCard">
+            <Card border="primary" className="mb-4 disabled">
               <Card.Header>
                 <FaGraduationCap className="text-primary me-2" size={18} />
                 <span>6to Básico</span>
@@ -262,8 +260,10 @@ const Materiales = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="link-underlinelink-offset-2 link-underline link-underline-opacity-0"
+            onClick={(e) => e.preventDefault()}
+            style={{ pointerEvents: "none", cursor: "not-allowed" }}
           >
-            <Card border="primary" className="mb-4 btnCard">
+            <Card border="primary" className="mb-4 disabled">
               <Card.Header>
                 <FaGraduationCap className="text-primary me-2" size={18} />
                 <span>7mo Básico</span>
@@ -284,8 +284,10 @@ const Materiales = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="link-underlinelink-offset-2 link-underline link-underline-opacity-0"
+            onClick={(e) => e.preventDefault()}
+            style={{ pointerEvents: "none", cursor: "not-allowed" }}
           >
-            <Card border="primary" className="mb-4 btnCard">
+            <Card border="primary" className="mb-4 disabled">
               <Card.Header>
                 <FaGraduationCap className="text-primary me-2" size={18} />
                 <span>8vo Básico</span>
@@ -306,8 +308,10 @@ const Materiales = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="link-underlinelink-offset-2 link-underline link-underline-opacity-0"
+            onClick={(e) => e.preventDefault()}
+            style={{ pointerEvents: "none", cursor: "not-allowed" }}
           >
-            <Card border="primary" className="mb-4 btnCard">
+            <Card border="primary" className="mb-4 disabled">
               <Card.Header>
                 <FaGraduationCap className="text-primary me-2" size={18} />
                 <span>Textos de Inglés</span>
@@ -329,8 +333,10 @@ const Materiales = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="link-underlinelink-offset-2 link-underline link-underline-opacity-0"
+            onClick={(e) => e.preventDefault()}
+            style={{ pointerEvents: "none", cursor: "not-allowed" }}
           >
-            <Card border="primary" className="mb-4 btnCard">
+            <Card border="primary" className="mb-4 disabled">
               <Card.Header>
                 <FaGraduationCap className="text-primary me-2" size={18} />
                 <span>Plan Lector</span>
@@ -355,8 +361,10 @@ const Materiales = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="link-underlinelink-offset-2 link-underline link-underline-opacity-0"
+            onClick={(e) => e.preventDefault()}
+            style={{ pointerEvents: "none", cursor: "not-allowed" }}
           >
-            <Card border="primary" className="mb-4 btnCard">
+            <Card border="primary" className="mb-4 disabled">
               <Card.Header>
                 <FaGraduationCap className="text-primary me-2" size={18} />
                 <span>Materiales E.M.</span>
