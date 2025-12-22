@@ -91,7 +91,7 @@ function Home() {
               <hr />
               {/* <FacebookFeed /> */}
 
-              <div
+              {/* <div
                 className="bg-body-tertiary"
                 style={{
                   backgroundImage: "url('/images/bannerumag.png')",
@@ -123,7 +123,7 @@ function Home() {
                   </h2>
                   <NoticiasScraper />
                 </div>
-              </div>
+              </div> */}
             </div>
           </Col>
         </Row>

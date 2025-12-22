@@ -4,7 +4,7 @@ import { FaFileAlt, FaGraduationCap } from "react-icons/fa";
 const Materiales = () => {
   return (
     <div className="container contenedor px-5">
-      <h2>Lista de Materiales 2025</h2>
+      <h2>Lista de Materiales y Plan Lector 2026</h2>
       <hr />
 
       <h4>Educación Parvularia</h4>
@@ -373,7 +373,7 @@ const Materiales = () => {
         </div>
         <div className="col-md-4">
           <a
-            href="/docs/materiales2025/Plan-Lector-EM-2025.pdf"
+            href="/docs/materiales2026/Plan-Lector-EM-2026.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="link-underlinelink-offset-2 link-underline link-underline-opacity-0"

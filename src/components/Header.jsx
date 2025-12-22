@@ -60,8 +60,8 @@ export const Header = () => {
                 <ButtonAccess
                   name={"Matrícula 2026"}
                   link={"/matricula"}
-                  variant={"warning"}
-                  animate={true}
+                  variant={"primary"}
+                  animate={false}
                 />
                 <ButtonAccess
                   name={"Beca V. 2026"}
@@ -69,7 +69,7 @@ export const Header = () => {
                   onClick={handleBecaClick}
                   animate={false}
                 />
-                <ButtonAccess
+                {/* <ButtonAccess
                   name={"Fechas Reuniones"}
                   link={"/Reuniones"}
                   variant={"primary"}
@@ -83,12 +83,13 @@ export const Header = () => {
                   name={"Evaluaciones"}
                   link={"/Evaluaciones"}
                   variant={"primary"}
-                />
-                {/* <ButtonAccess
-                  name={"Lista de Materiales"}
-                  link={"/Materiales"}
-                  variant={"primary"}
                 /> */}
+                <ButtonAccess
+                  name={"Lista de Materiales 2026"}
+                  link={"/Materiales"}
+                  variant={"warning"}
+                  animate={true}
+                />
               </Col>
             </Row>
           </Container>
