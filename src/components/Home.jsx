@@ -6,7 +6,7 @@ import Externos from "./Externos";
 // import FacebookFeed from "./FacebookFeed";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
-import NoticiasScraper from "./NoticiasScraper";
+//import NoticiasScraper from "./NoticiasScraper";
 import { Container, Row, Col } from "react-bootstrap";
 import ComponentSae from "./sae";
 import UltimosVideos from "./UltimosVideos";
@@ -36,6 +36,16 @@ function MyVerticallyCenteredModal(props) {
                 vhernandez@liceoexperimental.cl
               </a>
               , indicando nombre completo del alumno/a y curso 2026.
+            </p>
+
+            <h3>Becas de Mantención PRESIDENTE DE LA REPÚBLICA E INDIGENA</h3>
+            <p>
+              Se informa que JUNAEB dió inicio al proceso de postulación y
+              renovación de las Becas de Mantención PRESIDENTE DE LA REPÚBLICA E
+              INDIGENA, para lo cual deben acceder el el siguiente link:
+              <a href="https://www.junaeb.cl/portal-becas/">
+                https://www.junaeb.cl/portal-becas/
+              </a>
             </p>
           </div>
         </div>
