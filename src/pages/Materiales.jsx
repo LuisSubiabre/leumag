@@ -106,7 +106,7 @@ const Materiales = () => {
       <div className="row">
         <div className="col-md-4">
           <a
-            href="https://drive.google.com/file/d/1Z-fHoot5L2ACkmnPDoAq92JUwogurtTa/view?usp=drive_link"
+            href="/docs/materiales2026/LM-1-basico-2026.pdf"
             target="_blank"
             //   rel="noopener noreferrer"
             className="link-underlinelink-offset-2 link-underline link-underline-opacity-0"
