@@ -23,30 +23,40 @@ function MyVerticallyCenteredModal(props) {
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter"></Modal.Title>
       </Modal.Header>
-      <Modal.Body className="text-center">
+      <Modal.Body>
         <div className="d-flex flex-column align-items-center">
           <hr className="my-4" />
-          <div className="mt-4">
-            <h3 className="mb-3">Beneficio Alimentación Escolar JUNAEB 2026</h3>
-            <p className="mb-3">
-              Se informa a los interesados en obtener el Beneficio de
-              Alimentación Escolar JUNAEB para el año 2026, enviar Registro
-              Social de Hogares Actualizado al mail{" "}
-              <a href="mailto:vhernandez@liceoexperimental.cl">
-                vhernandez@liceoexperimental.cl
-              </a>
-              , indicando nombre completo del alumno/a y curso 2026.
-            </p>
-
-            <h3>Becas de Mantención PRESIDENTE DE LA REPÚBLICA E INDIGENA</h3>
-            <p>
-              Se informa que JUNAEB dió inicio al proceso de postulación y
-              renovación de las Becas de Mantención PRESIDENTE DE LA REPÚBLICA E
-              INDIGENA, para lo cual deben acceder el el siguiente link:
-              <a href="https://www.junaeb.cl/portal-becas/">
-                https://www.junaeb.cl/portal-becas/
-              </a>
-            </p>
+          <div
+            className="mt-4"
+            style={{ maxWidth: "600px", textAlign: "left" }}
+          >
+            <h3 className="mb-4 text-center fw-bold">Comunicado</h3>
+            <div className="px-3">
+              <p className="mb-3" style={{ lineHeight: "1.7" }}>
+                Se informa a la comunidad educativa que, debido a la falta de
+                suministro eléctrico en el Liceo y en la oficina de
+                administración, provocada por trabajos que se encuentra
+                realizando la empresa Edelmag en el sector, las actividades
+                laborales quedan suspendidas durante la jornada de hoy viernes
+                26 de diciembre.
+              </p>
+              <p className="mb-3" style={{ lineHeight: "1.7" }}>
+                Lamentablemente, no fuimos informados con la debida
+                anticipación, lo que impidió comunicar esta situación
+                oportunamente. Durante el transcurso del día se informará
+                oportunamente si el servicio eléctrico se restablece y si las
+                actividades pueden retomarse con normalidad.
+              </p>
+              <p className="mb-3" style={{ lineHeight: "1.7" }}>
+                Debido a esta situación, se suspende la atención a apoderados y
+                el proceso de matrículas hasta nuevo aviso.
+              </p>
+              <p className="mb-0 mt-4 fst-italic" style={{ lineHeight: "1.7" }}>
+                Agradecemos su comprensión y solicitamos difundir esta
+                información a través de los canales oficiales del
+                establecimiento.
+              </p>
+            </div>
           </div>
         </div>
       </Modal.Body>
