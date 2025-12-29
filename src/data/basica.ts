@@ -19,6 +19,11 @@ import azamorano from "../assets/img/funcionarios/azamorano.png";
 import movando from "../assets/img/funcionarios/movando.png";
 import plemus from "../assets/img/funcionarios/plemus.png";
 import mdiazbustos from "../assets/img/funcionarios/mdiazbustos.png";
+import ymino from "../assets/img/funcionarios/ymino.png";
+import gcontreras from "../assets/img/funcionarios/gcontreras.png";
+import clara from "../assets/img/funcionarios/clara.png";
+import jpfarias from "../assets/img/funcionarios/jpfarias.png";
+import pdelgado from "../assets/img/funcionarios/pdelgado.png";
 export type Funcionario = {
   img: string;
   nombre: string;
@@ -78,7 +83,7 @@ export const equipoBasica: Funcionario[] = [
     asignatura: "Inglés",
   },
   {
-    img: demoImage,
+    img: ymino,
     nombre: "Yessica Miño",
     correo: "ymino@liceoexperimental.cl",
     dpto: "Educación Básica",
@@ -150,7 +155,7 @@ export const equipoBasica: Funcionario[] = [
     asignatura: "Matemática",
   },
   {
-    img: demoImage,
+    img: gcontreras,
     nombre: "Gustavo Contreras",
     correo: "gcontreras@liceoexperimental.cl",
     dpto: "Educación Básica",
@@ -158,7 +163,7 @@ export const equipoBasica: Funcionario[] = [
     asignatura: "Profesor de inglés 7° y 8°",
   },
   {
-    img: demoImage,
+    img: clara,
     nombre: "Cecilia Lara",
     correo: "clara@liceoexperimental.cl",
     dpto: "Educación Básica",
@@ -166,9 +171,9 @@ export const equipoBasica: Funcionario[] = [
     asignatura: "Matemática",
   },
   {
-    img: demoImage,
-    nombre: " Fernanda Román",
-    correo: "fromanb@liceoexperimental.cl",
+    img: jpfarias,
+    nombre: "Juan Pablo Farias",
+    correo: "jpfarias@liceoexperimental.cl",
     dpto: "Educación Básica",
     more: "",
     asignatura: "Historía",
@@ -218,7 +223,7 @@ export const equipoBasica: Funcionario[] = [
   },
 
   {
-    img: demoImage,
+    img: pdelgado,
     nombre: "Paola Delgado",
     correo: "pdelgado@liceoexperimental.cl",
     dpto: "Educación Básica",

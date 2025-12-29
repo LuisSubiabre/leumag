@@ -13,7 +13,6 @@ import fmancilla from "../assets/img/funcionarios/fmancilla.png";
 import mrodriguez from "../assets/img/funcionarios/mrodriguez.png";
 import pcardenas from "../assets/img/funcionarios/pcardenas.png";
 import aalarcon from "../assets/img/funcionarios/aalarcon.png";
-import nsanabria from "../assets/img/funcionarios/nsanabria.png";
 import svillegas from "../assets/img/funcionarios/svillegas.png";
 import ybahamonde from "../assets/img/funcionarios/ybahamonde.png";
 import anaguelquin from "../assets/img/funcionarios/anaguelquin.png";
@@ -21,8 +20,12 @@ import mcortez from "../assets/img/funcionarios/mcortez.png";
 import cramirez from "../assets/img/funcionarios/cramirez.png";
 import amarquez from "../assets/img/funcionarios/amarquez.png";
 import ssanchez from "../assets/img/funcionarios/ssanchez.png";
-import aguerra from "../assets/img/funcionarios/aguerra.png";
 import rahumada from "../assets/img/funcionarios/rahumada.png";
+import pparedes from "../assets/img/funcionarios/pparedes.png";
+import mperanchiguay from "../assets/img/funcionarios/mperanchiguay.png";
+import milnao from "../assets/img/funcionarios/milnao.png";
+import ealmonacid from "../assets/img/funcionarios/ealmonacid.png";
+
 export type Funcionario = {
   img: string;
   nombre: string;
@@ -55,12 +58,6 @@ export const equipoAsistentes: Funcionario[] = [
     correo: "avidal@liceoexperimental.cl",
     dpto: "Inspectora",
   },
-  {
-    img: aguerra,
-    nombre: "Arielle Guerra",
-    correo: "aguerra@liceoexperimental.cl",
-    dpto: "Inspectora Parvulos",
-  },
 
   {
     img: cramirez,
@@ -75,15 +72,16 @@ export const equipoAsistentes: Funcionario[] = [
     dpto: "TENS",
   },
   {
-    img: demoImage,
+    img: ealmonacid,
     nombre: "Elizabeth Almonacid",
     correo: "ealmonacid@liceoexperimental.cl",
     dpto: "Técnico 2° Básico B",
   },
+
   {
-    img: demoImage,
-    nombre: "María Angélica Castelblanco",
-    correo: "mcastelblanco@liceoexperimental.cl",
+    img: milnao,
+    nombre: "Marta Ilnao",
+    correo: "milnao@liceoexperimental.cl",
     dpto: "Inspectora",
   },
   {
@@ -153,7 +151,7 @@ export const equipoAsistentes: Funcionario[] = [
     dpto: "Inspectora",
   },
   {
-    img: demoImage,
+    img: pparedes,
     nombre: "Paulina Paredes",
     correo: "pparedes@liceoexperimental.cl",
     dpto: "Psicologa Apoyo Convivencia Escolar",
@@ -180,7 +178,7 @@ export const equipoAsistentes: Funcionario[] = [
     img: svera,
     nombre: "Samantha Vera",
     correo: "svera@liceoexperimental.cl",
-    dpto: "Portería",
+    dpto: "Recepción",
   },
   {
     img: vhernandez,

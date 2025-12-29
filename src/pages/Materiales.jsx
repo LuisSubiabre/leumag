@@ -4,36 +4,28 @@ import { FaFileAlt, FaGraduationCap } from "react-icons/fa";
 const Materiales = () => {
   return (
     <div className="container contenedor px-5">
-      <h2>Lista de Materiales 2025</h2>
+      <h2>Lista de Materiales y Plan Lector 2026</h2>
       <hr />
 
       <h4>Educación Parvularia</h4>
       <div className="row">
         <div className="col-md-4">
           <a
-            href="/docs/materiales2025/LM-NT1-2025.pdf"
+            href="https://drive.google.com/file/d/1N2faAgh6_dTrhgXzrkfuSAFKr5r5pHNO/view?usp=drive_link"
             target="_blank"
-            rel="noopener noreferrer"
+            // rel="noopener noreferrer"
             className="link-underlinelink-offset-2 link-underline link-underline-opacity-0"
+            // onClick={(e) => e.preventDefault()}
+            // style={{ pointerEvents: "none", cursor: "not-allowed" }}
           >
             <Card
               border="primary"
-              className="mb-4 btnCard"
+              className="mb-4 btCard"
               style={{
                 transition: "transform 0.3s ease, box-shadow 0.3s ease",
                 borderRadius: "12px",
                 overflow: "hidden",
                 boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = "translateY(-5px)";
-                e.currentTarget.style.boxShadow =
-                  "0 8px 16px rgba(0, 123, 255, 0.2)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = "translateY(0)";
-                e.currentTarget.style.boxShadow =
-                  "0 4px 8px rgba(0, 0, 0, 0.1)";
               }}
             >
               <Card.Header className="d-flex align-items-center">
@@ -41,7 +33,7 @@ const Materiales = () => {
                 <span>Materiales NT 1</span>
               </Card.Header>
               <Card.Body>
-                <Card.Title>Materiales NT 1</Card.Title>
+                <Card.Title>Materiales NT 1 </Card.Title>
                 <Card.Text className="d-flex align-items-center">
                   <FaFileAlt className="text-danger me-2" size={16} /> Ver
                   materiales
@@ -52,10 +44,12 @@ const Materiales = () => {
         </div>
         <div className="col-md-4">
           <a
-            href="/docs/materiales2025/LM-NT2-2025.pdf"
+            href="https://drive.google.com/file/d/1ssVxeUvX7GoTvodKMsOomBQUR6dbIPFt/view?usp=drive_link"
             target="_blank"
-            rel="noopener noreferrer"
+            // rel="noopener noreferrer"
             className="link-underlinelink-offset-2 link-underline link-underline-opacity-0"
+            //onClick={(e) => e.preventDefault()}
+            //style={{ pointerEvents: "none", cursor: "not-allowed" }}
           >
             <Card
               border="primary"
@@ -65,16 +59,6 @@ const Materiales = () => {
                 borderRadius: "12px",
                 overflow: "hidden",
                 boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = "translateY(-5px)";
-                e.currentTarget.style.boxShadow =
-                  "0 8px 16px rgba(0, 123, 255, 0.2)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = "translateY(0)";
-                e.currentTarget.style.boxShadow =
-                  "0 4px 8px rgba(0, 0, 0, 0.1)";
               }}
             >
               <Card.Header className="d-flex align-items-center">
@@ -93,12 +77,14 @@ const Materiales = () => {
         </div>
         <div className="col-md-4">
           <a
-            href="/docs/materiales2025/TextosIngles-2025.pdf"
+            href="/docs/materiales2026/Textos-de-Ingles-2026.pdf"
             target="_blank"
-            rel="noopener noreferrer"
+            // rel="noopener noreferrer"
             className="link-underlinelink-offset-2 link-underline link-underline-opacity-0"
+            // onClick={(e) => e.preventDefault()}
+            // style={{ pointerEvents: "none", cursor: "not-allowed" }}
           >
-            <Card border="primary" className="mb-4 btnCard">
+            <Card border="primary" className="mb-4 btCard">
               <Card.Header>
                 <FaGraduationCap className="text-primary me-2" size={18} />
                 <span>Textos de Inglés</span>
@@ -120,10 +106,12 @@ const Materiales = () => {
       <div className="row">
         <div className="col-md-4">
           <a
-            href="/docs/materiales2025/LM-1-Basico-2025.pdf"
+            href="/docs/materiales2026/LM-1-basico-2026.pdf"
             target="_blank"
-            rel="noopener noreferrer"
+            //   rel="noopener noreferrer"
             className="link-underlinelink-offset-2 link-underline link-underline-opacity-0"
+            //   onClick={(e) => e.preventDefault()}
+            // style={{ pointerEvents: "none", cursor: "not-allowed" }}
           >
             <Card border="primary" className="mb-4 btnCard">
               <Card.Header>
@@ -142,10 +130,12 @@ const Materiales = () => {
         </div>
         <div className="col-md-4">
           <a
-            href="/docs/materiales2025/LM-2-Basico-2025.pdf"
+            href="https://drive.google.com/file/d/14nlLEesRRDbkG5S_LB_tlDA3uXHS8FY2/view?usp=drive_link"
             target="_blank"
-            rel="noopener noreferrer"
+            // rel="noopener noreferrer"
             className="link-underlinelink-offset-2 link-underline link-underline-opacity-0"
+            //  onClick={(e) => e.preventDefault()}
+            //   style={{ pointerEvents: "none", cursor: "not-allowed" }}
           >
             <Card border="primary" className="mb-4 btnCard">
               <Card.Header>
@@ -164,10 +154,12 @@ const Materiales = () => {
         </div>
         <div className="col-md-4">
           <a
-            href="/docs/materiales2025/LM-3-Basico-2025.pdf"
+            href="https://drive.google.com/file/d/141GjAarICIHn6XqKQKLdZsPjdcmuExeF/view?usp=drive_link"
             target="_blank"
-            rel="noopener noreferrer"
+            //rel="noopener noreferrer"
             className="link-underlinelink-offset-2 link-underline link-underline-opacity-0"
+            //onClick={(e) => e.preventDefault()}
+            //style={{ pointerEvents: "none", cursor: "not-allowed" }}
           >
             <Card border="primary" className="mb-4 btnCard">
               <Card.Header>
@@ -189,10 +181,12 @@ const Materiales = () => {
       <div className="row">
         <div className="col-md-4">
           <a
-            href="/docs/materiales2025/LM-4-Basico-2025.pdf"
+            href="https://drive.google.com/file/d/1_QWYZ3qqG7G1aG6bFOc3tonDqkqs80Xa/view?usp=sharing"
             target="_blank"
-            rel="noopener noreferrer"
+            //   rel="noopener noreferrer"
             className="link-underlinelink-offset-2 link-underline link-underline-opacity-0"
+            // onClick={(e) => e.preventDefault()}
+            //style={{ pointerEvents: "none", cursor: "not-allowed" }}
           >
             <Card border="primary" className="mb-4 btnCard">
               <Card.Header>
@@ -211,10 +205,12 @@ const Materiales = () => {
         </div>
         <div className="col-md-4">
           <a
-            href="/docs/materiales2025/LM-5-Basico-2025.pdf"
+            href="https://drive.google.com/file/d/10Tsz3DAkBPx5CzKRG0qi9pOAp2qNVgwP/view?usp=drive_link"
             target="_blank"
-            rel="noopener noreferrer"
+            //  rel="noopener noreferrer"
             className="link-underlinelink-offset-2 link-underline link-underline-opacity-0"
+            // onClick={(e) => e.preventDefault()}
+            // style={{ pointerEvents: "none", cursor: "not-allowed" }}
           >
             <Card border="primary" className="mb-4 btnCard">
               <Card.Header>
@@ -233,10 +229,12 @@ const Materiales = () => {
         </div>
         <div className="col-md-4">
           <a
-            href="/docs/materiales2025/LM-6-Basico-2025.pdf"
+            href="https://drive.google.com/file/d/1LdcyWmm3Qldg0x_S3oDDg7BNo9hxztaR/view?usp=drive_link"
             target="_blank"
-            rel="noopener noreferrer"
+            // rel="noopener noreferrer"
             className="link-underlinelink-offset-2 link-underline link-underline-opacity-0"
+            // onClick={(e) => e.preventDefault()}
+            // style={{ pointerEvents: "none", cursor: "not-allowed" }}
           >
             <Card border="primary" className="mb-4 btnCard">
               <Card.Header>
@@ -258,10 +256,12 @@ const Materiales = () => {
       <div className="row">
         <div className="col-md-4">
           <a
-            href="/docs/materiales2025/LM-7-Basico-2025.pdf"
+            href="https://drive.google.com/file/d/13p5V5RMVAiSUWMBP1xSnHL22rl195obE/view?usp=drive_link"
             target="_blank"
-            rel="noopener noreferrer"
+            // rel="noopener noreferrer"
             className="link-underlinelink-offset-2 link-underline link-underline-opacity-0"
+            //onClick={(e) => e.preventDefault()}
+            //style={{ pointerEvents: "none", cursor: "not-allowed" }}
           >
             <Card border="primary" className="mb-4 btnCard">
               <Card.Header>
@@ -280,10 +280,12 @@ const Materiales = () => {
         </div>
         <div className="col-md-4">
           <a
-            href="/docs/materiales2025/LM-8-Basico-2025.pdf"
+            href="https://drive.google.com/file/d/18ZQifunnOoePyMX3Ld10kvh7P2s0SlqB/view?usp=drive_link"
             target="_blank"
-            rel="noopener noreferrer"
+            // rel="noopener noreferrer"
             className="link-underlinelink-offset-2 link-underline link-underline-opacity-0"
+            //onClick={(e) => e.preventDefault()}
+            //style={{ pointerEvents: "none", cursor: "not-allowed" }}
           >
             <Card border="primary" className="mb-4 btnCard">
               <Card.Header>
@@ -302,10 +304,12 @@ const Materiales = () => {
         </div>
         <div className="col-md-4">
           <a
-            href="/docs/materiales2025/TextosIngles-2025.pdf"
+            href="/docs/materiales2026/Textos-de-Ingles-2026.pdf"
             target="_blank"
-            rel="noopener noreferrer"
+            // rel="noopener noreferrer"
             className="link-underlinelink-offset-2 link-underline link-underline-opacity-0"
+            // onClick={(e) => e.preventDefault()}
+            //style={{ pointerEvents: "none", cursor: "not-allowed" }}
           >
             <Card border="primary" className="mb-4 btnCard">
               <Card.Header>
@@ -325,15 +329,38 @@ const Materiales = () => {
 
         <div className="col-md-4">
           <a
-            href="/docs/materiales2025/Plan-Lector-2025.pdf"
+            href="/docs/materiales2026/PlanLector-1a4EGB-2026.pdf"
             target="_blank"
-            rel="noopener noreferrer"
+            // rel="noopener noreferrer"
+            className="link-underlinelink-offset-2 link-underline link-underline-opacity-0"
+            // onClick={(e) => e.preventDefault()}
+            //  style={{ pointerEvents: "none", cursor: "not-allowed" }}
+          >
+            <Card border="primary" className="mb-4 btnCard">
+              <Card.Header>
+                <FaGraduationCap className="text-primary me-2" size={18} />
+                <span>Plan Lector de 1ero a 4to</span>
+              </Card.Header>
+              <Card.Body>
+                <Card.Title>Plan Lector</Card.Title>
+                <Card.Text className="d-flex align-items-center">
+                  <FaFileAlt className="text-danger me-2" size={16} /> Ver
+                  materiales
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </a>
+        </div>
+        <div className="col-md-4">
+          <a
+            href="/docs/materiales2026/PlanLector-5a8EGB-2026.pdf"
+            target="_blank"
             className="link-underlinelink-offset-2 link-underline link-underline-opacity-0"
           >
             <Card border="primary" className="mb-4 btnCard">
               <Card.Header>
                 <FaGraduationCap className="text-primary me-2" size={18} />
-                <span>Plan Lector</span>
+                <span>Plan Lector de 5to a 8vo</span>
               </Card.Header>
               <Card.Body>
                 <Card.Title>Plan Lector</Card.Title>
@@ -353,8 +380,10 @@ const Materiales = () => {
           <a
             href="https://docs.google.com/spreadsheets/d/1W_iw4bAgls3f5fkcLuZ1g_f10SXKJqFQcVvpxRgN4w4/edit?usp=sharing"
             target="_blank"
-            rel="noopener noreferrer"
+            //   rel="noopener noreferrer"
             className="link-underlinelink-offset-2 link-underline link-underline-opacity-0"
+            // onClick={(e) => e.preventDefault()}
+            // style={{ pointerEvents: "none", cursor: "not-allowed" }}
           >
             <Card border="primary" className="mb-4 btnCard">
               <Card.Header>
@@ -373,7 +402,7 @@ const Materiales = () => {
         </div>
         <div className="col-md-4">
           <a
-            href="/docs/materiales2025/Plan-Lector-EM-2025.pdf"
+            href="/docs/materiales2026/Plan-Lector-EM-2026.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="link-underlinelink-offset-2 link-underline link-underline-opacity-0"

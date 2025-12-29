@@ -15,6 +15,14 @@ import pnavea from "../assets/img/funcionarios/pnavea.png";
 import jtoro from "../assets/img/funcionarios/jtoro.png";
 import pbarria from "../assets/img/funcionarios/pbarria.png";
 import rbahamonde from "../assets/img/funcionarios/rbahamonde.png";
+import cvidela from "../assets/img/funcionarios/cvidela.png";
+import dbascunan from "../assets/img/funcionarios/dbascunan.png";
+import mvargas from "../assets/img/funcionarios/mvargas.png";
+import maburto from "../assets/img/funcionarios/maburto.png";
+import csoto from "../assets/img/funcionarios/csoto.png";
+import msaldivia from "../assets/img/funcionarios/msaldivia.png";
+import amorales from "../assets/img/funcionarios/amorales.png";
+import cmansilla from "../assets/img/funcionarios/cmansilla.png";
 export type Funcionario = {
   img: string;
   nombre: string;
@@ -26,16 +34,23 @@ export type Funcionario = {
 
 export const equipoMedia: Funcionario[] = [
   {
-    img: demoImage,
-    nombre: "Carmen Mansilla",
+    img: cmansilla,
+    nombre: "Carmen Gloria Mansilla",
     correo: "cmansilla@liceoexperimental.cl",
     dpto: "Educación Media",
-    more: "Jefatura: 1° Medio A",
+    more: "Jefatura: 1° A",
     asignatura: "-",
   },
-
   {
-    img: demoImage,
+    img: mvargas,
+    nombre: "María José Vargas",
+    correo: "mvargas@liceoexperimental.cl",
+    dpto: "Educación Media",
+    more: "Jefatura: 1° B",
+    asignatura: "Biología",
+  },
+  {
+    img: cvidela,
     nombre: "Claudia Videla",
     correo: "cvidela@liceoexperimental.cl",
     dpto: "Educación Media",
@@ -158,12 +173,12 @@ export const equipoMedia: Funcionario[] = [
       "Inglés Idioma Extranjero Cursos 2° A, 2° B, 3° A, 3° B, 4° A, 4° B, 4° C",
   },
   {
-    img: demoImage,
+    img: dbascunan,
     nombre: "Denisse Bascuñán",
     correo: "dbascunan@liceoexperimental.cl",
     dpto: "Educación Media",
     more: "—",
-    asignatura: "—",
+    asignatura: "Artes Visuales y Tecnología - FD Diseño Arquitectura y Artes.",
   },
   {
     img: demoImage,
@@ -191,27 +206,36 @@ export const equipoMedia: Funcionario[] = [
     asignatura: "Economía y Sociedad",
   },
   {
-    img: demoImage,
+    img: msaldivia,
     nombre: "María Saldivia",
     correo: "msaldivia@liceoexperimental.cl",
     dpto: "Educación Media",
     more: "—",
     asignatura: "Pensamiento Computacional y Programación",
   },
+
   {
-    img: demoImage,
-    nombre: "María José Vargas",
-    correo: "mvargas@liceoexperimental.cl",
-    dpto: "Educación Media",
-    more: "—",
-    asignatura: "Biología",
-  },
-  {
-    img: demoImage,
+    img: maburto,
     nombre: "Miguel Aburto",
     correo: "maburto@liceoexperimental.cl",
     dpto: "Educación Media",
     more: "—",
-    asignatura: "Religión",
+    asignatura: "Religión Católica",
+  },
+  {
+    img: csoto,
+    nombre: "Camila Soto",
+    correo: "csoto@liceoexperimental.cl",
+    dpto: "Educación Media",
+    more: "—",
+    asignatura: "Religión Evangélica",
+  },
+  {
+    img: amorales,
+    nombre: "Ángela Morales",
+    correo: "amorales@liceoexperimental.cl",
+    dpto: "Educación Media",
+    more: "—",
+    asignatura: "Lenguaje",
   },
 ];

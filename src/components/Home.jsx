@@ -6,8 +6,7 @@ import Externos from "./Externos";
 // import FacebookFeed from "./FacebookFeed";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
-import imgComunicado from "/comunicados/com120825.png";
-import NoticiasScraper from "./NoticiasScraper";
+//import NoticiasScraper from "./NoticiasScraper";
 import { Container, Row, Col } from "react-bootstrap";
 import ComponentSae from "./sae";
 import UltimosVideos from "./UltimosVideos";
@@ -24,19 +23,41 @@ function MyVerticallyCenteredModal(props) {
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter"></Modal.Title>
       </Modal.Header>
-      <Modal.Body className="text-center">
+      <Modal.Body>
         <div className="d-flex flex-column align-items-center">
-          <img
-            src={imgComunicado}
-            alt="Comunicado"
-            className="img-fluid mb-3"
-            style={{
-              borderRadius: "12px",
-              boxShadow: "0 2px 12px rgba(0,0,0,0.08)",
-              maxWidth: "100%",
-              height: "auto",
-            }}
-          />
+          <hr className="my-4" />
+          <div
+            className="mt-4"
+            style={{ maxWidth: "600px", textAlign: "left" }}
+          >
+            <h3 className="mb-4 text-center fw-bold">Comunicado</h3>
+            <div className="px-3">
+              <p className="mb-3" style={{ lineHeight: "1.7" }}>
+                Se informa a la comunidad educativa que, debido a la falta de
+                suministro eléctrico en el Liceo y en la oficina de
+                administración, provocada por trabajos que se encuentra
+                realizando la empresa Edelmag en el sector, las actividades
+                laborales quedan suspendidas durante la jornada de hoy viernes
+                26 de diciembre.
+              </p>
+              <p className="mb-3" style={{ lineHeight: "1.7" }}>
+                Lamentablemente, no fuimos informados con la debida
+                anticipación, lo que impidió comunicar esta situación
+                oportunamente. Durante el transcurso del día se informará
+                oportunamente si el servicio eléctrico se restablece y si las
+                actividades pueden retomarse con normalidad.
+              </p>
+              <p className="mb-3" style={{ lineHeight: "1.7" }}>
+                Debido a esta situación, se suspende la atención a apoderados y
+                el proceso de matrículas hasta nuevo aviso.
+              </p>
+              <p className="mb-0 mt-4 fst-italic" style={{ lineHeight: "1.7" }}>
+                Agradecemos su comprensión y solicitamos difundir esta
+                información a través de los canales oficiales del
+                establecimiento.
+              </p>
+            </div>
+          </div>
         </div>
       </Modal.Body>
       <Modal.Footer>
@@ -90,7 +111,7 @@ function Home() {
               <hr />
               {/* <FacebookFeed /> */}
 
-              <div
+              {/* <div
                 className="bg-body-tertiary"
                 style={{
                   backgroundImage: "url('/images/bannerumag.png')",
@@ -122,7 +143,7 @@ function Home() {
                   </h2>
                   <NoticiasScraper />
                 </div>
-              </div>
+              </div> */}
             </div>
           </Col>
         </Row>

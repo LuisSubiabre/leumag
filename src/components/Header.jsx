@@ -3,13 +3,14 @@ import { ButtonAccess } from "./ButtonAccess";
 import logoImage from "../assets/img/experimentalin.png";
 import { Image, Container, Row, Col } from "react-bootstrap";
 import { useState } from "react";
-import ComponentSae from "./sae";
+// import ComponentSae from "./sae";
+import BecaComponent from "./BecaCompoment";
 
 export const Header = () => {
-  const [showSaeModal, setShowSaeModal] = useState(false);
+  const [showBecaModal, setShowBecaModal] = useState(false);
 
-  const handleSaeClick = () => {
-    setShowSaeModal(true);
+  const handleBecaClick = () => {
+    setShowBecaModal(true);
   };
 
   return (
@@ -56,18 +57,19 @@ export const Header = () => {
                 md="auto"
                 className="d-flex flex-column flex-md-row justify-content-center align-items-stretch gap-2"
               >
-                {/* <ButtonAccess
-                  name={"Matrícula 2025"}
-                  link={"/matricula"}
-                  variant={"warning"}
-                /> */}
                 <ButtonAccess
-                  name={"SAE 2025"}
-                  variant={"warning"}
-                  onClick={handleSaeClick}
-                  animate={true}
+                  name={"Matrícula 2026"}
+                  link={"/matricula"}
+                  variant={"primary"}
+                  animate={false}
                 />
                 <ButtonAccess
+                  name={"Beca V. 2026"}
+                  variant={"primary"}
+                  onClick={handleBecaClick}
+                  animate={false}
+                />
+                {/* <ButtonAccess
                   name={"Fechas Reuniones"}
                   link={"/Reuniones"}
                   variant={"primary"}
@@ -81,11 +83,12 @@ export const Header = () => {
                   name={"Evaluaciones"}
                   link={"/Evaluaciones"}
                   variant={"primary"}
-                />
+                /> */}
                 <ButtonAccess
-                  name={"Lista de Materiales"}
+                  name={"Lista de Materiales 2026"}
                   link={"/Materiales"}
-                  variant={"primary"}
+                  variant={"warning"}
+                  animate={true}
                 />
               </Col>
             </Row>
@@ -95,7 +98,10 @@ export const Header = () => {
       <div className="container py-4"></div>
 
       {/* Modal del SAE */}
-      <ComponentSae show={showSaeModal} onHide={() => setShowSaeModal(false)} />
+      <BecaComponent
+        show={showBecaModal}
+        onHide={() => setShowBecaModal(false)}
+      />
     </>
   );
 };
