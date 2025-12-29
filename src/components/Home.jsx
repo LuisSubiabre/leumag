@@ -25,36 +25,56 @@ function MyVerticallyCenteredModal(props) {
       </Modal.Header>
       <Modal.Body>
         <div className="d-flex flex-column align-items-center">
-          <hr className="my-4" />
           <div
-            className="mt-4"
-            style={{ maxWidth: "600px", textAlign: "left" }}
+            className="mt-4 w-100"
+            style={{ maxWidth: "650px", textAlign: "left" }}
           >
-            <h3 className="mb-4 text-center fw-bold">Comunicado</h3>
+            <h3 className="mb-4 text-center fw-bold text-primary">
+              Información Importante
+            </h3>
+
+            {/* Sección 1: Beneficio Alimentación Escolar */}
+            <div className="mb-4 px-3">
+              <h4 className="mb-3 fw-bold" style={{ color: "#0d6efd" }}>
+                Beneficio Alimentación Escolar JUNAEB 2026
+              </h4>
+              <p className="mb-2" style={{ lineHeight: "1.8" }}>
+                Se informa a los interesados en obtener el Beneficio de
+                Alimentación Escolar JUNAEB para el año 2026, enviar Registro
+                Social de Hogares Actualizado al correo:{" "}
+                <a
+                  href="mailto:vhernandez@liceoexperimental.cl"
+                  className="fw-semibold"
+                  style={{ textDecoration: "none" }}
+                >
+                  vhernandez@liceoexperimental.cl
+                </a>
+                , indicando nombre completo del alumno/a y curso 2026.
+              </p>
+            </div>
+
+            <hr className="my-4" />
+
+            {/* Sección 2: Becas de Mantención */}
             <div className="px-3">
-              <p className="mb-3" style={{ lineHeight: "1.7" }}>
-                Se informa a la comunidad educativa que, debido a la falta de
-                suministro eléctrico en el Liceo y en la oficina de
-                administración, provocada por trabajos que se encuentra
-                realizando la empresa Edelmag en el sector, las actividades
-                laborales quedan suspendidas durante la jornada de hoy viernes
-                26 de diciembre.
+              <h4 className="mb-3 fw-bold" style={{ color: "#0d6efd" }}>
+                Becas de Mantención Presidente de la República e Indígena
+              </h4>
+              <p className="mb-2" style={{ lineHeight: "1.8" }}>
+                Se informa que JUNAEB dio inicio al proceso de postulación y
+                renovación de las Becas de Mantención Presidente de la República
+                e Indígena. Para postular, deben acceder al siguiente enlace:
               </p>
-              <p className="mb-3" style={{ lineHeight: "1.7" }}>
-                Lamentablemente, no fuimos informados con la debida
-                anticipación, lo que impidió comunicar esta situación
-                oportunamente. Durante el transcurso del día se informará
-                oportunamente si el servicio eléctrico se restablece y si las
-                actividades pueden retomarse con normalidad.
-              </p>
-              <p className="mb-3" style={{ lineHeight: "1.7" }}>
-                Debido a esta situación, se suspende la atención a apoderados y
-                el proceso de matrículas hasta nuevo aviso.
-              </p>
-              <p className="mb-0 mt-4 fst-italic" style={{ lineHeight: "1.7" }}>
-                Agradecemos su comprensión y solicitamos difundir esta
-                información a través de los canales oficiales del
-                establecimiento.
+              <p className="mb-0">
+                <a
+                  href="https://www.junaeb.cl/portal-becas/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="fw-semibold"
+                  style={{ wordBreak: "break-all" }}
+                >
+                  https://www.junaeb.cl/portal-becas/
+                </a>
               </p>
             </div>
           </div>
@@ -78,7 +98,7 @@ function Home() {
   const [modalShow, setModalShow] = useState(true);
 
   useEffect(() => {
-    setModalShow(false);
+    setModalShow(true);
   }, []);
 
   return (
