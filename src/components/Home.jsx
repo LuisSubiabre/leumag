@@ -3,12 +3,14 @@ import PropTypes from "prop-types";
 import Posts from "./Posts";
 import Documentos from "./Documentos";
 import Externos from "./Externos";
-import FacebookFeed from "./FacebookFeed";
+// import FacebookFeed from "./FacebookFeed";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
-import imgComunicado from "/comunicados/afiche.png";
-import { ComunicadosComponent } from "./ComunicadosComponent";
+import imgComunicado from "/comunicados/com120825.png";
+import NoticiasScraper from "./NoticiasScraper";
 import { Container, Row, Col } from "react-bootstrap";
+import ComponentSae from "./sae";
+import UltimosVideos from "./UltimosVideos";
 
 // Componente del modal
 function MyVerticallyCenteredModal(props) {
@@ -23,29 +25,24 @@ function MyVerticallyCenteredModal(props) {
         <Modal.Title id="contained-modal-title-vcenter"></Modal.Title>
       </Modal.Header>
       <Modal.Body className="text-center">
-        <div>
-          <iframe
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/9a9MHDsBEHs?si=To2dnFUstGcYVjY4"
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowfullscreen
-          ></iframe>
-          <hr></hr>
+        <div className="d-flex flex-column align-items-center">
           <img
             src={imgComunicado}
-            width="400"
-            height="400"
             alt="Comunicado"
             className="img-fluid mb-3"
+            style={{
+              borderRadius: "12px",
+              boxShadow: "0 2px 12px rgba(0,0,0,0.08)",
+              maxWidth: "100%",
+              height: "auto",
+            }}
           />
         </div>
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={props.onHide}>Cerrar</Button>
+        <Button variant="primary" onClick={props.onHide}>
+          Cerrar
+        </Button>
       </Modal.Footer>
     </Modal>
   );
@@ -70,24 +67,62 @@ function Home() {
           <Col lg={8} className="order-2 order-lg-1">
             <Posts />
             <hr className="d-lg-none" />
-            <ComunicadosComponent />
+            <UltimosVideos />
+
             <hr />
             <Documentos />
-            <div className="d-lg-none">
-              <hr />
-              <FacebookFeed />
-            </div>
           </Col>
           <Col lg={4} className="order-1 order-lg-2">
             <div className="d-lg-none mb-4">
               <Externos />
+              <hr />
+              <ComponentSae />
             </div>
+            <hr />
+
             <div
               className="d-none d-lg-block sticky-top"
               style={{ top: "80px" }}
             >
               <Externos />
-              <FacebookFeed />
+              <hr />
+              <ComponentSae />
+              <hr />
+              {/* <FacebookFeed /> */}
+
+              <div
+                className="bg-body-tertiary"
+                style={{
+                  backgroundImage: "url('/images/bannerumag.png')",
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  backgroundRepeat: "no-repeat",
+                  padding: "2rem",
+                  borderRadius: "15px",
+                  boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+                  marginBottom: "2rem",
+                  position: "relative",
+                  backdropFilter: "blur(8px)",
+                  backgroundColor: "rgba(var(--bs-body-bg-rgb), 0.15)",
+                }}
+              >
+                <div
+                  className="bg-body"
+                  style={{
+                    padding: "2rem",
+                    borderRadius: "15px",
+                    backdropFilter: "blur(4px)",
+                    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.05)",
+                    backgroundColor: "rgba(var(--bs-body-bg-rgb), 0.6)",
+                  }}
+                >
+                  <h2 className="text-2xl font-bold text-center mb-4">
+                    Intervenciones educativas Carrera de Nutrición y Dietética
+                    Universidad de Magallanes
+                  </h2>
+                  <NoticiasScraper />
+                </div>
+              </div>
             </div>
           </Col>
         </Row>

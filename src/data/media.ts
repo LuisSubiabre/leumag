@@ -206,4 +206,12 @@ export const equipoMedia: Funcionario[] = [
     more: "—",
     asignatura: "Biología",
   },
+  {
+    img: demoImage,
+    nombre: "Miguel Aburto",
+    correo: "maburto@liceoexperimental.cl",
+    dpto: "Educación Media",
+    more: "—",
+    asignatura: "Religión",
+  },
 ];

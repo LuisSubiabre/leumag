@@ -12,6 +12,7 @@ import Materiales from "./pages/Materiales";
 import Evaluaciones from "./pages/Evaluaciones";
 import Noticia from "./components/Noticia";
 import Noticias from "./components/Noticias";
+import NoticiasScraper from "./components/NoticiasScraper";
 import ScrollToTop from "./components/ScrollToTop";
 import NotFound from "./components/NotFound";
 import { Comunicados } from "./pages/Comunicados";
@@ -41,6 +42,7 @@ function App() {
         <Route path="/Evaluaciones" element={<Evaluaciones />} />
         <Route path="/Noticia/:id" element={<Noticia />} />
         <Route path="/Noticias" element={<Noticias />} />
+        <Route path="/NoticiasScraper" element={<NoticiasScraper />} />
         <Route path="/Comunicados" element={<Comunicados />} />
         <Route path="/Becas" element={<SocioeconomicForm />} />
         <Route path="/Reuniones" element={<Reuniones />} />

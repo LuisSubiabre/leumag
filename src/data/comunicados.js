@@ -1,5 +1,95 @@
 export const comunicados = [
   {
+    id: 15,
+    titulo: "Suspensión de clases jornada tarde Jueves 14 de agosto 2025",
+    fecha: "12-08-2025",
+    img: "/comunicados/com120825.png",
+    contenido: `
+    <p>En el marco de la convocatoria del Ministerio de Educación a todos los establecimientos educacionales del País, a participar de una Jornada de reflexión pedagógica sobre el desarrollo profesional docente, a realizarse el próximo día jueves 14 de agosto de 2025. Les informamos que se suspenden las clases sin recuperación para la jornada de la tarde. Con este propósito, los horarios de salida para cada nivel son los siguientes:</p>
+
+    <ul>
+        <li>Las clases para los niveles transición 1 y 2 son normales conforme a la jornada escolar habitual.</li>
+        <li>Les agradecemos la puntualidad en el retiro de sus pupilos, para el adecuado desarrollo de la jornada.</li>
+    </ul>
+
+    <table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse; text-align: center;">
+        <tr style="background-color: #dce6f1; font-weight: bold;">
+            <td>Enseñanza básica</td>
+            <td>jueves 14/08</td>
+        </tr>
+        <tr>
+            <td colspan="2" style="font-weight: bold;">Cursos &nbsp;&nbsp;&nbsp;&nbsp; horario</td>
+        </tr>
+        <tr>
+            <td>1° - 2° - 3°</td>
+            <td>12:50</td>
+        </tr>
+        <tr>
+            <td>4° - 5° - 6°</td>
+            <td>12:55</td>
+        </tr>
+        <tr>
+            <td>7° - 8°</td>
+            <td>13:00</td>
+        </tr>
+        <tr style="background-color: #dce6f1; font-weight: bold;">
+            <td>Enseñanza media</td>
+            <td>jueves 14/08</td>
+        </tr>
+        <tr>
+            <td>1° a 4° medio</td>
+            <td>13:45</td>
+        </tr>
+    </table>
+
+    <h4>INFORMACIÓN COMPLEMENTARIA IMPORTANTE:</h4>
+    <ul>
+        <li><strong>Almuerzo JUNAEB:</strong> Para los estudiantes beneficiarios, el servicio será entregado con normalidad.</li>
+        <li>Todos los ACLE se suspenden.</li>
+    </ul>
+    `,
+  },
+  {
+    id: 14,
+    titulo: "Atención de Apoderados - Administración",
+    fecha: "26-03-2025",
+    img: "/comunicados/administracio062025.png",
+    contenido: `Estimado(a) Apoderado(a):
+
+<p>Junto con saludar cordialmente, les informamos que, con motivo de que nuestro Liceo ha
+sido designado como local de votación para las primarias presidenciales de este domingo
+29 de junio, y por instrucción del SERVEL, debemos entregar las instalaciones a las Fuerzas Armadas desde el viernes 27 hasta el lunes 30 de junio.</p>
+
+<p>Además, de acuerdo con lo establecido por el Ministerio de Educación en el calendario
+escolar 2025, el receso de invierno se extenderá desde el 1 al 18 de julio del presente
+año. Por esta razón, durante ese período no habrá atención al público en las oficinas de
+administración, lo que incluye la suspensión de pagos presenciales.</p>
+
+<p>Retomaremos nuestras funciones el día lunes 21 de julio, en el horario habitual de 08:00 a 13:00 hrs.</p>
+
+<p>Durante los días de receso, los pagos podrán realizarse únicamente mediante
+transferencia electrónica o depósito bancario en la siguiente cuenta:</p>
+
+<p>Banco Scotiabank</p>
+<p>Cta.Cte. Nro. 00064014056</p>
+<p>RUT 65.471.020-1</p>
+<p>FUDE UMAG</p>
+
+<p>Recordar siempre por favor enviar correo a la siguiente dirección: pagoarancel@liceoexperimental.cl
+En el mensaje indicar nombre y RUT del alumno, curso y mes de pago, junto al respaldo de transferencia o depósito.</p>
+
+<p>Durante este período, las boletas correspondientes al pago del arancel serán enviadas a
+sus correos electrónicos al finalizar cada semana.
+Les recordamos que el compromiso adquirido con la institución contempla el pago
+mensual del arancel, cuyo vencimiento es el día 5 de cada mes. Este aporte regular y
+oportuno es fundamental para que podamos llevar a cabo adecuadamente las actividades programadas, en beneficio de nuestros estudiantes y el buen funcionamiento de la institución.</p>
+
+<p>Agradecemos su comprensión y compromiso, y los animamos a mantener sus pagos al día conforme al calendario establecido.</p>
+
+<p>Que tengan un reparador receso de invierno, atte.
+ADMINISTRACIÓN</p>`,
+  },
+  {
     id: 13,
     titulo: "Feliz día del estudiante",
     fecha: "09-04-2025",
