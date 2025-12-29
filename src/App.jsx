@@ -12,6 +12,7 @@ import Materiales from "./pages/Materiales";
 import Evaluaciones from "./pages/Evaluaciones";
 import Noticia from "./components/Noticia";
 import Noticias from "./components/Noticias";
+import NoticiasScraper from "./components/NoticiasScraper";
 import ScrollToTop from "./components/ScrollToTop";
 import NotFound from "./components/NotFound";
 import { Comunicados } from "./pages/Comunicados";
@@ -22,6 +23,7 @@ import CentroDePadres from "./pages/CentroDePadres";
 import CardShowcase from "./pages/CardShowcase";
 import EstamentosPage from "./pages/EstamentosPage";
 import CentroDeAlumnos from "./pages/CentroDeAlumnos";
+import InfoCra from "./pages/InfoCra";
 
 function App() {
   return (
@@ -40,6 +42,7 @@ function App() {
         <Route path="/Evaluaciones" element={<Evaluaciones />} />
         <Route path="/Noticia/:id" element={<Noticia />} />
         <Route path="/Noticias" element={<Noticias />} />
+        <Route path="/NoticiasScraper" element={<NoticiasScraper />} />
         <Route path="/Comunicados" element={<Comunicados />} />
         <Route path="/Becas" element={<SocioeconomicForm />} />
         <Route path="/Reuniones" element={<Reuniones />} />
@@ -47,6 +50,7 @@ function App() {
         <Route path="/CentroDePadres" element={<CentroDePadres />} />
         <Route path="/CentroDeAlumnos" element={<CentroDeAlumnos />} />
         <Route path="/cards" element={<CardShowcase />} />
+        <Route path="/InfoCra" element={<InfoCra />} />
         <Route path="*" element={<NotFound />} /> {/* Ruta para manejar 404 */}
       </Routes>
       <Footer />

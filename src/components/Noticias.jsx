@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { Row, Col, Card, Form, Spinner } from "react-bootstrap";
@@ -10,75 +10,111 @@ const Noticias = () => {
   const [loading, setLoading] = useState(false);
   const [hasMore, setHasMore] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
+  const [mediaCache, setMediaCache] = useState(new Map());
+
+  const formatDate = (dateString) => {
+    const options = { year: "numeric", month: "long", day: "numeric" };
+    return new Date(dateString).toLocaleDateString("es-ES", options);
+  };
+
+  const getMediaUrl = useCallback(
+    async (mediaId) => {
+      if (mediaCache.has(mediaId)) {
+        return mediaCache.get(mediaId);
+      }
+
+      try {
+        const response = await axios.get(
+          `https://portal.liceoexperimental.cl/wp-json/wp/v2/media/${mediaId}`
+        );
+        const url = response.data.source_url;
+        setMediaCache((prev) => new Map(prev).set(mediaId, url));
+        return url;
+      } catch (error) {
+        console.error("Error fetching media:", error);
+        return null;
+      }
+    },
+    [mediaCache]
+  );
+
+  const fetchPosts = useCallback(async () => {
+    if (!hasMore || loading) return;
+
+    try {
+      setLoading(true);
+      const response = await axios.get(
+        `https://portal.liceoexperimental.cl/wp-json/wp/v2/posts?page=${page}&per_page=10`
+      );
+
+      if (response.data.length === 0) {
+        setHasMore(false);
+        return;
+      }
+
+      const postsData = await Promise.all(
+        response.data.map(async (post) => {
+          const {
+            featured_media: featuredMediaId,
+            id,
+            title,
+            content,
+            link,
+            date,
+          } = post;
+
+          const featuredMedia = featuredMediaId
+            ? await getMediaUrl(featuredMediaId)
+            : null;
+
+          return {
+            id,
+            title: title.rendered,
+            content: content.rendered.substring(0, 100) + "...",
+            link,
+            featuredMedia,
+            date: formatDate(date),
+          };
+        })
+      );
+
+      setPosts((prevPosts) => {
+        // Filtrar posts duplicados
+        const newPosts = postsData.filter(
+          (newPost) =>
+            !prevPosts.some((existingPost) => existingPost.id === newPost.id)
+        );
+        return [...prevPosts, ...newPosts];
+      });
+
+      setPage((prevPage) => prevPage + 1);
+      setHasMore(response.data.length === 10);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    } finally {
+      setLoading(false);
+    }
+  }, [page, hasMore, loading, getMediaUrl]);
 
   useEffect(() => {
-    const fetchPosts = async () => {
-      if (!hasMore) return;
-      try {
-        setLoading(true);
-        const response = await axios.get(
-          `https://portal.liceoexperimental.cl/wp-json/wp/v2/posts?page=${page}&per_page=10`
-        );
-        const postsData = await Promise.all(
-          response.data.map(async (post) => {
-            const {
-              featured_media: featuredMediaId,
-              id,
-              title,
-              content,
-              link,
-            } = post;
-            const featuredMediaResponse = featuredMediaId
-              ? await axios.get(
-                  `https://portal.liceoexperimental.cl/wp-json/wp/v2/media/${featuredMediaId}`
-                )
-              : null;
-            const featuredMedia = featuredMediaResponse
-              ? featuredMediaResponse.data.source_url
-              : null;
-            return {
-              id,
-              title: title.rendered,
-              content: content.rendered.substring(0, 100) + "...",
-              link,
-              featuredMedia,
-            };
-          })
-        );
-
-        setPosts((prevPosts) => [...prevPosts, ...postsData]);
-        setPage((prevPage) => prevPage + 1);
-        setLoading(false);
-
-        // Verificar si hay más posts para cargar
-        if (postsData.length < 10) {
-          setHasMore(false);
-        }
-      } catch (error) {
-        console.error("Error fetching data:", error);
-        setLoading(false);
-      }
-    };
-
     const handleScroll = () => {
       if (
         window.innerHeight + document.documentElement.scrollTop + 100 >=
           document.documentElement.offsetHeight &&
-        !loading
+        !loading &&
+        hasMore
       ) {
         fetchPosts();
       }
     };
 
     window.addEventListener("scroll", handleScroll);
-
-    // Cargar los primeros posts al montar el componente
     fetchPosts();
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [page, hasMore, loading]);
+  }, [fetchPosts]);
 
   const filteredPosts = posts.filter(
     (post) =>
@@ -100,16 +136,36 @@ const Noticias = () => {
       </Form>
       <Row>
         <h2>Todas las noticias:</h2>
-        {filteredPosts.map((post, index) => (
-          <Col md={4} key={index}>
+        {filteredPosts.map((post) => (
+          <Col md={4} key={post.id}>
             <Card className="shadow-lg mb-5 bg-body-tertiary rounded-3">
               <Card.Img
                 variant="top"
                 src={post.featuredMedia}
                 alt="Imagen destacada"
                 className="rounded-top"
+                loading="lazy"
+                style={{ height: "200px", objectFit: "cover" }}
               />
               <Card.Body className="p-4">
+                <div className="d-flex justify-content-between align-items-center mb-2">
+                  <small
+                    className="text-muted"
+                    style={{
+                      fontSize: "0.9rem",
+                      fontStyle: "italic",
+                      color: "var(--bs-body-color)",
+                      backgroundColor: "var(--bs-tertiary-bg)",
+                      padding: "6px 12px",
+                      borderRadius: "8px",
+                      boxShadow: "0 2px 4px rgba(0,0,0,0.05)",
+                      border: "1px solid var(--bs-border-color)",
+                      transition: "all 0.3s ease",
+                    }}
+                  >
+                    {post.date}
+                  </small>
+                </div>
                 <Card.Title
                   className="text-primary fw-bold"
                   dangerouslySetInnerHTML={{ __html: post.title }}
@@ -181,9 +237,9 @@ const Noticias = () => {
             </Spinner>
           </div>
         )}
-        {!hasMore && (
+        {!hasMore && posts.length > 0 && (
           <p className="text-center text-muted">
-            No hay más noticias para mostrar.
+            Has llegado al final de las noticias.
           </p>
         )}
       </Row>

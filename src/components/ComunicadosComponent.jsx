@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { comunicados } from "../comunicados.js";
+import { comunicados } from "../data/comunicados.js";
 import { useState } from "react";
 
 export const ComunicadosComponent = () => {
@@ -10,7 +10,7 @@ export const ComunicadosComponent = () => {
     <div className="container">
       <div className="row">
         <div className="col-12">
-          <h2 className="mb-4">Últimos comunicados</h2>
+          <h2 className="mb-4">Últimos comunicados:</h2>
         </div>
       </div>
 

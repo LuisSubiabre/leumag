@@ -1,0 +1,167 @@
+.directiva-list {
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.directiva-list:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.directiva-item {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e9ecef;
+  transition: all 0.3s ease;
+}
+
+.directiva-item:hover {
+  background-color: #f8f9fa;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+
+.directiva-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.cargo {
+  font-weight: 700;
+  color: #0d6efd;
+  margin-right: 0.75rem;
+  font-size: 1.1rem;
+}
+
+.nombre {
+  font-weight: 600;
+  margin-right: 0.75rem;
+  color: #212529;
+}
+
+.curso {
+  color: #6c757d;
+  font-size: 0.95rem;
+  background-color: #f8f9fa;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  display: inline-block;
+}
+
+/* Estilos para la sección principal */
+.contenedor {
+  padding: 3rem 0;
+}
+
+.contenedor h2 {
+  color: #0d6efd;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+}
+
+.contenedor h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background-color: #0d6efd;
+  border-radius: 2px;
+}
+
+/* Estilos para la imagen del CAA */
+.img-caa {
+  border: 4px solid #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.img-caa:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilos para las tarjetas de noticias */
+.card {
+  transition: all 0.3s ease;
+  border: none;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.05);
+}
+
+.card-title {
+  font-size: 1.25rem;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+
+.card-text {
+  color: #6c757d;
+  line-height: 1.6;
+}
+
+/* Estilos para el botón */
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-primary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #0d6efd, #0a58ca);
+  z-index: -1;
+  transition: opacity 0.3s ease;
+}
+
+.btn-primary:hover::before {
+  opacity: 0.8;
+}
+
+/* Estilos para el spinner de carga */
+.spinner-grow {
+  width: 3rem;
+  height: 3rem;
+  color: #0d6efd;
+}
+
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+  .directiva-list {
+    padding: 1.5rem;
+  }
+
+  .img-caa {
+    width: 300px;
+    height: 300px;
+  }
+
+  .card-img-top {
+    height: 180px;
+  }
+}

@@ -33,15 +33,7 @@ export const equipoMedia: Funcionario[] = [
     more: "Jefatura: 1° Medio A",
     asignatura: "-",
   },
-  {
-    img: mcisternas,
-    nombre: "Manuel Cisternas",
-    correo: "mcisternas@liceoexperimental.cl",
-    dpto: "Educación Media",
-    more: "Jefatura: 1° B",
-    asignatura:
-      "Biología – Ciencias para la Ciudadanía – FD Biología Celular y Molecular – FD Biología de los Ecosistemas",
-  },
+
   {
     img: demoImage,
     nombre: "Claudia Videla",
@@ -197,5 +189,29 @@ export const equipoMedia: Funcionario[] = [
     dpto: "Educación Media",
     more: "—",
     asignatura: "Economía y Sociedad",
+  },
+  {
+    img: demoImage,
+    nombre: "María Saldivia",
+    correo: "msaldivia@liceoexperimental.cl",
+    dpto: "Educación Media",
+    more: "—",
+    asignatura: "Pensamiento Computacional y Programación",
+  },
+  {
+    img: demoImage,
+    nombre: "María José Vargas",
+    correo: "mvargas@liceoexperimental.cl",
+    dpto: "Educación Media",
+    more: "—",
+    asignatura: "Biología",
+  },
+  {
+    img: demoImage,
+    nombre: "Miguel Aburto",
+    correo: "maburto@liceoexperimental.cl",
+    dpto: "Educación Media",
+    more: "—",
+    asignatura: "Religión",
   },
 ];

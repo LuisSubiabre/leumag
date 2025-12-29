@@ -11,6 +11,7 @@ const Documentos = () => {
   return (
     <Container className="py-5">
       <Row className="g-4">
+        <h2>Documentos Oficiales:</h2>
         <Col md={6} lg={4} className="mb-4">
           <a
             href="https://docs.google.com/presentation/d/1bfAJUra5h97VnXrcEYnShwg9MblkiBpX/edit?usp=sharing&ouid=113785725979968228794&rtpof=true&sd=true"
@@ -25,7 +26,7 @@ const Documentos = () => {
               borderColor="#007bff"
               footerText="Ver documento"
               footerIcon={<FaGoogle className="text-danger" />}
-              subtitle={<span className="badge bg-danger ms-2">Nuevo</span>}
+              //subtitle={<span className="badge bg-danger ms-2">Nuevo</span>}
             />
           </a>
         </Col>

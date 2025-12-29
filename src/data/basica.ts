@@ -114,7 +114,7 @@ export const equipoBasica: Funcionario[] = [
     nombre: "Carola Cárdenas",
     correo: "ccardenas@liceoexperimental.cl",
     dpto: "Educación Básica",
-    more: "Jefatura: 5° Básico B",
+    more: "Jefatura: 6° Básico B",
     asignatura: "Ciencias Naturales – Tecnología",
   },
   {
@@ -152,7 +152,7 @@ export const equipoBasica: Funcionario[] = [
   {
     img: demoImage,
     nombre: "Gustavo Contreras",
-    correo: "fperez@liceoexperimental.cl",
+    correo: "gcontreras@liceoexperimental.cl",
     dpto: "Educación Básica",
     more: "Jefatura: 8° Básico A",
     asignatura: "Profesor de inglés 7° y 8°",

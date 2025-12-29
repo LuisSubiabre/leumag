@@ -109,7 +109,7 @@ const CustomCard = ({
 CustomCard.propTypes = {
   title: PropTypes.string,
   titleIcon: PropTypes.node,
-  subtitle: PropTypes.string,
+  subtitle: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   subtitleIcon: PropTypes.node,
   children: PropTypes.node,
   headerText: PropTypes.string,

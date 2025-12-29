@@ -19,7 +19,6 @@ import ybahamonde from "../assets/img/funcionarios/ybahamonde.png";
 import anaguelquin from "../assets/img/funcionarios/anaguelquin.png";
 import mcortez from "../assets/img/funcionarios/mcortez.png";
 import cramirez from "../assets/img/funcionarios/cramirez.png";
-import cgutierrez from "../assets/img/funcionarios/cgutierrez.png";
 import amarquez from "../assets/img/funcionarios/amarquez.png";
 import ssanchez from "../assets/img/funcionarios/ssanchez.png";
 import aguerra from "../assets/img/funcionarios/aguerra.png";
@@ -62,17 +61,18 @@ export const equipoAsistentes: Funcionario[] = [
     correo: "aguerra@liceoexperimental.cl",
     dpto: "Inspectora Parvulos",
   },
-  {
-    img: cgutierrez,
-    nombre: "Carolina Gutiérrez",
-    correo: "cgutierrez@liceoexperimental.cl",
-    dpto: "Encargada de Seguridad ",
-  },
+
   {
     img: cramirez,
     nombre: "Carolina Ramírez",
     correo: "cramirez@liceoexperimental.cl",
     dpto: "Técnico 1° Básico A",
+  },
+  {
+    img: rfarina,
+    nombre: "Rodrigo Fariña",
+    correo: "rfarina@liceoexperimental.cl",
+    dpto: "TENS",
   },
   {
     img: demoImage,
@@ -82,8 +82,8 @@ export const equipoAsistentes: Funcionario[] = [
   },
   {
     img: demoImage,
-    nombre: "Elizabeth Galindo",
-    correo: "egalindo@liceoexperimental.cl",
+    nombre: "María Angélica Castelblanco",
+    correo: "mcastelblanco@liceoexperimental.cl",
     dpto: "Inspectora",
   },
   {

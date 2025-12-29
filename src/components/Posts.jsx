@@ -8,11 +8,16 @@ const Posts = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [hoveredCard, setHoveredCard] = useState(null);
 
+  const formatDate = (dateString) => {
+    const options = { year: "numeric", month: "long", day: "numeric" };
+    return new Date(dateString).toLocaleDateString("es-ES", options);
+  };
+
   useEffect(() => {
     const fetchPosts = async () => {
       try {
         const response = await axios.get(
-          "https://portal.liceoexperimental.cl/wp-json/wp/v2/posts?per_page=4"
+          "https://portal.liceoexperimental.cl/wp-json/wp/v2/posts?per_page=6"
         );
         const postsData = await Promise.all(
           response.data.map(async (post) => {
@@ -22,6 +27,7 @@ const Posts = () => {
               title,
               content,
               link,
+              date,
             } = post;
             const featuredMediaResponse = featuredMediaId
               ? await axios.get(
@@ -37,6 +43,7 @@ const Posts = () => {
               content: content.rendered.substring(0, 100) + "...",
               link,
               featuredMedia,
+              date: formatDate(date),
             };
           })
         );
@@ -76,7 +83,7 @@ const Posts = () => {
       ) : (
         <>
           {posts.map((post, index) => (
-            <Col md={6} key={index} className="mb-3">
+            <Col md={6} lg={4} key={index} className="mb-3">
               <Link to={`Noticia/${post.id}`} className="text-decoration-none">
                 <Card
                   className="rounded h-100"
@@ -103,16 +110,33 @@ const Posts = () => {
                     style={{
                       height: "220px",
                       objectFit: "cover",
-
                       transition: "transform 0.3s ease",
                       transform:
                         hoveredCard === post.id ? "scale(1.02)" : "scale(1)",
                     }}
                   />
                   <Card.Body>
+                    <div className="d-flex justify-content-between align-items-center mb-2">
+                      <small
+                        className="text-muted"
+                        style={{
+                          fontSize: "0.9rem",
+                          fontStyle: "italic",
+                          color: "var(--bs-body-color)",
+                          backgroundColor: "var(--bs-tertiary-bg)",
+                          padding: "6px 12px",
+                          borderRadius: "8px",
+                          boxShadow: "0 2px 4px rgba(0,0,0,0.05)",
+                          border: "1px solid var(--bs-border-color)",
+                          transition: "all 0.3s ease",
+                        }}
+                      >
+                        {post.date}
+                      </small>
+                    </div>
                     <Card.Title
                       dangerouslySetInnerHTML={{ __html: post.title }}
-                      className="h2 "
+                      className="h2"
                       style={{
                         fontSize: "1.2rem",
                         fontWeight: "700",
