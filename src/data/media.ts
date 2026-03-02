@@ -205,14 +205,14 @@ export const equipoMedia: Funcionario[] = [
     more: "—",
     asignatura: "Economía y Sociedad",
   },
-  {
-    img: msaldivia,
-    nombre: "María Saldivia",
-    correo: "msaldivia@liceoexperimental.cl",
-    dpto: "Educación Media",
-    more: "—",
-    asignatura: "Pensamiento Computacional y Programación",
-  },
+  // {
+  //   img: msaldivia,
+  //   nombre: "María Saldivia",
+  //   correo: "msaldivia@liceoexperimental.cl",
+  //   dpto: "Educación Media",
+  //   more: "—",
+  //   asignatura: "Pensamiento Computacional y Programación",
+  // },
 
   {
     img: maburto,
@@ -222,14 +222,14 @@ export const equipoMedia: Funcionario[] = [
     more: "—",
     asignatura: "Religión Católica",
   },
-  {
-    img: csoto,
-    nombre: "Camila Soto",
-    correo: "csoto@liceoexperimental.cl",
-    dpto: "Educación Media",
-    more: "—",
-    asignatura: "Religión Evangélica",
-  },
+  // {
+  //   img: csoto,
+  //   nombre: "Camila Soto",
+  //   correo: "csoto@liceoexperimental.cl",
+  //   dpto: "Educación Media",
+  //   more: "—",
+  //   asignatura: "Religión Evangélica",
+  // },
   {
     img: amorales,
     nombre: "Ángela Morales",

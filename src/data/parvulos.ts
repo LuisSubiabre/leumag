@@ -25,13 +25,13 @@ export const equipoParvulos: Funcionario[] = [
     dpto: "Educación Parvularia",
     more: "Jefatura NT2A",
   },
-  {
-    img: pnunez,
-    nombre: "Paola Nuñez",
-    correo: "pnunez@liceoexperimental.cl",
-    dpto: "Educación Parvularia",
-    more: "Jefatura NT1B",
-  },
+  // {
+  //   img: pnunez,
+  //   nombre: "Paola Nuñez",
+  //   correo: "pnunez@liceoexperimental.cl",
+  //   dpto: "Educación Parvularia",
+  //   more: "Jefatura NT1B",
+  // },
   {
     img: msolis,
     nombre: "Maria José Solís",

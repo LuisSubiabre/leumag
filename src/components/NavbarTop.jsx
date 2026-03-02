@@ -19,7 +19,7 @@ const NavbarTop = () => {
   useEffect(() => {
     document.documentElement.setAttribute(
       "data-bs-theme",
-      isDarkMode ? "dark" : "light"
+      isDarkMode ? "dark" : "light",
     );
   }, [isDarkMode]);
 
@@ -74,8 +74,19 @@ const NavbarTop = () => {
               />
             </div>
           </div>
-
           <Button
+            variant="primary"
+            className="student-portal-btn d-none d-lg-block ms-3"
+            onClick={() =>
+              window.open(
+                "https://www.kimche.co/kimche-familia-ingreso-apoderados/",
+              )
+            }
+          >
+            Kimche Familia
+          </Button>
+
+          {/* <Button
             variant="primary"
             className="student-portal-btn d-none d-lg-block ms-3"
             onClick={() =>
@@ -83,7 +94,7 @@ const NavbarTop = () => {
             }
           >
             Portal Estudiante
-          </Button>
+          </Button> */}
 
           <button
             className="navbar-toggler ms-2"
@@ -178,11 +189,23 @@ const NavbarTop = () => {
               variant="primary"
               className="student-portal-btn w-100 mb-3"
               onClick={() =>
+                window.open(
+                  "https://www.kimche.co/kimche-familia-ingreso-apoderados/",
+                )
+              }
+            >
+              Kimche Familia
+            </Button>
+
+            {/* <Button
+              variant="primary"
+              className="student-portal-btn w-100 mb-3"
+              onClick={() =>
                 window.open("https://estudiante.liceoexperimental.cl/")
               }
             >
               Portal Estudiante
-            </Button>
+            </Button> */}
             <RedesSociales colorRSS="gray" />
           </div>
         </div>

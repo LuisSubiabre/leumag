@@ -114,12 +114,12 @@ export const equipoAsistentes: Funcionario[] = [
     correo: "khetchenleitner@liceoexperimental.cl",
     dpto: "Central de Apuntes",
   },
-  {
-    img: mcarreno,
-    nombre: "Margarita Carreño",
-    correo: "mcarreno@liceoexperimental.cl",
-    dpto: "Inspectora",
-  },
+  // {
+  //   img: mcarreno,
+  //   nombre: "Margarita Carreño",
+  //   correo: "mcarreno@liceoexperimental.cl",
+  //   dpto: "Inspectora",
+  // },
   {
     img: mcortez,
     nombre: "Maricela Cortéz",
