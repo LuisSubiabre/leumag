@@ -36,7 +36,7 @@ function MyVerticallyCenteredModal(props) {
             {/* Sección 1: Beneficio Alimentación Escolar */}
             <div className="mb-4 px-3">
               <a
-                href="https://drive.google.com/file/d/1ddRCdKb7XHa_AdloH_foweOIcaZeIb2s/view?usp=sharing"
+                href="https://drive.google.com/file/d/1EoB4dvZHy_nspU_1WP3EORC_i4IEo0jk/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
               >
