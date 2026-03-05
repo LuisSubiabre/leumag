@@ -69,12 +69,12 @@ export const Header = () => {
                   onClick={handleBecaClick}
                   animate={false}
                 />
-                {/* <ButtonAccess
-                  name={"Fechas Reuniones"}
-                  link={"/Reuniones"}
+                <ButtonAccess
+                  name={"Horarios 2026"}
+                  link={"/Horarios"}
                   variant={"primary"}
                 />
-                <ButtonAccess
+                {/* <ButtonAccess
                   name={"Horarios"}
                   link={"/Horarios"}
                   variant={"primary"}
