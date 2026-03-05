@@ -86,15 +86,15 @@ const NavbarTop = () => {
             Kimche Familia
           </Button>
 
-          {/* <Button
-            variant="primary"
+          <Button
+            variant="secondary"
             className="student-portal-btn d-none d-lg-block ms-3"
             onClick={() =>
               window.open("https://estudiante.liceoexperimental.cl/")
             }
           >
             Portal Estudiante
-          </Button> */}
+          </Button>
 
           <button
             className="navbar-toggler ms-2"
@@ -197,15 +197,17 @@ const NavbarTop = () => {
               Kimche Familia
             </Button>
 
-            {/* <Button
-              variant="primary"
-              className="student-portal-btn w-100 mb-3"
-              onClick={() =>
-                window.open("https://estudiante.liceoexperimental.cl/")
-              }
-            >
-              Portal Estudiante
-            </Button> */}
+            {
+              <Button
+                variant="primary"
+                className="student-portal-btn w-100 mb-3"
+                onClick={() =>
+                  window.open("https://estudiante.liceoexperimental.cl/")
+                }
+              >
+                Portal Estudiante
+              </Button>
+            }
             <RedesSociales colorRSS="gray" />
           </div>
         </div>

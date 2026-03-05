@@ -49,7 +49,7 @@ const Horarios = () => {
         </div>
         <div className="col-md-4">
           <a
-            href="#"
+            href="https://docs.google.com/spreadsheets/d/1Xd3OOQxeUJFRraxwiu_vkVBDycjZpICS3ttpl1k0kkU/edit?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="link-underlinelink-offset-2 link-underline link-underline-opacity-0"
