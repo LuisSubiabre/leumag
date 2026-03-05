@@ -9,7 +9,7 @@ const Horarios = () => {
       <div className="row">
         <div className="col-md-4">
           <a
-            href="https://docs.google.com/spreadsheets/d/1fUwU7cMuxsQGhjg6mysj6W8YoKv_mycZA1QlpYSmbZ4/edit?gid=1663824483#gid=1663824483"
+            href="https://docs.google.com/spreadsheets/d/1knZG202Pknw8YkNpfeM0SjxjMxTWg8mPCEukuhAkjvU/edit?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="link-underlinelink-offset-2 link-underline link-underline-opacity-0"
@@ -49,7 +49,7 @@ const Horarios = () => {
         </div>
         <div className="col-md-4">
           <a
-            href="https://docs.google.com/spreadsheets/d/1Xd3OOQxeUJFRraxwiu_vkVBDycjZpICS3ttpl1k0kkU/edit?gid=0#gid=0"
+            href="#"
             target="_blank"
             rel="noopener noreferrer"
             className="link-underlinelink-offset-2 link-underline link-underline-opacity-0"
