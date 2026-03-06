@@ -30,29 +30,108 @@ function MyVerticallyCenteredModal(props) {
             className="mt-4 w-100"
             style={{ maxWidth: "650px", textAlign: "left" }}
           >
-            <h3 className="mb-4 text-center fw-bold text-primary">
-              Beca Vulnerabilidad Año 2026
-            </h3>
+            <h3 className="mb-4 text-center fw-bold text-primary"></h3>
 
             {/* Sección 1: Beneficio Alimentación Escolar */}
             <div className="mb-4 px-3">
-              <a href="/Comunicados" target="_blank" rel="noopener noreferrer">
-                <img
-                  src="/comunicados/060326.png"
-                  alt="Información Importante"
-                  className="img-fluid mb-3"
-                  style={{ cursor: "pointer" }}
-                />
-              </a>
+              <div
+                id="comunicadosCarousel"
+                className="carousel slide"
+                data-bs-ride="carousel"
+                data-bs-interval="6000"
+              >
+                <div className="carousel-inner">
+                  <div className="carousel-item active">
+                    <a
+                      href="/Comunicados"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        src="/comunicados/060326.png"
+                        alt="Información Importante"
+                        className="d-block w-100 img-fluid"
+                        style={{ cursor: "pointer" }}
+                      />
+                    </a>
+                  </div>
+                  <div className="carousel-item">
+                    <a
+                      href="/Comunicados"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        src="/comunicados/060326Fina.png"
+                        alt="Información Importante"
+                        className="d-block w-100 img-fluid"
+                        style={{ cursor: "pointer" }}
+                      />
+                    </a>
+                  </div>
+                </div>
 
-              <a href="/Comunicados" target="_blank" rel="noopener noreferrer">
-                <img
-                  src="/comunicados/060326Fina.png"
-                  alt="Información Importante"
-                  className="img-fluid mb-3"
-                  style={{ cursor: "pointer" }}
-                />
-              </a>
+                <button
+                  className="carousel-control-prev"
+                  type="button"
+                  data-bs-target="#comunicadosCarousel"
+                  data-bs-slide="prev"
+                >
+                  <span
+                    className="carousel-control-prev-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span className="visually-hidden">Anterior</span>
+                </button>
+                <button
+                  className="carousel-control-next"
+                  type="button"
+                  data-bs-target="#comunicadosCarousel"
+                  data-bs-slide="next"
+                >
+                  <span
+                    className="carousel-control-next-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span className="visually-hidden">Siguiente</span>
+                </button>
+              </div>
+
+              <div className="d-flex justify-content-center mt-2">
+                <div
+                  className="carousel-indicators position-static m-0"
+                  style={{ gap: "0.5rem" }}
+                >
+                  <button
+                    type="button"
+                    data-bs-target="#comunicadosCarousel"
+                    data-bs-slide-to="0"
+                    className="active"
+                    aria-current="true"
+                    aria-label="Imagen 1"
+                    style={{
+                      width: "10px",
+                      height: "10px",
+                      borderRadius: "50%",
+                      backgroundColor: "#0d6efd",
+                      opacity: 1,
+                    }}
+                  ></button>
+                  <button
+                    type="button"
+                    data-bs-target="#comunicadosCarousel"
+                    data-bs-slide-to="1"
+                    aria-label="Imagen 2"
+                    style={{
+                      width: "10px",
+                      height: "10px",
+                      borderRadius: "50%",
+                      backgroundColor: "#6c757d",
+                      opacity: 0.7,
+                    }}
+                  ></button>
+                </div>
+              </div>
             </div>
           </div>
         </div>

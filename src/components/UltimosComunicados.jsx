@@ -58,7 +58,7 @@ const UltimosComunicados = () => {
           (comunicado, index) => (
             <a
               key={`${comunicado.id}-${index}`}
-              href="/comunicados"
+              href="/Comunicados"
               className="text-decoration-none text-reset"
             >
               <article
@@ -81,9 +81,7 @@ const UltimosComunicados = () => {
                 )}
                 <div className="d-flex flex-column">
                   <span className="small text-muted">{comunicado.fecha}</span>
-                  <h4 className="fs-6 fw-semibold mb-1">
-                    {comunicado.titulo}
-                  </h4>
+                  <h4 className="fs-6 fw-semibold mb-1">{comunicado.titulo}</h4>
                   {comunicado.contenido && (
                     <p className="small text-body-secondary mb-0">
                       {getExtracto(comunicado.contenido)}
@@ -92,7 +90,7 @@ const UltimosComunicados = () => {
                 </div>
               </article>
             </a>
-          )
+          ),
         )}
       </div>
     </div>
