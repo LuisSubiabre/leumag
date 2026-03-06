@@ -1,6 +1,103 @@
 export const comunicados = [
   {
     id: 17,
+    titulo: "Cartola de Situación Financiera 2026 LEUMAG",
+    fecha: "06-03-2026",
+    img: "/comunicados/060326Fina.png",
+    contenido: `<div>
+
+  <p><strong>Estimado(a) Apoderado(a):</strong></p>
+
+  <p>
+    Junto con saludarle cordialmente y desearle un muy buen año académico 2026,
+    nos dirigimos a usted para informarle que ya se encuentra en sus correos
+    institucionales la <strong>Cartola de Situación Financiera 2026 LEUMAG</strong>,
+    documento en el que se detallan las cuotas mensuales correspondientes al
+    presente año y sus respectivas fechas de vencimiento.
+  </p>
+
+  <p>
+    Entendemos que cada familia enfrenta realidades distintas y que organizar
+    los compromisos económicos no siempre es sencillo. Sin embargo, es muy
+    importante recordar que la responsabilidad de mantener sus pagos al día
+    recae en el apoderado(a). El cumplimiento oportuno de estos compromisos nos
+    permite asegurar la continuidad de nuestras actividades académicas, el pago
+    de servicios, el funcionamiento general del establecimiento y, en definitiva,
+    brindar a sus hijos(as) el servicio educativo que merecen.
+  </p>
+
+  <p><strong>En caso de realizar transferencias o depósitos, los datos bancarios de nuestro Liceo son:</strong></p>
+
+  <ul>
+    <li><strong>Banco:</strong> Scotiabank</li>
+    <li><strong>Cuenta Corriente:</strong> 00064014056</li>
+    <li><strong>RUT:</strong> 65.471.020-1</li>
+    <li><strong>Titular:</strong> FUDE UMAG</li>
+  </ul>
+
+  <p>
+    <strong>Recordar siempre enviar un correo a:</strong>
+    <a href="mailto:pagoarancel@liceoexperimental.cl">pagoarancel@liceoexperimental.cl</a>
+  </p>
+
+  <p>En el mensaje indicar:</p>
+
+  <ul>
+    <li>Nombre del alumno</li>
+    <li>RUT del alumno</li>
+    <li>Curso</li>
+    <li>Mes de pago</li>
+    <li>Adjuntar respaldo de transferencia o depósito</li>
+  </ul>
+
+  <p>
+    En caso de requerir <strong>pagos presenciales</strong>, el área de Recaudación
+    atiende de <strong>lunes a viernes, de 08:00 a 13:00 horas</strong>, en:
+  </p>
+
+  <p>
+    <strong>Calle Angamos N°131 (esquina calle Patagona)</strong>
+  </p>
+
+  <p>
+    Es importante señalar que el <strong>no pago total o parcial de los compromisos financieros</strong>,
+    así como la no presentación de antecedentes que acrediten un cambio en la
+    situación socioeconómica (según lo establecido en la <strong>Circular N°580
+    del 22 de septiembre de 2025 del Ministerio de Educación</strong>), faculta
+    al establecimiento para dejar vacante la matrícula de su pupilo(a), pudiendo
+    esta ser asignada a un estudiante en lista de espera del
+    <strong>Sistema de Admisión Escolar</strong>.
+  </p>
+
+  <p>
+    No quisiéramos que ninguna familia enfrente inconvenientes al momento de la
+    matrícula por situaciones que pueden preverse con anticipación. Por ello,
+    le invitamos encarecidamente a revisar su cartola y regularizar
+    oportunamente cualquier saldo pendiente.
+  </p>
+
+  <p>
+    En caso de dificultades, le pedimos acercarse con tiempo para buscar
+    alternativas y orientarle adecuadamente.
+  </p>
+
+  <p>
+    Agradecemos sinceramente su compromiso y responsabilidad con la comunidad
+    educativa. Trabajando en conjunto, podremos asegurar un excelente
+    <strong>año escolar 2026</strong> para todos nuestros estudiantes.
+  </p>
+
+  <p>
+    Sin otro particular, saluda atentamente a usted,
+  </p>
+
+  <p><strong>ADMINISTRACIÓN LEUMAG</strong></p>
+  <img width="80%" src="/images/pagos26.png" alt="Cartola de Situación Financiera 2026 LEUMAG" />
+
+</div>`,
+  },
+  {
+    id: 17,
     titulo: "Beca Vulnerabilidad Año 2026",
     fecha: "06-03-2026",
     img: "/comunicados/060326.png",
