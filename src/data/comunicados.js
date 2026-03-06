@@ -1,5 +1,74 @@
 export const comunicados = [
   {
+    id: 17,
+    titulo: "Beca Vulnerabilidad Año 2026",
+    fecha: "06-03-2026",
+    img: "/comunicados/060326.png",
+    contenido: `<div>
+  <p><strong>Estimados Padres y Apoderados:</strong></p>
+
+  <p>
+    Junto con saludarles, se informa del inicio del <strong>Proceso de Postulación a la
+    Beca Vulnerabilidad año 2026</strong>, <strong>SOLO PARA ALUMNOS NUEVOS</strong>.
+    Para lo cual se solicita revisar detalladamente los siguientes puntos:
+  </p>
+
+  <ol>
+    <li>
+      <strong>Circular Proceso de Postulación Vulnerabilidad 2026:</strong>
+      Indica características del establecimiento, normativas legales y procedimientos
+      de postulación. Se solicita leer detenidamente estas normativas y respetarlas
+      íntegramente, ya que cualquier falta u omisión contenida en estas indicaciones
+      no permitirá la continuidad en el proceso.
+    </li>
+
+    <li>
+      <strong>Reglamento de Becas año 2025:</strong>
+      Este reglamento establece los tipos de becas institucionales, la vigencia de
+      estas y los requisitos de postulación.
+      <br>
+      <em>(Revisar página web del establecimiento educacional).</em>
+    </li>
+
+    <li>
+      <strong>Formulario de postulación a Beca Vulnerabilidad:</strong>
+      Descargar el formulario y completarlo con letra legible, para luego enviarlo
+      junto a la documentación de respaldo al correo electrónico indicado en la circular.
+    </li>
+
+    <li>
+      <strong>Documentación obligatoria a presentar 2026.</strong>
+    </li>
+
+    <li>
+      <strong>Declaración de gastos mensuales 2026</strong>
+      (solo para trabajadores ocasionales o independientes).
+    </li>
+
+    <li>
+      <strong>Archivos necesarios para realizar la postulación.</strong>
+    </li>
+  </ol>
+
+  <p>
+    <strong>
+      LA INFORMACIÓN SE ENCUENTRA EN LA PÁGINA WEB DEL LICEO:
+      <a href="https://www.liceoexperimental.cl" target="_blank">
+        www.liceoexperimental.cl
+      </a>
+    </strong>
+  </p>
+
+  <p>
+    <strong>Dudas y consultas:</strong><br>
+    Dirigirlas al correo:
+    <a href="mailto:postulacionvulnerabilidad2026@liceoexperimental.cl">
+      postulacionvulnerabilidad2026@liceoexperimental.cl
+    </a>
+  </p>
+</div>`,
+  },
+  {
     id: 16,
     titulo: "Charla Becas y Créditos para la Educación Superior",
     fecha: "14-10-2025",

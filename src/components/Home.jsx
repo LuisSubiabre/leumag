@@ -30,23 +30,23 @@ function MyVerticallyCenteredModal(props) {
             style={{ maxWidth: "650px", textAlign: "left" }}
           >
             <h3 className="mb-4 text-center fw-bold text-primary">
-              Comunicado Oficial Inicio Año Escolar 2026
+              Beca Vulnerabilidad Año 2026
             </h3>
 
             {/* Sección 1: Beneficio Alimentación Escolar */}
             <div className="mb-4 px-3">
-              <a
+              {/* <a
                 href="https://drive.google.com/file/d/1EoB4dvZHy_nspU_1WP3EORC_i4IEo0jk/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
-              >
-                <img
-                  src="/comunicados/270226.png"
-                  alt="Información Importante"
-                  className="img-fluid mb-3"
-                  style={{ cursor: "pointer" }}
-                />
-              </a>
+              > */}
+              <img
+                src="/comunicados/060326.png"
+                alt="Información Importante"
+                className="img-fluid mb-3"
+                style={{ cursor: "pointer" }}
+              />
+              {/* </a> */}
             </div>
           </div>
         </div>
