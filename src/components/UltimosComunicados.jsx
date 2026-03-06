@@ -15,6 +15,7 @@ const getExtracto = (contenido, maxLength = 140) => {
 
 const UltimosComunicados = () => {
   const contenedorRef = useRef(null);
+  const comunicadosLimitados = comunicados.slice(0, 3);
 
   useEffect(() => {
     const contenedor = contenedorRef.current;
@@ -25,20 +26,20 @@ const UltimosComunicados = () => {
     const avanzarScroll = () => {
       if (!contenedor) return;
 
-      scrollPosicion += 1;
+      scrollPosicion += 0.5;
 
-      const limite = contenedor.scrollHeight - contenedor.clientHeight;
+      const alturaLista = contenedor.scrollHeight / 2;
 
-      if (limite <= 0) {
+      if (alturaLista <= 0) {
         scrollPosicion = 0;
-      } else if (scrollPosicion >= limite) {
+      } else if (scrollPosicion >= alturaLista) {
         scrollPosicion = 0;
       }
 
       contenedor.scrollTop = scrollPosicion;
     };
 
-    const intervaloId = setInterval(avanzarScroll, 60);
+    const intervaloId = setInterval(avanzarScroll, 20);
 
     return () => clearInterval(intervaloId);
   }, []);
@@ -53,42 +54,46 @@ const UltimosComunicados = () => {
           overflow: "hidden",
         }}
       >
-        {comunicados.slice(0, 3).map((comunicado) => (
-          <a
-            key={comunicado.id}
-            href="/comunicados"
-            className="text-decoration-none text-reset"
-          >
-            <article
-              className="d-flex mb-3 p-2 border rounded align-items-stretch bg-body shadow-sm"
-              style={{ gap: "0.75rem", cursor: "pointer" }}
+        {[...comunicadosLimitados, ...comunicadosLimitados].map(
+          (comunicado, index) => (
+            <a
+              key={`${comunicado.id}-${index}`}
+              href="/comunicados"
+              className="text-decoration-none text-reset"
             >
-              {comunicado.img && (
-                <div style={{ flexShrink: 0 }}>
-                  {/* <img
-                    src={comunicado.img}
-                    alt={comunicado.titulo}
-                    style={{
-                      width: "80px",
-                      height: "80px",
-                      objectFit: "cover",
-                      borderRadius: "8px",
-                    }}
-                  /> */}
-                </div>
-              )}
-              <div className="d-flex flex-column">
-                <span className="small text-muted">{comunicado.fecha}</span>
-                <h4 className="fs-6 fw-semibold mb-1">{comunicado.titulo}</h4>
-                {comunicado.contenido && (
-                  <p className="small text-body-secondary mb-0">
-                    {getExtracto(comunicado.contenido)}
-                  </p>
+              <article
+                className="d-flex mb-3 p-2 border rounded align-items-stretch bg-body shadow-sm"
+                style={{ gap: "0.75rem", cursor: "pointer" }}
+              >
+                {comunicado.img && (
+                  <div style={{ flexShrink: 0 }}>
+                    {/* <img
+                      src={comunicado.img}
+                      alt={comunicado.titulo}
+                      style={{
+                        width: "80px",
+                        height: "80px",
+                        objectFit: "cover",
+                        borderRadius: "8px",
+                      }}
+                    /> */}
+                  </div>
                 )}
-              </div>
-            </article>
-          </a>
-        ))}
+                <div className="d-flex flex-column">
+                  <span className="small text-muted">{comunicado.fecha}</span>
+                  <h4 className="fs-6 fw-semibold mb-1">
+                    {comunicado.titulo}
+                  </h4>
+                  {comunicado.contenido && (
+                    <p className="small text-body-secondary mb-0">
+                      {getExtracto(comunicado.contenido)}
+                    </p>
+                  )}
+                </div>
+              </article>
+            </a>
+          )
+        )}
       </div>
     </div>
   );
