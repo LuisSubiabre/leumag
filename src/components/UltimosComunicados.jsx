@@ -30,7 +30,7 @@ const UltimosComunicados = () => {
           >
             {comunicado.img && (
               <div style={{ flexShrink: 0 }}>
-                <img
+                {/* <img
                   src={comunicado.img}
                   alt={comunicado.titulo}
                   style={{
@@ -39,7 +39,7 @@ const UltimosComunicados = () => {
                     objectFit: "cover",
                     borderRadius: "8px",
                   }}
-                />
+                /> */}
               </div>
             )}
             <div className="d-flex flex-column">

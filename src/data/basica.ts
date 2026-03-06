@@ -220,8 +220,8 @@ export const equipoBasica: Funcionario[] = [
   },
   {
     img: demoImage,
-    nombre: "Pedro Barrientos",
-    correo: "pbarrientos@liceoexperimental.cl",
+    nombre: "Pedro Riveros",
+    correo: "priveros@liceoexperimental.cl",
     dpto: "Educación Básica",
     more: "",
     asignatura: "Artes y Tecnología",
