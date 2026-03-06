@@ -8,6 +8,9 @@ import jvenegas from "../assets/img/funcionarios/jvenegas.png";
 import abarrientos from "../assets/img/funcionarios/abarrientos.png";
 import pnunez from "../assets/img/funcionarios/pnunez.png";
 import ffigueroa from "../assets/img/funcionarios/ffigueroa.png";
+import milnao from "../assets/img/funcionarios/milnao.png";
+import tguidipani from "../assets/img/funcionarios/tguidipani.png";
+import pespinoza from "../assets/img/funcionarios/pespinoza.png";
 
 export type Funcionario = {
   img: string;
@@ -23,21 +26,29 @@ export const equipoParvulos: Funcionario[] = [
     nombre: "Luz Barría",
     correo: "lbarria@liceoexperimental.cl",
     dpto: "Educación Parvularia",
-    more: "Jefatura NT2A",
+    more: "Coordinadora Ciclo Educación Parvularia",
   },
-  // {
-  //   img: pnunez,
-  //   nombre: "Paola Nuñez",
-  //   correo: "pnunez@liceoexperimental.cl",
-  //   dpto: "Educación Parvularia",
-  //   more: "Jefatura NT1B",
-  // },
+
   {
     img: msolis,
     nombre: "Maria José Solís",
     correo: "msolis@liceoexperimental.cl",
     dpto: "Educación Parvularia",
-    more: "Jefatura NT1A",
+    more: "Jefatura NT1 A",
+  },
+  {
+    img: demoImage,
+    nombre: "Marianela Herrera",
+    correo: "mherrera@liceoexperimental.cl",
+    dpto: "Educación Parvularia",
+    more: "Jefatura NT1 B",
+  },
+  {
+    img: milnao,
+    nombre: "Marta Ilnao",
+    correo: "milnao@liceoexperimental.cl",
+    dpto: "Educación Parvularia",
+    more: "Jefatura NT2 A",
   },
 
   {
@@ -45,7 +56,7 @@ export const equipoParvulos: Funcionario[] = [
     nombre: "Teresa Cárdenas",
     correo: "tcardenas@liceoexperimental.cl",
     dpto: "Educación Parvularia",
-    more: "Jefatura NT2B",
+    more: "Jefatura NT2 B",
   },
 
   {
@@ -53,21 +64,14 @@ export const equipoParvulos: Funcionario[] = [
     nombre: "Deice Andrade",
     correo: "dandrade@liceoexperimental.cl",
     dpto: "Técnico en Educación Parvularia",
-    more: "NT 1B",
+    more: "NT 1A",
   },
   {
     img: nrodriguez,
     nombre: "Ninfa Rodríguez",
     correo: "nrodriguez@liceoexperimental.cl",
     dpto: "Técnico en Educación Parvularia",
-    more: "NT 1A",
-  },
-  {
-    img: jvenegas,
-    nombre: "Jaqueline Venegas",
-    correo: "jvenegas@liceoexperimental.cl",
-    dpto: "Técnico en Educación Parvularia",
-    more: "NT 2B",
+    more: "NT 1B",
   },
   {
     img: abarrientos,
@@ -77,10 +81,34 @@ export const equipoParvulos: Funcionario[] = [
     more: "NT 2A",
   },
   {
+    img: jvenegas,
+    nombre: "Jaqueline Venegas",
+    correo: "jvenegas@liceoexperimental.cl",
+    dpto: "Técnico en Educación Parvularia",
+    more: "NT 2B",
+  },
+
+  {
     img: ffigueroa,
     nombre: "Franco Figueroa",
     correo: "ffigueroa@liceoexperimental.cl",
-    dpto: "Profesor Educación Músical",
+    dpto: "Profesor Taller Músical",
     more: "NT 1 y NT 2",
+  },
+
+  {
+    img: tguidipani,
+    nombre: "Tatiana Guidipani",
+    correo: "tguidipani@liceoexperimental.cl",
+    dpto: "Profesora Taller Psicomotricidad",
+    more: "NT 1 y NT 2",
+  },
+
+  {
+    img: demoImage,
+    nombre: "Karen Mariqueo",
+    correo: "kmariqueo@liceoexperimental.cl",
+    dpto: "Inspectora Ciclo Educación Parvularia",
+    more: "",
   },
 ];

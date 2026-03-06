@@ -34,11 +34,37 @@ export type Funcionario = {
 
 export const equipoMedia: Funcionario[] = [
   {
+    img: mdiaz,
+    nombre: "Milton Diaz",
+    correo: "mdiaz@liceoexperimental.cl",
+    dpto: "Educación Media",
+    more: "Jefatura: 1ero Medio A",
+    asignatura: "Formación Ciudadana e Historia del Presente",
+  },
+  {
+    img: rbahamonde,
+    nombre: "Romina Bahamonde ",
+    correo: "rbahamonde@liceoexperimental.cl",
+    dpto: "Educación Media",
+    more: "Jefatura: 1ero Medio B",
+    asignatura: "Educación Física y Salud",
+  },
+  {
+    img: pbarrientos,
+    nombre: "Patricia Barrientos",
+    correo: "pbarrientos@liceoexperimental.cl",
+    dpto: "Educación Media",
+    more: "Jefatura: 1ero Medio C",
+
+    asignatura:
+      "Física – Ciencias para la Ciudadanía – FD Física – FD Ciencias de la Salud",
+  },
+  {
     img: cmansilla,
     nombre: "Carmen Gloria Mansilla",
     correo: "cmansilla@liceoexperimental.cl",
     dpto: "Educación Media",
-    more: "Jefatura: 1° A",
+    more: "Jefatura: 2° A",
     asignatura: "-",
   },
   {
@@ -46,7 +72,7 @@ export const equipoMedia: Funcionario[] = [
     nombre: "María José Vargas",
     correo: "mvargas@liceoexperimental.cl",
     dpto: "Educación Media",
-    more: "Jefatura: 1° B",
+    more: "Jefatura: 2° B",
     asignatura: "Biología",
   },
   {
@@ -54,24 +80,60 @@ export const equipoMedia: Funcionario[] = [
     nombre: "Claudia Videla",
     correo: "cvidela@liceoexperimental.cl",
     dpto: "Educación Media",
-    more: "Jefatura: 1° C",
-    asignatura: "-",
+    more: "Jefatura: 2° C",
+    asignatura:
+      "Matemática, FD Límites, derivadas e integrales, FD Pensamiento Computacional y Programación",
   },
   {
     img: pnavea,
     nombre: "Paola Navea",
     correo: "pnavea@liceoexperimental.cl",
     dpto: "Educación Media",
-    more: "Jefatura: 2° A",
-    asignatura: "—",
+    more: "Jefatura: 3ero Medio A",
+    asignatura: "Música",
   },
   {
     img: saranguiz,
     nombre: "Samy Aránguiz ",
     correo: "saranguiz@liceoexperimental.cl",
     dpto: "Educación Media",
-    more: "Jefatura: 2° B",
+    more: "Jefatura: 3ero Medio B",
     asignatura: "Lengua y Literatura – Taller de Literatura",
+  },
+  {
+    img: amorales,
+    nombre: "Ángela Morales",
+    correo: "amorales@liceoexperimental.cl",
+    dpto: "Educación Media",
+    more: "Jefatura: 3ero Medio C",
+    asignatura: "Lenguaje",
+  },
+
+  {
+    img: pbarria,
+    nombre: "Paula Barría",
+    correo: "pbarria@liceoexperimental.cl",
+    dpto: "Educación Media",
+    more: "Jefatura: 4to Medio A",
+    asignatura: "Lengua y Literatura – Teatro – Simce",
+  },
+
+  {
+    img: acancino,
+    nombre: "Alex Cancino",
+    correo: "acancino@liceoexperimental.cl",
+    dpto: "Educación Media",
+    more: "Jefatura: 4to Medio B",
+    asignatura: "Matemática",
+  },
+
+  {
+    img: jtoro,
+    nombre: "Josué Toro",
+    correo: "jtoro@liceoexperimental.cl",
+    dpto: "Educación Media",
+    more: "Jefatura: 4to Medio C",
+    asignatura: "Historia – Filosofía",
   },
   {
     img: jfajardo,
@@ -81,50 +143,6 @@ export const equipoMedia: Funcionario[] = [
     more: "Jefatura: 2° C",
     asignatura: "Inglés",
   },
-
-  {
-    img: pbarria,
-    nombre: "Paula Barría",
-    correo: "pbarria@liceoexperimental.cl",
-    dpto: "Educación Media",
-    more: "Jefatura: 3° A",
-    asignatura: "Lengua y Literatura – Teatro – Simce",
-  },
-
-  {
-    img: acancino,
-    nombre: "Alex Cancino",
-    correo: "acancino@liceoexperimental.cl",
-    dpto: "Educación Media",
-    more: "Jefatura: 3° B",
-    asignatura: "Matemática",
-  },
-
-  {
-    img: jtoro,
-    nombre: "Josué Toro",
-    correo: "jtoro@liceoexperimental.cl",
-    dpto: "Educación Media",
-    more: "Jefatura: 3° C",
-    asignatura: "Historia – Filosofía",
-  },
-  {
-    img: mdiaz,
-    nombre: "Milton Diaz",
-    correo: "mdiaz@liceoexperimental.cl",
-    dpto: "Educación Media",
-    more: "Jefatura: 4° A",
-    asignatura: "Formación Ciudadana e Historia del Presente",
-  },
-  {
-    img: rbahamonde,
-    nombre: "Romina Bahamonde ",
-    correo: "rbahamonde@liceoexperimental.cl",
-    dpto: "Educación Media",
-    more: "Jefatura: 4° B",
-    asignatura: "Educación Física y Salud",
-  },
-
   {
     img: arivas,
     nombre: "Alejandra Rivas",
@@ -134,15 +152,6 @@ export const equipoMedia: Funcionario[] = [
     asignatura:
       "Química – Ciencias para la Ciudadanía – Ciencias de la Salud – FD Química",
   },
-
-  // {
-  //   img: csoto,
-  //   nombre: "Camila Soto Aguillar",
-  //   correo: "csoto@liceoexperimental.cl",
-  //   dpto: "Educación Media",
-  //   more: "—",
-  //   asignatura: "Religión Evangélica – Desarrollo Personal",
-  // },
 
   {
     img: aneira,
@@ -154,23 +163,12 @@ export const equipoMedia: Funcionario[] = [
   },
 
   {
-    img: pbarrientos,
-    nombre: "Patricia Barrientos",
-    correo: "pbarrientos@liceoexperimental.cl",
-    dpto: "Educación Media",
-    more: "-",
-    asignatura:
-      "Física – Ciencias para la Ciudadanía – FD Física – FD Ciencias de la Salud",
-  },
-
-  {
     img: nibarra,
     nombre: "Nelda Ibarra",
     correo: "nibarra@liceoexperimental.cl",
     dpto: "Educación Media",
     more: "-",
-    asignatura:
-      "Inglés Idioma Extranjero Cursos 2° A, 2° B, 3° A, 3° B, 4° A, 4° B, 4° C",
+    asignatura: "Inglés Idioma Extranjero",
   },
   {
     img: dbascunan,
@@ -205,14 +203,6 @@ export const equipoMedia: Funcionario[] = [
     more: "—",
     asignatura: "Economía y Sociedad",
   },
-  // {
-  //   img: msaldivia,
-  //   nombre: "María Saldivia",
-  //   correo: "msaldivia@liceoexperimental.cl",
-  //   dpto: "Educación Media",
-  //   more: "—",
-  //   asignatura: "Pensamiento Computacional y Programación",
-  // },
 
   {
     img: maburto,
@@ -222,20 +212,20 @@ export const equipoMedia: Funcionario[] = [
     more: "—",
     asignatura: "Religión Católica",
   },
-  // {
-  //   img: csoto,
-  //   nombre: "Camila Soto",
-  //   correo: "csoto@liceoexperimental.cl",
-  //   dpto: "Educación Media",
-  //   more: "—",
-  //   asignatura: "Religión Evangélica",
-  // },
   {
-    img: amorales,
-    nombre: "Ángela Morales",
-    correo: "amorales@liceoexperimental.cl",
+    img: demoImage,
+    nombre: "David Paillan",
+    correo: "dpaillan@liceoexperimental.cl",
     dpto: "Educación Media",
     more: "—",
-    asignatura: "Lenguaje",
+    asignatura: "Religión Evangélica",
+  },
+  {
+    img: demoImage,
+    nombre: "Javiera Morales",
+    correo: "jmorales@liceoexperimental.cl",
+    dpto: "Educación Media",
+    more: "—",
+    asignatura: "Música",
   },
 ];

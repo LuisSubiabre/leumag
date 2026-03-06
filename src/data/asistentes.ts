@@ -1,7 +1,7 @@
 import demoImage from "../assets/img/funcionarios/demo.png";
 import avidal from "../assets/img/funcionarios/avidal.png";
 import fgodoy from "../assets/img/funcionarios/fgodoy.png";
-import mcarreno from "../assets/img/funcionarios/mcarreno.png";
+//import mcarreno from "../assets/img/funcionarios/mcarreno.png";
 import mhijerra from "../assets/img/funcionarios/mhijerra.png";
 import rfarina from "../assets/img/funcionarios/rfarina.png";
 import svera from "../assets/img/funcionarios/svera.png";
@@ -22,8 +22,7 @@ import amarquez from "../assets/img/funcionarios/amarquez.png";
 import ssanchez from "../assets/img/funcionarios/ssanchez.png";
 import rahumada from "../assets/img/funcionarios/rahumada.png";
 import pparedes from "../assets/img/funcionarios/pparedes.png";
-import mperanchiguay from "../assets/img/funcionarios/mperanchiguay.png";
-import milnao from "../assets/img/funcionarios/milnao.png";
+//import mperanchiguay from "../assets/img/funcionarios/mperanchiguay.png";
 import ealmonacid from "../assets/img/funcionarios/ealmonacid.png";
 
 export type Funcionario = {
@@ -78,12 +77,6 @@ export const equipoAsistentes: Funcionario[] = [
     dpto: "Técnico 2° Básico B",
   },
 
-  {
-    img: milnao,
-    nombre: "Marta Ilnao",
-    correo: "milnao@liceoexperimental.cl",
-    dpto: "Inspectora",
-  },
   {
     img: fgodoy,
     nombre: "Filomena Godoy",
@@ -191,5 +184,17 @@ export const equipoAsistentes: Funcionario[] = [
     nombre: "Yasna Bahamonde",
     correo: "ybahamonde@liceoexperimental.cl",
     dpto: "Encargada Adquisiciones",
+  },
+  {
+    img: demoImage,
+    nombre: "Claudio Paredes",
+    correo: "cparedes@liceoexperimental.cl",
+    dpto: "Inspector",
+  },
+  {
+    img: demoImage,
+    nombre: "Juan Díaz",
+    correo: "jdiaz@liceoexperimental.cl",
+    dpto: "Inspector",
   },
 ].sort((a, b) => a.nombre.split(" ")[1].localeCompare(b.nombre.split(" ")[1]));
