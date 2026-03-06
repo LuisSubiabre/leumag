@@ -10,6 +10,7 @@ import Button from "react-bootstrap/Button";
 import { Container, Row, Col } from "react-bootstrap";
 import ComponentSae from "./sae";
 import UltimosVideos from "./UltimosVideos";
+import UltimosComunicados from "./UltimosComunicados";
 
 // Componente del modal
 function MyVerticallyCenteredModal(props) {
@@ -97,6 +98,8 @@ function Home() {
               style={{ top: "80px" }}
             >
               <Externos />
+              <hr />
+              <UltimosComunicados />
               <hr />
               <ComponentSae />
               <hr />
