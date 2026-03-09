@@ -39,13 +39,79 @@ const BecaComponent = ({ show, onHide }) => {
         <Modal.Body>
           <div className="mb-4">
             <h5 className="fw-bold mb-3">Estimados Padres y Apoderados:</h5>
-            <p className="mb-3">
-              Junto con saludarles, con fecha Martes 09 de Septiembre se informa
-              del inicio del Proceso de postulación a la Beca Vulnerabilidad año
-              2026, para lo cual se solicita revisar detalladamente los
+            <p>Estimados Padres y Apoderados:</p>
+
+            <p>
+              Junto con saludarles, con fecha{" "}
+              <strong>Martes 09 de Septiembre</strong> se informa del inicio del{" "}
+              <strong>
+                Proceso de Postulación a la Beca Vulnerabilidad año 2026
+              </strong>
+              ,<strong>solo para alumnos nuevos</strong>.
+            </p>
+
+            <p>
+              Para lo anterior, se solicita revisar detalladamente los
               siguientes puntos:
             </p>
+
+            <ol>
+              <li>
+                <strong>
+                  Circular Proceso de Postulación Vulnerabilidad 2026:
+                </strong>
+                Indica características del establecimiento, normativas legales y
+                procedimientos de postulación. Se solicita leer detenidamente
+                estas normativas y respetarlas íntegramente, ya que cualquier
+                falta u omisión contenida en estas indicaciones no permitirá la
+                continuidad en el proceso.
+              </li>
+
+              <li>
+                <strong>Reglamento de Becas año 2025:</strong>
+                Este reglamento norma los tipos de becas institucionales, la
+                vigencia de estas y los requisitos de postulación.
+                <em>(Revisar página web del establecimiento educacional).</em>
+              </li>
+
+              <li>
+                <strong>
+                  Formulario de Postulación a Beca Vulnerabilidad:
+                </strong>
+                Descargar el formulario y completarlo con letra legible, para
+                luego enviarlo junto a la documentación de respaldo al correo
+                electrónico indicado en la circular.
+              </li>
+
+              <li>
+                <strong>Documentación obligatoria a presentar 2026.</strong>
+              </li>
+
+              <li>
+                <strong>Declaración de gastos mensuales 2026</strong>
+                (solo para trabajadores ocasionales o independientes).
+              </li>
+
+              <li>
+                <strong>
+                  Archivos necesarios para realizar la postulación.
+                </strong>
+              </li>
+            </ol>
             <ListGroup>
+              <ListGroup.Item>
+                <a
+                  href="https://drive.google.com/drive/folders/1T31L_X6vNlDIF7rQ0F4IyXRm8nDhUkqj?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-outline-primary w-100"
+                >
+                  <i className="bi bi-folder me-2"></i>
+                  Acceder a Carpeta Compartida
+                </a>
+              </ListGroup.Item>
+            </ListGroup>
+            {/* <ListGroup>
               <ListGroup.Item>
                 <strong>1.-</strong> Circular Proceso de Postulación
                 vulnerabilidad 2026: Indica características del Establecimiento,
@@ -92,10 +158,10 @@ const BecaComponent = ({ show, onHide }) => {
                 </span>{" "}
                 <span className="text-muted">(plazo expirado)</span>
               </ListGroup.Item>
-            </ListGroup>
+            </ListGroup> */}
 
             {/* Botones de descarga de documentos */}
-            <div className="mt-4">
+            {/* <div className="mt-4">
               <h6 className="fw-bold mb-3">Documentos para descargar:</h6>
               <div className="row g-2">
                 <div className="col-12 col-md-6">
@@ -130,12 +196,11 @@ const BecaComponent = ({ show, onHide }) => {
                   </a>
                 </div>
               </div>
-            </div>
+            </div> */}
 
             <div className="mt-3">
               <p className="fw-bold">
-                Dudas y consultas se responderán hasta el 16 de Septiembre,
-                dirigirlas al mail:
+                Dudas y consultas a:
                 postulacionvulnerabilidad2026@liceoexperimental.cl
               </p>
             </div>

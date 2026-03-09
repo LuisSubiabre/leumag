@@ -64,10 +64,10 @@ export const Header = () => {
                   animate={false}
                 />
                 <ButtonAccess
-                  name={"Beca V. 2026"}
-                  variant={"primary"}
+                  name={"Beca Vulnerabilidad 2026"}
+                  variant={"warning"}
                   onClick={handleBecaClick}
-                  animate={false}
+                  animate={true}
                 />
                 <ButtonAccess
                   name={"Horarios 2026"}
@@ -87,8 +87,8 @@ export const Header = () => {
                 <ButtonAccess
                   name={"Lista de Materiales 2026"}
                   link={"/Materiales"}
-                  variant={"warning"}
-                  animate={true}
+                  variant={"primary"}
+                  animate={false}
                 />
               </Col>
             </Row>
