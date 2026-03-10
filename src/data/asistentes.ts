@@ -187,8 +187,8 @@ export const equipoAsistentes: Funcionario[] = [
   },
   {
     img: demoImage,
-    nombre: "Claudio Paredes",
-    correo: "cparedes@liceoexperimental.cl",
+    nombre: "Claudio Pardo",
+    correo: "cpardolagos@liceoexperimental.cl",
     dpto: "Inspector",
   },
   {
