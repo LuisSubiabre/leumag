@@ -64,7 +64,7 @@ export const equipoMedia: Funcionario[] = [
     nombre: "Carmen Gloria Mansilla",
     correo: "cmansilla@liceoexperimental.cl",
     dpto: "Educación Media",
-    more: "Jefatura: 2° A",
+    more: "Jefatura: 2do Medio A",
     asignatura: "-",
   },
   {
@@ -72,7 +72,7 @@ export const equipoMedia: Funcionario[] = [
     nombre: "María José Vargas",
     correo: "mvargas@liceoexperimental.cl",
     dpto: "Educación Media",
-    more: "Jefatura: 2° B",
+    more: "Jefatura: 2do Medio  B",
     asignatura: "Biología",
   },
   {
@@ -80,7 +80,7 @@ export const equipoMedia: Funcionario[] = [
     nombre: "Claudia Videla",
     correo: "cvidela@liceoexperimental.cl",
     dpto: "Educación Media",
-    more: "Jefatura: 2° C",
+    more: "Jefatura: 2do Medio C",
     asignatura:
       "Matemática, FD Límites, derivadas e integrales, FD Pensamiento Computacional y Programación",
   },
@@ -140,7 +140,7 @@ export const equipoMedia: Funcionario[] = [
     nombre: "Jessica Fajardo",
     correo: "jfajardo@liceoexperimental.cl",
     dpto: "Educación Media",
-    more: "Jefatura: 2° C",
+    more: "",
     asignatura: "Inglés",
   },
   {
