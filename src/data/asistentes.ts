@@ -197,4 +197,10 @@ export const equipoAsistentes: Funcionario[] = [
     correo: "jdiaz@liceoexperimental.cl",
     dpto: "Inspector",
   },
+  {
+    img: demoImage,
+    nombre: "Patricia Díaz",
+    correo: "pdiazmunoz@liceoexperimental.cl",
+    dpto: "Inspector",
+  },
 ].sort((a, b) => a.nombre.split(" ")[1].localeCompare(b.nombre.split(" ")[1]));
