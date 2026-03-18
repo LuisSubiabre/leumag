@@ -64,11 +64,17 @@ export const Header = () => {
                   animate={false}
                 />
                 <ButtonAccess
+                  name={"Calendario de Evaluaciones"}
+                  variant={"warning"}
+                  link={"/Evaluaciones"}
+                  animate={true}
+                ></ButtonAccess>
+                {/* <ButtonAccess
                   name={"Beca Vulnerabilidad 2026"}
                   variant={"warning"}
                   onClick={handleBecaClick}
                   animate={true}
-                />
+                /> */}
                 <ButtonAccess
                   name={"Horarios 2026"}
                   link={"/Horarios"}

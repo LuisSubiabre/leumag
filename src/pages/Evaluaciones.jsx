@@ -9,7 +9,7 @@ const Evaluaciones = () => {
       <div className="row">
         <div className="col-md-4">
           <a
-            href="https://docs.google.com/spreadsheets/d/1byXNmAtssdVuFQFirrIAP33ClARLc_yiozi549Wjgms/edit?usp=sharing"
+            href="https://docs.google.com/spreadsheets/d/1GmrN0B-2A05Tr1_sTGjHBIl-4LFj1GLx5K300g41mGE/edit?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="link-underlinelink-offset-2 link-underline link-underline-opacity-0"
@@ -40,7 +40,7 @@ const Evaluaciones = () => {
                   <span>Evaluaciones E.G.B</span>
                 </div>
                 <small className="pl-4">
-                  <Badge>Actualizado 2do Semestre</Badge>
+                  <Badge>1er Semestre 2026</Badge>
                 </small>
               </Card.Header>
               <Card.Body>
@@ -55,7 +55,7 @@ const Evaluaciones = () => {
         </div>
         <div className="col-md-4">
           <a
-            href="https://docs.google.com/spreadsheets/d/1RWaRdPXiKuZIesIf1N_HakmkcHSdlRXS9UKUzlq1hIE/edit?usp=sharing"
+            href="https://docs.google.com/spreadsheets/d/1aFWPHZsdwyhqDVDjO7GxRSvqhSMnbUYAq34l-ov-csQ/edit?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="link-underlinelink-offset-2 link-underline link-underline-opacity-0"
@@ -86,7 +86,7 @@ const Evaluaciones = () => {
                   <span>Evaluaciones E.G.B.</span>
                 </div>
                 <small className="pl-4">
-                  <Badge>Actualizado 2do Semestre</Badge>
+                  <Badge>1er Semestre 2026</Badge>
                 </small>
               </Card.Header>
               <Card.Body>
@@ -101,14 +101,14 @@ const Evaluaciones = () => {
         </div>
         <div className="col-md-4">
           <a
-            href="https://docs.google.com/spreadsheets/d/1VDDlX1aqYOhG0snFYIiW_24BYfMW7uPOxaJlaSR8HQw/edit?gid=0#gid=0"
+            href="#"
             target="_blank"
             rel="noopener noreferrer"
             className="link-underlinelink-offset-2 link-underline link-underline-opacity-0"
           >
             <Card
               border="primary"
-              className="mb-4 btnCard"
+              className="text-muted mb-4 btnCard opacity-50"
               style={{
                 transition: "transform 0.3s ease, box-shadow 0.3s ease",
                 borderRadius: "12px",
@@ -132,7 +132,7 @@ const Evaluaciones = () => {
                   <span>Evaluaciones E.M.</span>
                 </div>
                 <small className="pl-4">
-                  <Badge>Actualizado 2do Semestre</Badge>
+                  <Badge>En actualización</Badge>
                 </small>
               </Card.Header>
               <Card.Body>
