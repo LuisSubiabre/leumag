@@ -73,10 +73,10 @@ MyVerticallyCenteredModal.propTypes = {
 
 // Componente principal Home
 function Home() {
-  const [modalShow, setModalShow] = useState(false);
+  const [modalShow, setModalShow] = useState(true);
 
   useEffect(() => {
-    setModalShow(true);
+    setModalShow(false);
   }, []);
 
   return (
