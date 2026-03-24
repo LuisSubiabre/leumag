@@ -11,6 +11,8 @@ import ffigueroa from "../assets/img/funcionarios/ffigueroa.png";
 import milnao from "../assets/img/funcionarios/milnao.png";
 import tguidipani from "../assets/img/funcionarios/tguidipani.png";
 import pespinoza from "../assets/img/funcionarios/pespinoza.png";
+import mherrera from "../assets/img/funcionarios/mherrera.png";
+import kmariqueo from "../assets/img/funcionarios/kmariqueo.png";
 
 export type Funcionario = {
   img: string;
@@ -37,7 +39,7 @@ export const equipoParvulos: Funcionario[] = [
     more: "Jefatura NT1 A",
   },
   {
-    img: demoImage,
+    img: mherrera,
     nombre: "Marianela Herrera",
     correo: "mherrera@liceoexperimental.cl",
     dpto: "Educación Parvularia",
@@ -111,7 +113,7 @@ export const equipoParvulos: Funcionario[] = [
   },
 
   {
-    img: demoImage,
+    img: kmariqueo,
     nombre: "Karen Mariqueo",
     correo: "kmariqueo@liceoexperimental.cl",
     dpto: "Inspectora Ciclo Educación Parvularia",

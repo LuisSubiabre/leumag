@@ -1,7 +1,7 @@
 import demoImage from "../assets/img/funcionarios/demo.png";
 import avidal from "../assets/img/funcionarios/avidal.png";
 import fgodoy from "../assets/img/funcionarios/fgodoy.png";
-//import mcarreno from "../assets/img/funcionarios/mcarreno.png";
+import aespinoza from "../assets/img/funcionarios/aespinoza.png";
 import mhijerra from "../assets/img/funcionarios/mhijerra.png";
 import rfarina from "../assets/img/funcionarios/rfarina.png";
 import svera from "../assets/img/funcionarios/svera.png";
@@ -22,8 +22,9 @@ import amarquez from "../assets/img/funcionarios/amarquez.png";
 import ssanchez from "../assets/img/funcionarios/ssanchez.png";
 import rahumada from "../assets/img/funcionarios/rahumada.png";
 import pparedes from "../assets/img/funcionarios/pparedes.png";
-//import mperanchiguay from "../assets/img/funcionarios/mperanchiguay.png";
+import pdiazmunoz from "../assets/img/funcionarios/pdiazmunoz.png";
 import ealmonacid from "../assets/img/funcionarios/ealmonacid.png";
+import cpardolagos from "../assets/img/funcionarios/cpardolagos.png";
 
 export type Funcionario = {
   img: string;
@@ -186,21 +187,28 @@ export const equipoAsistentes: Funcionario[] = [
     dpto: "Encargada Adquisiciones",
   },
   {
-    img: demoImage,
+    img: cpardolagos,
     nombre: "Claudio Pardo",
     correo: "cpardolagos@liceoexperimental.cl",
     dpto: "Inspector",
   },
   {
-    img: demoImage,
+    img: aespinoza,
     nombre: "Alexis Espinoza",
     correo: "aespinoza@liceoexperimental.cl",
     dpto: "Inspector",
   },
   {
-    img: demoImage,
+    img: pdiazmunoz,
     nombre: "Patricia Díaz",
     correo: "pdiazmunoz@liceoexperimental.cl",
     dpto: "Inspector",
+  },
+
+  {
+    img: demoImage,
+    nombre: "Javier Labrín",
+    correo: "jlabrin@liceoexperimental.cl",
+    dpto: "Encargado de Logística",
   },
 ].sort((a, b) => a.nombre.split(" ")[1].localeCompare(b.nombre.split(" ")[1]));
