@@ -59,6 +59,7 @@ const Evaluaciones = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="link-underlinelink-offset-2 link-underline link-underline-opacity-0"
+            //className="link-underlinelink-offset-2 link-underline link-underline-opacity-0"
           >
             <Card
               border="primary"
@@ -101,14 +102,15 @@ const Evaluaciones = () => {
         </div>
         <div className="col-md-4">
           <a
-            href="#"
+            href="https://docs.google.com/spreadsheets/d/1UoHZpqW_kjqIQw1_rax25rL2FKRUBlcMnC-Bp-exs44/edit?gid=0#gid=0"
             target="_blank"
             rel="noopener noreferrer"
             className="link-underlinelink-offset-2 link-underline link-underline-opacity-0"
           >
             <Card
               border="primary"
-              className="text-muted mb-4 btnCard opacity-50"
+              className="mb-4 btnCard"
+              // className="text-muted mb-4 btnCard opacity-50"
               style={{
                 transition: "transform 0.3s ease, box-shadow 0.3s ease",
                 borderRadius: "12px",
@@ -132,7 +134,7 @@ const Evaluaciones = () => {
                   <span>Evaluaciones E.M.</span>
                 </div>
                 <small className="pl-4">
-                  <Badge>En actualización</Badge>
+                  <Badge>1er Semestre</Badge>
                 </small>
               </Card.Header>
               <Card.Body>
