@@ -93,8 +93,8 @@ export const equipoParvulos: Funcionario[] = [
     img: pespinoza,
     nombre: "Pablo Espinoza",
     correo: "pespinoza@liceoexperimental.cl",
-    dpto: "Técnico en Educación Parvularia",
-    more: "Inglés",
+    dpto: "Profesor Inglés",
+    more: "NT 1 y NT 2",
   },
   {
     img: ffigueroa,
