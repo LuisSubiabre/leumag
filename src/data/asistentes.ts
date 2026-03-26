@@ -9,7 +9,6 @@ import vhernandez from "../assets/img/funcionarios/vhernandez.png";
 import gbarria from "../assets/img/funcionarios/gbarria.png";
 import rcisterna from "../assets/img/funcionarios/rcisterna.png";
 import fgonzalez from "../assets/img/funcionarios/fgonzalez.png";
-import fmancilla from "../assets/img/funcionarios/fmancilla.png";
 import mrodriguez from "../assets/img/funcionarios/mrodriguez.png";
 import pcardenas from "../assets/img/funcionarios/pcardenas.png";
 import aalarcon from "../assets/img/funcionarios/aalarcon.png";
@@ -90,12 +89,7 @@ export const equipoAsistentes: Funcionario[] = [
     correo: "fgonzalez@liceoexperimental.cl",
     dpto: "Encargado Logística",
   },
-  {
-    img: fmancilla,
-    nombre: "Francisco Mancilla",
-    correo: "fmancilla@liceoexperimental.cl",
-    dpto: "Encargado Recaudación",
-  },
+
   {
     img: gbarria,
     nombre: "Guillermo Barria",
