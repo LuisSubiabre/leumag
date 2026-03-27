@@ -12,7 +12,7 @@ const CentroDeAlumnos = () => {
       try {
         // Primero obtenemos el ID de la categoría CAA
         const categoriesResponse = await fetch(
-          "https://portal.liceoexperimental.cl/wp-json/wp/v2/categories"
+          "https://portal.liceoexperimental.cl/wp-json/wp/v2/categories",
         );
         const categories = await categoriesResponse.json();
         const caaCategory = categories.find((cat) => cat.slug === "caa");
@@ -20,7 +20,7 @@ const CentroDeAlumnos = () => {
         if (caaCategory) {
           // Luego obtenemos los posts de esa categoría
           const postsResponse = await fetch(
-            `https://portal.liceoexperimental.cl/wp-json/wp/v2/posts?categories=${caaCategory.id}`
+            `https://portal.liceoexperimental.cl/wp-json/wp/v2/posts?categories=${caaCategory.id}`,
           );
           const posts = await postsResponse.json();
 
@@ -29,7 +29,7 @@ const CentroDeAlumnos = () => {
             posts.map(async (post) => {
               if (post.featured_media) {
                 const mediaResponse = await fetch(
-                  `https://portal.liceoexperimental.cl/wp-json/wp/v2/media/${post.featured_media}`
+                  `https://portal.liceoexperimental.cl/wp-json/wp/v2/media/${post.featured_media}`,
                 );
                 const mediaData = await mediaResponse.json();
                 return {
@@ -38,7 +38,7 @@ const CentroDeAlumnos = () => {
                 };
               }
               return post;
-            })
+            }),
           );
 
           setNoticias(postsWithImages);
@@ -56,44 +56,44 @@ const CentroDeAlumnos = () => {
   return (
     <div className="container contenedor px-5">
       <div className="text-center mb-5">
-        <h2>Centro de Alumnos</h2>
+        <h2>Centro de Alumnos 2026</h2>
       </div>
 
       <div className="row justify-content-center align-items-center mb-5">
         <div className="col-12 col-md-6 text-center">
           <img
-            src="/images/caa25.png"
+            src="/images/caa26.png"
             alt="Centro de Alumnos"
-            className="img-fluid rounded-circle img-caa mb-4"
-            style={{ width: "400px", height: "400px" }}
+            className="img-fluid img-caa mb-4"
+            style={{ width: "600px", height: "400px" }}
           />
         </div>
         <div className="col-12 col-md-6">
           <div className="directiva-list">
             <p className="directiva-item">
-              <span className="cargo">Presidenta:</span>
-              <span className="nombre">Constanza Quintullanca</span>
-              <span className="curso">3ro medio C</span>
+              <span className="cargo">Presidente:</span>
+              <span className="nombre">Néstor Ruiz</span>
+              <span className="curso">4to medio A</span>
             </p>
             <p className="directiva-item">
               <span className="cargo">Vicepresidenta:</span>
-              <span className="nombre">Catalina Cárdenas</span>
-              <span className="curso">4to medio C</span>
+              <span className="nombre">Mia Mayorga</span>
+              <span className="curso">4to medio A</span>
             </p>
             <p className="directiva-item">
               <span className="cargo">Secretaria:</span>
-              <span className="nombre">Constanza Whuitt</span>
-              <span className="curso">2do medio C</span>
+              <span className="nombre">Isidora Espinoza</span>
+              <span className="curso">4to medio A</span>
             </p>
             <p className="directiva-item">
               <span className="cargo">Secretario de actas:</span>
-              <span className="nombre">Benjamín Mendicute</span>
-              <span className="curso">2do medio B</span>
+              <span className="nombre">Javiera Gamboa</span>
+              <span className="curso">1ero medio B</span>
             </p>
             <p className="directiva-item">
               <span className="cargo">Tesorera:</span>
-              <span className="nombre">Mara Fernández</span>
-              <span className="curso">3ro medio A</span>
+              <span className="nombre">Antonia Ojeda</span>
+              <span className="curso">4to medio A</span>
             </p>
           </div>
         </div>

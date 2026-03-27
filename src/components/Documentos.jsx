@@ -1,11 +1,12 @@
 import { Container, Row, Col } from "react-bootstrap";
 import docRIE from "../assets/docs/RIE.pdf";
-import docPISE from "../assets/docs/PISE.pdf";
 import docEvaluacion from "../assets/docs/reglamento2024.pdf";
 // import docConvivencia from '../assets/docs/convivencia.pdf';
 import docCAA from "../assets/docs/reglamentoCAA.pdf";
 import CustomCard from "./CustomCard";
 import { FaFileAlt, FaFilePdf, FaGoogle } from "react-icons/fa";
+
+const docPISE = "/docs/PISE-LEUMAG-2025.pdf";
 
 const Documentos = () => {
   return (
