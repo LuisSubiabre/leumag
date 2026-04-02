@@ -1,6 +1,13 @@
 export const comunicados = [
   {
     id: 17,
+    titulo: "Atención Apoderados - Administración",
+    fecha: "02-04 -2026",
+    img: "/comunicados/020426.png",
+    contenido: ``,
+  },
+  {
+    id: 17,
     titulo: "Cartola de Situación Financiera 2026 LEUMAG",
     fecha: "06-03-2026",
     img: "/comunicados/060326Fina.png",

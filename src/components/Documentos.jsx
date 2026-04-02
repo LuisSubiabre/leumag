@@ -15,19 +15,19 @@ const Documentos = () => {
         <h2>Documentos Oficiales:</h2>
         <Col md={6} lg={4} className="mb-4">
           <a
-            href="https://docs.google.com/presentation/d/1bfAJUra5h97VnXrcEYnShwg9MblkiBpX/edit?usp=sharing&ouid=113785725979968228794&rtpof=true&sd=true"
+            href="https://docs.google.com/presentation/d/1yllKGEZgYuAyNWH4LwhsMO2VjFjmp_S2/edit?usp=drive_link&ouid=113785725979968228794&rtpof=true&sd=true"
             target="_blank"
             rel="noopener noreferrer"
             className="text-decoration-none"
           >
             <CustomCard
-              headerText="Cuenta Pública 2024"
+              headerText="Cuenta Pública 2025"
               headerIcon={<FaFileAlt className="text-primary" />}
-              title="Cuenta Pública 2024"
+              title="Cuenta Pública 2025"
               borderColor="#007bff"
               footerText="Ver documento"
               footerIcon={<FaGoogle className="text-danger" />}
-              //subtitle={<span className="badge bg-danger ms-2">Nuevo</span>}
+              subtitle={<span className="badge bg-warning ms-2">Nuevo</span>}
             />
           </a>
         </Col>

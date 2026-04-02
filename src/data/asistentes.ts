@@ -24,6 +24,7 @@ import pparedes from "../assets/img/funcionarios/pparedes.png";
 import pdiazmunoz from "../assets/img/funcionarios/pdiazmunoz.png";
 import ealmonacid from "../assets/img/funcionarios/ealmonacid.png";
 import cpardolagos from "../assets/img/funcionarios/cpardolagos.png";
+import nsanabria from "../assets/img/funcionarios/nsanabria.png";
 
 export type Funcionario = {
   img: string;
@@ -50,6 +51,12 @@ export const equipoAsistentes: Funcionario[] = [
     nombre: "Andrea Naguelquín",
     correo: "anaguelquin@liceoexperimental.cl",
     dpto: "Encargada Tesorería",
+  },
+  {
+    img: nsanabria,
+    nombre: "Ninoska Sanabria",
+    correo: "nsanabria@liceoexperimental.cl",
+    dpto: "Recepción",
   },
   {
     img: avidal,
