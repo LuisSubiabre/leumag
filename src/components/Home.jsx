@@ -45,7 +45,7 @@ function MyVerticallyCenteredModal(props) {
                       rel="noopener noreferrer"
                     >
                       <img
-                        src="/comunicados/020426.png"
+                        src="/comunicados/tne2026.png"
                         alt="Información Importante"
                         className="d-block w-100 img-fluid"
                         style={{ cursor: "pointer" }}
@@ -73,10 +73,10 @@ MyVerticallyCenteredModal.propTypes = {
 
 // Componente principal Home
 function Home() {
-  const [modalShow, setModalShow] = useState(true);
+  const [modalShow, setModalShow] = useState(false);
 
   useEffect(() => {
-    setModalShow(true);
+    setModalShow(false);
   }, []);
 
   return (
