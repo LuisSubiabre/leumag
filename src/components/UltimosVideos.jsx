@@ -50,7 +50,7 @@ export default function UltimosVideos() {
       // Método 1: Intentar con RSS2JSON API
       try {
         const response = await fetch(
-          `https://api.rss2json.com/v1/api.json?rss_url=https://www.youtube.com/feeds/videos.xml?channel_id=${channelId}`
+          `https://api.rss2json.com/v1/api.json?rss_url=https://www.youtube.com/feeds/videos.xml?channel_id=${channelId}`,
         );
 
         if (response.ok) {
@@ -79,7 +79,7 @@ export default function UltimosVideos() {
       // Método 2: Intentar con Invidious API
       try {
         const invidiousResponse = await fetch(
-          `https://invidious.snopyta.org/api/v1/channels/${channelId}/videos`
+          `https://invidious.snopyta.org/api/v1/channels/${channelId}/videos`,
         );
 
         if (invidiousResponse.ok) {
@@ -101,7 +101,7 @@ export default function UltimosVideos() {
       } catch (invidiousError) {
         console.log(
           "Invidious falló, usando datos de respaldo:",
-          invidiousError
+          invidiousError,
         );
       }
 
@@ -123,9 +123,12 @@ export default function UltimosVideos() {
     fetchVideos();
 
     // Actualización automática cada 15 minutos
-    const interval = setInterval(() => {
-      fetchVideos();
-    }, 15 * 60 * 1000); // 15 minutos
+    const interval = setInterval(
+      () => {
+        fetchVideos();
+      },
+      15 * 60 * 1000,
+    ); // 15 minutos
 
     // Actualización cuando el usuario regresa a la pestaña
     const handleVisibilityChange = () => {
@@ -202,7 +205,7 @@ export default function UltimosVideos() {
                 <div className="play-overlay">
                   <div className="play-button">▶</div>
                 </div>
-                <div className="video-number">{index + 1}</div>
+                {/* <div className="video-number">{index + 1}</div> */}
               </div>
               <div className="video-info">
                 <h3 className="video-title">{video.title}</h3>

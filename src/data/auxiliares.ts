@@ -5,7 +5,6 @@ import jsaldivia from "../assets/img/funcionarios/jsaldivia.png";
 import svelasquez from "../assets/img/funcionarios/svelasquez.png";
 import ereyes from "../assets/img/funcionarios/ereyes.png";
 import gquinchen from "../assets/img/funcionarios/gquinchen.png";
-import cortega from "../assets/img/funcionarios/cortega.png";
 import jbarria from "../assets/img/funcionarios/jbarria.png";
 import egallardo from "../assets/img/funcionarios/egallardo.png";
 import klapaz from "../assets/img/funcionarios/klapaz.png";
@@ -41,13 +40,7 @@ export const equipoAuxiliar: Funcionario[] = [
     dpto: "Auxiliar",
     more: "",
   },
-  {
-    img: cortega,
-    nombre: "Carlos Ortega",
-    correo: "cortega@liceoexperimental.cl",
-    dpto: "Auxiliar Apoyo de Mantenimiento",
-    more: "",
-  },
+
   {
     img: jsaldivia,
     nombre: "José Saldivia",
@@ -95,6 +88,20 @@ export const equipoAuxiliar: Funcionario[] = [
     nombre: "Katherine La Paz",
     correo: "klapaz@liceoexperimental.cl",
     dpto: "Auxiliar",
+    more: "",
+  },
+  {
+    img: demoImage,
+    nombre: "Lisette Laport",
+    correo: "llaport@liceoexperimental.cl",
+    dpto: "Auxiliar",
+    more: "",
+  },
+  {
+    img: demoImage,
+    nombre: "Javier Labrin",
+    correo: "jlabrin@liceoexperimental.cl",
+    dpto: "Encargado Logística",
     more: "",
   },
 ].sort((a, b) => a.nombre.split(" ")[1].localeCompare(b.nombre.split(" ")[1]));

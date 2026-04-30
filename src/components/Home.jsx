@@ -11,6 +11,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import ComponentSae from "./sae";
 import UltimosVideos from "./UltimosVideos";
 import UltimosComunicados from "./UltimosComunicados";
+import UltimosVideosScroll from "./UltimosVideosScroll";
 
 // Componente del modal
 function MyVerticallyCenteredModal(props) {
@@ -86,7 +87,7 @@ function Home() {
           <Col lg={8} className="order-2 order-lg-1">
             <Posts />
             <hr className="d-lg-none" />
-            <UltimosVideos />
+            {/* <UltimosVideos /> */}
 
             <hr />
             <Documentos />
@@ -103,10 +104,10 @@ function Home() {
               className="d-none d-lg-block sticky-top"
               style={{ top: "80px" }}
             >
-              <Externos />
+              <UltimosVideosScroll />
               <hr />
-              <UltimosComunicados />
-              <hr />
+              {/* <UltimosComunicados /> */}
+              {/* <hr /> */}
               <ComponentSae />
               <hr />
               {/* <FacebookFeed /> */}

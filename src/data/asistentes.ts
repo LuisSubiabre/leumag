@@ -3,12 +3,10 @@ import avidal from "../assets/img/funcionarios/avidal.png";
 import fgodoy from "../assets/img/funcionarios/fgodoy.png";
 import aespinoza from "../assets/img/funcionarios/aespinoza.png";
 import mhijerra from "../assets/img/funcionarios/mhijerra.png";
-import rfarina from "../assets/img/funcionarios/rfarina.png";
 import svera from "../assets/img/funcionarios/svera.png";
 import vhernandez from "../assets/img/funcionarios/vhernandez.png";
 import gbarria from "../assets/img/funcionarios/gbarria.png";
 import rcisterna from "../assets/img/funcionarios/rcisterna.png";
-import fgonzalez from "../assets/img/funcionarios/fgonzalez.png";
 import mrodriguez from "../assets/img/funcionarios/mrodriguez.png";
 import pcardenas from "../assets/img/funcionarios/pcardenas.png";
 import aalarcon from "../assets/img/funcionarios/aalarcon.png";
@@ -72,10 +70,10 @@ export const equipoAsistentes: Funcionario[] = [
     dpto: "Técnico 1° Básico A",
   },
   {
-    img: rfarina,
-    nombre: "Rodrigo Fariña",
-    correo: "rfarina@liceoexperimental.cl",
-    dpto: "TENS",
+    img: demoImage,
+    nombre: "Isabel Cárcamo",
+    correo: "mcarcamo@liceoexperimental.cl",
+    dpto: "Recaudación y Cobranza",
   },
   {
     img: ealmonacid,
@@ -89,12 +87,6 @@ export const equipoAsistentes: Funcionario[] = [
     nombre: "Filomena Godoy",
     correo: "fgodoy@liceoexperimental.cl",
     dpto: "Secretaria Dirección",
-  },
-  {
-    img: fgonzalez,
-    nombre: "Francisco González",
-    correo: "fgonzalez@liceoexperimental.cl",
-    dpto: "Encargado Logística",
   },
 
   {
@@ -204,12 +196,5 @@ export const equipoAsistentes: Funcionario[] = [
     nombre: "Patricia Díaz",
     correo: "pdiazmunoz@liceoexperimental.cl",
     dpto: "Inspector",
-  },
-
-  {
-    img: demoImage,
-    nombre: "Javier Labrín",
-    correo: "jlabrin@liceoexperimental.cl",
-    dpto: "Encargado de Logística",
   },
 ].sort((a, b) => a.nombre.split(" ")[1].localeCompare(b.nombre.split(" ")[1]));
