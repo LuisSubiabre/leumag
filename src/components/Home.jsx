@@ -98,7 +98,6 @@ function Home() {
               <hr />
               <ComponentSae />
             </div>
-            <hr />
 
             <div
               className="d-none d-lg-block sticky-top"

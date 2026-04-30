@@ -94,7 +94,7 @@ const UltimosVideosScroll = () => {
 
   return (
     <div className="mb-4">
-      <h3 className="fw-bold text-center mb-3">Ultimos videos</h3>
+      <h3 className=" text-center mb-3">Últimos videos</h3>
       <div
         ref={contenedorRef}
         style={{
