@@ -9,8 +9,8 @@ import Button from "react-bootstrap/Button";
 //import NoticiasScraper from "./NoticiasScraper";
 import { Container, Row, Col } from "react-bootstrap";
 import ComponentSae from "./sae";
-import UltimosVideos from "./UltimosVideos";
-import UltimosComunicados from "./UltimosComunicados";
+// import UltimosVideos from "./UltimosVideos";
+// import UltimosComunicados from "./UltimosComunicados";
 import UltimosVideosScroll from "./UltimosVideosScroll";
 
 // Componente del modal
@@ -106,7 +106,8 @@ function Home() {
               <UltimosVideosScroll />
               <hr />
               {/* <UltimosComunicados /> */}
-              {/* <hr /> */}
+              <Externos />
+              <hr />
               <ComponentSae />
               <hr />
               {/* <FacebookFeed /> */}
