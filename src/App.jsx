@@ -24,6 +24,7 @@ import CardShowcase from "./pages/CardShowcase";
 import EstamentosPage from "./pages/EstamentosPage";
 import CentroDeAlumnos from "./pages/CentroDeAlumnos";
 import InfoCra from "./pages/InfoCra";
+import Booktuber from "./pages/Booktuber";
 
 function App() {
   return (
@@ -51,6 +52,8 @@ function App() {
         <Route path="/CentroDeAlumnos" element={<CentroDeAlumnos />} />
         <Route path="/cards" element={<CardShowcase />} />
         <Route path="/InfoCra" element={<InfoCra />} />
+        <Route path="/Bookuber" element={<Booktuber />} />
+        <Route path="/Booktuber" element={<Booktuber />} />
         <Route path="*" element={<NotFound />} /> {/* Ruta para manejar 404 */}
       </Routes>
       <Footer />

@@ -41,12 +41,12 @@ function MyVerticallyCenteredModal(props) {
                 <div className="carousel-inner">
                   <div className="carousel-item active">
                     <a
-                      href="/Comunicados"
+                      href="https://drive.google.com/file/d/18bZXmlBBdeIjuL0sQ_JL27LJPvLaLr3D/view?usp=sharing"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       <img
-                        src="/comunicados/tne2026.png"
+                        src="/comunicados/0505206_v.png"
                         alt="Información Importante"
                         className="d-block w-100 img-fluid"
                         style={{ cursor: "pointer" }}
@@ -74,10 +74,10 @@ MyVerticallyCenteredModal.propTypes = {
 
 // Componente principal Home
 function Home() {
-  const [modalShow, setModalShow] = useState(false);
+  const [modalShow, setModalShow] = useState(true);
 
   useEffect(() => {
-    setModalShow(false);
+    setModalShow(true);
   }, []);
 
   return (
