@@ -40,18 +40,18 @@ function MyVerticallyCenteredModal(props) {
               >
                 <div className="carousel-inner">
                   <div className="carousel-item active">
-                    <a
+                    {/* <a
                       href="https://drive.google.com/file/d/18bZXmlBBdeIjuL0sQ_JL27LJPvLaLr3D/view?usp=sharing"
                       target="_blank"
                       rel="noopener noreferrer"
-                    >
-                      <img
-                        src="/comunicados/0505206_v.png"
-                        alt="Información Importante"
-                        className="d-block w-100 img-fluid"
-                        style={{ cursor: "pointer" }}
-                      />
-                    </a>
+                    > */}
+                    <img
+                      src="/duelo.jpg"
+                      alt="Información Importante"
+                      className="d-block img-fluid mx-auto"
+                      style={{ cursor: "pointer", width: "80%" }}
+                    />
+                    {/* </a> */}
                   </div>
                 </div>
               </div>
