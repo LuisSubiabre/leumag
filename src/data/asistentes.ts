@@ -18,7 +18,6 @@ import cramirez from "../assets/img/funcionarios/cramirez.png";
 import amarquez from "../assets/img/funcionarios/amarquez.png";
 import ssanchez from "../assets/img/funcionarios/ssanchez.png";
 import rahumada from "../assets/img/funcionarios/rahumada.png";
-import pparedes from "../assets/img/funcionarios/pparedes.png";
 import pdiazmunoz from "../assets/img/funcionarios/pdiazmunoz.png";
 import ealmonacid from "../assets/img/funcionarios/ealmonacid.png";
 import cpardolagos from "../assets/img/funcionarios/cpardolagos.png";
@@ -136,12 +135,6 @@ export const equipoAsistentes: Funcionario[] = [
     nombre: "Paola Cárdenas",
     correo: "pcardenas@liceoexperimental.cl",
     dpto: "Inspectora",
-  },
-  {
-    img: pparedes,
-    nombre: "Paulina Paredes",
-    correo: "pparedes@liceoexperimental.cl",
-    dpto: "Psicologa Apoyo Convivencia Escolar",
   },
   {
     img: rcisterna,

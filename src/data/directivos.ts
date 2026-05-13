@@ -4,6 +4,7 @@ import fhinojosa from "../assets/img/funcionarios/fhinojosa.png";
 import mmansilla from "../assets/img/funcionarios/mmansilla.png";
 import moyarzun from "../assets/img/funcionarios/moyarzun.png";
 import mcisternas from "../assets/img/funcionarios/mcisternas.png";
+import pparedes from "../assets/img/funcionarios/pparedes.png";
 
 export type Funcionario = {
   img: string;
@@ -49,5 +50,11 @@ export const equipoDirectivo: Funcionario[] = [
     nombre: "Mavis Oyarzún",
     correo: "moyarzun@liceoexperimental.cl",
     dpto: "Orientadora Ens. Media",
+  },
+  {
+    img: pparedes,
+    nombre: "Paulina Paredes",
+    correo: "pparedes@liceoexperimental.cl",
+    dpto: "Coordinadora de Convivencia Educativa",
   },
 ];
