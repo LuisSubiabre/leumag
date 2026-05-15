@@ -1,21 +1,24 @@
 import { useEffect, useRef, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faYoutube } from "@fortawesome/free-brands-svg-icons";
 
 const CHANNEL_ID = "UCrR4xpjHUVkhhSDhMLEqIOw";
+const YOUTUBE_CHANNEL_URL = "https://www.youtube.com/@LiceoExperimentalUmag";
 
 const fallbackVideos = [
   {
     title: "Canal oficial del Liceo Experimental UMAG",
-    link: "https://www.youtube.com/@LiceoExperimentalUmag",
+    link: YOUTUBE_CHANNEL_URL,
     videoId: "fallback1",
   },
   {
     title: "Actividades destacadas del LEUMAG",
-    link: "https://www.youtube.com/@LiceoExperimentalUmag",
+    link: YOUTUBE_CHANNEL_URL,
     videoId: "fallback2",
   },
   {
     title: "Conoce nuestro contenido en YouTube",
-    link: "https://www.youtube.com/@LiceoExperimentalUmag",
+    link: YOUTUBE_CHANNEL_URL,
     videoId: "fallback3",
   },
 ];
@@ -94,7 +97,19 @@ const UltimosVideosScroll = () => {
 
   return (
     <div className="mb-4">
-      <h3 className=" text-center mb-3">Últimos videos</h3>
+      <div className="d-flex align-items-center justify-content-center gap-2 mb-3">
+        <h3 className="mb-0 text-center">Últimos videos</h3>
+        <a
+          href={YOUTUBE_CHANNEL_URL}
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Ir al canal de YouTube del Liceo Experimental UMAG"
+          className="text-danger"
+          title="Canal de YouTube"
+        >
+          <FontAwesomeIcon icon={faYoutube} size="lg" />
+        </a>
+      </div>
       <div
         ref={contenedorRef}
         style={{
