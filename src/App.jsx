@@ -25,6 +25,7 @@ import EstamentosPage from "./pages/EstamentosPage";
 import CentroDeAlumnos from "./pages/CentroDeAlumnos";
 import InfoCra from "./pages/InfoCra";
 import Booktuber from "./pages/Booktuber";
+import Calendarios from "./pages/Calendarios";
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
         <Route path="/Estamentos" element={<EstamentosPage />} />
         <Route path="/Contacto" element={<Contacto />} />
         <Route path="/Horarios" element={<Horarios />} />
+        <Route path="/Calendarios" element={<Calendarios />} />
         <Route path="/Materiales" element={<Materiales />} />
         <Route path="/Evaluaciones" element={<Evaluaciones />} />
         <Route path="/Noticia/:id" element={<Noticia />} />

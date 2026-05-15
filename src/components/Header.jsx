@@ -9,9 +9,9 @@ import BecaComponent from "./BecaCompoment";
 export const Header = () => {
   const [showBecaModal, setShowBecaModal] = useState(false);
 
-  const handleBecaClick = () => {
-    setShowBecaModal(true);
-  };
+  // const handleBecaClick = () => {
+  //   setShowBecaModal(true);
+  // };
 
   return (
     <>
@@ -69,13 +69,13 @@ export const Header = () => {
                   link={"/Evaluaciones"}
                   animate={false}
                 ></ButtonAccess>
-                <ButtonAccess
+                {/* <ButtonAccess
                   name={"Booktuber 2026"}
                   variant={"warning"}
                   //onClick={handleBecaClick}
                   link={"/Booktuber"}
                   animate={true}
-                />
+                /> */}
                 <ButtonAccess
                   name={"Horarios 2026"}
                   link={"/Horarios"}
