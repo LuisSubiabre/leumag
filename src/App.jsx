@@ -26,6 +26,7 @@ import CentroDeAlumnos from "./pages/CentroDeAlumnos";
 import InfoCra from "./pages/InfoCra";
 import Booktuber from "./pages/Booktuber";
 import Calendarios from "./pages/Calendarios";
+import CalendarioOficial from "./pages/CalendarioOficial";
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
         <Route path="/Contacto" element={<Contacto />} />
         <Route path="/Horarios" element={<Horarios />} />
         <Route path="/Calendarios" element={<Calendarios />} />
+        <Route path="/CalendarioOficial" element={<CalendarioOficial />} />
         <Route path="/Materiales" element={<Materiales />} />
         <Route path="/Evaluaciones" element={<Evaluaciones />} />
         <Route path="/Noticia/:id" element={<Noticia />} />

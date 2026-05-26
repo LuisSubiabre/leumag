@@ -69,13 +69,13 @@ export const Header = () => {
                   link={"/Evaluaciones"}
                   animate={false}
                 ></ButtonAccess>
-                {/* <ButtonAccess
-                  name={"Booktuber 2026"}
+                <ButtonAccess
+                  name={"Calendario Oficial"}
                   variant={"warning"}
                   //onClick={handleBecaClick}
-                  link={"/Booktuber"}
+                  link={"/CalendarioOficial"}
                   animate={true}
-                /> */}
+                />
                 <ButtonAccess
                   name={"Horarios 2026"}
                   link={"/Horarios"}

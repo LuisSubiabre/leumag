@@ -23,7 +23,9 @@ function MyVerticallyCenteredModal(props) {
       centered
     >
       <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">Comunicado</Modal.Title>
+        <Modal.Title id="contained-modal-title-vcenter">
+          Calendario de Reuniones
+        </Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <div className="d-flex flex-column align-items-center">
@@ -41,12 +43,12 @@ function MyVerticallyCenteredModal(props) {
                 <div className="carousel-inner">
                   <div className="carousel-item active">
                     <a
-                      href="https://drive.google.com/file/d/18bZXmlBBdeIjuL0sQ_JL27LJPvLaLr3D/view?usp=sharing"
+                      href="/CalendarioOficial"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       <img
-                        src="/comunicados/0505206_v.png"
+                        src="/images/reuniones26.png"
                         alt="Información Importante"
                         className="d-block w-100 img-fluid"
                         style={{ cursor: "pointer" }}
@@ -74,10 +76,10 @@ MyVerticallyCenteredModal.propTypes = {
 
 // Componente principal Home
 function Home() {
-  const [modalShow, setModalShow] = useState(false);
+  const [modalShow, setModalShow] = useState(true);
 
   useEffect(() => {
-    setModalShow(false);
+    setModalShow(true);
   }, []);
 
   return (
