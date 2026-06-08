@@ -23,9 +23,7 @@ function MyVerticallyCenteredModal(props) {
       centered
     >
       <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">
-          Calendario de Reuniones
-        </Modal.Title>
+        <Modal.Title id="contained-modal-title-vcenter"></Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <div className="d-flex flex-column align-items-center">
@@ -42,18 +40,18 @@ function MyVerticallyCenteredModal(props) {
               >
                 <div className="carousel-inner">
                   <div className="carousel-item active">
-                    <a
+                    {/* <a
                       href="/CalendarioOficial"
                       target="_blank"
                       rel="noopener noreferrer"
-                    >
-                      <img
-                        src="/images/reuniones26.png"
-                        alt="Información Importante"
-                        className="d-block w-100 img-fluid"
-                        style={{ cursor: "pointer" }}
-                      />
-                    </a>
+                    > */}
+                    <img
+                      src="duelo.png"
+                      alt="Información Importante"
+                      className="d-block w-100 img-fluid"
+                      style={{ cursor: "pointer" }}
+                    />
+                    {/* </a> */}
                   </div>
                 </div>
               </div>

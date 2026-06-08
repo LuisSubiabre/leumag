@@ -90,9 +90,9 @@ const Documentos = () => {
             className="text-decoration-none cursor-pointer"
           >
             <CustomCard
-              headerText="CAA"
+              headerText="Centro Estudiantes"
               headerIcon={<FaFileAlt className="text-primary" />}
-              title="Reglamento Centro de Alumnos"
+              title="Reglamento Centro de Estudiantes"
               borderColor="primary"
               footerText="Ver documento"
               footerIcon={<FaFilePdf className="text-danger" />}
