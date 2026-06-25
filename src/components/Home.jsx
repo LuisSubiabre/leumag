@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import Posts from "./Posts";
+import NoticiasCompactas from "./NoticiasCompactas";
 import Documentos from "./Documentos";
 import Externos from "./Externos";
 // import FacebookFeed from "./FacebookFeed";
@@ -46,7 +47,7 @@ function MyVerticallyCenteredModal(props) {
                       rel="noopener noreferrer"
                     > */}
                     <img
-                      src="duelo.png"
+                      src="/images/FelicesVacaciones.png"
                       alt="Información Importante"
                       className="d-block w-100 img-fluid"
                       style={{ cursor: "pointer" }}
@@ -74,10 +75,10 @@ MyVerticallyCenteredModal.propTypes = {
 
 // Componente principal Home
 function Home() {
-  const [modalShow, setModalShow] = useState(false);
+  const [modalShow, setModalShow] = useState(true);
 
   useEffect(() => {
-    setModalShow(false);
+    setModalShow(true);
   }, []);
 
   return (
@@ -86,6 +87,7 @@ function Home() {
         <Row>
           <Col lg={8} className="order-2 order-lg-1">
             <Posts />
+            <NoticiasCompactas />
             <hr className="d-lg-none" />
             {/* <UltimosVideos /> */}
 

@@ -17,7 +17,7 @@ const Posts = () => {
     const fetchPosts = async () => {
       try {
         const response = await axios.get(
-          "https://portal.liceoexperimental.cl/wp-json/wp/v2/posts?per_page=6"
+          "https://portal.liceoexperimental.cl/wp-json/wp/v2/posts?per_page=6",
         );
         const postsData = await Promise.all(
           response.data.map(async (post) => {
@@ -31,7 +31,7 @@ const Posts = () => {
             } = post;
             const featuredMediaResponse = featuredMediaId
               ? await axios.get(
-                  `https://portal.liceoexperimental.cl/wp-json/wp/v2/media/${featuredMediaId}`
+                  `https://portal.liceoexperimental.cl/wp-json/wp/v2/media/${featuredMediaId}`,
                 )
               : null;
             const featuredMedia = featuredMediaResponse
@@ -45,7 +45,7 @@ const Posts = () => {
               featuredMedia,
               date: formatDate(date),
             };
-          })
+          }),
         );
         setPosts(postsData);
       } catch (error) {
@@ -152,7 +152,7 @@ const Posts = () => {
               </Link>
             </Col>
           ))}
-          <div className="mb-2 d-flex flex-row-reverse bd-highlight">
+          {/* <div className="mb-2 d-flex flex-row-reverse bd-highlight">
             <Link
               to="/Noticias"
               className="btn btn-primary"
@@ -177,7 +177,7 @@ const Posts = () => {
             >
               Ver todas las noticias
             </Link>
-          </div>
+          </div> */}
         </>
       )}
     </Row>
