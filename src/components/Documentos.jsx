@@ -1,6 +1,6 @@
 import { Row, Col, Card, Badge } from "react-bootstrap";
 import PropTypes from "prop-types";
-import docRIE from "../assets/docs/RIE.pdf";
+//import docRIE from "../assets/docs/RIE.pdf";
 import docEvaluacion from "../assets/docs/reglamento2024.pdf";
 import docCAA from "../assets/docs/reglamentoCAA.pdf";
 import {
@@ -170,9 +170,9 @@ const DocumentoCard = ({ documento }) => {
               </Badge>
             )}
           </span>
-          <Badge bg="secondary" className="text-uppercase">
+          {/* <Badge bg="secondary" className="text-lowercase">
             {documento.categoria}
-          </Badge>
+          </Badge> */}
         </Card.Header>
 
         <Card.Body className="d-flex flex-column">
