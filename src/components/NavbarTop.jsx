@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
 import logoImage from "../assets/img/logo.png";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import RedesSociales from "./RedesSociales";
 import { Button } from "react-bootstrap";
 import "./NavbarTop.css";
@@ -15,6 +15,7 @@ const NavbarTop = () => {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const location = useLocation();
 
   useEffect(() => {
     document.documentElement.setAttribute(
@@ -22,6 +23,11 @@ const NavbarTop = () => {
       isDarkMode ? "dark" : "light",
     );
   }, [isDarkMode]);
+
+  useEffect(() => {
+    setIsMenuOpen(false);
+    setActiveDropdown(null);
+  }, [location.pathname]);
 
   const handleThemeChange = (isDark) => {
     setIsDarkMode(isDark);
