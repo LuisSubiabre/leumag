@@ -1,13 +1,41 @@
-import bgImagen from "../assets/img/hero.png";
 import { ButtonAccess } from "./ButtonAccess";
 import logoImage from "../assets/img/experimentalin.png";
 import { Image, Container, Row, Col } from "react-bootstrap";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 // import ComponentSae from "./sae";
 import BecaComponent from "./BecaCompoment";
+import "./Header.css";
+
+const heroImageModules = import.meta.glob("../assets/img/hero/*.{png,jpg,jpeg,webp}", {
+  eager: true,
+  import: "default",
+});
+
+const heroImages = Object.keys(heroImageModules)
+  .sort()
+  .map((path) => heroImageModules[path]);
+
+const HERO_INTERVAL_MS = 6000;
 
 export const Header = () => {
   const [showBecaModal, setShowBecaModal] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    if (heroImages.length <= 1) return;
+
+    const prefiereMenosMovimiento = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
+    if (prefiereMenosMovimiento) return;
+
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % heroImages.length);
+    }, HERO_INTERVAL_MS);
+
+    return () => clearInterval(interval);
+  }, []);
 
   // const handleBecaClick = () => {
   //   setShowBecaModal(true);
@@ -16,22 +44,23 @@ export const Header = () => {
   return (
     <>
       <div className="d-flex flex-column">
-        <div
-          className="pt-5 text-center bg-image d-flex flex-column justify-content-between parallax-container"
-          style={{
-            backgroundImage: `url(${bgImagen})`,
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            minHeight: "400px",
-            height: "auto",
-          }}
-        >
-          <div className="mask">
-            {" "}
-            {/* Agrega una máscara para oscurecer el fondo */}
-            <div className="d-flex justify-content-center align-items-center h-100">
-              <div className="text-white" style={{ filter: "none" }}>
+        <div className="hero text-center">
+          <div className="hero-banner">
+            <div className="hero-backgrounds" aria-hidden="true">
+              {heroImages.map((image, index) => (
+                <img
+                  key={image}
+                  src={image}
+                  alt=""
+                  className={`hero-background${
+                    index === currentImageIndex ? " hero-background--active" : ""
+                  }`}
+                />
+              ))}
+            </div>
+            <div className="hero-overlay" aria-hidden="true" />
+            <div className="hero-content">
+              <div className="text-white hero-title">
                 <div className="animate-bounce-slow">
                   <Image
                     src={logoImage}
@@ -41,16 +70,14 @@ export const Header = () => {
                     className="img-fluid"
                   />
                 </div>
-                {/* Fondo opaco */}
-                <h1 className="mb-3 fs-2 fs-md-1">Liceo Experimental Umag</h1>
-                <h4 className="mb-3 fs-5 fs-md-4">
+                <h1 className="mb-2 fs-2 fs-md-1">Liceo Experimental Umag</h1>
+                <h4 className="mb-0 fs-6 fs-md-4">
                   La verdad a través de la razón
                 </h4>
-                {/* <a data-mdb-ripple-init className="btn btn-outline-light btn-lg" href="#!" role="button">A</a> */}
               </div>
             </div>
           </div>
-          <Container className="mb-4">
+          <Container className="hero-actions">
             <Row className="justify-content-center">
               <Col
                 xs={12}
