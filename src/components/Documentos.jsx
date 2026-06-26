@@ -27,7 +27,6 @@ const Documentos = () => {
               borderColor="#007bff"
               footerText="Ver documento"
               footerIcon={<FaGoogle className="text-danger" />}
-              subtitle={<span className="badge bg-warning ms-2">Nuevo</span>}
             />
           </a>
         </Col>
@@ -113,6 +112,25 @@ const Documentos = () => {
               borderColor="primary"
               footerText="Ver documento"
               footerIcon={<FaGoogle className="text-danger" />}
+            />
+          </a>
+        </Col>
+
+        <Col md={6} lg={4} className="mb-4">
+          <a
+            href="https://drive.google.com/drive/folders/1OTleENUh8VxegnFjKl8wsmHhqw7a2obe?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-decoration-none cursor-pointer"
+          >
+            <CustomCard
+              headerText="Uso de Dispositivos Móviles"
+              headerIcon={<FaFileAlt className="text-primary" />}
+              title="Protocolola de uso de Dispositivos Móviles e Infografía"
+              borderColor="primary"
+              footerText="Ver documento"
+              footerIcon={<FaGoogle className="text-danger" />}
+              subtitle={<span className="badge bg-warning ms-2">Nuevo</span>}
             />
           </a>
         </Col>
