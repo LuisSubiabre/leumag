@@ -47,7 +47,7 @@ function MyVerticallyCenteredModal(props) {
                       rel="noopener noreferrer"
                     > */}
                     <img
-                      src="/images/FelicesVacaciones.png"
+                      src="/comunicados/230726.png"
                       alt="Información Importante"
                       className="d-block w-100 img-fluid"
                       style={{ cursor: "pointer" }}

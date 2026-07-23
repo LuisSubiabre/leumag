@@ -1,6 +1,13 @@
 export const comunicados = [
   {
-    id: 17,
+    id: 19,
+    titulo: "Atención Apoderados - Administración",
+    fecha: "23-07-2026",
+    img: "/comunicados/230726.png",
+    contenido: ``,
+  },
+  {
+    id: 18,
     titulo: "Atención Apoderados - Administración",
     fecha: "02-04 -2026",
     img: "/comunicados/020426.png",
