@@ -1,12 +1,11 @@
 import React from "react";
 import { Usuarios } from "./Usuarios";
-import demoImage from '../assets/img/funcionarios/demo.png';
-import hortiz from '../assets/img/funcionarios/hortiz.png';
-import mbahamonde from '../assets/img/funcionarios/mbahamonde.png';
-import jsaldivia from '../assets/img/funcionarios/jsaldivia.png';
-import svelasquez from '../assets/img/funcionarios/svelasquez.png';
-import ereyes from '../assets/img/funcionarios/ereyes.png';
-import gquinchen from '../assets/img/funcionarios/gquinchen.png';
+import demoImage from "../assets/img/funcionarios/demo.png";
+import hortiz from "../assets/img/funcionarios/hortiz.png";
+import mbahamonde from "../assets/img/funcionarios/mbahamonde.png";
+import jsaldivia from "../assets/img/funcionarios/jsaldivia.png";
+import svelasquez from "../assets/img/funcionarios/svelasquez.png";
+import gquinchen from "../assets/img/funcionarios/gquinchen.png";
 import { Row, Col, Container } from "react-bootstrap";
 const docentes = [
   {
@@ -45,21 +44,12 @@ const docentes = [
     more: "",
   },
   {
-    img: ereyes,
-    nombre: "Elizabeth Reyes",
-    correo: "ereyes@liceoexperimental.cl",
-    dpto: "Auxiliar",
-    more: "",
-  },
-  ,
-  ,
-  {
     img: svelasquez,
     nombre: "Sandra Velásquez",
     correo: "svelasquez@liceoexperimental.cl",
     dpto: "Auxiliar",
     more: "",
-  }
+  },
 ];
 
 export const EquipoAuxiliar = () => {

@@ -220,12 +220,4 @@ export const equipoMedia: Funcionario[] = [
     more: "—",
     asignatura: "Religión Evangélica",
   },
-  {
-    img: demoImage,
-    nombre: "Javiera Morales",
-    correo: "jmorales@liceoexperimental.cl",
-    dpto: "Educación Media",
-    more: "—",
-    asignatura: "Música",
-  },
 ];

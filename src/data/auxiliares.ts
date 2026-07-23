@@ -3,7 +3,6 @@ import hortiz from "../assets/img/funcionarios/hortiz.png";
 import mbahamonde from "../assets/img/funcionarios/mbahamonde.png";
 import jsaldivia from "../assets/img/funcionarios/jsaldivia.png";
 import svelasquez from "../assets/img/funcionarios/svelasquez.png";
-import ereyes from "../assets/img/funcionarios/ereyes.png";
 import gquinchen from "../assets/img/funcionarios/gquinchen.png";
 import jbarria from "../assets/img/funcionarios/jbarria.png";
 import egallardo from "../assets/img/funcionarios/egallardo.png";
@@ -45,13 +44,6 @@ export const equipoAuxiliar: Funcionario[] = [
     img: jsaldivia,
     nombre: "José Saldivia",
     correo: "jsaldivia@liceoexperimental.cl",
-    dpto: "Auxiliar",
-    more: "",
-  },
-  {
-    img: ereyes,
-    nombre: "Elizabeth Reyes",
-    correo: "ereyes@liceoexperimental.cl",
     dpto: "Auxiliar",
     more: "",
   },
