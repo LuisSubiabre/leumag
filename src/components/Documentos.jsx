@@ -228,8 +228,7 @@ const Documentos = () => {
           Documentos oficiales
         </h2>
         <p className="text-muted mb-0">
-          Reglamentos, protocolos y apoyos que suelen necesitar apoderados y
-          estudiantes.
+          Reglamentos, protocolos y otros documentos oficiales del liceo.
         </p>
       </div>
 

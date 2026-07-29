@@ -23,37 +23,43 @@ const ACCESOS_RAPIDOS = [
     label: "Matrícula",
     icon: FaUserGraduate,
     tone: "matricula",
-    featured: true,
+    animation: false,
   },
   {
     to: "/Comunicados",
     label: "Comunicados",
     icon: FaBullhorn,
     tone: "avisos",
+    animation: false,
   },
   {
     to: "/Horarios",
     label: "Horarios",
     icon: FaClock,
     tone: "horarios",
+    animation: false,
   },
   {
     to: "/CalendarioOficial",
     label: "Calendario",
     icon: FaCalendarAlt,
     tone: "calendario",
+    animation: false,
   },
   {
     to: "/Evaluaciones",
     label: "Evaluaciones",
     icon: FaClipboardList,
     tone: "evaluaciones",
+    featured: true,
+    animation: true,
   },
   {
     to: "/Materiales",
     label: "Materiales",
     icon: FaFolderOpen,
     tone: "materiales",
+    animation: false,
   },
 ];
 
@@ -64,31 +70,33 @@ function Home() {
         <section className="home-welcome" aria-labelledby="home-welcome-title">
           <div className="home-welcome__top">
             <div className="home-welcome__content">
-              <p className="home-welcome__eyebrow">Familia LEUMAG</p>
+              <p className="home-welcome__eyebrow">Comunidad Experimentalina</p>
               <h2 id="home-welcome-title" className="home-welcome__title">
                 Todo lo importante, en un solo lugar
               </h2>
               <p className="home-welcome__text">
-                Accesos frecuentes, noticias y comunicados para apoderados.
+                Accesos frecuentes, calendarios, evaluaciones y más.
               </p>
             </div>
           </div>
 
           <nav className="home-quick-links" aria-label="Accesos frecuentes">
-            {ACCESOS_RAPIDOS.map(({ to, label, icon: Icon, tone, featured }) => (
-              <Link
-                key={to}
-                to={to}
-                className={`home-quick-link home-quick-link--${tone}${
-                  featured ? " home-quick-link--featured" : ""
-                }`}
-              >
-                <span className="home-quick-link__icon" aria-hidden="true">
-                  <Icon />
-                </span>
-                <span className="home-quick-link__label">{label}</span>
-              </Link>
-            ))}
+            {ACCESOS_RAPIDOS.map(
+              ({ to, label, icon: Icon, tone, featured, animation }) => (
+                <Link
+                  key={to}
+                  to={to}
+                  className={`home-quick-link home-quick-link--${tone}${
+                    featured ? " home-quick-link--featured" : ""
+                  }${animation ? " home-quick-link--animate" : ""}`}
+                >
+                  <span className="home-quick-link__icon" aria-hidden="true">
+                    <Icon />
+                  </span>
+                  <span className="home-quick-link__label">{label}</span>
+                </Link>
+              ),
+            )}
           </nav>
         </section>
 
