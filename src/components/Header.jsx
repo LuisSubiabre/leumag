@@ -6,10 +6,13 @@ import { useEffect, useState } from "react";
 import BecaComponent from "./BecaCompoment";
 import "./Header.css";
 
-const heroImageModules = import.meta.glob("../assets/img/hero/*.{png,jpg,jpeg,webp}", {
-  eager: true,
-  import: "default",
-});
+const heroImageModules = import.meta.glob(
+  "../assets/img/hero/*.{png,jpg,jpeg,webp}",
+  {
+    eager: true,
+    import: "default",
+  },
+);
 
 const heroImages = Object.keys(heroImageModules)
   .sort()
@@ -53,7 +56,9 @@ export const Header = () => {
                   src={image}
                   alt=""
                   className={`hero-background${
-                    index === currentImageIndex ? " hero-background--active" : ""
+                    index === currentImageIndex
+                      ? " hero-background--active"
+                      : ""
                   }`}
                 />
               ))}
@@ -92,16 +97,16 @@ export const Header = () => {
                 />
                 <ButtonAccess
                   name={"Calendario de Evaluaciones"}
-                  variant={"primary"}
+                  variant={"warning"}
                   link={"/Evaluaciones"}
-                  animate={false}
+                  animate={true}
                 ></ButtonAccess>
                 <ButtonAccess
                   name={"Calendario Oficial"}
-                  variant={"warning"}
+                  variant={"primary"}
                   //onClick={handleBecaClick}
                   link={"/CalendarioOficial"}
-                  animate={true}
+                  animate={false}
                 />
                 <ButtonAccess
                   name={"Horarios 2026"}
