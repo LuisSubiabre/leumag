@@ -1,161 +1,143 @@
-import { useEffect, useState } from "react";
-import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
+import { Container, Row, Col } from "react-bootstrap";
+import {
+  FaBullhorn,
+  FaCalendarAlt,
+  FaClipboardList,
+  FaClock,
+  FaFolderOpen,
+  FaUserGraduate,
+} from "react-icons/fa";
 import Posts from "./Posts";
 import NoticiasCompactas from "./NoticiasCompactas";
 import Documentos from "./Documentos";
 import Externos from "./Externos";
-// import FacebookFeed from "./FacebookFeed";
-import Modal from "react-bootstrap/Modal";
-import Button from "react-bootstrap/Button";
-//import NoticiasScraper from "./NoticiasScraper";
-import { Container, Row, Col } from "react-bootstrap";
 import ComponentSae from "./sae";
-// import UltimosVideos from "./UltimosVideos";
-// import UltimosComunicados from "./UltimosComunicados";
+import UltimosComunicados from "./UltimosComunicados";
 import UltimosVideosScroll from "./UltimosVideosScroll";
+import "./Home.css";
 
-// Componente del modal
-function MyVerticallyCenteredModal(props) {
+const ACCESOS_RAPIDOS = [
+  {
+    to: "/Matricula",
+    label: "Matrícula",
+    icon: FaUserGraduate,
+    tone: "matricula",
+    featured: true,
+  },
+  {
+    to: "/Comunicados",
+    label: "Comunicados",
+    icon: FaBullhorn,
+    tone: "avisos",
+  },
+  {
+    to: "/Horarios",
+    label: "Horarios",
+    icon: FaClock,
+    tone: "horarios",
+  },
+  {
+    to: "/CalendarioOficial",
+    label: "Calendario",
+    icon: FaCalendarAlt,
+    tone: "calendario",
+  },
+  {
+    to: "/Evaluaciones",
+    label: "Evaluaciones",
+    icon: FaClipboardList,
+    tone: "evaluaciones",
+  },
+  {
+    to: "/Materiales",
+    label: "Materiales",
+    icon: FaFolderOpen,
+    tone: "materiales",
+  },
+];
+
+function Home() {
   return (
-    <Modal
-      {...props}
-      size="lg"
-      aria-labelledby="contained-modal-title-vcenter"
-      centered
-    >
-      <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter"></Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
-        <div className="d-flex flex-column align-items-center">
-          <div
-            className="mt-4 w-100"
-            style={{ maxWidth: "650px", textAlign: "left" }}
-          >
-            <div className="mb-4 px-3">
-              <div
-                id="comunicadosCarousel"
-                className="carousel slide"
-                data-bs-ride="carousel"
-                data-bs-interval="6000"
-              >
-                <div className="carousel-inner">
-                  <div className="carousel-item active">
-                    {/* <a
-                      href="/CalendarioOficial"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    > */}
-                    <img
-                      src="/comunicados/230726.png"
-                      alt="Información Importante"
-                      className="d-block w-100 img-fluid"
-                      style={{ cursor: "pointer" }}
-                    />
-                    {/* </a> */}
-                  </div>
-                </div>
-              </div>
+    <div className="home-page">
+      <Container fluid className="home-page__container">
+        <section className="home-welcome" aria-labelledby="home-welcome-title">
+          <div className="home-welcome__top">
+            <div className="home-welcome__content">
+              <p className="home-welcome__eyebrow">Familia LEUMAG</p>
+              <h2 id="home-welcome-title" className="home-welcome__title">
+                Todo lo importante, en un solo lugar
+              </h2>
+              <p className="home-welcome__text">
+                Accesos frecuentes, noticias y comunicados para apoderados.
+              </p>
             </div>
           </div>
-        </div>
-      </Modal.Body>
-      <Modal.Footer>
-        <Button variant="primary" onClick={props.onHide}>
-          Cerrar
-        </Button>
-      </Modal.Footer>
-    </Modal>
-  );
-}
 
-MyVerticallyCenteredModal.propTypes = {
-  onHide: PropTypes.func.isRequired,
-};
-
-// Componente principal Home
-function Home() {
-  const [modalShow, setModalShow] = useState(true);
-
-  useEffect(() => {
-    setModalShow(false);
-  }, []);
-
-  return (
-    <>
-      <Container fluid className="px-4">
-        <Row>
-          <Col lg={8} className="order-2 order-lg-1">
-            <Posts />
-            <NoticiasCompactas />
-            <hr className="d-lg-none" />
-            {/* <UltimosVideos /> */}
-
-            <hr />
-            <Documentos />
-          </Col>
-          <Col lg={4} className="order-1 order-lg-2">
-            <div className="d-lg-none mb-4">
-              <Externos />
-              <hr />
-              <ComponentSae />
-            </div>
-
-            <div
-              className="d-none d-lg-block sticky-top"
-              style={{ top: "80px" }}
-            >
-              <UltimosVideosScroll />
-              <hr />
-              {/* <UltimosComunicados /> */}
-              <Externos />
-              <hr />
-              <ComponentSae />
-              <hr />
-              {/* <FacebookFeed /> */}
-
-              {/* <div
-                className="bg-body-tertiary"
-                style={{
-                  backgroundImage: "url('/images/bannerumag.png')",
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                  backgroundRepeat: "no-repeat",
-                  padding: "2rem",
-                  borderRadius: "15px",
-                  boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-                  marginBottom: "2rem",
-                  position: "relative",
-                  backdropFilter: "blur(8px)",
-                  backgroundColor: "rgba(var(--bs-body-bg-rgb), 0.15)",
-                }}
+          <nav className="home-quick-links" aria-label="Accesos frecuentes">
+            {ACCESOS_RAPIDOS.map(({ to, label, icon: Icon, tone, featured }) => (
+              <Link
+                key={to}
+                to={to}
+                className={`home-quick-link home-quick-link--${tone}${
+                  featured ? " home-quick-link--featured" : ""
+                }`}
               >
-                <div
-                  className="bg-body"
-                  style={{
-                    padding: "2rem",
-                    borderRadius: "15px",
-                    backdropFilter: "blur(4px)",
-                    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.05)",
-                    backgroundColor: "rgba(var(--bs-body-bg-rgb), 0.6)",
-                  }}
-                >
-                  <h2 className="text-2xl font-bold text-center mb-4">
-                    Intervenciones educativas Carrera de Nutrición y Dietética
-                    Universidad de Magallanes
-                  </h2>
-                  <NoticiasScraper />
-                </div>
-              </div> */}
+                <span className="home-quick-link__icon" aria-hidden="true">
+                  <Icon />
+                </span>
+                <span className="home-quick-link__label">{label}</span>
+              </Link>
+            ))}
+          </nav>
+        </section>
+
+        <Row className="home-layout g-4">
+          <Col lg={8} className="order-2 order-lg-1">
+            <section className="home-panel home-panel--news">
+              <Posts />
+            </section>
+
+            <section className="home-panel home-panel--archive mt-4">
+              <NoticiasCompactas />
+            </section>
+
+            <section className="home-panel home-panel--docs mt-4">
+              <Documentos />
+            </section>
+          </Col>
+
+          <Col lg={4} className="order-1 order-lg-2">
+            <div className="home-sidebar d-lg-none">
+              <section className="home-panel home-panel--aside">
+                <UltimosComunicados />
+              </section>
+              <section className="home-panel home-panel--aside mt-3">
+                <Externos />
+              </section>
+              <section className="home-panel home-panel--aside mt-3">
+                <ComponentSae />
+              </section>
             </div>
+
+            <aside className="home-sidebar home-sidebar--sticky d-none d-lg-block">
+              <section className="home-panel home-panel--aside">
+                <UltimosComunicados />
+              </section>
+              <section className="home-panel home-panel--aside mt-3">
+                <UltimosVideosScroll />
+              </section>
+              <section className="home-panel home-panel--aside mt-3">
+                <Externos />
+              </section>
+              <section className="home-panel home-panel--aside mt-3">
+                <ComponentSae />
+              </section>
+            </aside>
           </Col>
         </Row>
       </Container>
-      <MyVerticallyCenteredModal
-        show={modalShow}
-        onHide={() => setModalShow(false)}
-      />
-    </>
+    </div>
   );
 }
 

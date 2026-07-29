@@ -2,15 +2,18 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { Row, Col, Card, Spinner } from "react-bootstrap";
+import { FaArrowRight } from "react-icons/fa";
+
+const PLACEHOLDER_IMG =
+  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='220' viewBox='0 0 400 220'%3E%3Crect fill='%23e8f3ff' width='400' height='220'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%235b6b82' font-family='sans-serif' font-size='15'%3ESin imagen%3C/text%3E%3C/svg%3E";
 
 const Posts = () => {
   const [posts, setPosts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [hoveredCard, setHoveredCard] = useState(null);
 
   const formatDate = (dateString) => {
-    const options = { year: "numeric", month: "long", day: "numeric" };
-    return new Date(dateString).toLocaleDateString("es-ES", options);
+    const options = { day: "numeric", month: "long", year: "numeric" };
+    return new Date(dateString).toLocaleDateString("es-CL", options);
   };
 
   useEffect(() => {
@@ -26,7 +29,6 @@ const Posts = () => {
               id,
               title,
               content,
-              link,
               date,
             } = post;
             const featuredMediaResponse = featuredMediaId
@@ -41,7 +43,6 @@ const Posts = () => {
               id,
               title: title.rendered,
               content: content.rendered.substring(0, 100) + "...",
-              link,
               featuredMedia,
               date: formatDate(date),
             };
@@ -50,7 +51,6 @@ const Posts = () => {
         setPosts(postsData);
       } catch (error) {
         console.error("Error fetching data:", error);
-        // Mostrar mensaje de error al usuario
       } finally {
         setIsLoading(false);
       }
@@ -60,127 +60,67 @@ const Posts = () => {
   }, []);
 
   return (
-    <Row className="card-deck">
-      <h2 className="mb-4">Últimas noticias:</h2>
-      {isLoading ? (
-        <div
-          className="d-flex justify-content-center align-items-center"
-          style={{ height: "50vh" }}
+    <section aria-labelledby="ultimas-noticias-titulo">
+      <div className="home-section-head">
+        <div>
+          <h2 id="ultimas-noticias-titulo">Lo que está pasando</h2>
+          <p>Novedades y noticias recientes.</p>
+        </div>
+        <Link
+          to="/Noticias"
+          className="btn btn-primary btn-ver-todas d-none d-md-inline-flex align-items-center gap-2"
         >
+          Ver todas
+          <FaArrowRight size={12} />
+        </Link>
+      </div>
+
+      {isLoading ? (
+        <div className="d-flex justify-content-center align-items-center py-5">
           <div className="text-center">
-            <Spinner
-              animation="border"
-              role="status"
-              style={{ color: "#007bff", width: "3rem", height: "3rem" }}
-            >
+            <Spinner animation="border" role="status" className="text-primary">
               <span className="visually-hidden">Cargando...</span>
             </Spinner>
-            <p className="mt-3">
-              Cargando las últimas noticias, por favor espera...
-            </p>
+            <p className="mt-3 mb-0 text-muted">Cargando noticias…</p>
           </div>
         </div>
       ) : (
-        <>
-          {posts.map((post, index) => (
-            <Col md={6} lg={4} key={index} className="mb-3">
+        <Row>
+          {posts.map((post) => (
+            <Col md={6} lg={4} key={post.id} className="mb-3">
               <Link to={`Noticia/${post.id}`} className="text-decoration-none">
-                <Card
-                  className="rounded h-100"
-                  style={{
-                    height: "350px",
-                    boxShadow:
-                      hoveredCard === post.id
-                        ? "0 8px 16px rgba(0, 123, 255, 0.2)"
-                        : "0 4px 8px rgba(0, 0, 0, 0.1)",
-                    borderRadius: "12px",
-                    transition: "all 0.3s ease",
-                    transform:
-                      hoveredCard === post.id ? "translateY(-5px)" : "none",
-                    cursor: "pointer",
-                  }}
-                  onMouseEnter={() => setHoveredCard(post.id)}
-                  onMouseLeave={() => setHoveredCard(null)}
-                >
-                  <Card.Img
-                    variant="top"
-                    src={post.featuredMedia}
-                    alt={post.title}
-                    className="img-fluid"
-                    style={{
-                      height: "220px",
-                      objectFit: "cover",
-                      transition: "transform 0.3s ease",
-                      transform:
-                        hoveredCard === post.id ? "scale(1.02)" : "scale(1)",
-                    }}
-                  />
+                <Card className="noticia-card h-100">
+                  <div className="noticia-card-img-wrap">
+                    <Card.Img
+                      variant="top"
+                      src={post.featuredMedia || PLACEHOLDER_IMG}
+                      alt={post.title.replace(/<[^>]+>/g, "")}
+                      loading="lazy"
+                    />
+                  </div>
                   <Card.Body>
-                    <div className="d-flex justify-content-between align-items-center mb-2">
-                      <small
-                        className="text-muted"
-                        style={{
-                          fontSize: "0.9rem",
-                          fontStyle: "italic",
-                          color: "var(--bs-body-color)",
-                          backgroundColor: "var(--bs-tertiary-bg)",
-                          padding: "6px 12px",
-                          borderRadius: "8px",
-                          boxShadow: "0 2px 4px rgba(0,0,0,0.05)",
-                          border: "1px solid var(--bs-border-color)",
-                          transition: "all 0.3s ease",
-                        }}
-                      >
-                        {post.date}
-                      </small>
-                    </div>
+                    <small className="noticia-fecha">{post.date}</small>
                     <Card.Title
                       dangerouslySetInnerHTML={{ __html: post.title }}
-                      className="h2"
-                      style={{
-                        fontSize: "1.2rem",
-                        fontWeight: "700",
-                        marginBottom: "15px",
-                      }}
-                    ></Card.Title>
-                    <Card.Text
-                      dangerouslySetInnerHTML={{ __html: post.content }}
-                      className="text-muted"
-                    ></Card.Text>
+                      className="noticia-titulo"
+                    />
                   </Card.Body>
                 </Card>
               </Link>
             </Col>
           ))}
-          {/* <div className="mb-2 d-flex flex-row-reverse bd-highlight">
+          <div className="d-flex d-md-none justify-content-center mt-1 mb-1">
             <Link
               to="/Noticias"
-              className="btn btn-primary"
-              style={{
-                fontSize: "1.1rem",
-                padding: "10px 20px",
-                borderRadius: "30px",
-                fontWeight: "600",
-                boxShadow: "0 4px 8px rgba(0, 123, 255, 0.3)",
-                transition: "all 0.3s ease",
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = "translateY(-3px)";
-                e.currentTarget.style.boxShadow =
-                  "0 6px 12px rgba(0, 123, 255, 0.4)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = "translateY(0)";
-                e.currentTarget.style.boxShadow =
-                  "0 4px 8px rgba(0, 123, 255, 0.3)";
-              }}
+              className="btn btn-primary btn-ver-todas d-inline-flex align-items-center gap-2"
             >
               Ver todas las noticias
+              <FaArrowRight size={12} />
             </Link>
-          </div> */}
-        </>
+          </div>
+        </Row>
       )}
-    </Row>
+    </section>
   );
 };
 

@@ -10,9 +10,9 @@ const Externos = () => {
     <Container className="my-4">
       <Row className="justify-content-center">
         <Col xs={12} className="text-center mb-3">
-          <h3 className="fw-bold">Enlaces Importantes</h3>
-          <p className="text-muted">
-            Accede rápidamente a nuestros recursos y sitios relacionados
+          <h3 className="fw-bold">Enlaces útiles</h3>
+          <p className="text-muted mb-0 small">
+            Recursos frecuentes para familias y estudiantes
           </p>
         </Col>
       </Row>
