@@ -1,20 +1,61 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
+import {
+  faSun,
+  faMoon,
+  faChevronDown,
+  faExternalLinkAlt,
+} from "@fortawesome/free-solid-svg-icons";
 import logoImage from "../assets/img/logo.png";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import RedesSociales from "./RedesSociales";
-import { Button } from "react-bootstrap";
 import "./NavbarTop.css";
+
+const NAV_ITEMS = [
+  { type: "link", label: "Inicio", to: "/" },
+  {
+    type: "dropdown",
+    id: "institucion",
+    label: "Institución",
+    items: [
+      { label: "Nosotros", to: "/Nosotros" },
+      { label: "Estamentos", to: "/Estamentos" },
+    ],
+  },
+  { type: "link", label: "Comunicados", to: "/Comunicados" },
+  {
+    type: "dropdown",
+    id: "comunidad",
+    label: "Comunidad",
+    items: [
+      { label: "Centro de Padres", to: "/CentroDePadres" },
+      { label: "Centro de Alumnos", to: "/CentroDeAlumnos" },
+    ],
+  },
+  { type: "link", label: "Contacto", to: "/Contacto" },
+];
+
+const PORTALS = [
+  {
+    label: "Kimche Familia",
+    href: "https://www.kimche.co/kimche-familia-ingreso-apoderados/",
+    primary: true,
+  },
+  {
+    label: "Portal Estudiante",
+    href: "https://estudiante.liceoexperimental.cl/",
+    primary: false,
+  },
+];
 
 const NavbarTop = () => {
   const [isDarkMode, setIsDarkMode] = useState(() => {
     const savedTheme = localStorage.getItem("theme");
     return savedTheme ? savedTheme === "dark" : false;
   });
-
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const navRef = useRef(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -29,192 +70,220 @@ const NavbarTop = () => {
     setActiveDropdown(null);
   }, [location.pathname]);
 
-  const handleThemeChange = (isDark) => {
-    setIsDarkMode(isDark);
-    localStorage.setItem("theme", isDark ? "dark" : "light");
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (navRef.current && !navRef.current.contains(event.target)) {
+        setActiveDropdown(null);
+      }
+    };
+
+    const handleEscape = (event) => {
+      if (event.key === "Escape") {
+        setActiveDropdown(null);
+        setIsMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("keydown", handleEscape);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleEscape);
+    };
+  }, []);
+
+  const handleThemeChange = () => {
+    const next = !isDarkMode;
+    setIsDarkMode(next);
+    localStorage.setItem("theme", next ? "dark" : "light");
+  };
+
+  const toggleDropdown = (id) => {
+    setActiveDropdown((current) => (current === id ? null : id));
+  };
+
+  const isDropdownActive = (items) =>
+    items.some((item) => location.pathname === item.to);
+
+  const openPortal = (href) => {
+    window.open(href, "_blank", "noopener,noreferrer");
   };
 
   return (
     <nav
-      className={`navbar navbar-expand-lg sticky-top ${
+      ref={navRef}
+      className={`navbar navbar-expand-lg sticky-top site-navbar ${
         isDarkMode ? "navbar-dark" : "navbar-light"
       }`}
+      aria-label="Navegación principal"
     >
-      <div className="container-fluid">
-        <Link className="navbar-brand d-flex align-items-center" to={"/"}>
+      <div className="container-fluid site-navbar__inner">
+        <Link className="navbar-brand site-navbar__brand" to="/">
           <img
             src={logoImage}
             width="40"
             height="30"
-            className="me-2"
-            alt="Logo Liceo Experimental Umag"
+            className="site-navbar__logo"
+            alt=""
           />
-          <span>Liceo Experimental Umag</span>
+          <span className="site-navbar__brand-text">
+            <span className="d-none d-sm-inline">Liceo Experimental Umag</span>
+            <span className="d-sm-none">LEUMAG</span>
+          </span>
         </Link>
 
-        <div className="d-flex align-items-center order-lg-last">
-          <RedesSociales colorRSS="gray" className="d-none d-lg-flex me-3" />
+        <div className="site-navbar__toolbar">
+          <button
+            type="button"
+            className="theme-toggle"
+            onClick={handleThemeChange}
+            aria-label={isDarkMode ? "Activar modo claro" : "Activar modo oscuro"}
+            title={isDarkMode ? "Modo claro" : "Modo oscuro"}
+          >
+            <FontAwesomeIcon icon={isDarkMode ? faSun : faMoon} />
+          </button>
 
-          <div className="theme-switch-wrapper">
-            <div className="theme-switch">
-              <FontAwesomeIcon
-                icon={faSun}
-                className={`theme-icon ${!isDarkMode ? "active" : ""}`}
-                onClick={() => handleThemeChange(false)}
-                role="button"
-              />
-              <div className="switch-track">
-                <input
-                  type="checkbox"
-                  id="themeSwitch"
-                  checked={isDarkMode}
-                  onChange={() => handleThemeChange(!isDarkMode)}
+          <div className="site-navbar__portals d-none d-lg-flex">
+            {PORTALS.map((portal) => (
+              <button
+                key={portal.label}
+                type="button"
+                className={`portal-btn ${
+                  portal.primary ? "portal-btn--primary" : "portal-btn--secondary"
+                }`}
+                onClick={() => openPortal(portal.href)}
+              >
+                {portal.label}
+                <FontAwesomeIcon
+                  icon={faExternalLinkAlt}
+                  className="portal-btn__icon"
+                  aria-hidden="true"
                 />
-                <span className="switch-thumb"></span>
-              </div>
-              <FontAwesomeIcon
-                icon={faMoon}
-                className={`theme-icon ${isDarkMode ? "active" : ""}`}
-                onClick={() => handleThemeChange(true)}
-                role="button"
-              />
-            </div>
+              </button>
+            ))}
           </div>
-          <Button
-            variant="primary"
-            className="student-portal-btn d-none d-lg-block ms-3"
-            onClick={() =>
-              window.open(
-                "https://www.kimche.co/kimche-familia-ingreso-apoderados/",
-              )
-            }
-          >
-            Kimche Familia
-          </Button>
-
-          <Button
-            variant="secondary"
-            className="student-portal-btn d-none d-lg-block ms-3"
-            onClick={() =>
-              window.open("https://estudiante.liceoexperimental.cl/")
-            }
-          >
-            Portal Estudiante
-          </Button>
 
           <button
-            className="navbar-toggler ms-2"
+            className="navbar-toggler site-navbar__toggler"
             type="button"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            onClick={() => {
+              setIsMenuOpen((open) => !open);
+              setActiveDropdown(null);
+            }}
             aria-controls="navbarSupportedContent"
             aria-expanded={isMenuOpen}
-            aria-label="Toggle navigation"
+            aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
           >
             <span className="navbar-toggler-icon"></span>
           </button>
         </div>
 
         <div
-          className={`collapse navbar-collapse ${isMenuOpen ? "show" : ""}`}
+          className={`collapse navbar-collapse site-navbar__collapse ${
+            isMenuOpen ? "show" : ""
+          }`}
           id="navbarSupportedContent"
         >
-          <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
-            <li className="nav-item">
-              <NavLink className="nav-link" to={"/"}>
-                Inicio
-              </NavLink>
-            </li>
+          <ul className="navbar-nav site-navbar__links">
+            {NAV_ITEMS.map((item) => {
+              if (item.type === "link") {
+                return (
+                  <li className="nav-item" key={item.to}>
+                    <NavLink
+                      className={({ isActive }) =>
+                        `nav-link${isActive ? " active" : ""}`
+                      }
+                      to={item.to}
+                      end={item.to === "/"}
+                    >
+                      {item.label}
+                    </NavLink>
+                  </li>
+                );
+              }
 
-            <li className="nav-item dropdown">
-              <a
-                className="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                onMouseEnter={() => setActiveDropdown("institucion")}
-                onMouseLeave={() => setActiveDropdown(null)}
-              >
-                Institución
-              </a>
-              <div
-                className={`dropdown-menu ${
-                  activeDropdown === "institucion" ? "show" : ""
-                }`}
-                onMouseEnter={() => setActiveDropdown("institucion")}
-                onMouseLeave={() => setActiveDropdown(null)}
-              >
-                <NavLink className="dropdown-item" to="/Nosotros">
-                  Nosotros
-                </NavLink>
-                <NavLink className="dropdown-item" to="/Estamentos">
-                  Estamentos
-                </NavLink>
-              </div>
-            </li>
+              const open = activeDropdown === item.id;
+              const sectionActive = isDropdownActive(item.items);
 
-            <li className="nav-item">
-              <NavLink className="nav-link" to={"/Comunicados"}>
-                Comunicados
-              </NavLink>
-            </li>
-
-            <li className="nav-item dropdown">
-              <a
-                className="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                onMouseEnter={() => setActiveDropdown("comunidad")}
-                onMouseLeave={() => setActiveDropdown(null)}
-              >
-                Comunidad
-              </a>
-              <div
-                className={`dropdown-menu ${
-                  activeDropdown === "comunidad" ? "show" : ""
-                }`}
-                onMouseEnter={() => setActiveDropdown("comunidad")}
-                onMouseLeave={() => setActiveDropdown(null)}
-              >
-                <NavLink className="dropdown-item" to="/CentroDePadres">
-                  Centro de Padres
-                </NavLink>
-                <NavLink className="dropdown-item" to="/CentroDeAlumnos">
-                  Centro de Alumnos
-                </NavLink>
-              </div>
-            </li>
-
-            <li className="nav-item">
-              <NavLink className="nav-link" to={"/Contacto"}>
-                Contacto
-              </NavLink>
-            </li>
+              return (
+                <li
+                  className={`nav-item dropdown${open ? " show" : ""}`}
+                  key={item.id}
+                  onMouseEnter={() => {
+                    if (window.matchMedia("(min-width: 992px)").matches) {
+                      setActiveDropdown(item.id);
+                    }
+                  }}
+                  onMouseLeave={() => {
+                    if (window.matchMedia("(min-width: 992px)").matches) {
+                      setActiveDropdown(null);
+                    }
+                  }}
+                >
+                  <button
+                    type="button"
+                    className={`nav-link dropdown-toggle${
+                      sectionActive ? " active" : ""
+                    }`}
+                    aria-expanded={open}
+                    aria-haspopup="true"
+                    onClick={() => toggleDropdown(item.id)}
+                  >
+                    {item.label}
+                    <FontAwesomeIcon
+                      icon={faChevronDown}
+                      className={`dropdown-caret${open ? " dropdown-caret--open" : ""}`}
+                      aria-hidden="true"
+                    />
+                  </button>
+                  <div
+                    className={`dropdown-menu${open ? " show" : ""}`}
+                    role="menu"
+                  >
+                    {item.items.map((subItem) => (
+                      <NavLink
+                        key={subItem.to}
+                        className={({ isActive }) =>
+                          `dropdown-item${isActive ? " active" : ""}`
+                        }
+                        to={subItem.to}
+                        role="menuitem"
+                      >
+                        {subItem.label}
+                      </NavLink>
+                    ))}
+                  </div>
+                </li>
+              );
+            })}
           </ul>
 
-          <div className="d-lg-none mobile-bottom-actions">
-            <Button
-              variant="primary"
-              className="student-portal-btn w-100 mb-3"
-              onClick={() =>
-                window.open(
-                  "https://www.kimche.co/kimche-familia-ingreso-apoderados/",
-                )
-              }
-            >
-              Kimche Familia
-            </Button>
-
-            {
-              <Button
-                variant="primary"
-                className="student-portal-btn w-100 mb-3"
-                onClick={() =>
-                  window.open("https://estudiante.liceoexperimental.cl/")
-                }
-              >
-                Portal Estudiante
-              </Button>
-            }
-            <RedesSociales colorRSS="gray" />
+          <div className="d-lg-none mobile-menu-footer">
+            <div className="mobile-portals">
+              {PORTALS.map((portal) => (
+                <button
+                  key={portal.label}
+                  type="button"
+                  className={`portal-btn w-100 ${
+                    portal.primary
+                      ? "portal-btn--primary"
+                      : "portal-btn--secondary"
+                  }`}
+                  onClick={() => openPortal(portal.href)}
+                >
+                  {portal.label}
+                  <FontAwesomeIcon
+                    icon={faExternalLinkAlt}
+                    className="portal-btn__icon"
+                    aria-hidden="true"
+                  />
+                </button>
+              ))}
+            </div>
+            <div className="mobile-socials">
+              <span className="mobile-socials__label">Redes</span>
+              <RedesSociales colorRSS="gray" />
+            </div>
           </div>
         </div>
       </div>
