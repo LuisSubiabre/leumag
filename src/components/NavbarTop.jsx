@@ -56,6 +56,7 @@ const NavbarTop = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
   const navRef = useRef(null);
+  const closeTimeoutRef = useRef(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -68,7 +69,19 @@ const NavbarTop = () => {
   useEffect(() => {
     setIsMenuOpen(false);
     setActiveDropdown(null);
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
   }, [location.pathname]);
+
+  useEffect(() => {
+    return () => {
+      if (closeTimeoutRef.current) {
+        clearTimeout(closeTimeoutRef.current);
+      }
+    };
+  }, []);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -217,12 +230,18 @@ const NavbarTop = () => {
                   key={item.id}
                   onMouseEnter={() => {
                     if (window.matchMedia("(min-width: 992px)").matches) {
+                      if (closeTimeoutRef.current) {
+                        clearTimeout(closeTimeoutRef.current);
+                        closeTimeoutRef.current = null;
+                      }
                       setActiveDropdown(item.id);
                     }
                   }}
                   onMouseLeave={() => {
                     if (window.matchMedia("(min-width: 992px)").matches) {
-                      setActiveDropdown(null);
+                      closeTimeoutRef.current = setTimeout(() => {
+                        setActiveDropdown(null);
+                      }, 120);
                     }
                   }}
                 >

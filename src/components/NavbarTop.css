@@ -182,7 +182,7 @@ button.nav-link.dropdown-toggle {
   border-radius: 0.75rem;
   box-shadow: 0 10px 28px rgba(15, 23, 42, 0.12);
   padding: 0.4rem;
-  margin-top: 0.35rem;
+  margin-top: 0;
   min-width: 12.5rem;
 }
 
@@ -305,12 +305,27 @@ button.nav-link.dropdown-toggle {
     margin-left: 0.75rem;
   }
 
+  .site-navbar .nav-item.dropdown {
+    position: relative;
+  }
+
   .site-navbar .dropdown-menu {
     display: none;
+    top: calc(100% - 0.15rem);
   }
 
   .site-navbar .dropdown-menu.show {
     display: block;
+  }
+
+  /* Puente invisible para no perder el hover al bajar al menú */
+  .site-navbar .dropdown-menu::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -0.75rem;
+    height: 0.75rem;
   }
 
   .site-navbar .nav-link.active::after {
