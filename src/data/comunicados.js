@@ -14,7 +14,7 @@ export const comunicados = [
     contenido: ``,
   },
   {
-    id: 17,
+    id: 20,
     titulo: "Cartola de Situación Financiera 2026 LEUMAG",
     fecha: "06-03-2026",
     img: "/comunicados/060326Fina.png",
