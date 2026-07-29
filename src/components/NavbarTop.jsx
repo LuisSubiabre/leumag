@@ -133,11 +133,15 @@ const NavbarTop = () => {
         </Link>
 
         <div className="site-navbar__toolbar">
+          <RedesSociales variant="navbar" className="site-navbar__socials" />
+
           <button
             type="button"
             className="theme-toggle"
             onClick={handleThemeChange}
-            aria-label={isDarkMode ? "Activar modo claro" : "Activar modo oscuro"}
+            aria-label={
+              isDarkMode ? "Activar modo claro" : "Activar modo oscuro"
+            }
             title={isDarkMode ? "Modo claro" : "Modo oscuro"}
           >
             <FontAwesomeIcon icon={isDarkMode ? faSun : faMoon} />
@@ -149,7 +153,9 @@ const NavbarTop = () => {
                 key={portal.label}
                 type="button"
                 className={`portal-btn ${
-                  portal.primary ? "portal-btn--primary" : "portal-btn--secondary"
+                  portal.primary
+                    ? "portal-btn--primary"
+                    : "portal-btn--secondary"
                 }`}
                 onClick={() => openPortal(portal.href)}
               >
@@ -279,10 +285,6 @@ const NavbarTop = () => {
                   />
                 </button>
               ))}
-            </div>
-            <div className="mobile-socials">
-              <span className="mobile-socials__label">Redes</span>
-              <RedesSociales colorRSS="gray" />
             </div>
           </div>
         </div>

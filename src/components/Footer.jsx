@@ -16,7 +16,7 @@ const Footer = () => {
                     </div>
 
                     <div>
-                        <RedesSociales />
+                        <RedesSociales variant="footer" colorRSS="white" />
                     </div>
 
                 </section >
