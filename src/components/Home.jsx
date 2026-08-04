@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Container, Row, Col, Modal, Button } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import {
   FaBullhorn,
   FaCalendarAlt,
@@ -16,6 +16,7 @@ import Externos from "./Externos";
 import ComponentSae from "./sae";
 import UltimosComunicados from "./UltimosComunicados";
 import UltimosVideosScroll from "./UltimosVideosScroll";
+import HomeModal from "./HomeModal";
 import "./Home.css";
 
 // Modal al cargar el Home: cámbialo a true para mostrarlo
@@ -156,30 +157,12 @@ function Home() {
         </Row>
       </Container>
 
-      <Modal
+      <HomeModal
         show={modalShow}
         onHide={() => setModalShow(false)}
-        size="lg"
-        centered
-      >
-        <Modal.Header closeButton>
-          <Modal.Title>{HOME_MODAL.title}</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <div className="home-modal__body">
-            <img
-              src={HOME_MODAL.image}
-              alt={HOME_MODAL.title}
-              className="home-modal__image"
-            />
-          </div>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="primary" onClick={() => setModalShow(false)}>
-            Cerrar
-          </Button>
-        </Modal.Footer>
-      </Modal>
+        title={HOME_MODAL.title}
+        image={HOME_MODAL.image}
+      />
     </div>
   );
 }
