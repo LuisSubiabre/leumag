@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Modal, Button } from "react-bootstrap";
 import {
   FaBullhorn,
   FaCalendarAlt,
@@ -16,6 +17,13 @@ import ComponentSae from "./sae";
 import UltimosComunicados from "./UltimosComunicados";
 import UltimosVideosScroll from "./UltimosVideosScroll";
 import "./Home.css";
+
+// Modal al cargar el Home: cámbialo a true para mostrarlo
+const SHOW_HOME_MODAL = true;
+const HOME_MODAL = {
+  title: "Información importante",
+  image: "/comunicados/paes26.png",
+};
 
 const ACCESOS_RAPIDOS = [
   {
@@ -64,6 +72,8 @@ const ACCESOS_RAPIDOS = [
 ];
 
 function Home() {
+  const [modalShow, setModalShow] = useState(SHOW_HOME_MODAL);
+
   return (
     <div className="home-page">
       <Container fluid className="home-page__container">
@@ -145,6 +155,31 @@ function Home() {
           </Col>
         </Row>
       </Container>
+
+      <Modal
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+        size="lg"
+        centered
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>{HOME_MODAL.title}</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <div className="home-modal__body">
+            <img
+              src={HOME_MODAL.image}
+              alt={HOME_MODAL.title}
+              className="home-modal__image"
+            />
+          </div>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="primary" onClick={() => setModalShow(false)}>
+            Cerrar
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </div>
   );
 }
