@@ -23,6 +23,8 @@ import csoto from "../assets/img/funcionarios/csoto.png";
 import msaldivia from "../assets/img/funcionarios/msaldivia.png";
 import amorales from "../assets/img/funcionarios/amorales.png";
 import cmansilla from "../assets/img/funcionarios/cmansilla.png";
+import dpaillan from "../assets/img/funcionarios/dpaillan.png";
+
 export type Funcionario = {
   img: string;
   nombre: string;
@@ -213,7 +215,7 @@ export const equipoMedia: Funcionario[] = [
     asignatura: "Religión Católica",
   },
   {
-    img: demoImage,
+    img: dpaillan,
     nombre: "David Paillan",
     correo: "dpaillan@liceoexperimental.cl",
     dpto: "Educación Media",
