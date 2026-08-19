@@ -27,6 +27,7 @@ import InfoCra from "./pages/InfoCra";
 import Booktuber from "./pages/Booktuber";
 import Calendarios from "./pages/Calendarios";
 import CalendarioOficial from "./pages/CalendarioOficial";
+import Anexos from "./pages/Anexos";
 
 function App() {
   return (
@@ -58,6 +59,7 @@ function App() {
         <Route path="/InfoCra" element={<InfoCra />} />
         <Route path="/Bookuber" element={<Booktuber />} />
         <Route path="/Booktuber" element={<Booktuber />} />
+        <Route path="/anexos" element={<Anexos />} />
         <Route path="*" element={<NotFound />} /> {/* Ruta para manejar 404 */}
       </Routes>
       <Footer />
