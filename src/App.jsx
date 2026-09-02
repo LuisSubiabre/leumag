@@ -28,6 +28,7 @@ import Booktuber from "./pages/Booktuber";
 import Calendarios from "./pages/Calendarios";
 import CalendarioOficial from "./pages/CalendarioOficial";
 import Anexos from "./pages/Anexos";
+import BecaVulnerabilidad from "./pages/BecaVulnerabilidad";
 
 function App() {
   return (
@@ -51,6 +52,7 @@ function App() {
         <Route path="/NoticiasScraper" element={<NoticiasScraper />} />
         <Route path="/Comunicados" element={<Comunicados />} />
         <Route path="/Becas" element={<SocioeconomicForm />} />
+        <Route path="/BecaVulnerabilidad" element={<BecaVulnerabilidad />} />
         <Route path="/Reuniones" element={<Reuniones />} />
         <Route path="/matricula" element={<MatriculaPage />} />
         <Route path="/CentroDePadres" element={<CentroDePadres />} />

@@ -56,6 +56,9 @@ const Footer = () => {
                                 <p>
                                     <Link to={'/Contacto'} className="text-reset">Contacto</Link>
                                 </p>
+                                <p>
+                                    <Link to={'/BecaVulnerabilidad'} className="text-reset">Beca Vulnerabilidad 2027</Link>
+                                </p>
                             </div>
                             <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
 

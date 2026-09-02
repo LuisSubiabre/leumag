@@ -7,6 +7,7 @@ import {
   FaClipboardList,
   FaClock,
   FaFolderOpen,
+  FaHandHoldingHeart,
   FaUserGraduate,
 } from "react-icons/fa";
 import Posts from "./Posts";
@@ -27,6 +28,14 @@ const HOME_MODAL = {
 };
 
 const ACCESOS_RAPIDOS = [
+  {
+    to: "/BecaVulnerabilidad",
+    label: "Beca 2027",
+    icon: FaHandHoldingHeart,
+    tone: "becas",
+    featured: true,
+    animation: true,
+  },
   {
     to: "/Matricula",
     label: "Matrícula",
@@ -60,8 +69,7 @@ const ACCESOS_RAPIDOS = [
     label: "Evaluaciones",
     icon: FaClipboardList,
     tone: "evaluaciones",
-    featured: true,
-    animation: true,
+    animation: false,
   },
   {
     to: "/Materiales",

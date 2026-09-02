@@ -20,6 +20,7 @@ const NAV_ITEMS = [
     items: [
       { label: "Nosotros", to: "/Nosotros" },
       { label: "Estamentos", to: "/Estamentos" },
+      { label: "Beca Vulnerabilidad 2027", to: "/BecaVulnerabilidad" },
     ],
   },
   { type: "link", label: "Comunicados", to: "/Comunicados" },

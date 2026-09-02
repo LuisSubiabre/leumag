@@ -1,5 +1,64 @@
 export const comunicados = [
   {
+    id: 21,
+    titulo: "Beca Vulnerabilidad Año 2027",
+    fecha: "02-09-2026",
+    img: "/comunicados/beca-vulnerabilidad-2027.svg",
+    contenido: `<div>
+  <p><strong>Estimados Padres y Apoderados:</strong></p>
+  <p>
+    Junto con saludarles, con fecha <strong>miércoles 02 de septiembre</strong>
+    informamos fechas del <strong>Proceso de postulación a la Beca Vulnerabilidad año 2027</strong>,
+    para lo cual se solicita revisar detalladamente los siguientes puntos:
+  </p>
+  <ol>
+    <li>
+      <strong>Circular Proceso de Postulación vulnerabilidad 2027:</strong>
+      Indica características del Establecimiento, Normativas Legales y Procedimientos de Postulación;
+      se solicita leer detenidamente estas normativas y respetarla íntegramente ya que cualquier falta
+      u omisión contenida en estas indicaciones no permitirán su continuidad en el proceso.
+    </li>
+    <li>
+      <strong>Reglamento de Becas año 2025:</strong>
+      dicho reglamento norma los tipos de becas institucionales, la vigencia de estas y los requisitos
+      de postulación. (Revisar página web del Establecimiento educacional)
+    </li>
+    <li>
+      <strong>Formulario de postulación a Beca Vulnerabilidad:</strong>
+      Descargar formulario y completarlo con letra legible, para luego ser enviado junto a la
+      documentación de respaldo al correo electrónico indicado en la circular.
+    </li>
+    <li><strong>Documentación Obligatoria a Presentar 2027.</strong></li>
+    <li>
+      <strong>Declaración de Gastos Mensuales 2027</strong>
+      (sólo para trabajadores ocasionales o independientes).
+    </li>
+    <li><strong>Archivos necesarios para realizar postulación.</strong></li>
+  </ol>
+  <p>
+    <strong>La información se encuentra en la página web del Liceo,</strong>
+    <a href="https://www.liceoexperimental.cl" target="_blank" rel="noopener noreferrer">
+      www.liceoexperimental.cl
+    </a>
+  </p>
+  <p>
+    Dudas y consultas se responderán hasta el <strong>16 de septiembre</strong>,
+    dirigirlas al mail:
+    <a href="mailto:postulacionvulnerabilidad2027@liceoexperimental.cl">
+      postulacionvulnerabilidad2027@liceoexperimental.cl
+    </a>
+  </p>
+  <p><strong>Postulaciones:</strong></p>
+  <p>Desde el miércoles 09 de septiembre a las 15:00 hrs</p>
+  <p>Hasta el martes 22 de septiembre a las 23:59 hrs</p>
+  <p>
+    <a href="/BecaVulnerabilidad"><strong>Ir a Beca Vulnerabilidad 2027</strong></a>
+  </p>
+  <p>Atentamente,</p>
+  <p><strong>LICEO EXPERIMENTAL UMAG</strong></p>
+</div>`,
+  },
+  {
     id: 19,
     titulo: "Atención Apoderados - Administración",
     fecha: "23-07-2026",
