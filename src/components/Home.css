@@ -449,6 +449,28 @@
   padding: 0.25rem 0.5rem 0.5rem;
 }
 
+.home-modal__video {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+}
+
+.home-modal__video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.home-modal__watch-link a {
+  font-weight: 650;
+}
+
 .home-modal__media-link {
   display: block;
   max-width: 100%;
