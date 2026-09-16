@@ -23,8 +23,8 @@ import "./Home.css";
 // Modal al cargar el Home: cámbialo a true para mostrarlo
 const SHOW_HOME_MODAL = true;
 const HOME_MODAL = {
-  title: "Muestra de danzas folclóricas 2026 — Enseñanza Media",
-  youtubeId: "TBIRZeyTtFk",
+  title: "Muestra de danzas folclóricas 2026 — Enseñanza Básica",
+  youtubeId: "RHJzWcEYY9w",
 };
 
 const ACCESOS_RAPIDOS = [
