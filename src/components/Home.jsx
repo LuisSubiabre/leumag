@@ -21,7 +21,7 @@ import HomeModal from "./HomeModal";
 import "./Home.css";
 
 // Modal al cargar el Home: cámbialo a true para mostrarlo
-const SHOW_HOME_MODAL = true;
+const SHOW_HOME_MODAL = false;
 const HOME_MODAL = {
   title: "Muestra de danzas folclóricas 2026 — Enseñanza Básica",
   youtubeId: "RHJzWcEYY9w",
