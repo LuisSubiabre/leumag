@@ -119,20 +119,19 @@ const BecaVulnerabilidad = () => {
           </p>
           <h1 className="beca-hero__title">Beca Vulnerabilidad 2027</h1>
           <p className="beca-hero__lead">
-            Fechas del proceso de postulación para familias del Liceo
-            Experimental Umag.
+            El proceso de postulación se encuentra cerrado.
           </p>
           <div className="beca-hero__chips">
+            <span className="beca-chip beca-chip--alert">
+              <FaInfoCircle aria-hidden="true" />
+              Plazo de postulación expirado
+            </span>
             <span className="beca-chip">
               <FaCalendarAlt aria-hidden="true" />
-              Desde el miércoles 9 de septiembre, 15:00 hrs
+              Fue hasta el martes 22 de septiembre, 23:59 hrs
             </span>
             <span className="beca-chip">
               <FaClock aria-hidden="true" />
-              Hasta el martes 22 de septiembre, 23:59 hrs
-            </span>
-            <span className="beca-chip beca-chip--alert">
-              <FaInfoCircle aria-hidden="true" />
               Consultas hasta el 16 de septiembre
             </span>
           </div>
@@ -198,6 +197,10 @@ const BecaVulnerabilidad = () => {
                 <strong>Hasta</strong> el martes 22 de septiembre a las 23:59
                 hrs
               </p>
+              <p className="mt-2 mb-0">
+                <strong>Plazo expirado.</strong> Ya no se reciben postulaciones
+                ni consultas.
+              </p>
             </div>
 
             <p className="beca-letter__signoff">Atentamente,</p>
@@ -206,24 +209,17 @@ const BecaVulnerabilidad = () => {
 
           <aside className="beca-aside">
             <div className="beca-aside__card">
-              <h2>Plazo de postulación</h2>
+              <h2>Proceso cerrado</h2>
               <p>
-                Desde el <strong>miércoles 09 de septiembre, 15:00 hrs</strong>,
-                hasta el <strong>martes 22 de septiembre, 23:59 hrs</strong>.
+                El plazo de postulación finalizó el{" "}
+                <strong>martes 22 de septiembre a las 23:59 hrs</strong>.
               </p>
               <p>
-                Complete el formulario con letra legible y envíelo junto a la
-                documentación de respaldo al correo indicado en la circular.
+                Las consultas se recibieron hasta el{" "}
+                <strong>16 de septiembre</strong>.
               </p>
-              <a
-                className="beca-btn beca-btn--primary"
-                href={`mailto:${CORREO_CONSULTAS}`}
-              >
-                <FaEnvelope aria-hidden="true" />
-                Escribir al correo de postulación
-              </a>
               <p className="beca-aside__hint">
-                Consultas hasta el 16 de septiembre
+                Los documentos se mantienen disponibles solo como referencia.
               </p>
             </div>
             <div className="beca-aside__card beca-aside__card--muted">

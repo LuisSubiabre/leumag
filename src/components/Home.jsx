@@ -33,8 +33,8 @@ const ACCESOS_RAPIDOS = [
     label: "Beca 2027",
     icon: FaHandHoldingHeart,
     tone: "becas",
-    featured: true,
-    animation: true,
+    featured: false,
+    animation: false,
   },
   {
     to: "/Matricula",
