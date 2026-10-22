@@ -188,7 +188,7 @@ export const equipoAsistentes: Funcionario[] = [
   },
   {
     img: soyarzo,
-    nombre: "Susan Yarzún",
+    nombre: "Susan Oyarzún",
     correo: "soyarzo@liceoexperimental.cl",
     dpto: "Prevención de Riesgos",
   },
