@@ -29,6 +29,8 @@ import Calendarios from "./pages/Calendarios";
 import CalendarioOficial from "./pages/CalendarioOficial";
 import Anexos from "./pages/Anexos";
 import BecaVulnerabilidad from "./pages/BecaVulnerabilidad";
+import DocumentosPage from "./pages/DocumentosPage";
+import Acle from "./pages/Acle";
 
 function App() {
   return (
@@ -53,6 +55,8 @@ function App() {
         <Route path="/Comunicados" element={<Comunicados />} />
         <Route path="/Becas" element={<SocioeconomicForm />} />
         <Route path="/BecaVulnerabilidad" element={<BecaVulnerabilidad />} />
+        <Route path="/Documentos" element={<DocumentosPage />} />
+        <Route path="/Acle" element={<Acle />} />
         <Route path="/Reuniones" element={<Reuniones />} />
         <Route path="/matricula" element={<MatriculaPage />} />
         <Route path="/Matricula" element={<MatriculaPage />} />

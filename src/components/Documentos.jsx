@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Row, Col, Card, Badge } from "react-bootstrap";
 import PropTypes from "prop-types";
 //import docRIE from "../assets/docs/RIE.pdf";
@@ -220,27 +221,71 @@ DocumentoCard.propTypes = {
   }).isRequired,
 };
 
-const Documentos = () => {
+const categorias = [...new Set(documentos.map((documento) => documento.categoria))];
+
+const DocumentosGrid = ({ items }) => (
+  <Row className="g-4">
+    {items.map((documento) => (
+      <Col key={documento.id} xs={12} sm={6} lg={4}>
+        <DocumentoCard documento={documento} />
+      </Col>
+    ))}
+  </Row>
+);
+
+DocumentosGrid.propTypes = {
+  items: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
+
+const Documentos = ({ showHeading = true, grouped = false, showAllLink = false }) => {
   return (
     <section aria-labelledby="documentos-titulo">
-      <div className="mb-4">
-        <h2 id="documentos-titulo" className="mb-2">
+      {showHeading ? (
+        <div className="home-section-head mb-4">
+          <div>
+            <h2 id="documentos-titulo" className="mb-2">
+              Documentos oficiales
+            </h2>
+            <p className="text-muted mb-0">
+              Reglamentos, protocolos y otros documentos oficiales del liceo.
+            </p>
+          </div>
+          {showAllLink ? (
+            <Link
+              to="/Documentos"
+              className="btn btn-outline-primary btn-ver-todas d-inline-flex align-items-center gap-2"
+            >
+              Ver todos los documentos
+              <FaArrowRight size={12} />
+            </Link>
+          ) : null}
+        </div>
+      ) : (
+        <h2 id="documentos-titulo" className="visually-hidden">
           Documentos oficiales
         </h2>
-        <p className="text-muted mb-0">
-          Reglamentos, protocolos y otros documentos oficiales del liceo.
-        </p>
-      </div>
+      )}
 
-      <Row className="g-4">
-        {documentos.map((documento) => (
-          <Col key={documento.id} xs={12} sm={6} lg={4}>
-            <DocumentoCard documento={documento} />
-          </Col>
-        ))}
-      </Row>
+      {grouped ? (
+        categorias.map((categoria) => (
+          <div key={categoria} className="mb-5">
+            <h3 className="h5 fw-bold mb-3">{categoria}</h3>
+            <DocumentosGrid
+              items={documentos.filter((documento) => documento.categoria === categoria)}
+            />
+          </div>
+        ))
+      ) : (
+        <DocumentosGrid items={documentos} />
+      )}
     </section>
   );
+};
+
+Documentos.propTypes = {
+  showHeading: PropTypes.bool,
+  grouped: PropTypes.bool,
+  showAllLink: PropTypes.bool,
 };
 
 export default Documentos;

@@ -130,7 +130,7 @@ function Home() {
             </section>
 
             <section className="home-panel home-panel--docs mt-4">
-              <Documentos />
+              <Documentos showAllLink />
             </section>
           </Col>
 

@@ -11,6 +11,9 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import RedesSociales from "./RedesSociales";
 import "./NavbarTop.css";
 
+const CUENTA_PUBLICA_HREF =
+  "https://docs.google.com/presentation/d/1yllKGEZgYuAyNWH4LwhsMO2VjFjmp_S2/edit?usp=drive_link&ouid=113785725979968228794&rtpof=true&sd=true";
+
 const NAV_ITEMS = [
   { type: "link", label: "Inicio", to: "/" },
   {
@@ -19,13 +22,15 @@ const NAV_ITEMS = [
     label: "Institución",
     items: [
       { label: "Nosotros", to: "/Nosotros" },
-      { label: "Estamentos", to: "/Estamentos" },
+      { label: "Equipo", to: "/Estamentos" },
+      { label: "Documentos oficiales", to: "/Documentos" },
+      { label: "Cuenta Pública", href: CUENTA_PUBLICA_HREF },
     ],
   },
   { type: "link", label: "Comunicados", to: "/Comunicados" },
   {
     type: "dropdown",
-    id: "vida-escolar",
+    id: "academico",
     label: "Información Académica",
     items: [
       { label: "Horarios", to: "/Horarios" },
@@ -40,8 +45,9 @@ const NAV_ITEMS = [
     id: "comunidad",
     label: "Comunidad",
     items: [
+      { label: "Centro de Estudiantes", to: "/CentroDeAlumnos" },
       { label: "Centro de Padres", to: "/CentroDePadres" },
-      { label: "Centro de Alumnos", to: "/CentroDeAlumnos" },
+      { label: "ACLE / Talleres", to: "/Acle" },
     ],
   },
   { type: "link", label: "Contacto", to: "/Contacto" },
@@ -128,7 +134,11 @@ const NavbarTop = () => {
   };
 
   const isDropdownActive = (items) =>
-    items.some((item) => location.pathname === item.to);
+    items.some(
+      (item) =>
+        item.to &&
+        location.pathname.toLowerCase() === item.to.toLowerCase(),
+    );
 
   const openPortal = (href) => {
     window.open(href, "_blank", "noopener,noreferrer");
@@ -277,18 +287,37 @@ const NavbarTop = () => {
                     className={`dropdown-menu${open ? " show" : ""}`}
                     role="menu"
                   >
-                    {item.items.map((subItem) => (
-                      <NavLink
-                        key={subItem.to}
-                        className={({ isActive }) =>
-                          `dropdown-item${isActive ? " active" : ""}`
-                        }
-                        to={subItem.to}
-                        role="menuitem"
-                      >
-                        {subItem.label}
-                      </NavLink>
-                    ))}
+                    {item.items.map((subItem) =>
+                      subItem.href ? (
+                        <a
+                          key={subItem.href}
+                          className="dropdown-item"
+                          href={subItem.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          role="menuitem"
+                        >
+                          {subItem.label}
+                          <FontAwesomeIcon
+                            icon={faExternalLinkAlt}
+                            className="ms-2"
+                            size="xs"
+                            aria-hidden="true"
+                          />
+                        </a>
+                      ) : (
+                        <NavLink
+                          key={subItem.to}
+                          className={({ isActive }) =>
+                            `dropdown-item${isActive ? " active" : ""}`
+                          }
+                          to={subItem.to}
+                          role="menuitem"
+                        >
+                          {subItem.label}
+                        </NavLink>
+                      ),
+                    )}
                   </div>
                 </li>
               );
