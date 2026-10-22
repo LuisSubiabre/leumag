@@ -55,6 +55,7 @@ function App() {
         <Route path="/BecaVulnerabilidad" element={<BecaVulnerabilidad />} />
         <Route path="/Reuniones" element={<Reuniones />} />
         <Route path="/matricula" element={<MatriculaPage />} />
+        <Route path="/Matricula" element={<MatriculaPage />} />
         <Route path="/CentroDePadres" element={<CentroDePadres />} />
         <Route path="/CentroDeAlumnos" element={<CentroDeAlumnos />} />
         <Route path="/cards" element={<CardShowcase />} />

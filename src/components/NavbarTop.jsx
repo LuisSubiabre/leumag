@@ -20,10 +20,21 @@ const NAV_ITEMS = [
     items: [
       { label: "Nosotros", to: "/Nosotros" },
       { label: "Estamentos", to: "/Estamentos" },
-      { label: "Beca Vulnerabilidad 2027", to: "/BecaVulnerabilidad" },
     ],
   },
   { type: "link", label: "Comunicados", to: "/Comunicados" },
+  {
+    type: "dropdown",
+    id: "vida-escolar",
+    label: "Información Académica",
+    items: [
+      { label: "Horarios", to: "/Horarios" },
+      { label: "Evaluaciones", to: "/Evaluaciones" },
+      { label: "Calendario", to: "/CalendarioOficial" },
+      { label: "Materiales", to: "/Materiales" },
+      { label: "Matrícula", to: "/matricula" },
+    ],
+  },
   {
     type: "dropdown",
     id: "comunidad",

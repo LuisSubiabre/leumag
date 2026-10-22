@@ -54,10 +54,13 @@ const Footer = () => {
                                     <Link to={'/Estamentos'} className="text-reset">Estamentos</Link>
                                 </p>
                                 <p>
-                                    <Link to={'/Contacto'} className="text-reset">Contacto</Link>
+                                    <Link to={'/Comunicados'} className="text-reset">Comunicados</Link>
                                 </p>
                                 <p>
-                                    <Link to={'/BecaVulnerabilidad'} className="text-reset">Beca Vulnerabilidad 2027</Link>
+                                    <Link to={'/Horarios'} className="text-reset">Horarios</Link>
+                                </p>
+                                <p>
+                                    <Link to={'/Contacto'} className="text-reset">Contacto</Link>
                                 </p>
                             </div>
                             <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
