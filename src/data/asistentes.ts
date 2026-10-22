@@ -6,7 +6,7 @@ import mhijerra from "../assets/img/funcionarios/mhijerra.png";
 import svera from "../assets/img/funcionarios/svera.png";
 import vhernandez from "../assets/img/funcionarios/vhernandez.png";
 import gbarria from "../assets/img/funcionarios/gbarria.png";
-import rcisterna from "../assets/img/funcionarios/rcisterna.png";
+//import rcisterna from "../assets/img/funcionarios/rcisterna.png";
 import mrodriguez from "../assets/img/funcionarios/mrodriguez.png";
 import pcardenas from "../assets/img/funcionarios/pcardenas.png";
 import aalarcon from "../assets/img/funcionarios/aalarcon.png";
@@ -22,6 +22,7 @@ import pdiazmunoz from "../assets/img/funcionarios/pdiazmunoz.png";
 import ealmonacid from "../assets/img/funcionarios/ealmonacid.png";
 import cpardolagos from "../assets/img/funcionarios/cpardolagos.png";
 import nsanabria from "../assets/img/funcionarios/nsanabria.png";
+import soyarzo from "../assets/img/funcionarios/soyarzo.png";
 
 export type Funcionario = {
   img: string;
@@ -97,7 +98,7 @@ export const equipoAsistentes: Funcionario[] = [
   {
     img: demoImage,
     nombre: "Katherine Hechenleitner",
-    correo: "khetchenleitner@liceoexperimental.cl",
+    correo: "khechenleitner@liceoexperimental.cl",
     dpto: "Central de Apuntes",
   },
   // {
@@ -136,12 +137,7 @@ export const equipoAsistentes: Funcionario[] = [
     correo: "pcardenas@liceoexperimental.cl",
     dpto: "Inspectora",
   },
-  {
-    img: rcisterna,
-    nombre: "Ronny Cisterna",
-    correo: "rcisterna@liceoexperimental.cl",
-    dpto: "Administrador Establecimiento",
-  },
+
   {
     img: ssanchez,
     nombre: "Silvia Sánchez",
@@ -189,6 +185,12 @@ export const equipoAsistentes: Funcionario[] = [
     nombre: "Patricia Díaz",
     correo: "pdiazmunoz@liceoexperimental.cl",
     dpto: "Inspector",
+  },
+  {
+    img: soyarzo,
+    nombre: "Susan Yarzún",
+    correo: "soyarzo@liceoexperimental.cl",
+    dpto: "Prevención de Riesgos",
   },
   {
     img: demoImage,
