@@ -84,7 +84,7 @@ const UltimosComunicados = () => {
         {items.map((comunicado, index) => (
           <Link
             key={`${comunicado.id}-${index}`}
-            to="/Comunicados"
+            to={`/Comunicados#comunicado-${comunicado.id}`}
             className="text-decoration-none text-reset"
           >
             <article className="comunicado-card d-flex mb-3 p-2 border align-items-stretch bg-body shadow-sm">
