@@ -2,6 +2,7 @@ import { ButtonAccess } from "./ButtonAccess";
 import logoImage from "../assets/img/experimentalin.png";
 import { Image, Container } from "react-bootstrap";
 import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import BecaComponent from "./BecaCompoment";
 import "./Header.css";
 
@@ -23,6 +24,8 @@ const HERO_INTERVAL_MS = 6000;
 const SHOW_HERO_ACTIONS = false;
 
 export const Header = () => {
+  const { pathname } = useLocation();
+  const isHome = pathname === "/";
   const [showBecaModal, setShowBecaModal] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -44,8 +47,8 @@ export const Header = () => {
 
   return (
     <>
-      <div className="hero text-center">
-        <div className="hero-banner">
+      <div className={`hero text-center${isHome ? " hero--home" : ""}`}>
+        <div className={`hero-banner${isHome ? " hero-banner--home" : ""}`}>
           <div className="hero-backgrounds" aria-hidden="true">
             {heroImages.map((image, index) => (
               <img

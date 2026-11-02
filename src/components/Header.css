@@ -10,6 +10,27 @@
   overflow: hidden;
 }
 
+.hero-banner--home {
+  aspect-ratio: 21 / 9;
+  max-height: min(68vh, 520px);
+  min-height: 280px;
+}
+
+.hero--home .hero-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.22) 0%,
+    rgba(0, 0, 0, 0.18) 45%,
+    rgba(0, 0, 0, 0.55) 100%
+  );
+}
+
+.hero--home .hero-content h1 {
+  font-size: clamp(1.7rem, 4vw, 2.6rem);
+  font-weight: 750;
+  letter-spacing: -0.03em;
+}
+
 .hero-backgrounds {
   position: absolute;
   inset: 0;

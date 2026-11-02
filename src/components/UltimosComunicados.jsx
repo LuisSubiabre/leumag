@@ -1,9 +1,8 @@
-import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { FaBullhorn } from "react-icons/fa";
+import { FaArrowRight } from "react-icons/fa";
 import { comunicados } from "../data/comunicados";
 
-const getExtracto = (contenido, maxLength = 110) => {
+const getExtracto = (contenido, maxLength = 140) => {
   if (!contenido) return "";
 
   const textoPlano = contenido
@@ -16,102 +15,44 @@ const getExtracto = (contenido, maxLength = 110) => {
 };
 
 const UltimosComunicados = () => {
-  const contenedorRef = useRef(null);
-  const [paused, setPaused] = useState(false);
-  const comunicadosLimitados = comunicados.slice(0, 4);
-
-  useEffect(() => {
-    const contenedor = contenedorRef.current;
-    if (!contenedor || comunicadosLimitados.length <= 2) return;
-
-    const prefiereMenosMovimiento = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
-    if (prefiereMenosMovimiento) return;
-
-    let scrollPosicion = 0;
-
-    const avanzarScroll = () => {
-      if (!contenedor || paused) return;
-
-      scrollPosicion += 0.35;
-      const alturaLista = contenedor.scrollHeight / 2;
-
-      if (alturaLista <= 0) {
-        scrollPosicion = 0;
-      } else if (scrollPosicion >= alturaLista) {
-        scrollPosicion = 0;
-      }
-
-      contenedor.scrollTop = scrollPosicion;
-    };
-
-    const intervaloId = setInterval(avanzarScroll, 30);
-    return () => clearInterval(intervaloId);
-  }, [paused, comunicadosLimitados.length]);
-
-  const items =
-    comunicadosLimitados.length > 2
-      ? [...comunicadosLimitados, ...comunicadosLimitados]
-      : comunicadosLimitados;
+  const destacados = comunicados.slice(0, 2);
 
   return (
-    <div className="mb-1 comunicados-sidebar">
-      <div className="d-flex justify-content-between align-items-start gap-2 mb-3">
+    <section className="home-coms" aria-labelledby="comunicados-home-titulo">
+      <div className="home-section-head">
         <div>
-          <h3 className="fw-bold mb-1 fs-5 d-flex align-items-center gap-2">
-            <FaBullhorn className="text-warning" aria-hidden="true" />
-            Para apoderados
-          </h3>
-          <p className="small text-muted mb-0">Últimos comunicados oficiales</p>
+          <p className="home-kicker">Para apoderados</p>
+          <h2 id="comunicados-home-titulo">Comunicados</h2>
         </div>
-        <Link
-          to="/Comunicados"
-          className="btn btn-sm btn-outline-primary rounded-pill text-nowrap"
-        >
+        <Link to="/Comunicados" className="home-text-link">
           Ver todos
+          <FaArrowRight size={12} />
         </Link>
       </div>
 
-      <div
-        ref={contenedorRef}
-        className="comunicados-scroll"
-        onMouseEnter={() => setPaused(true)}
-        onMouseLeave={() => setPaused(false)}
-        onFocus={() => setPaused(true)}
-        onBlur={() => setPaused(false)}
-      >
-        {items.map((comunicado, index) => (
+      <div className="home-coms__grid">
+        {destacados.map((comunicado) => (
           <Link
-            key={`${comunicado.id}-${index}`}
+            key={comunicado.id}
             to={`/Comunicados#comunicado-${comunicado.id}`}
-            className="text-decoration-none text-reset"
+            className="home-com-card"
           >
-            <article className="comunicado-card d-flex mb-3 p-2 border align-items-stretch bg-body shadow-sm">
-              {comunicado.img ? (
-                <img
-                  src={comunicado.img}
-                  alt=""
-                  className="comunicado-thumb"
-                  loading="lazy"
-                />
+            {comunicado.img ? (
+              <img src={comunicado.img} alt="" loading="lazy" />
+            ) : (
+              <div className="home-com-card__fallback" aria-hidden="true" />
+            )}
+            <div className="home-com-card__body">
+              <time>{comunicado.fecha}</time>
+              <h3>{comunicado.titulo}</h3>
+              {comunicado.contenido ? (
+                <p>{getExtracto(comunicado.contenido)}</p>
               ) : null}
-              <div className="d-flex flex-column min-w-0">
-                <span className="small text-muted">{comunicado.fecha}</span>
-                <h4 className="fs-6 fw-semibold mb-1 text-truncate-2">
-                  {comunicado.titulo}
-                </h4>
-                {comunicado.contenido ? (
-                  <p className="small text-body-secondary mb-0">
-                    {getExtracto(comunicado.contenido)}
-                  </p>
-                ) : null}
-              </div>
-            </article>
+            </div>
           </Link>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Container, Row, Col } from "react-bootstrap";
 import {
+  FaArrowRight,
   FaBullhorn,
   FaCalendarAlt,
   FaClipboardList,
@@ -9,18 +9,23 @@ import {
   FaFolderOpen,
   FaHandHoldingHeart,
   FaUserGraduate,
+  FaUsers,
+  FaStar,
+  FaChalkboardTeacher,
 } from "react-icons/fa";
 import Posts from "./Posts";
-import NoticiasCompactas from "./NoticiasCompactas";
 import Documentos from "./Documentos";
 import Externos from "./Externos";
 import ComponentSae from "./sae";
 import UltimosComunicados from "./UltimosComunicados";
 import UltimosVideosScroll from "./UltimosVideosScroll";
 import HomeModal from "./HomeModal";
+import hero1 from "../assets/img/hero/1.png";
+import hero2 from "../assets/img/hero/2.png";
+import hero3 from "../assets/img/hero/3.png";
+import hero4 from "../assets/img/hero/4.png";
 import "./Home.css";
 
-// Modal al cargar el Home: cámbialo a true para mostrarlo
 const SHOW_HOME_MODAL = false;
 const HOME_MODAL = {
   title: "Muestra de danzas folclóricas 2026 — Enseñanza Básica",
@@ -31,52 +36,109 @@ const ACCESOS_RAPIDOS = [
   {
     to: "/BecaVulnerabilidad",
     label: "Beca 2027",
+    hint: "Postulación",
     icon: FaHandHoldingHeart,
     tone: "becas",
-    featured: false,
-    animation: false,
   },
   {
     to: "/Matricula",
     label: "Matrícula",
+    hint: "Proceso 2026",
     icon: FaUserGraduate,
     tone: "matricula",
-    animation: false,
   },
   {
     to: "/Comunicados",
     label: "Comunicados",
+    hint: "Avisos",
     icon: FaBullhorn,
     tone: "avisos",
-    animation: false,
   },
   {
     to: "/Horarios",
     label: "Horarios",
+    hint: "Cursos",
     icon: FaClock,
     tone: "horarios",
-    animation: false,
   },
   {
     to: "/CalendarioOficial",
     label: "Calendario",
+    hint: "Año escolar",
     icon: FaCalendarAlt,
     tone: "calendario",
-    animation: false,
   },
   {
     to: "/Evaluaciones",
     label: "Evaluaciones",
+    hint: "Fechas",
     icon: FaClipboardList,
     tone: "evaluaciones",
-    animation: false,
   },
   {
     to: "/Materiales",
     label: "Materiales",
+    hint: "Útiles",
     icon: FaFolderOpen,
     tone: "materiales",
-    animation: false,
+  },
+];
+
+const NECESITAS = [
+  {
+    to: "/Horarios",
+    title: "Horarios de clases",
+    text: "Consulta los horarios de Enseñanza Básica y Media, actualizados para el año en curso.",
+    cta: "Ver horarios",
+    image: hero1,
+  },
+  {
+    to: "/CalendarioOficial",
+    title: "Calendario oficial",
+    text: "Revisa feriados, vacaciones, reuniones y las fechas clave del año escolar.",
+    cta: "Abrir calendario",
+    image: hero2,
+  },
+  {
+    to: "/Evaluaciones",
+    title: "Calendario de evaluaciones",
+    text: "Encuentra las fechas de pruebas y evaluaciones de cada nivel, en un solo lugar.",
+    cta: "Ver evaluaciones",
+    image: hero3,
+  },
+  {
+    to: "/Materiales",
+    title: "Listas de materiales",
+    text: "Descarga las listas de útiles y materiales solicitados por curso.",
+    cta: "Ver materiales",
+    image: hero4,
+  },
+];
+
+const COMUNIDAD = [
+  {
+    to: "/CentroDeAlumnos",
+    label: "Centro de Estudiantes",
+    text: "Representación y actividades de las y los estudiantes.",
+    icon: FaUsers,
+  },
+  {
+    to: "/CentroDePadres",
+    label: "Centro de Padres",
+    text: "Organización de apoderados y vida familiar del Liceo.",
+    icon: FaUserGraduate,
+  },
+  {
+    to: "/Acle",
+    label: "ACLE / Talleres",
+    text: "Deportes, arte y talleres de libre elección.",
+    icon: FaStar,
+  },
+  {
+    to: "/Estamentos",
+    label: "Equipo",
+    text: "Conoce a quienes hacen posible el Liceo.",
+    icon: FaChalkboardTeacher,
   },
 ];
 
@@ -85,85 +147,125 @@ function Home() {
 
   return (
     <div className="home-page">
-      <Container fluid className="home-page__container">
-        <section className="home-welcome" aria-labelledby="home-welcome-title">
-          <div className="home-welcome__top">
-            <div className="home-welcome__content">
-              <p className="home-welcome__eyebrow">Comunidad Experimentalina</p>
-              <h2 id="home-welcome-title" className="home-welcome__title">
-                Todo lo importante, en un solo lugar
-              </h2>
-              <p className="home-welcome__text">
-                Accesos frecuentes, calendarios, evaluaciones y más.
-              </p>
+      <section className="home-block home-block--access" aria-label="Accesos frecuentes">
+        <div className="home-wrap">
+          <nav className="home-access" aria-label="Accesos frecuentes">
+            {ACCESOS_RAPIDOS.map(({ to, label, hint, icon: Icon, tone }) => (
+              <Link
+                key={to}
+                to={to}
+                className={`home-access__item home-access__item--${tone}`}
+              >
+                <span className="home-access__icon" aria-hidden="true">
+                  <Icon />
+                </span>
+                <span className="home-access__text">
+                  <strong>{label}</strong>
+                  <small>{hint}</small>
+                </span>
+              </Link>
+            ))}
+          </nav>
+        </div>
+      </section>
+
+      <section className="home-block">
+        <div className="home-wrap">
+          <Posts />
+        </div>
+      </section>
+
+      <section className="home-block home-block--muted">
+        <div className="home-wrap">
+          <UltimosComunicados />
+        </div>
+      </section>
+
+      <section className="home-band home-band--ink">
+        <div className="home-wrap home-band__inner">
+          <p className="home-band__eyebrow">Nuestra identidad</p>
+          <h2>La verdad, a través de la razón</h2>
+          <p>
+            Formamos niñas, niños y jóvenes de Magallanes con una educación
+            humana y académica, para que sean un real aporte a la sociedad.
+          </p>
+          <Link to="/Nosotros" className="home-band__cta">
+            Conocer el Liceo
+            <FaArrowRight size={12} />
+          </Link>
+        </div>
+      </section>
+
+      <section className="home-block">
+        <div className="home-wrap">
+          <UltimosVideosScroll />
+        </div>
+      </section>
+
+      <section className="home-band home-band--community">
+        <div className="home-wrap">
+          <p className="home-kicker">Comunidad</p>
+          <h2 className="home-band__title">Somos más que la sala de clases</h2>
+          <div className="home-community">
+            {COMUNIDAD.map(({ to, label, text, icon: Icon }) => (
+              <Link key={to} to={to} className="home-community__card">
+                <span className="home-community__icon" aria-hidden="true">
+                  <Icon />
+                </span>
+                <h3>{label}</h3>
+                <p>{text}</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="home-block" aria-labelledby="necesitas-titulo">
+        <div className="home-wrap">
+          <div className="home-section-head home-section-head--center">
+            <div>
+              <p className="home-kicker">Información académica</p>
+              <h2 id="necesitas-titulo">Todo lo que necesitas</h2>
             </div>
           </div>
 
-          <nav className="home-quick-links" aria-label="Accesos frecuentes">
-            {ACCESOS_RAPIDOS.map(
-              ({ to, label, icon: Icon, tone, featured, animation }) => (
-                <Link
-                  key={to}
-                  to={to}
-                  className={`home-quick-link home-quick-link--${tone}${
-                    featured ? " home-quick-link--featured" : ""
-                  }${animation ? " home-quick-link--animate" : ""}`}
-                >
-                  <span className="home-quick-link__icon" aria-hidden="true">
-                    <Icon />
-                  </span>
-                  <span className="home-quick-link__label">{label}</span>
+          <div className="home-need">
+            {NECESITAS.map((item, index) => (
+              <article
+                key={item.to}
+                className={`home-need__row${
+                  index % 2 === 1 ? " home-need__row--reverse" : ""
+                }`}
+              >
+                <div className="home-need__copy">
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
+                  <Link to={item.to} className="home-text-link">
+                    {item.cta}
+                    <FaArrowRight size={12} />
+                  </Link>
+                </div>
+                <Link to={item.to} className="home-need__media" tabIndex={-1}>
+                  <img src={item.image} alt="" />
                 </Link>
-              ),
-            )}
-          </nav>
-        </section>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
 
-        <Row className="home-layout g-4">
-          <Col lg={8} className="order-2 order-lg-1">
-            <section className="home-panel home-panel--news">
-              <Posts />
-            </section>
+      <section className="home-block home-block--muted">
+        <div className="home-wrap">
+          <Documentos showAllLink />
+        </div>
+      </section>
 
-            <section className="home-panel home-panel--archive mt-4">
-              <NoticiasCompactas />
-            </section>
-
-            <section className="home-panel home-panel--docs mt-4">
-              <Documentos showAllLink />
-            </section>
-          </Col>
-
-          <Col lg={4} className="order-1 order-lg-2">
-            <div className="home-sidebar d-lg-none">
-              <section className="home-panel home-panel--aside">
-                <UltimosComunicados />
-              </section>
-              <section className="home-panel home-panel--aside mt-3">
-                <Externos />
-              </section>
-              <section className="home-panel home-panel--aside mt-3">
-                <ComponentSae />
-              </section>
-            </div>
-
-            <aside className="home-sidebar home-sidebar--sticky d-none d-lg-block">
-              <section className="home-panel home-panel--aside">
-                <UltimosComunicados />
-              </section>
-              <section className="home-panel home-panel--aside mt-3">
-                <UltimosVideosScroll />
-              </section>
-              <section className="home-panel home-panel--aside mt-3">
-                <Externos />
-              </section>
-              <section className="home-panel home-panel--aside mt-3">
-                <ComponentSae />
-              </section>
-            </aside>
-          </Col>
-        </Row>
-      </Container>
+      <section className="home-block">
+        <div className="home-wrap home-closing">
+          <Externos />
+          <ComponentSae />
+        </div>
+      </section>
 
       <HomeModal
         show={modalShow}
