@@ -1,5 +1,15 @@
+:root {
+  --leumag-ink: #1a2b4a;
+  --leumag-muted: #5b6b82;
+  --leumag-accent: #0d6efd;
+  --leumag-accent-soft: rgba(13, 110, 253, 0.1);
+  --leumag-sky: #e8f3ff;
+  --leumag-page: #f8f6f6;
+  --leumag-gold: #ffc107;
+}
+
 .contenedor {
-  background: #f8f6f6;
+  background: var(--leumag-page);
   padding-bottom: 12px;
 }
 
@@ -156,16 +166,6 @@ a .card.disabled {
 
 .btn-home:hover {
   animation: shadow 1s infinite;
-}
-
-.footer-bg {
-  margin-top: 12px;
-  border-top: 2px solid yellow;
-  background-image: url("./assets/img/footbanner.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  color: rgba(255, 255, 255, 0.795);
 }
 
 .parallax-container {
