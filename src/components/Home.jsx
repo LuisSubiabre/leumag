@@ -26,10 +26,11 @@ import hero3 from "../assets/img/hero/3.png";
 import hero4 from "../assets/img/hero/4.png";
 import "./Home.css";
 
-const SHOW_HOME_MODAL = false;
+const SHOW_HOME_MODAL = true;
 const HOME_MODAL = {
-  title: "Muestra de danzas folclóricas 2026 — Enseñanza Básica",
-  youtubeId: "RHJzWcEYY9w",
+  title: "PAES",
+  //youtubeId: "RHJzWcEYY9w",
+  image: "/images/paes.png",
 };
 
 const ACCESOS_RAPIDOS = [
