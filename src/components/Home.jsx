@@ -26,7 +26,7 @@ import hero3 from "../assets/img/hero/3.png";
 import hero4 from "../assets/img/hero/4.png";
 import "./Home.css";
 
-const SHOW_HOME_MODAL = true;
+const SHOW_HOME_MODAL = false;
 const HOME_MODAL = {
   title: "PAES",
   //youtubeId: "RHJzWcEYY9w",
