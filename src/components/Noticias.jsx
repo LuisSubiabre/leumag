@@ -1,100 +1,92 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { Row, Col, Card, Form, Spinner } from "react-bootstrap";
 import { FaSearch } from "react-icons/fa";
 
+const POSTS_URL = "https://portal.liceoexperimental.cl/wp-json/wp/v2/posts";
+const PER_PAGE = 10;
+const SEARCH_DELAY_MS = 400;
+
+const formatDate = (dateString) => {
+  const options = { year: "numeric", month: "long", day: "numeric" };
+  return new Date(dateString).toLocaleDateString("es-ES", options);
+};
+
+const toPostCard = (post) => ({
+  id: post.id,
+  title: post.title.rendered,
+  content: post.content.rendered.substring(0, 100) + "...",
+  link: post.link,
+  featuredMedia: post._embedded?.["wp:featuredmedia"]?.[0]?.source_url ?? null,
+  date: formatDate(post.date),
+});
+
 const Noticias = () => {
   const [posts, setPosts] = useState([]);
-  const [page, setPage] = useState(1);
-  const [loading, setLoading] = useState(false);
+  // La búsqueda y la página van juntas para que una búsqueda nueva
+  // vuelva a la página 1 con una sola petición.
+  const [request, setRequest] = useState({ query: "", page: 1 });
+  const [loading, setLoading] = useState(true);
   const [hasMore, setHasMore] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
-  const [mediaCache, setMediaCache] = useState(new Map());
 
-  const formatDate = (dateString) => {
-    const options = { year: "numeric", month: "long", day: "numeric" };
-    return new Date(dateString).toLocaleDateString("es-ES", options);
-  };
+  // Espera a que el usuario deje de escribir antes de consultar la API
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      const query = searchTerm.trim();
+      setRequest((prev) =>
+        prev.query === query ? prev : { query, page: 1 }
+      );
+    }, SEARCH_DELAY_MS);
 
-  const getMediaUrl = useCallback(
-    async (mediaId) => {
-      if (mediaCache.has(mediaId)) {
-        return mediaCache.get(mediaId);
-      }
+    return () => clearTimeout(timeoutId);
+  }, [searchTerm]);
 
-      try {
-        const response = await axios.get(
-          `https://portal.liceoexperimental.cl/wp-json/wp/v2/media/${mediaId}`
-        );
-        const url = response.data.source_url;
-        setMediaCache((prev) => new Map(prev).set(mediaId, url));
-        return url;
-      } catch (error) {
-        console.error("Error fetching media:", error);
-        return null;
-      }
-    },
-    [mediaCache]
-  );
+  useEffect(() => {
+    const controller = new AbortController();
+    const { query, page } = request;
 
-  const fetchPosts = useCallback(async () => {
-    if (!hasMore || loading) return;
-
-    try {
+    const loadPosts = async () => {
       setLoading(true);
-      const response = await axios.get(
-        `https://portal.liceoexperimental.cl/wp-json/wp/v2/posts?page=${page}&per_page=10`
-      );
+      try {
+        const response = await axios.get(POSTS_URL, {
+          params: {
+            page,
+            per_page: PER_PAGE,
+            _embed: "wp:featuredmedia",
+            ...(query && { search: query }),
+          },
+          signal: controller.signal,
+        });
 
-      if (response.data.length === 0) {
-        setHasMore(false);
-        return;
-      }
-
-      const postsData = await Promise.all(
-        response.data.map(async (post) => {
-          const {
-            featured_media: featuredMediaId,
-            id,
-            title,
-            content,
-            link,
-            date,
-          } = post;
-
-          const featuredMedia = featuredMediaId
-            ? await getMediaUrl(featuredMediaId)
-            : null;
-
-          return {
-            id,
-            title: title.rendered,
-            content: content.rendered.substring(0, 100) + "...",
-            link,
-            featuredMedia,
-            date: formatDate(date),
-          };
-        })
-      );
-
-      setPosts((prevPosts) => {
-        // Filtrar posts duplicados
-        const newPosts = postsData.filter(
-          (newPost) =>
-            !prevPosts.some((existingPost) => existingPost.id === newPost.id)
+        const newPosts = response.data.map(toPostCard);
+        setPosts((prevPosts) =>
+          page === 1
+            ? newPosts
+            : [
+                ...prevPosts,
+                // Filtrar posts duplicados
+                ...newPosts.filter(
+                  (newPost) =>
+                    !prevPosts.some((post) => post.id === newPost.id)
+                ),
+              ]
         );
-        return [...prevPosts, ...newPosts];
-      });
+        setHasMore(response.data.length === PER_PAGE);
+      } catch (error) {
+        if (axios.isCancel(error)) return;
+        console.error("Error fetching data:", error);
+        setHasMore(false);
+      } finally {
+        if (!controller.signal.aborted) setLoading(false);
+      }
+    };
 
-      setPage((prevPage) => prevPage + 1);
-      setHasMore(response.data.length === 10);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    } finally {
-      setLoading(false);
-    }
-  }, [page, hasMore, loading, getMediaUrl]);
+    loadPosts();
+
+    return () => controller.abort();
+  }, [request]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -104,27 +96,24 @@ const Noticias = () => {
         !loading &&
         hasMore
       ) {
-        fetchPosts();
+        setLoading(true);
+        setRequest((prev) => ({ ...prev, page: prev.page + 1 }));
       }
     };
 
     window.addEventListener("scroll", handleScroll);
-    fetchPosts();
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [fetchPosts]);
-
-  const filteredPosts = posts.filter(
-    (post) =>
-      post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      post.content.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  }, [loading, hasMore]);
 
   return (
     <div className="container contenedor px-5">
-      <Form className="mb-4 d-flex align-items-center">
+      <Form
+        className="mb-4 d-flex align-items-center"
+        onSubmit={(e) => e.preventDefault()}
+      >
         <Form.Control
           type="text"
           placeholder="Buscar noticias..."
@@ -136,7 +125,7 @@ const Noticias = () => {
       </Form>
       <Row>
         <h2>Todas las noticias:</h2>
-        {filteredPosts.map((post) => (
+        {posts.map((post) => (
           <Col md={4} key={post.id}>
             <Card className="shadow-lg mb-5 bg-body-tertiary rounded-3">
               <Card.Img
@@ -236,6 +225,11 @@ const Noticias = () => {
               <span className="visually-hidden">Cargando...</span>
             </Spinner>
           </div>
+        )}
+        {!loading && posts.length === 0 && request.query && (
+          <p className="text-center text-muted">
+            No se encontraron noticias para “{request.query}”.
+          </p>
         )}
         {!hasMore && posts.length > 0 && (
           <p className="text-center text-muted">
