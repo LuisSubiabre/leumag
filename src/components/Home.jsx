@@ -44,7 +44,7 @@ const ACCESOS_RAPIDOS = [
   {
     to: "/Matricula",
     label: "Matrícula",
-    hint: "Proceso 2026",
+    hint: "Proceso 2027",
     icon: FaUserGraduate,
     tone: "matricula",
   },
