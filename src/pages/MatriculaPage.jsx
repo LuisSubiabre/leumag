@@ -31,7 +31,7 @@ const MatriculaPage = () => {
         </Card>
       </div> */}
 
-      <div className="matricula-section">
+      {/* <div className="matricula-section">
         <Card className="">
           <Card.Body>
             <Card.Title className="text-center mb-4">
@@ -71,16 +71,16 @@ const MatriculaPage = () => {
             </div>
           </Card.Body>
         </Card>
-      </div>
+      </div> */}
 
       <div className="matricula-section">
         <Card className="">
           <Card.Body>
             <Card.Title className="text-center mb-4">
-              <h2>Matrícula 2026 Estudiantes Antiguos</h2>
+              <h2>Matrícula 2027 Estudiantes Antiguos</h2>
             </Card.Title>
             <div className="d-flex justify-content-center gap-3 flex-wrap">
-              <Button
+              {/* <Button
                 href="https://drive.google.com/drive/folders/1RK69p0dVA1zPfm6VJSRT5J-Y_zlWlYNY"
                 variant="primary"
                 target="_blank"
@@ -89,7 +89,7 @@ const MatriculaPage = () => {
               >
                 <FaFilePdf className="me-2" />
                 Horarios de Citación
-              </Button>
+              </Button> */}
               <Button
                 href="/docs/CircularMatriculasAntiguos.pdf"
                 variant="primary"
@@ -98,9 +98,9 @@ const MatriculaPage = () => {
                 className="matricula-button"
               >
                 <FaFilePdf className="me-2" />
-                Circular Matrícula 2026
+                Circular Matrícula 2027
               </Button>
-              <Button
+              {/* <Button
                 href="/docs/ProtocoloAcreditacion.pdf"
                 variant="primary"
                 target="_blank"
@@ -111,9 +111,9 @@ const MatriculaPage = () => {
                 Protocolo de Acreditación de Cambio en la Condición
                 Socioeconómica y la Determinación de la No Renovación de
                 Matrícula
-              </Button>
+              </Button> */}
               <Button
-                href="/docs/FORMATO-PODER-NOTARIAL-2026.pdf"
+                href="/docs/FORMATO-PODER-NOTARIAL-2027.pdf"
                 variant="primary"
                 target="_blank"
                 rel="noopener noreferrer"
