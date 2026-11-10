@@ -70,12 +70,6 @@ export const equipoAsistentes: Funcionario[] = [
     dpto: "Técnico 1° Básico A",
   },
   {
-    img: demoImage,
-    nombre: "Isabel Cárcamo",
-    correo: "mcarcamo@liceoexperimental.cl",
-    dpto: "Recaudación y Cobranza",
-  },
-  {
     img: ealmonacid,
     nombre: "Elizabeth Almonacid",
     correo: "ealmonacid@liceoexperimental.cl",
@@ -101,12 +95,6 @@ export const equipoAsistentes: Funcionario[] = [
     correo: "khechenleitner@liceoexperimental.cl",
     dpto: "Central de Apuntes",
   },
-  // {
-  //   img: mcarreno,
-  //   nombre: "Margarita Carreño",
-  //   correo: "mcarreno@liceoexperimental.cl",
-  //   dpto: "Inspectora",
-  // },
   {
     img: mcortez,
     nombre: "Maricela Cortéz",
