@@ -26,11 +26,11 @@ import hero3 from "../assets/img/hero/3.png";
 import hero4 from "../assets/img/hero/4.png";
 import "./Home.css";
 
-const SHOW_HOME_MODAL = false;
+const SHOW_HOME_MODAL = true;
 const HOME_MODAL = {
-  title: "PAES",
+  title: "PEE",
   //youtubeId: "RHJzWcEYY9w",
-  image: "/images/paes.png",
+  image: "/images/electivos.png",
 };
 
 const ACCESOS_RAPIDOS = [
