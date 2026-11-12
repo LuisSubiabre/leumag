@@ -12,6 +12,7 @@ import {
   FaUsers,
   FaStar,
   FaChalkboardTeacher,
+  FaTrophy,
 } from "react-icons/fa";
 import Posts from "./Posts";
 import Documentos from "./Documentos";
@@ -32,6 +33,9 @@ const HOME_MODAL = {
   //youtubeId: "RHJzWcEYY9w",
   image: "/images/electivos.png",
 };
+
+const FELICITACIONES_FORM_URL =
+  "https://docs.google.com/forms/d/e/1FAIpQLScqYH9VJ8kfyly5BqdT8eBnpfi_o10Jc42MIEMZo-Z4GM6qow/viewform";
 
 const ACCESOS_RAPIDOS = [
   {
@@ -82,6 +86,13 @@ const ACCESOS_RAPIDOS = [
     hint: "Útiles",
     icon: FaFolderOpen,
     tone: "materiales",
+  },
+  {
+    href: FELICITACIONES_FORM_URL,
+    label: "Felicitaciones",
+    hint: "Logros estudiantes",
+    icon: FaTrophy,
+    tone: "felicitaciones",
   },
 ];
 
@@ -151,21 +162,36 @@ function Home() {
       <section className="home-block home-block--access" aria-label="Accesos frecuentes">
         <div className="home-wrap">
           <nav className="home-access" aria-label="Accesos frecuentes">
-            {ACCESOS_RAPIDOS.map(({ to, label, hint, icon: Icon, tone }) => (
-              <Link
-                key={to}
-                to={to}
-                className={`home-access__item home-access__item--${tone}`}
-              >
-                <span className="home-access__icon" aria-hidden="true">
-                  <Icon />
-                </span>
-                <span className="home-access__text">
-                  <strong>{label}</strong>
-                  <small>{hint}</small>
-                </span>
-              </Link>
-            ))}
+            {ACCESOS_RAPIDOS.map(({ to, href, label, hint, icon: Icon, tone }) => {
+              const className = `home-access__item home-access__item--${tone}`;
+              const content = (
+                <>
+                  <span className="home-access__icon" aria-hidden="true">
+                    <Icon />
+                  </span>
+                  <span className="home-access__text">
+                    <strong>{label}</strong>
+                    <small>{hint}</small>
+                  </span>
+                </>
+              );
+
+              return href ? (
+                <a
+                  key={href}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={className}
+                >
+                  {content}
+                </a>
+              ) : (
+                <Link key={to} to={to} className={className}>
+                  {content}
+                </Link>
+              );
+            })}
           </nav>
         </div>
       </section>
@@ -217,6 +243,28 @@ function Home() {
                 <p>{text}</p>
               </Link>
             ))}
+          </div>
+
+          <div className="home-congrats">
+            <span className="home-congrats__icon" aria-hidden="true">
+              <FaTrophy />
+            </span>
+            <div className="home-congrats__copy">
+              <h3>¿Tu hijo o hija obtuvo un logro?</h3>
+              <p>
+                Envíanos sus felicitaciones y reconocimientos para compartirlos
+                con la comunidad. Puedes adjuntar fotografías.
+              </p>
+            </div>
+            <a
+              href={FELICITACIONES_FORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="home-band__cta home-congrats__cta"
+            >
+              Enviar felicitación
+              <FaArrowRight size={12} />
+            </a>
           </div>
         </div>
       </section>

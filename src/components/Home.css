@@ -80,7 +80,7 @@
 
 .home-access {
   display: grid;
-  grid-template-columns: repeat(7, minmax(0, 1fr));
+  grid-template-columns: repeat(8, minmax(0, 1fr));
   gap: 0.65rem;
 }
 
@@ -157,6 +157,11 @@
 .home-access__item--materiales .home-access__icon {
   background: rgba(111, 66, 193, 0.12);
   color: #6f42c1;
+}
+
+.home-access__item--felicitaciones .home-access__icon {
+  background: rgba(214, 51, 132, 0.12);
+  color: #d63384;
 }
 
 .home-access__text {
@@ -416,6 +421,68 @@
 
 .home-band--community .home-band__title {
   margin-bottom: 1.5rem;
+}
+
+.home-congrats {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  margin-top: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  border-radius: var(--home-radius);
+  background: var(--leumag-ink);
+  color: #e8eef8;
+  box-shadow: var(--home-shadow);
+}
+
+.home-congrats__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.95rem;
+  background: rgba(255, 193, 7, 0.18);
+  color: #ffc107;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.home-congrats__copy {
+  flex: 1;
+  min-width: 0;
+}
+
+.home-congrats__copy h3 {
+  margin: 0 0 0.25rem;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.home-congrats__copy p {
+  margin: 0;
+  color: rgba(232, 238, 248, 0.82);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.home-congrats__cta {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+[data-bs-theme="dark"] .home-congrats {
+  background: #15263f;
+  box-shadow: inset 0 0 0 1px rgba(144, 202, 249, 0.16);
+}
+
+@media (max-width: 767.98px) {
+  .home-congrats {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.25rem;
+  }
 }
 
 .home-community {
