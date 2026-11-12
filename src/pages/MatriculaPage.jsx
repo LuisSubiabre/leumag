@@ -125,7 +125,7 @@ const MatriculaPage = () => {
             </div>
             <div className="d-flex justify-content-center gap-3 mt-4 flex-wrap">
               <Button
-                href="https://docs.google.com/document/d/1bR00Di4zMew5sgtLUSelnaf1mhBreZMlRKZD_nmiLG4/edit?tab=t.0#heading=h.h89hwrcc8kc2"
+                href="/docs/GuiaMatricula.pdf"
                 variant="info"
                 target="_blank"
                 rel="noopener noreferrer"
