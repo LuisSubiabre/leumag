@@ -904,3 +904,7 @@
     animation: none;
   }
 }
+
+.home-stats {
+  margin: 0.5rem 0 1.8rem;
+}

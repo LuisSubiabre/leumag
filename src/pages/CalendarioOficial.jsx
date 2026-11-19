@@ -1,41 +1,51 @@
-import { Image } from "react-bootstrap";
+import { FaCalendarAlt, FaExternalLinkAlt } from "react-icons/fa";
+import { Page, PageHeader, Section } from "../components/ui/Page";
 import reuniones26 from "/images/reuniones26.png";
+import "./CalendarioOficial.css";
+
+const CALENDARIO_ID =
+  "liceoexperimental.cl_v1vo40hg7ljnh1avc8tmlcnmf0%40group.calendar.google.com";
+const CALENDARIO_EMBED = `https://calendar.google.com/calendar/embed?src=${CALENDARIO_ID}&ctz=America%2FPunta_Arenas`;
 
 const CalendarioOficial = () => {
-  const calendarioInstitucionalSrc =
-    "https://calendar.google.com/calendar/embed?src=liceoexperimental.cl_v1vo40hg7ljnh1avc8tmlcnmf0%40group.calendar.google.com&ctz=America%2FPunta_Arenas";
-
   return (
-    <div className="container contenedor px-5">
-      <h2>Calendario Oficial</h2>
-      <hr />
+    <Page>
+      <PageHeader
+        icon={FaCalendarAlt}
+        kicker="Información académica"
+        title="Calendario oficial"
+        lead="Revisa feriados, vacaciones, reuniones y las fechas clave del año escolar."
+      >
+        <a
+          href={CALENDARIO_EMBED}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="lp-btn lp-btn--ghost calendario-header__btn"
+        >
+          Abrir en Google Calendar
+          <FaExternalLinkAlt size={11} aria-hidden="true" />
+        </a>
+      </PageHeader>
 
-      <div className="mb-4">
-        <Image
-          src={reuniones26}
-          alt="Reuniones 2026"
-          fluid
-          rounded
-          style={{ maxWidth: 800, margin: "0 auto" }}
-        />
-      </div>
+      <Section id="reuniones" kicker="Apoderados" title="Reuniones 2026">
+        <div className="lp-frame calendario-reuniones" data-reveal>
+          <img src={reuniones26} alt="Calendario de reuniones de apoderados 2026" />
+        </div>
+      </Section>
 
-      <section className="mb-5">
-        <h3 className="h4 mb-3">Calendario Institucional</h3>
-        <iframe
-          src={calendarioInstitucionalSrc}
-          title="Calendario Institucional"
-          style={{ border: 0 }}
-          width="800"
-          height="600"
-          frameBorder="0"
-          scrolling="no"
-          className="d-block mx-auto w-100"
-        />
-      </section>
-    </div>
+      <Section id="institucional" kicker="Google Calendar" title="Calendario institucional">
+        <div className="lp-frame" data-reveal>
+          <iframe
+            src={CALENDARIO_EMBED}
+            title="Calendario Institucional"
+            height="600"
+            loading="lazy"
+            className="calendario-embed"
+          />
+        </div>
+      </Section>
+    </Page>
   );
 };
 
 export default CalendarioOficial;
-

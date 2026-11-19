@@ -1,0 +1,221 @@
+.mapa-llegar {
+  --ml-ink: var(--leumag-ink);
+  --ml-muted: var(--leumag-muted);
+  --ml-accent: var(--leumag-accent);
+  --ml-panel: #fff;
+  --ml-border: rgba(26, 43, 74, 0.08);
+  --ml-shadow: 0 12px 32px rgba(26, 43, 74, 0.08);
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.4fr);
+  gap: 1.5rem;
+  align-items: stretch;
+  color: var(--ml-ink);
+}
+
+[data-bs-theme="dark"] .mapa-llegar {
+  --ml-ink: #e8eef8;
+  --ml-muted: #a9b6c9;
+  --ml-accent: #90caf9;
+  --ml-panel: rgba(22, 28, 40, 0.92);
+  --ml-border: rgba(255, 255, 255, 0.08);
+  --ml-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
+}
+
+.mapa-llegar__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.mapa-llegar__kicker {
+  margin: 0 0 0.35rem;
+  color: var(--ml-accent);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.mapa-llegar__title {
+  margin: 0 0 1.25rem;
+  color: var(--ml-ink);
+  font-size: clamp(1.6rem, 3vw, 2.15rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+
+.mapa-llegar__sedes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.mapa-llegar__sede {
+  padding: 0.95rem 1.1rem;
+  border-radius: 1rem;
+  background: var(--ml-panel);
+  border: 1px solid var(--ml-border);
+  border-left: 4px solid var(--ml-accent);
+  box-shadow: 0 6px 16px rgba(26, 43, 74, 0.04);
+}
+
+.mapa-llegar__sede--alt {
+  border-left-color: #e8590c;
+}
+
+.mapa-llegar__sede h3 {
+  margin: 0 0 0.5rem;
+  color: var(--ml-ink);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.mapa-llegar__sede ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.mapa-llegar__sede li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--ml-muted);
+  font-size: 0.92rem;
+  min-width: 0;
+}
+
+.mapa-llegar__sede svg {
+  flex-shrink: 0;
+  color: var(--ml-accent);
+  font-size: 0.85rem;
+}
+
+.mapa-llegar__sede--alt svg {
+  color: #e8590c;
+}
+
+.mapa-llegar__sede a {
+  color: var(--ml-muted);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.mapa-llegar__sede a:hover,
+.mapa-llegar__sede a:focus-visible {
+  color: var(--ml-accent);
+  text-decoration: underline;
+}
+
+.mapa-llegar__cta {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 999px;
+  background: var(--leumag-accent);
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(13, 110, 253, 0.28);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.mapa-llegar__cta:hover,
+.mapa-llegar__cta:focus-visible {
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(13, 110, 253, 0.36);
+}
+
+.mapa-llegar__frame {
+  overflow: hidden;
+  border-radius: 1.15rem;
+  border: 1px solid var(--ml-border);
+  box-shadow: var(--ml-shadow);
+  isolation: isolate; /* mantiene los z-index de Leaflet bajo el navbar */
+}
+
+.mapa-llegar__canvas {
+  width: 100%;
+  height: 100%;
+  min-height: 380px;
+}
+
+.mapa-llegar__pin {
+  position: relative;
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  background: var(--leumag-accent, #0d6efd);
+  border: 3px solid #fff;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+}
+
+.mapa-llegar__pin::after {
+  content: "";
+  position: absolute;
+  inset: 7px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.mapa-llegar__pin--alt {
+  width: 24px;
+  height: 24px;
+  margin: 6px 0 0 3px;
+  background: #e8590c;
+}
+
+.mapa-llegar__pin--alt::after {
+  inset: 5px;
+}
+
+.mapa-llegar__pin--main {
+  animation: mapa-llegar-pin-drop 0.9s cubic-bezier(0.3, 1.6, 0.5, 1) both;
+}
+
+@keyframes mapa-llegar-pin-drop {
+  from {
+    transform: translateY(-40px) rotate(-45deg);
+    opacity: 0;
+  }
+  to {
+    transform: rotate(-45deg);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .mapa-llegar {
+    grid-template-columns: 1fr;
+  }
+
+  .mapa-llegar__canvas {
+    min-height: 300px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mapa-llegar__cta {
+    transition: none;
+  }
+
+  .mapa-llegar__pin--main {
+    animation: none;
+  }
+}
+
+/* Página de Contacto */
+.contacto-page {
+  padding-top: 2rem;
+  padding-bottom: 2.5rem;
+}

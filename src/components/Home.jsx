@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   FaArrowRight,
@@ -21,6 +21,9 @@ import ComponentSae from "./sae";
 import UltimosComunicados from "./UltimosComunicados";
 import UltimosVideosScroll from "./UltimosVideosScroll";
 import HomeModal from "./HomeModal";
+import MapaComoLlegar from "./MapaComoLlegar";
+import { useScrollReveal } from "./useHomeEffects";
+import { Cifra } from "./ui/Page";
 import hero1 from "../assets/img/hero/1.png";
 import hero2 from "../assets/img/hero/2.png";
 import hero3 from "../assets/img/hero/3.png";
@@ -127,6 +130,11 @@ const NECESITAS = [
   },
 ];
 
+const CIFRAS = [
+  { value: 25, suffix: "+", label: "años formando en Magallanes" },
+  { value: 840, suffix: "+", label: "estudiantes en nuestra comunidad" },
+];
+
 const COMUNIDAD = [
   {
     to: "/CentroDeAlumnos",
@@ -156,9 +164,11 @@ const COMUNIDAD = [
 
 function Home() {
   const [modalShow, setModalShow] = useState(SHOW_HOME_MODAL);
+  const pageRef = useRef(null);
+  useScrollReveal(pageRef);
 
   return (
-    <div className="home-page">
+    <div className="home-page" ref={pageRef}>
       <section className="home-block home-block--access" aria-label="Accesos frecuentes">
         <div className="home-wrap">
           <nav className="home-access" aria-label="Accesos frecuentes">
@@ -197,25 +207,30 @@ function Home() {
       </section>
 
       <section className="home-block">
-        <div className="home-wrap">
+        <div className="home-wrap" data-reveal>
           <Posts />
         </div>
       </section>
 
       <section className="home-block home-block--muted">
-        <div className="home-wrap">
+        <div className="home-wrap" data-reveal>
           <UltimosComunicados />
         </div>
       </section>
 
       <section className="home-band home-band--ink">
-        <div className="home-wrap home-band__inner">
+        <div className="home-wrap home-band__inner" data-reveal>
           <p className="home-band__eyebrow">Nuestra identidad</p>
           <h2>La verdad, a través de la razón</h2>
           <p>
             Formamos niñas, niños y jóvenes de Magallanes con una educación
             humana y académica, para que sean un real aporte a la sociedad.
           </p>
+          <div className="lp-stats home-stats">
+            {CIFRAS.map((cifra) => (
+              <Cifra key={cifra.label} {...cifra} />
+            ))}
+          </div>
           <Link to="/Nosotros" className="home-band__cta">
             Conocer el Liceo
             <FaArrowRight size={12} />
@@ -224,18 +239,23 @@ function Home() {
       </section>
 
       <section className="home-block">
-        <div className="home-wrap">
+        <div className="home-wrap" data-reveal>
           <UltimosVideosScroll />
         </div>
       </section>
 
       <section className="home-band home-band--community">
-        <div className="home-wrap">
+        <div className="home-wrap" data-reveal>
           <p className="home-kicker">Comunidad</p>
           <h2 className="home-band__title">Somos más que la sala de clases</h2>
-          <div className="home-community">
-            {COMUNIDAD.map(({ to, label, text, icon: Icon }) => (
-              <Link key={to} to={to} className="home-community__card">
+          <div className="home-community" data-reveal data-reveal-stagger>
+            {COMUNIDAD.map(({ to, label, text, icon: Icon }, index) => (
+              <Link
+                key={to}
+                to={to}
+                className="home-community__card"
+                style={{ "--i": index }}
+              >
                 <span className="home-community__icon" aria-hidden="true">
                   <Icon />
                 </span>
@@ -271,7 +291,7 @@ function Home() {
 
       <section className="home-block" aria-labelledby="necesitas-titulo">
         <div className="home-wrap">
-          <div className="home-section-head home-section-head--center">
+          <div className="home-section-head home-section-head--center" data-reveal>
             <div>
               <p className="home-kicker">Información académica</p>
               <h2 id="necesitas-titulo">Todo lo que necesitas</h2>
@@ -282,6 +302,7 @@ function Home() {
             {NECESITAS.map((item, index) => (
               <article
                 key={item.to}
+                data-reveal
                 className={`home-need__row${
                   index % 2 === 1 ? " home-need__row--reverse" : ""
                 }`}
@@ -304,13 +325,19 @@ function Home() {
       </section>
 
       <section className="home-block home-block--muted">
-        <div className="home-wrap">
+        <div className="home-wrap" data-reveal>
           <Documentos showAllLink />
         </div>
       </section>
 
-      <section className="home-block">
-        <div className="home-wrap home-closing">
+      <section className="home-block" aria-labelledby="como-llegar-titulo">
+        <div className="home-wrap" data-reveal>
+          <MapaComoLlegar />
+        </div>
+      </section>
+
+      <section className="home-block home-block--muted">
+        <div className="home-wrap home-closing" data-reveal>
           <Externos />
           <ComponentSae />
         </div>

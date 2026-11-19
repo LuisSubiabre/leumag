@@ -1,0 +1,157 @@
+/* Misión / Visión */
+.nosotros-statement h3 {
+  margin: 0.85rem 0 0.5rem;
+  font-size: 1.25rem;
+}
+
+.nosotros-statement blockquote {
+  margin: 0;
+  padding-left: 1rem;
+  border-left: 3px solid var(--lp-gold);
+}
+
+.nosotros-statement blockquote p {
+  color: var(--lp-ink);
+  font-size: 1.05rem;
+  font-style: italic;
+}
+
+.nosotros-statement--vision {
+  background: linear-gradient(160deg, var(--lp-panel) 40%, var(--lp-sky) 100%);
+}
+
+/* Principios */
+.nosotros-principios {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.nosotros-principio {
+  position: relative;
+  grid-column: span 2;
+}
+
+/* 3 arriba, 2 centrados abajo */
+.nosotros-principio:nth-child(4) {
+  grid-column: 2 / span 2;
+}
+
+.nosotros-principio h3 {
+  margin: 0.85rem 0 0.4rem;
+}
+
+.nosotros-principio p {
+  font-size: 0.93rem;
+}
+
+.nosotros-principio__num {
+  position: absolute;
+  top: 0.9rem;
+  right: 1.1rem;
+  color: var(--lp-border);
+  font-size: 2.2rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  -webkit-text-stroke: 1px var(--lp-accent);
+  -webkit-text-fill-color: transparent;
+  opacity: 0.35;
+}
+
+/* Logos */
+.nosotros-logo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin: 0;
+}
+
+.nosotros-logo__preview {
+  display: grid;
+  place-items: center;
+  height: 190px;
+  padding: 1rem;
+  border-radius: calc(var(--lp-radius) - 0.35rem);
+  background: #fff;
+  border: 1px solid var(--lp-border);
+}
+
+.nosotros-logo__preview--checker {
+  background-color: #fff;
+  background-image:
+    linear-gradient(45deg, #e9edf3 25%, transparent 25%),
+    linear-gradient(-45deg, #e9edf3 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #e9edf3 75%),
+    linear-gradient(-45deg, transparent 75%, #e9edf3 75%);
+  background-size: 18px 18px;
+  background-position: 0 0, 0 9px, 9px -9px, -9px 0;
+}
+
+.nosotros-logo__preview img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.nosotros-logo figcaption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  font-weight: 600;
+}
+
+.nosotros-logo__btn {
+  padding: 0.4rem 0.85rem;
+  font-size: 0.85rem;
+}
+
+/* Llamado final */
+.nosotros-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  padding: clamp(1.25rem, 3vw, 1.75rem) clamp(1.25rem, 3vw, 2rem);
+  border-radius: calc(var(--lp-radius) + 0.25rem);
+  background: var(--lp-sky);
+  border: 1px solid var(--lp-border);
+}
+
+.nosotros-cta h2 {
+  font-size: clamp(1.25rem, 2.5vw, 1.6rem);
+}
+
+.nosotros-cta p {
+  margin: 0.3rem 0 0;
+  color: var(--lp-muted);
+}
+
+.nosotros-cta__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+@media (max-width: 991.98px) {
+  .nosotros-principios {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .nosotros-principio,
+  .nosotros-principio:nth-child(4) {
+    grid-column: auto;
+  }
+
+  .nosotros-principio:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .nosotros-principios {
+    grid-template-columns: 1fr;
+  }
+}

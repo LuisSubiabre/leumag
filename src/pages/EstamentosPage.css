@@ -1,0 +1,85 @@
+.equipo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  gap: 0.9rem;
+}
+
+.equipo-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.1rem;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.equipo-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--lp-shadow);
+}
+
+.equipo-card__photo {
+  flex-shrink: 0;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--lp-sky);
+  box-shadow: 0 0 0 3px var(--lp-panel), 0 0 0 5px var(--lp-soft);
+}
+
+.equipo-card__body {
+  min-width: 0;
+}
+
+.lp-page .equipo-card__name {
+  margin: 0 0 0.15rem;
+  font-size: 0.98rem;
+  line-height: 1.25;
+}
+
+.equipo-card p.equipo-card__role {
+  margin: 0;
+  color: var(--lp-accent);
+  font-size: 0.82rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.equipo-card p.equipo-card__extra {
+  margin: 0.2rem 0 0;
+  font-size: 0.8rem;
+  line-height: 1.35;
+}
+
+.equipo-card__mail {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  max-width: 100%;
+  margin-top: 0.35rem;
+  color: var(--lp-muted);
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+
+.equipo-card__mail span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.equipo-card__mail:hover,
+.equipo-card__mail:focus-visible {
+  color: var(--lp-accent);
+  text-decoration: underline;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .equipo-card {
+    transition: none;
+  }
+
+  .equipo-card:hover {
+    transform: none;
+  }
+}

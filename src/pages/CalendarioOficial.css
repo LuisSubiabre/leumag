@@ -1,0 +1,18 @@
+.calendario-header__btn {
+  margin-top: 1.1rem;
+}
+
+.calendario-reuniones {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.calendario-embed {
+  height: 600px;
+}
+
+@media (max-width: 575.98px) {
+  .calendario-embed {
+    height: 480px;
+  }
+}
