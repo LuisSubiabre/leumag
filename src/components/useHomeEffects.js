@@ -27,10 +27,20 @@ export function useScrollReveal(rootRef) {
       { threshold: 0.12, rootMargin: "0px 0px -8% 0px" },
     );
 
-    root.querySelectorAll("[data-reveal]").forEach((el) => io.observe(el));
+    const observeAll = () =>
+      root
+        .querySelectorAll("[data-reveal]:not(.is-revealed)")
+        .forEach((el) => io.observe(el));
+    observeAll();
+
+    // El contenido que llega después (ej. noticias de WordPress) también
+    // debe vigilarse; si no, quedaría oculto para siempre.
+    const mo = new MutationObserver(observeAll);
+    mo.observe(root, { childList: true, subtree: true });
 
     return () => {
       io.disconnect();
+      mo.disconnect();
       root.classList.remove("reveal-ready");
     };
   }, [rootRef]);
