@@ -1,9 +1,11 @@
 import { ButtonAccess } from "./ButtonAccess";
 import logoImage from "../assets/img/experimentalin.png";
 import { Image, Container } from "react-bootstrap";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import BecaComponent from "./BecaCompoment";
+import { HeroParticles } from "./HeroScene3D";
+import { useHeroTilt } from "./useHeroTilt";
 import "./Header.css";
 
 const heroImageModules = import.meta.glob(
@@ -23,9 +25,15 @@ const HERO_INTERVAL_MS = 6000;
 // Activa esto cuando necesites CTAs bajo el hero (ej. campaña de matrícula).
 const SHOW_HERO_ACTIONS = false;
 
+// Hero experimental con profundidad 3D (paralaje + partículas). Solo en el home.
+const HERO_3D = true;
+
 export const Header = () => {
   const { pathname } = useLocation();
   const isHome = pathname === "/";
+  const is3D = isHome && HERO_3D;
+  const bannerRef = useRef(null);
+  useHeroTilt(bannerRef, is3D);
   const [showBecaModal, setShowBecaModal] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -48,7 +56,12 @@ export const Header = () => {
   return (
     <>
       <div className={`hero text-center${isHome ? " hero--home" : ""}`}>
-        <div className={`hero-banner${isHome ? " hero-banner--home" : ""}`}>
+        <div
+          ref={bannerRef}
+          className={`hero-banner${isHome ? " hero-banner--home" : ""}${
+            is3D ? " hero-banner--3d" : ""
+          }`}
+        >
           <div className="hero-backgrounds" aria-hidden="true">
             {heroImages.map((image, index) => (
               <img
@@ -62,6 +75,12 @@ export const Header = () => {
             ))}
           </div>
           <div className="hero-overlay" aria-hidden="true" />
+          {is3D && (
+            <>
+              <HeroParticles />
+              <div className="hero-spotlight" aria-hidden="true" />
+            </>
+          )}
           <div className="hero-content">
             <div className="text-white hero-title">
               <div className="animate-bounce-slow">
