@@ -26,20 +26,6 @@
   padding: 0.8rem 1rem;
 }
 
-.caa-miembro__avatar {
-  display: grid;
-  place-items: center;
-  flex-shrink: 0;
-  width: 2.6rem;
-  height: 2.6rem;
-  border-radius: 50%;
-  background: var(--lp-soft);
-  color: var(--lp-accent);
-  font-size: 0.85rem;
-  font-weight: 800;
-  letter-spacing: 0.02em;
-}
-
 .caa-miembro__info {
   display: flex;
   flex: 1;

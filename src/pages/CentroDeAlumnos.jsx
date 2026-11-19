@@ -14,13 +14,6 @@ const DIRECTIVA = [
   { cargo: "Tesorera", nombre: "Antonia Ojeda", curso: "4to medio A" },
 ];
 
-const iniciales = (nombre) =>
-  nombre
-    .split(" ")
-    .slice(0, 2)
-    .map((parte) => parte[0])
-    .join("");
-
 const CentroDeAlumnos = () => {
   const noticias = useWpCategoryPosts(["caa"]);
 
@@ -42,9 +35,6 @@ const CentroDeAlumnos = () => {
           <ul className="caa-directiva__lista">
             {DIRECTIVA.map(({ cargo, nombre, curso }) => (
               <li key={cargo} className="lp-card caa-miembro">
-                <span className="caa-miembro__avatar" aria-hidden="true">
-                  {iniciales(nombre)}
-                </span>
                 <span className="caa-miembro__info">
                   <span className="caa-miembro__cargo">{cargo}</span>
                   <span className="caa-miembro__nombre">{nombre}</span>
