@@ -1,0 +1,15 @@
+.cgp-afiche__pdf {
+  display: block;
+  width: 100%;
+  height: min(80vh, 720px);
+}
+
+.cgp-afiche__btn {
+  margin-top: 1rem;
+}
+
+@media (max-width: 575.98px) {
+  .cgp-afiche__pdf {
+    height: 60vh;
+  }
+}

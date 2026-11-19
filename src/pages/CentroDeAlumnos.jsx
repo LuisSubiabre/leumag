@@ -1,178 +1,65 @@
+import { FaUsers } from "react-icons/fa";
+import { Page, PageHeader, Section } from "../components/ui/Page";
+import { NewsGrid } from "../components/ui/NewsGrid";
+import { useWpCategoryPosts } from "../services/wordpress";
 import "./CentroDeAlumnos.css";
-import { useState, useEffect } from "react";
-import { Row, Col, Card, Spinner } from "react-bootstrap";
-import { Link } from "react-router-dom";
+
+const PERIODO = "2026";
+
+const DIRECTIVA = [
+  { cargo: "Presidente", nombre: "Néstor Ruiz", curso: "4to medio A" },
+  { cargo: "Vicepresidenta", nombre: "Mia Mayorga", curso: "4to medio A" },
+  { cargo: "Secretaria", nombre: "Isidora Espinoza", curso: "4to medio A" },
+  { cargo: "Secretario de actas", nombre: "Javiera Gamboa", curso: "1ero medio B" },
+  { cargo: "Tesorera", nombre: "Antonia Ojeda", curso: "4to medio A" },
+];
+
+const iniciales = (nombre) =>
+  nombre
+    .split(" ")
+    .slice(0, 2)
+    .map((parte) => parte[0])
+    .join("");
 
 const CentroDeAlumnos = () => {
-  const [noticias, setNoticias] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchNoticias = async () => {
-      try {
-        // Primero obtenemos el ID de la categoría CAA
-        const categoriesResponse = await fetch(
-          "https://portal.liceoexperimental.cl/wp-json/wp/v2/categories",
-        );
-        const categories = await categoriesResponse.json();
-        const caaCategory = categories.find((cat) => cat.slug === "caa");
-
-        if (caaCategory) {
-          // Luego obtenemos los posts de esa categoría
-          const postsResponse = await fetch(
-            `https://portal.liceoexperimental.cl/wp-json/wp/v2/posts?categories=${caaCategory.id}`,
-          );
-          const posts = await postsResponse.json();
-
-          // Obtener las imágenes destacadas para cada post
-          const postsWithImages = await Promise.all(
-            posts.map(async (post) => {
-              if (post.featured_media) {
-                const mediaResponse = await fetch(
-                  `https://portal.liceoexperimental.cl/wp-json/wp/v2/media/${post.featured_media}`,
-                );
-                const mediaData = await mediaResponse.json();
-                return {
-                  ...post,
-                  featuredMedia: mediaData.source_url,
-                };
-              }
-              return post;
-            }),
-          );
-
-          setNoticias(postsWithImages);
-        }
-      } catch (error) {
-        console.error("Error al cargar las noticias:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchNoticias();
-  }, []);
+  const noticias = useWpCategoryPosts(["caa"]);
 
   return (
-    <div className="container contenedor px-5">
-      <div className="text-center mb-5">
-        <h2>Centro de Alumnos 2026</h2>
-      </div>
+    <Page>
+      <PageHeader
+        icon={FaUsers}
+        kicker="Comunidad"
+        title={`Centro de Alumnos ${PERIODO}`}
+        lead="Representación y actividades de las y los estudiantes del Liceo."
+      />
 
-      <div className="row justify-content-center align-items-center mb-5">
-        <div className="col-12 col-md-6 text-center">
-          <img
-            src="/images/caa26.png"
-            alt="Centro de Alumnos"
-            className="img-fluid img-caa mb-4"
-            style={{ width: "600px", height: "400px" }}
-          />
-        </div>
-        <div className="col-12 col-md-6">
-          <div className="directiva-list">
-            <p className="directiva-item">
-              <span className="cargo">Presidente:</span>
-              <span className="nombre">Néstor Ruiz</span>
-              <span className="curso">4to medio A</span>
-            </p>
-            <p className="directiva-item">
-              <span className="cargo">Vicepresidenta:</span>
-              <span className="nombre">Mia Mayorga</span>
-              <span className="curso">4to medio A</span>
-            </p>
-            <p className="directiva-item">
-              <span className="cargo">Secretaria:</span>
-              <span className="nombre">Isidora Espinoza</span>
-              <span className="curso">4to medio A</span>
-            </p>
-            <p className="directiva-item">
-              <span className="cargo">Secretario de actas:</span>
-              <span className="nombre">Javiera Gamboa</span>
-              <span className="curso">1ero medio B</span>
-            </p>
-            <p className="directiva-item">
-              <span className="cargo">Tesorera:</span>
-              <span className="nombre">Antonia Ojeda</span>
-              <span className="curso">4to medio A</span>
-            </p>
+      <Section id="directiva" kicker={`Periodo ${PERIODO}`} title="Directiva">
+        <div className="caa-directiva" data-reveal>
+          <div className="lp-frame caa-directiva__foto">
+            <img src="/images/caa26.png" alt={`Directiva del Centro de Alumnos ${PERIODO}`} />
           </div>
-        </div>
-      </div>
 
-      {/* Sección de Noticias */}
-      <div className="mt-5">
-        <h2 className="text-center mb-5">Noticias del CAA</h2>
-        <Row>
-          {loading ? (
-            <div
-              className="d-flex justify-content-center align-items-center"
-              style={{ height: "200px" }}
-            >
-              <Spinner animation="grow" role="status">
-                <span className="visually-hidden">Cargando...</span>
-              </Spinner>
-            </div>
-          ) : noticias.length > 0 ? (
-            noticias.map((noticia) => (
-              <Col md={4} key={noticia.id} className="mb-4">
-                <Card className="h-100">
-                  {noticia.featuredMedia && (
-                    <Card.Img
-                      variant="top"
-                      src={noticia.featuredMedia}
-                      alt="Imagen destacada"
-                      className="card-img-top"
-                    />
-                  )}
-                  <Card.Body className="d-flex flex-column">
-                    <Card.Title
-                      className="text-primary fw-bold"
-                      dangerouslySetInnerHTML={{
-                        __html: noticia.title.rendered,
-                      }}
-                    />
-                    <Card.Text
-                      className="text-secondary flex-grow-1"
-                      dangerouslySetInnerHTML={{
-                        __html: noticia.excerpt.rendered,
-                      }}
-                    />
-                    <div className="mt-auto">
-                      <Link
-                        to={`/Noticia/${noticia.id}`}
-                        className="btn btn-primary w-100"
-                      >
-                        Leer noticia
-                        <svg
-                          width="16"
-                          height="16"
-                          viewBox="0 0 16 16"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="ms-2"
-                        >
-                          <path
-                            d="M1 8H15M15 8L8 1M15 8L8 15"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                        </svg>
-                      </Link>
-                    </div>
-                  </Card.Body>
-                </Card>
-              </Col>
-            ))
-          ) : (
-            <p className="text-center text-muted">
-              No hay noticias disponibles
-            </p>
-          )}
-        </Row>
-      </div>
-    </div>
+          <ul className="caa-directiva__lista">
+            {DIRECTIVA.map(({ cargo, nombre, curso }) => (
+              <li key={cargo} className="lp-card caa-miembro">
+                <span className="caa-miembro__avatar" aria-hidden="true">
+                  {iniciales(nombre)}
+                </span>
+                <span className="caa-miembro__info">
+                  <span className="caa-miembro__cargo">{cargo}</span>
+                  <span className="caa-miembro__nombre">{nombre}</span>
+                </span>
+                <span className="caa-miembro__curso">{curso}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </Section>
+
+      <Section id="noticias" kicker="Novedades" title="Noticias del CAA">
+        <NewsGrid {...noticias} empty="Aún no hay noticias del Centro de Alumnos." />
+      </Section>
+    </Page>
   );
 };
 
