@@ -179,7 +179,9 @@ export function PageNav({ items, label = "Secciones de la página" }) {
     if (!el) return;
     event.preventDefault();
     const smooth = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const y = el.getBoundingClientRect().top + window.scrollY - 76;
+    const navbarH =
+      parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--navbar-h")) || 0;
+    const y = el.getBoundingClientRect().top + window.scrollY - navbarH - 76;
     window.scrollTo({ top: y, behavior: smooth ? "smooth" : "auto" });
     setActive(id);
   };

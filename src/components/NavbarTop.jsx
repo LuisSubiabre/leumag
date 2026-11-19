@@ -84,6 +84,28 @@ const NavbarTop = () => {
     );
   }, [isDarkMode]);
 
+  // Publica la altura del navbar (cerrado) en --navbar-h para que las barras
+  // pegajosas de las páginas (ui/Page → PageNav) se ubiquen justo debajo.
+  const isMenuOpenRef = useRef(isMenuOpen);
+  isMenuOpenRef.current = isMenuOpen;
+
+  useEffect(() => {
+    const nav = navRef.current;
+    if (!nav || !("ResizeObserver" in window)) return;
+
+    const publish = () => {
+      if (isMenuOpenRef.current) return; // el menú móvil abierto no cuenta
+      document.documentElement.style.setProperty(
+        "--navbar-h",
+        `${nav.offsetHeight}px`,
+      );
+    };
+    publish();
+    const ro = new ResizeObserver(publish);
+    ro.observe(nav);
+    return () => ro.disconnect();
+  }, []);
+
   useEffect(() => {
     setIsMenuOpen(false);
     setActiveDropdown(null);

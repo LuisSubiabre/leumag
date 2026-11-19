@@ -564,8 +564,9 @@
    ========================================================== */
 .lp-nav {
   position: sticky;
-  top: 0.5rem;
-  z-index: 1020;
+  /* justo debajo del navbar pegajoso (NavbarTop publica --navbar-h) */
+  top: calc(var(--navbar-h, 0px) + 0.5rem);
+  z-index: 1010; /* bajo el navbar (1030) y sus menús desplegables */
   display: flex;
   justify-content: center;
   margin: -1rem 0 2rem;
@@ -620,7 +621,7 @@
 
 /* Las secciones con ancla no quedan tapadas por la barra */
 .lp-page [id] {
-  scroll-margin-top: 5rem;
+  scroll-margin-top: calc(var(--navbar-h, 0px) + 5rem);
 }
 
 /* Marco para contenido incrustado (calendarios, imágenes) */
