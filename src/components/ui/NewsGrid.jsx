@@ -8,9 +8,13 @@ const formatoFecha = new Intl.DateTimeFormat("es-CL", {
   year: "numeric",
 });
 
-function NewsCard({ post }) {
+/** Tarjeta de noticia de WordPress. `featured` la muestra grande y horizontal. */
+export function NewsCard({ post, featured = false }) {
   return (
-    <Link to={`/Noticia/${post.id}`} className="lp-news-card">
+    <Link
+      to={`/Noticia/${post.id}`}
+      className={`lp-news-card${featured ? " lp-news-card--featured" : ""}`}
+    >
       <span className="lp-news-card__media">
         {post.featuredMedia ? (
           <img src={post.featuredMedia} alt="" loading="lazy" />
@@ -43,20 +47,27 @@ function NewsCard({ post }) {
   );
 }
 
+/** Tarjeta gris de "cargando". */
+export function NewsCardSkeleton() {
+  return (
+    <div className="lp-news-card lp-news-card--skeleton" aria-hidden="true">
+      <span className="lp-news-card__media" />
+      <span className="lp-news-card__body">
+        <span className="lp-skeleton lp-skeleton--short" />
+        <span className="lp-skeleton" />
+        <span className="lp-skeleton" />
+      </span>
+    </div>
+  );
+}
+
 /** Grilla de noticias con estados de carga, vacío y error. */
 export function NewsGrid({ posts, loading, error, empty = "No hay noticias disponibles por ahora." }) {
   if (loading) {
     return (
       <div className="lp-news-grid" aria-busy="true" aria-label="Cargando noticias">
         {[0, 1, 2].map((i) => (
-          <div key={i} className="lp-news-card lp-news-card--skeleton" aria-hidden="true">
-            <span className="lp-news-card__media" />
-            <span className="lp-news-card__body">
-              <span className="lp-skeleton lp-skeleton--short" />
-              <span className="lp-skeleton" />
-              <span className="lp-skeleton" />
-            </span>
-          </div>
+          <NewsCardSkeleton key={i} />
         ))}
       </div>
     );
