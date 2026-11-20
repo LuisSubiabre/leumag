@@ -8,6 +8,7 @@ import { equipoDocenteAdministrativo } from "../data/docentes.ts";
 import { equipoAsistentes } from "../data/asistentes.ts";
 import { equipoAuxiliar } from "../data/auxiliares.ts";
 import { Page, PageHeader, PageNav, Section } from "../components/ui/Page";
+import { copiarAlPortapapeles } from "../services/clipboard";
 import "./EstamentosPage.css";
 
 const EQUIPOS = [
@@ -23,25 +24,6 @@ const EQUIPOS = [
 const NAV = EQUIPOS.map(({ id, nav }) => ({ id, label: nav }));
 
 const esCorreo = (texto) => typeof texto === "string" && texto.includes("@");
-
-async function copiarAlPortapapeles(texto) {
-  try {
-    await navigator.clipboard.writeText(texto);
-    return true;
-  } catch {
-    // Respaldo para navegadores sin Clipboard API (o sin HTTPS)
-    const area = document.createElement("textarea");
-    area.value = texto;
-    area.setAttribute("readonly", "");
-    area.style.position = "fixed";
-    area.style.opacity = "0";
-    document.body.appendChild(area);
-    area.select();
-    const ok = document.execCommand("copy");
-    area.remove();
-    return ok;
-  }
-}
 
 function Integrante({ img, nombre, dpto, correo, more, asignatura }) {
   const [estado, setEstado] = useState(null); // null | "copiado" | "error"

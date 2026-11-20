@@ -1,0 +1,118 @@
+.lp-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3.5rem 4rem;
+  background: rgba(5, 11, 26, 0.92);
+  animation: lp-lightbox-in 0.2s ease;
+}
+
+@keyframes lp-lightbox-in {
+  from {
+    opacity: 0;
+  }
+}
+
+.lp-lightbox__figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0;
+}
+
+.lp-lightbox__figure img {
+  max-width: 100%;
+  max-height: calc(100vh - 8rem);
+  border-radius: 0.5rem;
+  object-fit: contain;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  animation: lp-lightbox-zoom 0.25s ease;
+}
+
+@keyframes lp-lightbox-zoom {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+}
+
+.lp-lightbox__count {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.85rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.lp-lightbox__btn {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  font-size: 1.1rem;
+  transition: background 0.18s ease;
+}
+
+.lp-lightbox__btn:hover,
+.lp-lightbox__btn:focus-visible {
+  background: rgba(255, 255, 255, 0.25);
+  outline: none;
+}
+
+.lp-lightbox__btn:focus-visible {
+  box-shadow: 0 0 0 3px rgba(144, 202, 249, 0.6);
+}
+
+.lp-lightbox__close {
+  top: 1rem;
+  right: 1rem;
+}
+
+.lp-lightbox__nav {
+  top: 50%;
+  translate: 0 -50%;
+}
+
+.lp-lightbox__nav--prev {
+  left: 1rem;
+}
+
+.lp-lightbox__nav--next {
+  right: 1rem;
+}
+
+@media (max-width: 575.98px) {
+  .lp-lightbox {
+    padding: 3.5rem 0.5rem;
+  }
+
+  .lp-lightbox__nav {
+    top: auto;
+    bottom: 1rem;
+    translate: none;
+  }
+
+  .lp-lightbox__nav--prev {
+    left: calc(50% - 3.5rem);
+  }
+
+  .lp-lightbox__nav--next {
+    right: calc(50% - 3.5rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lp-lightbox,
+  .lp-lightbox__figure img {
+    animation: none;
+  }
+}
