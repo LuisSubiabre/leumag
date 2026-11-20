@@ -1,16 +1,8 @@
 import { FaBookOpen, FaBookReader, FaExternalLinkAlt } from "react-icons/fa";
 import { Page, PageHeader, Section } from "../components/ui/Page";
 import { craInfo } from "../data/infocra.js";
+import { imagenOptimizada } from "../services/cloudinary";
 import "./InfoCra.css";
-
-/*
- * Las portadas están en Cloudinary: se piden ya optimizadas (ancho justo y
- * formato liviano automático) en vez de la captura original a tamaño completo.
- */
-const portadaOptimizada = (url, ancho) =>
-  url.includes("res.cloudinary.com") && url.includes("/upload/")
-    ? url.replace("/upload/", `/upload/f_auto,q_auto,w_${ancho}/`)
-    : url;
 
 // Agrupa por año manteniendo el orden del archivo (más recientes primero)
 const porAnio = craInfo.reduce((grupos, revista) => {
@@ -32,7 +24,7 @@ function Portada({ revista }) {
       aria-label={`Leer ${revista.title}, ${revista.description} ${revista.year}`}
     >
       <span className="cra-card__cover">
-        <img src={portadaOptimizada(revista.image, 600)} alt="" loading="lazy" />
+        <img src={imagenOptimizada(revista.image, 600)} alt="" loading="lazy" />
         <span className="cra-card__hint" aria-hidden="true">
           <FaBookOpen />
           Leer
@@ -68,7 +60,7 @@ const InfoCra = () => {
             data-reveal
           >
             <span className="cra-destacada__cover">
-              <img src={portadaOptimizada(ultima.image, 900)} alt={`Portada de ${ultima.title}`} />
+              <img src={imagenOptimizada(ultima.image, 900)} alt={`Portada de ${ultima.title}`} />
             </span>
             <span className="cra-destacada__body">
               <span className="cra-destacada__badge">Nueva edición</span>

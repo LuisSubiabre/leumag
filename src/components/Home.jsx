@@ -22,6 +22,7 @@ import UltimosComunicados from "./UltimosComunicados";
 import UltimosVideosScroll from "./UltimosVideosScroll";
 import HomeModal from "./HomeModal";
 import MapaComoLlegar from "./MapaComoLlegar";
+import HomeInfoCra from "./HomeInfoCra";
 import { useScrollReveal } from "./useHomeEffects";
 import { Cifra } from "./ui/Page";
 import hero1 from "../assets/img/hero/1.png";
@@ -215,6 +216,12 @@ function Home() {
       <section className="home-block home-block--muted">
         <div className="home-wrap" data-reveal>
           <UltimosComunicados />
+        </div>
+      </section>
+
+      <section className="home-block" aria-labelledby="infocra-titulo">
+        <div className="home-wrap" data-reveal>
+          <HomeInfoCra />
         </div>
       </section>
 
