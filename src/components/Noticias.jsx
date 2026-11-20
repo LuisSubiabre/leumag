@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useNavigationType } from "react-router-dom";
 import axios from "axios";
 import { FaNewspaper, FaSearch, FaTimes } from "react-icons/fa";
 import { Page, PageHeader } from "./ui/Page";
@@ -14,16 +15,52 @@ const toPost = (post) => ({
   featuredMedia: post._embedded?.["wp:featuredmedia"]?.[0]?.source_url ?? null,
 });
 
+/*
+ * Estado guardado de la lista. Al volver desde una noticia (botón "atrás"),
+ * se recuperan las noticias ya cargadas, la búsqueda y la posición, en vez
+ * de partir de nuevo con 12 noticias desde arriba.
+ */
+let listaGuardada = null;
+
 const Noticias = () => {
-  const [posts, setPosts] = useState([]);
+  const navigationType = useNavigationType();
+  // Solo se restaura al volver atrás; entrar desde el menú parte de cero
+  const [restaurada] = useState(() =>
+    navigationType === "POP" && listaGuardada ? listaGuardada : null,
+  );
+
+  const [posts, setPosts] = useState(restaurada?.posts ?? []);
   // La búsqueda y la página van juntas para que una búsqueda nueva
   // vuelva a la página 1 con una sola petición.
-  const [request, setRequest] = useState({ query: "", page: 1 });
-  const [loading, setLoading] = useState(true);
-  const [hasMore, setHasMore] = useState(true);
+  const [request, setRequest] = useState(restaurada?.request ?? { query: "", page: 1 });
+  const [loading, setLoading] = useState(!restaurada);
+  const [hasMore, setHasMore] = useState(restaurada?.hasMore ?? true);
   const [error, setError] = useState(false);
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState(restaurada?.request.query ?? "");
   const sentinelRef = useRef(null);
+  const omitirPrimeraCarga = useRef(Boolean(restaurada));
+
+  // Guarda siempre la última versión del estado…
+  const estadoActual = useRef(null);
+  estadoActual.current = { posts, request, hasMore };
+
+  // …y al salir de la página la deja lista para volver
+  useEffect(
+    () => () => {
+      const { posts: guardados, request: req, hasMore: more } = estadoActual.current;
+      listaGuardada = guardados.length
+        ? { posts: guardados, request: req, hasMore: more, scrollY: window.scrollY }
+        : null;
+    },
+    [],
+  );
+
+  // Vuelve a la posición donde estaba la persona
+  useEffect(() => {
+    if (!restaurada) return;
+    const frame = requestAnimationFrame(() => window.scrollTo(0, restaurada.scrollY));
+    return () => cancelAnimationFrame(frame);
+  }, [restaurada]);
 
   // Espera a que el usuario deje de escribir antes de consultar la API
   useEffect(() => {
@@ -36,6 +73,12 @@ const Noticias = () => {
   }, [searchTerm]);
 
   useEffect(() => {
+    // Lista recuperada: esas noticias ya están cargadas
+    if (omitirPrimeraCarga.current) {
+      omitirPrimeraCarga.current = false;
+      return;
+    }
+
     const controller = new AbortController();
     const { query, page } = request;
 

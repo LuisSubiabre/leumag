@@ -301,3 +301,68 @@
     display: none;
   }
 }
+
+/* ==========================================================
+   Banner compacto en páginas internas: una franja baja con el
+   logo y el nombre en línea, para que el contenido quede arriba.
+   ========================================================== */
+.hero--compact .hero-banner {
+  aspect-ratio: auto;
+  height: clamp(84px, 10vw, 128px);
+  max-height: none;
+  min-height: 0;
+}
+
+.hero--compact .hero-overlay {
+  background: linear-gradient(
+    90deg,
+    rgba(10, 25, 55, 0.78) 0%,
+    rgba(10, 25, 55, 0.55) 55%,
+    rgba(10, 25, 55, 0.35) 100%
+  );
+}
+
+.hero--compact .hero-background {
+  object-position: center 35%;
+}
+
+.hero--compact .hero-title {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  column-gap: clamp(0.75rem, 2vw, 1.1rem);
+  text-align: left;
+}
+
+.hero--compact .hero-title > .animate-bounce-slow {
+  grid-row: span 2;
+}
+
+.hero--compact .hero-site-name {
+  align-self: end;
+}
+
+.hero--compact .hero-tagline {
+  align-self: start;
+}
+
+.hero--compact .animate-bounce-slow {
+  animation: none;
+}
+
+.hero--compact .hero-content .animate-bounce-slow img {
+  width: clamp(48px, 6vw, 72px);
+}
+
+.hero--compact .hero-site-name {
+  margin: 0 !important;
+  font-size: clamp(1.05rem, 2.2vw, 1.5rem) !important;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.hero--compact .hero-tagline {
+  font-size: clamp(0.72rem, 1.3vw, 0.9rem) !important;
+  opacity: 0.85;
+}

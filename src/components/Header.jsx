@@ -32,6 +32,9 @@ export const Header = () => {
   const { pathname } = useLocation();
   const isHome = pathname === "/";
   const is3D = isHome && HERO_3D;
+  // En páginas internas el banner es una franja baja: cada página ya tiene
+  // su propio encabezado, y el título principal (h1) es el de la página.
+  const TituloSitio = isHome ? "h1" : "p";
   const bannerRef = useRef(null);
   useHeroTilt(bannerRef, is3D);
   const [showBecaModal, setShowBecaModal] = useState(false);
@@ -55,7 +58,7 @@ export const Header = () => {
 
   return (
     <>
-      <div className={`hero text-center${isHome ? " hero--home" : ""}`}>
+      <div className={`hero text-center${isHome ? " hero--home" : " hero--compact"}`}>
         <div
           ref={bannerRef}
           className={`hero-banner${isHome ? " hero-banner--home" : ""}${
@@ -92,7 +95,9 @@ export const Header = () => {
                   className="img-fluid"
                 />
               </div>
-              <h1 className="mb-2 fs-2 fs-md-1">Liceo Experimental Umag</h1>
+              <TituloSitio className="hero-site-name mb-2 fs-2 fs-md-1">
+                Liceo Experimental Umag
+              </TituloSitio>
               <p className="mb-0 fs-6 fs-md-4 hero-tagline">
                 La verdad a través de la razón
               </p>
