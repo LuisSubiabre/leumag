@@ -314,6 +314,7 @@ const Noticia = () => {
   const contenidoRef = useRef(null);
   const [foto, setFoto] = useState(null);
   const [fotos, setFotos] = useState([]);
+  const [heroAbierta, setHeroAbierta] = useState(false);
 
   // Título de la pestaña
   useEffect(() => {
@@ -349,6 +350,11 @@ const Noticia = () => {
   }, []);
 
   const cerrarFoto = useCallback(() => setFoto(null), []);
+  const cerrarHero = useCallback(() => setHeroAbierta(false), []);
+  const heroImagenes = useMemo(
+    () => (noticia?.imagen ? [{ src: noticia.imagen, alt: noticia.titulo }] : []),
+    [noticia],
+  );
 
   const fecha = useMemo(
     () => (noticia ? formatoFecha.format(new Date(noticia.fecha)) : ""),
@@ -431,8 +437,18 @@ const Noticia = () => {
           </header>
 
           {noticia.imagen && (
-            <figure className="noticia-hero">
-              <img src={noticia.imagen} alt="" />
+            <figure
+              className="noticia-hero"
+              style={{ "--hero-img": `url("${noticia.imagen}")` }}
+            >
+              <button
+                type="button"
+                className="noticia-hero__btn"
+                onClick={() => setHeroAbierta(true)}
+                aria-label="Ampliar imagen destacada"
+              >
+                <img src={noticia.imagen} alt="" />
+              </button>
             </figure>
           )}
 
@@ -465,6 +481,12 @@ const Noticia = () => {
       </Page>
 
       <Lightbox images={fotos} index={foto} onClose={cerrarFoto} onChange={setFoto} />
+      <Lightbox
+        images={heroImagenes}
+        index={heroAbierta ? 0 : null}
+        onClose={cerrarHero}
+        onChange={() => {}}
+      />
     </>
   );
 };

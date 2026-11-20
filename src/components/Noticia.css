@@ -192,19 +192,61 @@ a.noticia-cat:hover {
   color: #fff;
 }
 
-/* Imagen destacada */
+/* Imagen destacada: se muestra completa (sin recortes), sea vertical
+   (ej. 1080×1350) u horizontal. Los costados se rellenan con la misma
+   imagen difuminada. */
 .noticia-hero {
+  position: relative;
+  display: flex;
+  justify-content: center;
   margin: 0 0 2rem;
   overflow: hidden;
   border-radius: var(--lp-radius);
+  background: var(--lp-sky);
   box-shadow: var(--lp-shadow);
+  isolation: isolate;
+}
+
+.noticia-hero::before {
+  content: "";
+  position: absolute;
+  inset: -40px;
+  z-index: -1;
+  background: var(--hero-img) center / cover no-repeat;
+  filter: blur(32px) saturate(1.2);
+  opacity: 0.55;
+}
+
+.noticia-hero__btn {
+  display: block;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: zoom-in;
+}
+
+.noticia-hero__btn:focus-visible {
+  outline: 3px solid var(--lp-accent);
+  outline-offset: -3px;
 }
 
 .noticia-hero img {
   display: block;
-  width: 100%;
-  max-height: 520px;
-  object-fit: cover;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: min(78vh, 680px);
+  object-fit: contain;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* En celular la imagen ocupa todo el ancho y se ve completa igual */
+@media (max-width: 575.98px) {
+  .noticia-hero img {
+    width: 100%;
+    max-height: none;
+    box-shadow: none;
+  }
 }
 
 /* ==========================================================
