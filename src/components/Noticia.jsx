@@ -447,7 +447,7 @@ const Noticia = () => {
   return (
     <>
       <BarraProgreso />
-      <Page className="noticia-page">
+      <Page narrow className="noticia-page">
         <Migas titulo={noticia.titulo} />
 
         <article>
