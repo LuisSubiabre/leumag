@@ -6,6 +6,7 @@ import {
   FaCheck,
   FaChevronRight,
   FaClock,
+  FaExpand,
   FaFacebookF,
   FaLink,
   FaNewspaper,
@@ -45,7 +46,9 @@ const decodificar = (html = "") => {
 };
 
 const textoPlano = (html = "") =>
-  decodificar(html.replace(/<[^>]+>/g, " ")).replace(/\s+/g, " ").trim();
+  decodificar(html.replace(/<[^>]+>/g, " "))
+    .replace(/\s+/g, " ")
+    .trim();
 
 const toNoticia = (post) => {
   const terms = post._embedded?.["wp:term"]?.[0] ?? [];
@@ -62,7 +65,12 @@ const toNoticia = (post) => {
     imagen: post._embedded?.["wp:featuredmedia"]?.[0]?.source_url ?? null,
     categorias: terms
       .filter((t) => t.slug !== CATEGORIA_GENERAL)
-      .map((t) => ({ id: t.id, slug: t.slug, label: CATEGORIAS[t.slug]?.label ?? t.name, to: CATEGORIAS[t.slug]?.to })),
+      .map((t) => ({
+        id: t.id,
+        slug: t.slug,
+        label: CATEGORIAS[t.slug]?.label ?? t.name,
+        to: CATEGORIAS[t.slug]?.to,
+      })),
   };
 };
 
@@ -75,9 +83,12 @@ function useNoticia(id) {
     const controller = new AbortController();
     setState({ status: "loading", noticia: null });
 
-    fetch(`${WP_API}/posts/${id}?_embed=wp:featuredmedia,wp:term`, { signal: controller.signal })
+    fetch(`${WP_API}/posts/${id}?_embed=wp:featuredmedia,wp:term`, {
+      signal: controller.signal,
+    })
       .then(async (res) => {
-        if (res.status === 404 || res.status === 400) return setState({ status: "notfound", noticia: null });
+        if (res.status === 404 || res.status === 400)
+          return setState({ status: "notfound", noticia: null });
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         setState({ status: "ok", noticia: toNoticia(await res.json()) });
       })
@@ -113,7 +124,8 @@ function useRelacionadas(noticia) {
         setPosts(
           (Array.isArray(data) ? data : []).map((p) => ({
             ...p,
-            featuredMedia: p._embedded?.["wp:featuredmedia"]?.[0]?.source_url ?? null,
+            featuredMedia:
+              p._embedded?.["wp:featuredmedia"]?.[0]?.source_url ?? null,
           })),
         ),
       )
@@ -162,7 +174,9 @@ const vozEspanol = () => {
   const voces = window.speechSynthesis.getVoices();
   const preferidas = ["es-CL", "es-419", "es-US", "es-MX", "es-AR"];
   return (
-    preferidas.map((lang) => voces.find((v) => v.lang === lang)).find(Boolean) ??
+    preferidas
+      .map((lang) => voces.find((v) => v.lang === lang))
+      .find(Boolean) ??
     voces.find((v) => v.lang?.startsWith("es")) ??
     null
   );
@@ -170,10 +184,14 @@ const vozEspanol = () => {
 
 function BotonEscuchar({ texto }) {
   const [leyendo, setLeyendo] = useState(false);
-  const soportado = typeof window !== "undefined" && "speechSynthesis" in window;
+  const soportado =
+    typeof window !== "undefined" && "speechSynthesis" in window;
 
   // Detener la lectura al salir de la noticia
-  useEffect(() => () => soportado && window.speechSynthesis.cancel(), [soportado]);
+  useEffect(
+    () => () => soportado && window.speechSynthesis.cancel(),
+    [soportado],
+  );
 
   if (!soportado) return null;
 
@@ -202,7 +220,11 @@ function BotonEscuchar({ texto }) {
       onClick={toggle}
       aria-pressed={leyendo}
     >
-      {leyendo ? <FaStop aria-hidden="true" /> : <FaVolumeUp aria-hidden="true" />}
+      {leyendo ? (
+        <FaStop aria-hidden="true" />
+      ) : (
+        <FaVolumeUp aria-hidden="true" />
+      )}
       <span>{leyendo ? "Detener" : "Escuchar"}</span>
     </button>
   );
@@ -212,7 +234,8 @@ function Compartir({ noticia }) {
   const [copiado, setCopiado] = useState(false);
   const timer = useRef(0);
   const url = window.location.href;
-  const puedeCompartir = typeof navigator !== "undefined" && typeof navigator.share === "function";
+  const puedeCompartir =
+    typeof navigator !== "undefined" && typeof navigator.share === "function";
 
   useEffect(() => () => clearTimeout(timer.current), []);
 
@@ -228,12 +251,17 @@ function Compartir({ noticia }) {
     navigator.share({ title: noticia.titulo, url }).catch(() => {});
   };
 
-  const resumen = noticia.texto.slice(0, 180) + (noticia.texto.length > 180 ? "…" : "");
+  const resumen =
+    noticia.texto.slice(0, 180) + (noticia.texto.length > 180 ? "…" : "");
 
   return (
     <div className="noticia-share" role="group" aria-label="Compartir noticia">
       {puedeCompartir && (
-        <button type="button" className="noticia-tool" onClick={compartirNativo}>
+        <button
+          type="button"
+          className="noticia-tool"
+          onClick={compartirNativo}
+        >
           <FaShareAlt aria-hidden="true" />
           <span>Compartir</span>
         </button>
@@ -266,7 +294,11 @@ function Compartir({ noticia }) {
         aria-label={copiado ? "Enlace copiado" : "Copiar enlace"}
         title={copiado ? "¡Copiado!" : "Copiar enlace"}
       >
-        {copiado ? <FaCheck aria-hidden="true" /> : <FaLink aria-hidden="true" />}
+        {copiado ? (
+          <FaCheck aria-hidden="true" />
+        ) : (
+          <FaLink aria-hidden="true" />
+        )}
       </button>
       <span className="visually-hidden" aria-live="polite">
         {copiado ? "Enlace copiado" : ""}
@@ -293,7 +325,11 @@ function Migas({ titulo }) {
 
 function Esqueleto() {
   return (
-    <div className="noticia-skeleton" aria-busy="true" aria-label="Cargando noticia">
+    <div
+      className="noticia-skeleton"
+      aria-busy="true"
+      aria-label="Cargando noticia"
+    >
       <span className="lp-skeleton lp-skeleton--short" />
       <span className="lp-skeleton noticia-skeleton__title" />
       <span className="lp-skeleton noticia-skeleton__title noticia-skeleton__title--short" />
@@ -315,6 +351,9 @@ const Noticia = () => {
   const [foto, setFoto] = useState(null);
   const [fotos, setFotos] = useState([]);
   const [heroAbierta, setHeroAbierta] = useState(false);
+  // Las imágenes del liceo suelen ser verticales (1080×1350); si llega una
+  // horizontal, el encabezado se apila en vez de ir en dos columnas.
+  const [orientacion, setOrientacion] = useState("vertical");
 
   // Título de la pestaña
   useEffect(() => {
@@ -336,15 +375,24 @@ const Noticia = () => {
       img.loading = "lazy";
       img.tabIndex = 0;
       img.setAttribute("role", "button");
-      img.setAttribute("aria-label", `Ampliar foto ${i + 1}${img.alt ? `: ${img.alt}` : ""}`);
+      img.setAttribute(
+        "aria-label",
+        `Ampliar foto ${i + 1}${img.alt ? `: ${img.alt}` : ""}`,
+      );
     });
-    setFotos(imgs.map((img) => ({ src: img.dataset.fullUrl || img.currentSrc || img.src, alt: img.alt })));
+    setFotos(
+      imgs.map((img) => ({
+        src: img.dataset.fullUrl || img.currentSrc || img.src,
+        alt: img.alt,
+      })),
+    );
   }, [noticia]);
 
   const abrirFoto = useCallback((event) => {
     const img = event.target.closest?.("img[data-index]");
     if (!img) return;
-    if (event.type === "keydown" && event.key !== "Enter" && event.key !== " ") return;
+    if (event.type === "keydown" && event.key !== "Enter" && event.key !== " ")
+      return;
     event.preventDefault();
     setFoto(Number(img.dataset.index));
   }, []);
@@ -352,7 +400,8 @@ const Noticia = () => {
   const cerrarFoto = useCallback(() => setFoto(null), []);
   const cerrarHero = useCallback(() => setHeroAbierta(false), []);
   const heroImagenes = useMemo(
-    () => (noticia?.imagen ? [{ src: noticia.imagen, alt: noticia.titulo }] : []),
+    () =>
+      noticia?.imagen ? [{ src: noticia.imagen, alt: noticia.titulo }] : [],
     [noticia],
   );
 
@@ -377,7 +426,9 @@ const Noticia = () => {
         <div className="lp-empty noticia-estado">
           <FaNewspaper aria-hidden="true" />
           <h1 className="noticia-estado__title">
-            {status === "notfound" ? "Noticia no encontrada" : "No pudimos cargar la noticia"}
+            {status === "notfound"
+              ? "Noticia no encontrada"
+              : "No pudimos cargar la noticia"}
           </h1>
           <p>
             {status === "notfound"
@@ -396,81 +447,104 @@ const Noticia = () => {
   return (
     <>
       <BarraProgreso />
-      <Page narrow className="noticia-page">
+      <Page className="noticia-page">
         <Migas titulo={noticia.titulo} />
 
         <article>
-          <header className="noticia-header">
-            {noticia.categorias.length > 0 && (
-              <div className="noticia-cats">
-                {noticia.categorias.map((cat) =>
-                  cat.to ? (
-                    <Link key={cat.id} to={cat.to} className="noticia-cat">
-                      {cat.label}
-                    </Link>
-                  ) : (
-                    <span key={cat.id} className="noticia-cat">
-                      {cat.label}
-                    </span>
-                  ),
-                )}
-              </div>
-            )}
-
-            <h1 className="noticia-title" dangerouslySetInnerHTML={{ __html: noticia.tituloHtml }} />
-
-            <div className="noticia-meta">
-              <span>
-                <FaCalendarAlt aria-hidden="true" />
-                <time dateTime={noticia.fecha}>{fecha}</time>
-              </span>
-              <span>
-                <FaClock aria-hidden="true" />
-                {noticia.minutos} min de lectura
-              </span>
-            </div>
-
-            <div className="noticia-toolbar">
-              <BotonEscuchar texto={`${noticia.titulo}. ${noticia.texto}`} />
-              <Compartir noticia={noticia} />
-            </div>
-          </header>
-
-          {noticia.imagen && (
-            <figure
-              className="noticia-hero"
-              style={{ "--hero-img": `url("${noticia.imagen}")` }}
-            >
-              <button
-                type="button"
-                className="noticia-hero__btn"
-                onClick={() => setHeroAbierta(true)}
-                aria-label="Ampliar imagen destacada"
-              >
-                <img src={noticia.imagen} alt="" />
-              </button>
-            </figure>
-          )}
-
           <div
-            ref={contenidoRef}
-            className="noticia-prose"
-            onClick={abrirFoto}
-            onKeyDown={abrirFoto}
-            dangerouslySetInnerHTML={{ __html: noticia.contenido }}
-          />
+            className={`noticia-intro${noticia.imagen ? ` noticia-intro--${orientacion}` : ""}`}
+          >
+            <header className="noticia-header">
+              {noticia.categorias.length > 0 && (
+                <div className="noticia-cats">
+                  {noticia.categorias.map((cat) =>
+                    cat.to ? (
+                      <Link key={cat.id} to={cat.to} className="noticia-cat">
+                        {cat.label}
+                      </Link>
+                    ) : (
+                      <span key={cat.id} className="noticia-cat">
+                        {cat.label}
+                      </span>
+                    ),
+                  )}
+                </div>
+              )}
 
-          <footer className="noticia-footer">
-            <Link to="/Noticias" className="lp-btn lp-btn--ghost">
-              <FaArrowLeft size={12} aria-hidden="true" />
-              Todas las noticias
-            </Link>
-            <Compartir noticia={noticia} />
-          </footer>
+              <h1
+                className="noticia-title"
+                dangerouslySetInnerHTML={{ __html: noticia.tituloHtml }}
+              />
+
+              <div className="noticia-meta">
+                <span>
+                  <FaCalendarAlt aria-hidden="true" />
+                  <time dateTime={noticia.fecha}>{fecha}</time>
+                </span>
+                <span>
+                  <FaClock aria-hidden="true" />
+                  {noticia.minutos} min de lectura
+                </span>
+              </div>
+
+              <div className="noticia-toolbar">
+                <BotonEscuchar texto={`${noticia.titulo}. ${noticia.texto}`} />
+                <Compartir noticia={noticia} />
+              </div>
+            </header>
+
+            {noticia.imagen && (
+              <figure className="noticia-hero">
+                <button
+                  type="button"
+                  className="noticia-hero__btn"
+                  onClick={() => setHeroAbierta(true)}
+                  aria-label="Ampliar imagen destacada"
+                >
+                  <img
+                    key={noticia.imagen}
+                    src={noticia.imagen}
+                    alt=""
+                    onLoad={(e) => {
+                      const { naturalWidth: w, naturalHeight: h } =
+                        e.currentTarget;
+                      setOrientacion(w > h * 1.1 ? "horizontal" : "vertical");
+                    }}
+                  />
+                  <span className="noticia-hero__zoom" aria-hidden="true">
+                    <FaExpand />
+                    Ampliar
+                  </span>
+                </button>
+              </figure>
+            )}
+          </div>
+
+          <div className="noticia-body">
+            <div
+              ref={contenidoRef}
+              className="noticia-prose"
+              onClick={abrirFoto}
+              onKeyDown={abrirFoto}
+              dangerouslySetInnerHTML={{ __html: noticia.contenido }}
+            />
+
+            <footer className="noticia-footer">
+              <Link to="/Noticias" className="lp-btn lp-btn--ghost">
+                <FaArrowLeft size={12} aria-hidden="true" />
+                Todas las noticias
+              </Link>
+              <Compartir noticia={noticia} />
+            </footer>
+          </div>
         </article>
 
         {relacionadas.length > 0 && (
-          <Section id="relacionadas" kicker="Sigue leyendo" title="Más noticias">
+          <Section
+            id="relacionadas"
+            kicker="Sigue leyendo"
+            title="Más noticias"
+          >
             <div className="lp-news-grid noticia-relacionadas">
               {relacionadas.map((post) => (
                 <NewsCard key={post.id} post={post} />
@@ -480,7 +554,12 @@ const Noticia = () => {
         )}
       </Page>
 
-      <Lightbox images={fotos} index={foto} onClose={cerrarFoto} onChange={setFoto} />
+      <Lightbox
+        images={fotos}
+        index={foto}
+        onClose={cerrarFoto}
+        onChange={setFoto}
+      />
       <Lightbox
         images={heroImagenes}
         index={heroAbierta ? 0 : null}
