@@ -1,83 +1,101 @@
-import { Container, Row, Col } from "react-bootstrap";
-import { FaNewspaper, FaCalendarAlt, FaBookReader } from "react-icons/fa";
+import { FaBookOpen, FaBookReader, FaExternalLinkAlt } from "react-icons/fa";
+import { Page, PageHeader, Section } from "../components/ui/Page";
 import { craInfo } from "../data/infocra.js";
+import "./InfoCra.css";
+
+/*
+ * Las portadas están en Cloudinary: se piden ya optimizadas (ancho justo y
+ * formato liviano automático) en vez de la captura original a tamaño completo.
+ */
+const portadaOptimizada = (url, ancho) =>
+  url.includes("res.cloudinary.com") && url.includes("/upload/")
+    ? url.replace("/upload/", `/upload/f_auto,q_auto,w_${ancho}/`)
+    : url;
+
+// Agrupa por año manteniendo el orden del archivo (más recientes primero)
+const porAnio = craInfo.reduce((grupos, revista) => {
+  const grupo = grupos.find((g) => g.anio === revista.year);
+  if (grupo) grupo.revistas.push(revista);
+  else grupos.push({ anio: revista.year, revistas: [revista] });
+  return grupos;
+}, []);
+
+const [ultima] = craInfo;
+
+function Portada({ revista }) {
+  return (
+    <a
+      href={revista.link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="cra-card"
+      aria-label={`Leer ${revista.title}, ${revista.description} ${revista.year}`}
+    >
+      <span className="cra-card__cover">
+        <img src={portadaOptimizada(revista.image, 600)} alt="" loading="lazy" />
+        <span className="cra-card__hint" aria-hidden="true">
+          <FaBookOpen />
+          Leer
+        </span>
+      </span>
+      <span className="cra-card__body">
+        <span className="cra-card__title">{revista.title}</span>
+        <span className="cra-card__meta">
+          {revista.description} · {revista.year}
+        </span>
+      </span>
+    </a>
+  );
+}
 
 const InfoCra = () => {
   return (
-    <Container className="contenedor py-5">
-      <h1 className="text-center mb-5">
-        <FaBookReader className="me-2 text-primary" />
-        Centro de Recursos para el Aprendizaje (CRA)
-      </h1>
-      <p className="text-center mb-5">
-        En esta sección podrás encontrar la revista digital del CRA de nuestro
-        establecimiento.
-      </p>
+    <Page>
+      <PageHeader
+        icon={FaBookReader}
+        kicker="Biblioteca"
+        title="INFO-CRA"
+        lead="La revista digital del Centro de Recursos para el Aprendizaje (CRA) de nuestro liceo."
+      />
 
-      <Row className="g-4">
-        {craInfo.map((portada) => (
-          <Col key={portada.id} xs={12} md={6} lg={4}>
-            <div
-              className="card h-100"
-              style={{
-                transition: "transform 0.3s ease, box-shadow 0.3s ease",
-                borderRadius: "12px",
-                overflow: "hidden",
-                boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-                cursor: "pointer",
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = "translateY(-5px)";
-                e.currentTarget.style.boxShadow =
-                  "0 8px 16px rgba(0, 123, 255, 0.2)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = "translateY(0)";
-                e.currentTarget.style.boxShadow =
-                  "0 4px 8px rgba(0, 0, 0, 0.1)";
-              }}
-            >
-              <div className="position-relative">
-                <a
-                  href={portada.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ display: "block" }}
-                >
-                  <img
-                    src={portada.image}
-                    className="card-img-top"
-                    alt={portada.title}
-                    style={{ height: "400px", objectFit: "cover" }}
-                  />
-                  <div className="position-absolute top-0 start-0 p-2">
-                    <FaNewspaper className="text-white opacity-75" size={24} />
-                  </div>
-                </a>
-              </div>
-              <div className="card-body">
-                <h5 className="card-title fw-bold">{portada.title}</h5>
-                <p className="card-text text-muted d-flex align-items-center">
-                  <FaCalendarAlt className="me-2" />
-                  {portada.year} - {portada.description}
-                </p>
-                <div className="d-grid">
-                  <a
-                    href={portada.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-primary"
-                  >
-                    <FaBookReader className="me-2" />
-                    Ver publicación
-                  </a>
-                </div>
-              </div>
-            </div>
-          </Col>
-        ))}
-      </Row>
-    </Container>
+      {ultima && (
+        <Section id="ultima" kicker="Recién publicada" title="Última edición">
+          <a
+            href={ultima.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cra-destacada"
+            data-reveal
+          >
+            <span className="cra-destacada__cover">
+              <img src={portadaOptimizada(ultima.image, 900)} alt={`Portada de ${ultima.title}`} />
+            </span>
+            <span className="cra-destacada__body">
+              <span className="cra-destacada__badge">Nueva edición</span>
+              <span className="cra-destacada__title">{ultima.title}</span>
+              <span className="cra-destacada__meta">
+                {ultima.description} {ultima.year}
+              </span>
+              <span className="lp-btn cra-destacada__btn">
+                <FaBookOpen aria-hidden="true" />
+                Leer revista
+                <FaExternalLinkAlt size={11} aria-hidden="true" />
+              </span>
+            </span>
+          </a>
+        </Section>
+      )}
+
+      {porAnio.map(({ anio, revistas }) => (
+        <Section key={anio} id={`cra-${anio}`} kicker="Ediciones" title={anio}>
+          <div className="cra-grid" data-reveal>
+            {revistas.map((revista) => (
+              <Portada key={revista.id} revista={revista} />
+            ))}
+          </div>
+        </Section>
+      ))}
+    </Page>
   );
 };
 
